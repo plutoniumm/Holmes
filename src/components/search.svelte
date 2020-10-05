@@ -1,18 +1,32 @@
 <script>
       import { onMount } from "svelte";
-      import { checkKey, startsWith } from "../micro/micro";
+      import { checkKey, startsWith, preprocessor } from "../micro/micro";
 
       export let sites;
       console.log(sites);
       let raw = "",
             magic,
-            ic;
+            ic,
+            staticBox;
+      $: key = raw.split(":")[0].split(" ")[0].toLowerCase();
       $: send = "";
 
-      const go = () => {
-            let key = raw.split(":")[0].split(" ")[0].toLowerCase();
-            let term;
+      const fx = (p) => {
+            const val = +p.split(" ")[0];
+            const frm = p.split(" ")[1];
+            const fin = p.split(" ")[2];
+            fetch(`https://api.exchangerate-api.com/v4/latest/${frm}`)
+                  .then((res) => res.json())
+                  .then((res) => {
+                        const rate = res.rates[fin];
+                        const ans = `${val} ${frm} = ${+rate * val} ${fin}`;
+                        console.log(ans);
+                        staticBox.innerHTML += "<br>" + ans;
+                  });
+      };
 
+      const go = () => {
+            let term;
             if (checkKey(key)) {
                   if (startsWith(raw, key + " ")) {
                         term = raw.replace(key + " ", "");
@@ -34,8 +48,39 @@
             }
       };
 
-      const submitHandler = () => {
-            console.log(raw);
+      const metal = () => {
+            if (magic.value == "") {
+                  alert("Please Enter A search Term");
+            } else {
+                  if (startsWith(raw, "> ")) {
+                        let exec = raw.replace("> ", "");
+                        let fn = exec.split(" ")[0];
+                        let param = exec.replace(fn + " ", "");
+                        switch (fn) {
+                              case "fx":
+                                    fx(param);
+                                    break;
+                              default:
+                                    alert("invalid func");
+                                    break;
+                        }
+                        // if (fn == "t") {count(+param);}
+                        // if (fn == "cal" ||fn == "calc" ||fn == "eval" ||fn == "solve") {calc(param);}
+                  } else {
+                        if (
+                              startsWith(raw, "https://") ||
+                              startsWith(raw, "http://")
+                        ) {
+                              window.location.href = raw.replace(
+                                    "http://",
+                                    "https://"
+                              );
+                        } else {
+                              const scr = preprocessor(key);
+                              eval(scr);
+                        }
+                  }
+            }
       };
 
       onMount(() => {
@@ -48,10 +93,20 @@
             .wrapper {
                   background: #222;
                   border: 1px solid #ddd6;
+                  font-size: 2rem;
+                  display: flex;
+                  align-items: center;
                   border-radius: 1em;
-                  padding: 1em;
+                  padding: 0.25em;
+                  img {
+                        background: #fff;
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 34px;
+                  }
                   #magic {
                         padding: 0.5em;
+                        font-size: 2rem;
                         background: transparent;
                         color: white;
                         outline: none;
@@ -64,7 +119,7 @@
 <section
       style="display:flex;justify-content: center;align-items: center;flex-direction: column;">
       {new Date().toLocaleTimeString('en-GB').slice(0, -3)}
-      <form on:submit={submitHandler}>
+      <form on:submit|preventDefault={metal}>
             <div class="wrapper" style="display:flex">
                   <div class="icon"><img bind:this={ic} src="" alt="" /></div>
                   <input
@@ -77,4 +132,5 @@
             </div>
             <input type="submit" style="display:none" />
       </form>
+      <div bind:this={staticBox} id="staticBox" />
 </section>

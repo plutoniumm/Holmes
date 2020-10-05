@@ -1,7 +1,12 @@
 <script>
+      export let data;
+
+      console.log(data);
 </script>
 
 <style>
 </style>
 
-<section>Hi</section>
+<section>
+      {#each data as link}{link.name}{/each}
+</section>
