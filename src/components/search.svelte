@@ -1,6 +1,6 @@
 <script>
       import { onMount } from "svelte";
-      import { checkKey, startsWith, preprocessor } from "../micro/micro";
+      import { checkKey, startsWith, preprocessor } from "../core/micro";
 
       export let sites;
       console.log(sites);
@@ -90,23 +90,28 @@
 
 <style type="text/scss">
       form {
+            display: flex;
+            justify-content: center;
             .wrapper {
                   background: #222;
                   border: 1px solid #ddd6;
-                  font-size: 2rem;
+                  font-size: 1.5rem;
                   display: flex;
                   align-items: center;
                   border-radius: 1em;
-                  padding: 0.25em;
+                  width: 80vw;
+                  padding: 0.25em 0.5em;
                   img {
-                        background: #fff;
-                        width: 48px;
-                        height: 48px;
+                        // background: #fff8;
+                        object-fit: contain;
+                        width: 44px;
+                        height: 44px;
                         border-radius: 34px;
                   }
                   #magic {
                         padding: 0.5em;
                         font-size: 2rem;
+                        overflow: hidden;
                         background: transparent;
                         color: white;
                         outline: none;
@@ -121,7 +126,9 @@
       {new Date().toLocaleTimeString('en-GB').slice(0, -3)}
       <form on:submit|preventDefault={metal}>
             <div class="wrapper" style="display:flex">
-                  <div class="icon"><img bind:this={ic} src="" alt="" /></div>
+                  <div class="icon">
+                        <img bind:this={ic} src="./icons/Basic.svg" alt="" />
+                  </div>
                   <input
                         on:keyup={go}
                         bind:this={magic}

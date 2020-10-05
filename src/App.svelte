@@ -7,7 +7,6 @@
 	import Links from "./components/links.svelte";
 
 	console.log(days);
-	console.log(links);
 </script>
 
 <style>
