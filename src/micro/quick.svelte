@@ -2,6 +2,7 @@
       export let link;
 
       let linkImg;
+      const fallback = "https://appiconmaker.co/home/appicon/testid?size=1024";
 
       var favi = link.link
             .replace("https://", "")
@@ -14,11 +15,10 @@
                   if (fi) {
                         linkImg.src = fi.icons[fi.icons.length - 1].src;
                   } else {
-                        linkImg.src =
-                              "https://static.toiimg.com/photo/72975551.cms";
+                        linkImg.src = fallback;
                   }
             })
-            .catch((e) => console.log(e));
+            .catch((e) => (linkImg.src = fallback));
 </script>
 
 <style type="text/scss">
@@ -43,9 +43,9 @@
                   <img
                         bind:this={linkImg}
                         src=""
-                        onerror="this.onerror=null;this.src='https://static.toiimg.com/photo/72975551.cms';"
+                        onerror="this.onerror=null;this.src='https://appiconmaker.co/home/appicon/testid?size=1024';"
                         alt={link.name} />
             </div>
-            {link.name}
+            <span style="font-size:0.75em;color:#ddd"> {link.name} </span>
       </a>
 </div>

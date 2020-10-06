@@ -1,8 +1,6 @@
 <script>
       export let data;
       import Quick from "../micro/quick.svelte";
-
-      console.log(data);
 </script>
 
 <style type="text/scss">
@@ -18,6 +16,7 @@
             bottom: 0.5em;
       }
       .quickCont {
+            border-radius: 1.5em;
             background: #1118;
             word-wrap: break-word;
       }

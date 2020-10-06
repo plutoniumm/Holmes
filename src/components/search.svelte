@@ -1,14 +1,17 @@
 <script>
       import { onMount } from "svelte";
-      import { checkKey, startsWith, preprocessor } from "../core/micro";
+      import { startsWith, preprocessor } from "../core/micro";
 
       export let sites;
-      console.log(sites);
       let raw = "",
             magic,
             ic,
             staticBox;
-      $: key = raw.split(":")[0].split(" ")[0].toLowerCase();
+      $: key = raw
+            ? raw.split(":")[0].split(" ")[0].toLowerCase() in sites
+                  ? raw.split(":")[0].split(" ")[0].toLowerCase()
+                  : "g"
+            : null;
       $: send = "";
 
       const fx = (p) => {
@@ -20,34 +23,39 @@
                   .then((res) => {
                         const rate = res.rates[fin];
                         const ans = `${val} ${frm} = ${+rate * val} ${fin}`;
-                        console.log(ans);
                         staticBox.innerHTML += "<br>" + ans;
                   });
       };
-
-      const go = () => {
+      const go = (e) => {
             let term;
-            if (checkKey(key)) {
-                  if (startsWith(raw, key + " ")) {
-                        term = raw.replace(key + " ", "");
-                        // if (term != "") sug(term);
-                        send = sites[key].prelink + term + sites[key].postlink;
-                  }
-                  if (startsWith(raw, key + ":")) {
-                        term = raw.replace(key + ":", "");
-                        send = sites[key][term];
-                  }
-                  ic.src = `./icons/${sites[key].name}.svg`;
+            if (raw == "") {
+                  document.getElementById("autoComplete").innerHTML = "";
+                  ic.src = `./icons/Basic.svg`;
             }
-            if (raw != "" && !checkKey(key)) {
-                  key = "g";
-                  term = raw;
-                  // if (term != "") sug(term);
-                  send = sites[key].prelink + term + sites[key].postlink;
-                  ic.src = `./icons/${sites[key].name}.svg`;
+            switch (e.keyCode) {
+                  case 40:
+                        suggI = suggI == 4 || suggI == null ? 0 : suggI + 1;
+                        magic.value = key + " " + suggList[suggI];
+                        break;
+                  case 38:
+                        suggI = suggI == 0 || suggI == null ? 4 : suggI - 1;
+                        magic.value = key + " " + suggList[suggI];
+                        break;
+                  default:
+                        suggI = null;
+                        break;
             }
+            term = magic.value.replace(key + " ", "");
+            if (term != "") sug(term);
+            send = sites[key].prelink + term + sites[key].postlink;
+            if (startsWith(raw, key + ":")) {
+                  term = raw.replace(key + ":", "");
+                  send = sites[key][term];
+            }
+            console.log(key);
+            console.log(send);
+            ic.src = `./icons/${sites[key].name}.svg`;
       };
-
       const metal = () => {
             if (magic.value == "") {
                   alert("Please Enter A search Term");
@@ -82,6 +90,14 @@
                   }
             }
       };
+      const sug = (SIn) => {
+            const sc_Old = document.getElementById("suggestions");
+            if (sc_Old) sc_Old.remove();
+            var sc = document.createElement("script");
+            sc.src = `https://clients1.google.com/complete/search?client=youtube&hl=en&q=${SIn}&jsonp=returnSug`;
+            sc.id = "suggestions";
+            document.body.appendChild(sc);
+      };
 
       onMount(() => {
             magic.focus();
@@ -95,10 +111,10 @@
             .wrapper {
                   background: #222;
                   border: 1px solid #ddd6;
-                  font-size: 1.5rem;
+                  font-size: 1.25rem;
                   display: flex;
                   align-items: center;
-                  border-radius: 1em;
+                  border-radius: 1.5em;
                   width: 80vw;
                   padding: 0.25em 0.5em;
                   img {
@@ -109,8 +125,8 @@
                         border-radius: 34px;
                   }
                   #magic {
-                        padding: 0.5em;
-                        font-size: 2rem;
+                        padding: 0.25em 0.5em;
+                        font-size: 1.75rem;
                         overflow: hidden;
                         background: transparent;
                         color: white;
@@ -119,11 +135,26 @@
                   }
             }
       }
+      #autoComplete {
+            background: #222;
+            width: 75%;
+            padding: 0.5em 0.75em;
+            margin: 0 auto;
+            list-style-type: none;
+            border-radius: 1em;
+            li {
+                  border-radius: 1em;
+                  padding: 0.2em 0.5em;
+                  &:first-child {
+                        padding-top: 0.5em;
+                  }
+            }
+      }
 </style>
 
 <section
       style="display:flex;justify-content: center;align-items: center;flex-direction: column;">
-      {new Date().toLocaleTimeString('en-GB').slice(0, -3)}
+      <br />
       <form on:submit|preventDefault={metal}>
             <div class="wrapper" style="display:flex">
                   <div class="icon">
@@ -134,10 +165,12 @@
                         bind:this={magic}
                         id="magic"
                         bind:value={raw}
-                        size={raw.length > 40 ? 40 : raw.length} />
-                  <div>follower</div>
+                        size="auto" />
             </div>
             <input type="submit" style="display:none" />
       </form>
+      <div style="width:100%;padding:0.5em;margin-top:0.5em;">
+            <ul id="autoComplete" />
+      </div>
       <div bind:this={staticBox} id="staticBox" />
 </section>

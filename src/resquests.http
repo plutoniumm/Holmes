@@ -1,1 +1,1 @@
-GET https://google.com HTTP/1.2
+GET https://clients1.google.com/complete/search?client=firefox&hl=en&q=Apple HTTP/1.2
