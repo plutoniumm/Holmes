@@ -14,5 +14,5 @@
 <nav class="nav">
       <div>Chernobyl</div>
       <div>{new Date().toLocaleString('en-GB')}</div>
-      <div>&nbsp;</div>
+      <div>Will add soon</div>
 </nav>

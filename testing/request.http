@@ -1,0 +1,3 @@
+GET /notifications HTTP/1.1
+Authorization: Bearer 070c43b247c5d179f1045753b29e7652092578a5
+Host: api.github.com

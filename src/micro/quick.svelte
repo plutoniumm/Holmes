@@ -2,7 +2,7 @@
       export let link;
 
       let linkImg;
-      const fallback = "https://appiconmaker.co/home/appicon/testid?size=1024";
+      const fallback = "./assets/link.png";
 
       var favi = link.link
             .replace("https://", "")
@@ -43,7 +43,7 @@
                   <img
                         bind:this={linkImg}
                         src=""
-                        onerror="this.onerror=null;this.src='https://appiconmaker.co/home/appicon/testid?size=1024';"
+                        onerror="this.onerror=null;this.src='./assets/link.png';"
                         alt={link.name} />
             </div>
             <span style="font-size:0.75em;color:#ddd"> {link.name} </span>

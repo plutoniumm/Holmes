@@ -1,22 +1,15 @@
-var http = require( "http" );
+const express = require( 'express' )
+const fs = require( 'fs' )
+const app = express()
+var exec = require( 'child_process' ).exec;
+const port = process.env.PORT || 4000
+// const cors = require( 'cors' );
+// const bodyParser = require( 'body-parser' );
+// const { v1: uuidv1 } = require( 'uuid' );
 
-var options = {
-      host: 'https://clients1.google.com',
-      // port: 80,
-      path: '/complete/search?client=firefox&hl=en&q=Apple',
-      method: 'GET'
-};
-
-var req = http.request( options, ( res ) => {
-      res.setEncoding( 'utf8' );
-      res.on( 'data', ( bod ) => {
-            console.log( bod );
-      } );
-} );
-
-req.on( 'error', ( e ) => { console.log( e ); } );
-
-// write data to request body
-req.write( 'data\n' );
-req.write( 'data\n' );
-req.end();
+// app.use( bodyParser.json() );
+// app.use( cors() );
+// app.options( '*', cors() );
+app.use( '/', express.static( './public' ) );
+// app.use( express.json() )
+app.listen( port, () => console.log( `Server Running at http://localhost:${ port }` ) )

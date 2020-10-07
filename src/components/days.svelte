@@ -1,9 +1,5 @@
 <script>
       export let days;
-
-      console.log(
-            Math.round((new Date(days[0].date) - new Date()) / (1000 * 86400))
-      );
 </script>
 
 <style type="text/scss">

@@ -5,7 +5,7 @@ logs
 *lock*.yml
 
 .DS_Store
-
+thread.js
 
 # Runtime data
 pids

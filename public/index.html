@@ -5,7 +5,7 @@
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1'>
 
-	<title>Svelte app</title>
+	<title>Holmes</title>
 
 	<link rel='icon' type='image/png' href='./favicon.png'>
 	<link rel='stylesheet' href='./global.css'>
@@ -24,13 +24,42 @@
 
 <script>
 	var suggList = [], suggI = null;
-	const returnSug = ( data ) => {
-		const bar = document.getElementById( 'magic' )
-		check = ( e ) => { bar.value = e.innerText; bar.focus() }
-		document.getElementById( 'autoComplete' ).innerHTML =
-			data[ 1 ].slice( 0, 5 ).map( el => `<li onclick="check(this)">${ el[ 0 ] }</li>` ).join( '<br />' )
-		suggList = data[ 1 ].slice( 0, 5 ).map( el => el[ 0 ] )
-	};
+	const returnSug = ( data ) => { const bar = document.getElementById( 'magic' ); check = ( e ) => { bar.value = e.innerText; bar.focus() }; document.getElementById( 'autoComplete' ).innerHTML = data[ 1 ].slice( 0, 2 ).map( el => `<li onclick="check(this)">${ el[ 0 ] }</li>` ).join( '<br />' ); suggList = data[ 1 ].slice( 0, 5 ).map( el => el[ 0 ] ) };
+</script>
+<script>
+	if ( window.Worker ) {
+		w = new Worker( './core/thread.js' )
+		var message = { func: 'getTest' }
+
+		w.postMessage( message )
+
+		w.onmessage = e => {
+			document.getElementById( 'gitNotifs' ).innerHTML = e.data.sort( ( a, b ) => { return new Date( b.updated_at ).getTime() - new Date( a.updated_at ).getTime() } ).map( el => {
+				return `
+				<a href="${ el.repository.owner.html_url }/${ el.repository.name }">
+				<li class="gitNotifs">
+					<div>
+						<div class="head">
+							<span>
+							${ el.repository.name }
+							</span>
+							<span>
+							${ new Date() - new Date( el.updated_at ) }
+							</span>
+						</div>
+						<div class="body">
+							${ el.subject.title }
+						</div>
+					</div>
+					<div class="head">
+						${el.subject.type}
+					</div>
+				</li>
+				</a>
+				`
+			} ).join( '' )
+		}
+	}
 </script>
 
 </html>

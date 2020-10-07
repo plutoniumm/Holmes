@@ -78,8 +78,13 @@
             "mail": "https://www.icloud.com/mail/"
       },
       "ht": {
-            "name": "Links",
+            "name": "Web",
             "prelink": "https://",
+            "postlink": ""
+      },
+      "htu": {
+            "name": "Web",
+            "prelink": "http://",
             "postlink": ""
       }
 }

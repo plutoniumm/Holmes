@@ -52,8 +52,6 @@
                   term = raw.replace(key + ":", "");
                   send = sites[key][term];
             }
-            console.log(key);
-            console.log(send);
             ic.src = `./icons/${sites[key].name}.svg`;
       };
       const metal = () => {
@@ -100,7 +98,9 @@
       };
 
       onMount(() => {
-            magic.focus();
+            setTimeout(() => {
+                  magic.focus();
+            }, 500);
       });
 </script>
 
@@ -115,7 +115,7 @@
                   display: flex;
                   align-items: center;
                   border-radius: 1.5em;
-                  width: 80vw;
+                  width: calc(80vw - 1em);
                   padding: 0.25em 0.5em;
                   img {
                         // background: #fff8;
@@ -137,7 +137,7 @@
       }
       #autoComplete {
             background: #222;
-            width: 75%;
+            width: calc(75% - 1.5em);
             padding: 0.5em 0.75em;
             margin: 0 auto;
             list-style-type: none;
@@ -165,11 +165,11 @@
                         bind:this={magic}
                         id="magic"
                         bind:value={raw}
-                        size="auto" />
+                        size="100" />
             </div>
             <input type="submit" style="display:none" />
       </form>
-      <div style="width:100%;padding:0.5em;margin-top:0.5em;">
+      <div style="width:calc(100% - 1em);padding:0.5em;margin-top:0.5em;">
             <ul id="autoComplete" />
       </div>
       <div bind:this={staticBox} id="staticBox" />

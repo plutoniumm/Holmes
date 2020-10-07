@@ -17,7 +17,7 @@ const days = [
 
 const app = new App( {
 	target: document.body,
-	props: { sites: sites, links: links, days: days }
+	props: { sites: sites, days: days, links: links }
 } );
 
 export default app;
