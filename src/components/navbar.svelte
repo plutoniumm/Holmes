@@ -12,7 +12,7 @@
 </style>
 
 <nav class="nav">
-      <div>Chernobyl</div>
+      <div>Holmes</div>
       <div>{new Date().toLocaleString('en-GB')}</div>
-      <div>Will add soon</div>
+      <div onclick="window.location.href='http://localhost:3000'">Newton</div>
 </nav>
