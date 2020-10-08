@@ -1,2 +1,6 @@
-GET /topSites/ HTTP/1.2
+POST /log?key=g&params=me HTTP/1.2
+Host: localhost:4000
+
+###
+GET /log HTTP/1.2
 Host: localhost:4000

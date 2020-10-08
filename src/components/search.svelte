@@ -15,14 +15,17 @@
       $: send = "";
 
       const fx = (p) => {
-            const val = +p.split(" ")[0];
-            const frm = p.split(" ")[1];
-            const fin = p.split(" ")[2];
+            const t = p.split(" ");
+            const val = +t[0];
+            const frm = t[1];
+            const fin = t[2];
             fetch(`https://api.exchangerate-api.com/v4/latest/${frm}`)
                   .then((res) => res.json())
-                  .then((res) => {
-                        const rate = res.rates[fin];
-                        const ans = `${val} ${frm} = ${+rate * val} ${fin}`;
+                  .then((r) => {
+                        const rate = r.rates[fin];
+                        const ans = `${val} ${frm} = ${(+rate * val).toFixed(
+                              2
+                        )} ${fin}`;
                         staticBox.innerHTML += "<br>" + ans;
                   });
       };
@@ -34,12 +37,10 @@
             }
             switch (e.keyCode) {
                   case 40:
-                        suggI = suggI == 4 || suggI == null ? 0 : suggI + 1;
-                        magic.value = key + " " + suggList[suggI];
+                        magic.value = key + " " + suggList[0];
                         break;
                   case 38:
-                        suggI = suggI == 0 || suggI == null ? 4 : suggI - 1;
-                        magic.value = key + " " + suggList[suggI];
+                        magic.value = key + " " + suggList[1];
                         break;
                   default:
                         suggI = null;
@@ -71,8 +72,12 @@
                                     break;
                         }
                         // if (fn == "t") {count(+param);}
-                        // if (fn == "cal" ||fn == "calc" ||fn == "eval" ||fn == "solve") {calc(param);}
                   } else {
+                        navigator.sendBeacon(
+                              `http://localhost:4000/log?key=${key}&params=${raw
+                                    .replace(key + " ", "")
+                                    .replace(key + ":", "")}`
+                        );
                         if (
                               startsWith(raw, "https://") ||
                               startsWith(raw, "http://")
@@ -98,9 +103,7 @@
       };
 
       onMount(() => {
-            setTimeout(() => {
-                  magic.focus();
-            }, 500);
+            setTimeout(magic.focus(), 500);
       });
 </script>
 

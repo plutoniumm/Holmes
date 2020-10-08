@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.3.0
+
+- Added history logging
+- Added beacon to send stat and added background stats calculations
+
+### Pending
+- Creating a minimal holmes logo?
+- Adding timer, pomodoro timer
+- Adding test scripts
+
 ## v2.2.0
 
 - Adding github integration
@@ -20,8 +30,8 @@ Full Convert to Svelte
 
 ## v1.0.0
 
-- Processing Engine for multiple sites with functions
+Processing Engine for multiple sites with functions
 
 ## v0.0.0
 
-- Simple new tab page written in vanillaJS
+Simple new tab page written in vanillaJS

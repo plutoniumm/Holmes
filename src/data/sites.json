@@ -53,7 +53,7 @@
             "dm": "https://www.instagram.com/direct/inbox/"
       },
       "ap": {
-            "name": "Amazon Prime",
+            "name": "Amazon",
             "prelink": "https://www.primevideo.com/search/ref=atv_nb_sr?phrase=",
             "postlink": "&ie=UTF8"
       },
@@ -63,7 +63,7 @@
             "postlink": "&ref_=nv_sr_sm"
       },
       "dict": {
-            "name": "Merriam Webster",
+            "name": "Webster",
             "prelink": "https://www.merriam-webster.com/dictionary/",
             "postlink": ""
       },
