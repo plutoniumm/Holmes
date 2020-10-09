@@ -1,18 +1,15 @@
 {
       "nf": {
             "name": "Netflix",
-            "prelink": "https://www.netflix.com/search?q=",
-            "postlink": ""
+            "prelink": "https://www.netflix.com/search?q="
       },
       "be": {
             "name": "Behance",
-            "prelink": "https://www.behance.net/search?search=",
-            "postlink": ""
+            "prelink": "https://www.behance.net/search?search="
       },
       "git": {
             "name": "Github",
             "prelink": "https://github.com/search?&q=",
-            "postlink": "",
             "me": "https://github.com/plutoniumblast?tab=repositories",
             "new": "https://github.com/new",
             "settings": "https://github.com/settings/profile",
@@ -21,8 +18,7 @@
       "g": {
             "name": "Google",
             "mail": "https://mail.google.com/",
-            "prelink": "https://www.google.com/search?q=",
-            "postlink": ""
+            "prelink": "https://www.google.com/search?q="
       },
       "gi": {
             "name": "GImages",
@@ -31,18 +27,15 @@
       },
       "ddg": {
             "name": "DuckDuckGo",
-            "prelink": "https://duckduckgo.com/?q=",
-            "postlink": ""
+            "prelink": "https://duckduckgo.com/?q="
       },
       "r": {
             "name": "Reddit",
-            "prelink": "https://www.reddit.com/search?q=",
-            "postlink": ""
+            "prelink": "https://www.reddit.com/search?q="
       },
       "y": {
             "name": "Youtube",
             "prelink": "https://www.youtube.com/results?search_query=",
-            "postlink": "",
             "new": "https://www.youtube.com/feed/subscriptions"
       },
       "ig": {
@@ -64,13 +57,11 @@
       },
       "dict": {
             "name": "Webster",
-            "prelink": "https://www.merriam-webster.com/dictionary/",
-            "postlink": ""
+            "prelink": "https://www.merriam-webster.com/dictionary/"
       },
       "wiki": {
             "name": "Wikipedia",
-            "prelink": "https://en.wikipedia.org/wiki/Special:Search?search=",
-            "postlink": ""
+            "prelink": "https://en.wikipedia.org/wiki/Special:Search?search="
       },
       ">": {
             "name": "Functions",
@@ -79,12 +70,10 @@
       },
       "ht": {
             "name": "Web",
-            "prelink": "https://",
-            "postlink": ""
+            "prelink": "https://"
       },
       "htu": {
             "name": "Web",
-            "prelink": "http://",
-            "postlink": ""
+            "prelink": "http://"
       }
 }

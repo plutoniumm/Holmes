@@ -2,23 +2,12 @@
       export let link;
 
       let linkImg;
-      const fallback = "./assets/link.png";
 
-      var favi = link.link
-            .replace("https://", "")
-            .replace("http://", "")
-            .replace("www.", "")
-            .split("/")[0];
-      fetch("http://favicongrabber.com/api/grab/" + favi)
-            .then((r) => r.json())
+      fetch("http://localhost:4000/favicon?link=" + link.imgLink)
+            .then((r) => r.text())
             .then((fi) => {
-                  if (fi) {
-                        linkImg.src = fi.icons[fi.icons.length - 1].src;
-                  } else {
-                        linkImg.src = fallback;
-                  }
-            })
-            .catch((e) => (linkImg.src = fallback));
+                  linkImg.src = "data:image/png;base64, " + fi;
+            });
 </script>
 
 <style type="text/scss">
@@ -42,8 +31,8 @@
             <div>
                   <img
                         bind:this={linkImg}
-                        src=""
-                        onerror="this.onerror=null;this.src='./assets/link.png';"
+                        src="./assets/link.png"
+                        onerror="this.onerror=null;this.src='{link.imgLink}';"
                         alt={link.name} />
             </div>
             <span style="font-size:0.75em;color:#ddd"> {link.name} </span>

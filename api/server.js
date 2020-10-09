@@ -1,6 +1,7 @@
 const express = require( 'express' )
 const fs = require( 'fs' )
 const app = express()
+const imageToBase64 = require( 'image-to-base64' );
 const port = process.env.PORT || 4000
 const cors = require( 'cors' );
 const { v1: uuidv1 } = require( 'uuid' );
@@ -48,5 +49,9 @@ app.get( '/log', ( req, res ) => {
             res.send( data )
       } )
 } )
+
+app.get( '/favicon', ( req, res ) => {
+      imageToBase64( req.query.link ).then( ( resp ) => { res.send( resp ) } )
+} );
 
 app.listen( port, console.log( 'Server listening on PORT:4000' ) )

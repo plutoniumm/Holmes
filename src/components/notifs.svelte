@@ -13,8 +13,7 @@
 
 <style type="text/scss">
       ul {
-            width: 86%;
-            margin: 0 auto;
+            padding: 0;
             display: flex;
             list-style: none;
             overflow-x: scroll;
@@ -25,6 +24,7 @@
                   min-width: 200px;
                   width: 200px;
                   height: 100px;
+                  position: relative;
                   background: #1118;
                   border: 1px solid transparent;
                   border-radius: 15px;
@@ -46,31 +46,31 @@
                         font-size: 0.75em;
                         color: #bbb;
                   }
+                  .body {
+                        position: relative;
+                        top: -7px;
+                        line-height: 1.33em;
+                  }
             }
       }
 </style>
 
-<section style="width:100%">
-      <ul>
-            {#each notifs as notif}
-                  <a
-                        href="{notif.repository.owner.html_url}/{notif.repository.name}">
-                        <li class="gitNotifs">
-                              <div>
-                                    <div class="head">
-                                          <span>{notif.repository.name}</span>
-                                          <span
-                                                style="text-transform:lowercase">{ms(new Date() - new Date(notif.updated_at))}</span>
-                                    </div>
-                                    <div class="body">
-                                          {notif.subject.title}
-                                    </div>
+<ul>
+      {#each notifs as notif}
+            <a href="{notif.repository.owner.html_url}/{notif.repository.name}">
+                  <li class="gitNotifs">
+                        <div>
+                              <div class="head">
+                                    <span>{notif.repository.name}</span>
+                                    <span
+                                          style="text-transform:lowercase">{ms(new Date() - new Date(notif.updated_at))}</span>
                               </div>
-                              <div class="head" style="padding-top:1em">
-                                    {notif.subject.type}
-                              </div>
-                        </li>
-                  </a>
-            {/each}
-      </ul>
-</section>
+                              <div class="body">{notif.subject.title}</div>
+                        </div>
+                        <div class="head" style="position:absolute;bottom:0;">
+                              {notif.subject.type}
+                        </div>
+                  </li>
+            </a>
+      {/each}
+</ul>

@@ -4,10 +4,9 @@
 
 <style type="text/scss">
       section {
-            width: calc(85% - 2em);
-            margin: 0 auto;
             overflow-y: scroll;
-            padding: 1em;
+            padding: 1em 0;
+            padding-top: 2em;
             display: flex;
             .track {
                   height: 70px;

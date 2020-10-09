@@ -1,4 +1,11 @@
-import sites from '../data/sites.json'
+export const sug = ( SIn ) => {
+      const sc_Old = document.getElementById( "suggestions" );
+      if ( sc_Old ) sc_Old.remove();
+      var sc = document.createElement( "script" );
+      sc.src = `https://clients1.google.com/complete/search?client=youtube&hl=en&q=${ SIn }&jsonp=returnSug`;
+      sc.id = "suggestions";
+      document.body.appendChild( sc );
+};
 
 export const startsWith = ( str, word ) => {
       return str.lastIndexOf( word, 0 ) === 0;
@@ -12,7 +19,7 @@ export const preprocessor = ( key ) => {
 
 export const ms = ( milli ) => {
       let time = '<1 Day';
-      const m = Math.round( milli / ( 60 * 1000 ) ) % 60
+      const m = Math.round( +milli / ( 60 * 1000 ) ) % 60
       const h = Math.round( m / 60 ) % 24
       const d = Math.round( h / 24 ) % 365
       if ( h > 0 ) time = `${ h } h`

@@ -1,11 +1,13 @@
 <script>
       import { onMount } from "svelte";
-      import { startsWith, preprocessor } from "../core/micro";
+      import { startsWith, preprocessor, sug } from "../core/micro";
 
       export let sites;
       let raw = "",
+            autoComplete,
             magic,
             ic,
+            dynaBox,
             staticBox;
       $: key = raw
             ? raw.split(":")[0].split(" ")[0].toLowerCase() in sites
@@ -13,12 +15,11 @@
                   : "g"
             : null;
       $: send = "";
-
       const fx = (p) => {
             const t = p.split(" ");
-            const val = +t[0];
-            const frm = t[1];
-            const fin = t[2];
+            const val = (+t[0]).toFixed(2);
+            const frm = t[1].toUpperCase();
+            const fin = t[2].toUpperCase();
             fetch(`https://api.exchangerate-api.com/v4/latest/${frm}`)
                   .then((res) => res.json())
                   .then((r) => {
@@ -32,8 +33,8 @@
       const go = (e) => {
             let term;
             if (raw == "") {
-                  document.getElementById("autoComplete").innerHTML = "";
-                  ic.src = `./icons/Basic.svg`;
+                  autoComplete.innerHTML = "";
+                  ic.src = "./icons/Basic.svg";
             }
             switch (e.keyCode) {
                   case 40:
@@ -47,8 +48,8 @@
                         break;
             }
             term = magic.value.replace(key + " ", "");
-            if (term != "") sug(term);
-            send = sites[key].prelink + term + sites[key].postlink;
+            term ? sug(term) : null;
+            send = sites[key].prelink + term + (sites[key].postlink || "");
             if (startsWith(raw, key + ":")) {
                   term = raw.replace(key + ":", "");
                   send = sites[key][term];
@@ -56,50 +57,28 @@
             ic.src = `./icons/${sites[key].name}.svg`;
       };
       const metal = () => {
-            if (magic.value == "") {
-                  alert("Please Enter A search Term");
-            } else {
-                  if (startsWith(raw, "> ")) {
-                        let exec = raw.replace("> ", "");
-                        let fn = exec.split(" ")[0];
-                        let param = exec.replace(fn + " ", "");
-                        switch (fn) {
-                              case "fx":
-                                    fx(param);
-                                    break;
-                              default:
-                                    alert("invalid func");
-                                    break;
-                        }
-                        // if (fn == "t") {count(+param);}
-                  } else {
-                        navigator.sendBeacon(
-                              `http://localhost:4000/log?key=${key}&params=${raw
-                                    .replace(key + " ", "")
-                                    .replace(key + ":", "")}`
-                        );
-                        if (
-                              startsWith(raw, "https://") ||
-                              startsWith(raw, "http://")
-                        ) {
-                              window.location.href = raw.replace(
-                                    "http://",
-                                    "https://"
-                              );
-                        } else {
-                              const scr = preprocessor(key);
-                              eval(scr);
-                        }
+            if (startsWith(raw, "> ")) {
+                  const exec = raw.replace("> ", "");
+                  const fn = exec.split(" ")[0];
+                  const param = exec.replace(fn + " ", "");
+                  switch (fn) {
+                        case "fx":
+                              fx(param);
+                              break;
+                        default:
+                              alert("invalid func");
+                              break;
                   }
+                  // if (fn == "t") {count(+param);}
+            } else {
+                  navigator.sendBeacon(
+                        `http://localhost:4000/log?key=${key}&params=${raw
+                              .replace(key + " ", "")
+                              .replace(key + ":", "")}`
+                  );
+                  const scr = preprocessor(key);
+                  eval(scr);
             }
-      };
-      const sug = (SIn) => {
-            const sc_Old = document.getElementById("suggestions");
-            if (sc_Old) sc_Old.remove();
-            var sc = document.createElement("script");
-            sc.src = `https://clients1.google.com/complete/search?client=youtube&hl=en&q=${SIn}&jsonp=returnSug`;
-            sc.id = "suggestions";
-            document.body.appendChild(sc);
       };
 
       onMount(() => {
@@ -145,6 +124,10 @@
             margin: 0 auto;
             list-style-type: none;
             border-radius: 1em;
+            transition: padding 0.3s ease;
+            &:empty {
+                  padding: 0;
+            }
             li {
                   border-radius: 1em;
                   padding: 0.2em 0.5em;
@@ -167,13 +150,14 @@
                         on:keyup={go}
                         bind:this={magic}
                         id="magic"
+                        required
                         bind:value={raw}
                         size="100" />
             </div>
             <input type="submit" style="display:none" />
       </form>
       <div style="width:calc(100% - 1em);padding:0.5em;margin-top:0.5em;">
-            <ul id="autoComplete" />
+            <ul bind:this={autoComplete} id="autoComplete" />
       </div>
       <div bind:this={staticBox} id="staticBox" />
 </section>

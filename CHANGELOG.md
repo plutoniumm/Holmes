@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.4.0
+
+- Major performance improvements
+- Remove favicon fetch, was slow and impractical at this stage
+- Adding timer
+- Add logo (Not very useful but sure)
+
+### Pending
+- Pomodoro timer
+
 ## v2.3.0
 
 - Added history logging
