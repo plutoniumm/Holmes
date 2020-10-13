@@ -2,21 +2,21 @@
       export let days;
 </script>
 
-<style type="text/scss">
+<style>
       section {
             overflow-y: scroll;
             padding: 1em 0;
             padding-top: 2em;
             display: flex;
-            .track {
-                  height: 70px;
-                  width: 150px;
-                  background: #222;
-                  border-radius: 20px;
-                  font-size: 1.75em;
-                  padding: 0.25em 0.5em;
-                  margin: 0 7px;
-            }
+      }
+      .track {
+            height: 70px;
+            width: 150px;
+            background: #222;
+            border-radius: 20px;
+            font-size: 1.75em;
+            padding: 0.25em 0.5em;
+            margin: 0 7px;
       }
 </style>
 

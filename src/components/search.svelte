@@ -69,7 +69,6 @@
                               alert("invalid func");
                               break;
                   }
-                  // if (fn == "t") {count(+param);}
             } else {
                   navigator.sendBeacon(
                         `http://localhost:4000/log?key=${key}&params=${raw

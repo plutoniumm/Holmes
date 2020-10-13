@@ -1,6 +1,4 @@
 <script>
-      import { ms } from "../core/micro";
-
       $: notifs = [];
 
       if (window.Worker) {
@@ -57,18 +55,18 @@
 
 <ul>
       {#each notifs as notif}
-            <a href="{notif.repository.owner.html_url}/{notif.repository.name}">
+            <a href="{notif.owner}/{notif.repo}">
                   <li class="gitNotifs">
                         <div>
                               <div class="head">
-                                    <span>{notif.repository.name}</span>
+                                    <span>{notif.repo}</span>
                                     <span
-                                          style="text-transform:lowercase">{ms(new Date() - new Date(notif.updated_at))}</span>
+                                          style="text-transform:lowercase">{notif.updated_at}</span>
                               </div>
-                              <div class="body">{notif.subject.title}</div>
+                              <div class="body">{notif.title}</div>
                         </div>
                         <div class="head" style="position:absolute;bottom:0;">
-                              {notif.subject.type}
+                              {notif.type}
                         </div>
                   </li>
             </a>

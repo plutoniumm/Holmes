@@ -41,7 +41,7 @@
       import Quick from "../micro/quick.svelte";
 </script>
 
-<style type="text/scss">
+<style>
       .links,
       .quickCont {
             display: flex;

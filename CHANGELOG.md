@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.5.0
+
+### Pending
+- Pomodoro timer
+- White and Pink noise
+
+
 ## v2.4.0
 
 - Major performance improvements
@@ -9,6 +16,7 @@
 
 ### Pending
 - Pomodoro timer
+
 
 ## v2.3.0
 
@@ -20,6 +28,7 @@
 - Adding timer, pomodoro timer
 - Adding test scripts
 
+
 ## v2.2.0
 
 - Adding github integration
@@ -29,14 +38,17 @@
 - Adding timer, pomodoro timer and forex check check
 - Adding test scripts
 
+
 ## v2.1.0
 
 - Engine now has less steps and is much simpler and faster
 - Engine now has search suggestions (From Google Search API)
 
+
 ## v2.0.0
 
 Full Convert to Svelte
+
 
 ## v1.0.0
 

@@ -36,5 +36,7 @@ export default {
 		production && terser(),
 		json()
 	],
+	experimentalCodeSplitting: true,
+	experimentalDynamicImport: true,
 	watch: { clearScreen: true }
 };

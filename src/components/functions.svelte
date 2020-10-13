@@ -53,29 +53,38 @@
             display: flex;
             .dynaBox {
                   margin: 0 0.5em;
-                  background: #222;
-                  border-radius: 20px;
-                  padding: 10px;
+                  border-radius: 15px;
+                  overflow: hidden;
+                  display: flex;
+                  justify-content: center;
+                  flex-wrap: wrap;
                   height: 100px;
                   width: 250px;
                   input,
                   button {
-                        width: calc(50% - 2px);
                         border: 0;
-                        border-radius: 5px;
-                        margin: 5px 1px;
+                        width: 125px;
+                        margin: 0;
+                        padding: 5px;
                         font-size: 1em;
                         outline: none;
-                        padding: 12px 0.5em;
                         color: white;
+                        &:hover {
+                              cursor: pointer;
+                              box-shadow: 0 0 5px 2px #fff8;
+                              transition: box-shadow 0.3s ease;
+                        }
                   }
                   input[type="number"] {
-                        width: calc(50% - 2px - 1em);
-                        background: #111;
+                        width: 115px;
+                        background: #0af;
                         &::-webkit-outer-spin-button,
                         &::-webkit-inner-spin-button {
                               -webkit-appearance: none;
                               margin: 0;
+                        }
+                        &::placeholder {
+                              color: #ddd;
                         }
                   }
                   button {
@@ -87,6 +96,7 @@
                   font-size: 2.5em;
                   z-index: 2;
                   text-align: center;
+                  background: #222;
                   line-height: 0.5em;
             }
             .pbar {
@@ -106,7 +116,9 @@
 <section>
       <div style="width:80%;margin:0 7px;display:flex;position:relative;">
             <div class="dynaBox">
-                  <form on:submit|preventDefault={timer} style="display:flex">
+                  <form
+                        on:submit|preventDefault={timer}
+                        style="display:flex;padding:0;margin:0;width:250px;">
                         <input
                               placeholder="Enter Mins"
                               type="number"
@@ -118,7 +130,7 @@
                               value="GO"
                               style="background:#0c0;color:white;" />
                   </form>
-                  <div style="display:flex;justify-content:space-between;">
+                  <div style="display:flex;">
                         <button
                               on:click={pauser}
                               style="background:#f80;color:white;">Pause</button>
