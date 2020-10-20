@@ -1,11 +1,10 @@
 <script>
-	export let sites, days;
+	export let sites;
 
 	$: showStats = !true;
 	import Navbar from "./components/navbar.svelte";
 	import Search from "./components/search.svelte";
 	import Functions from "./components/functions.svelte";
-	import Days from "./components/days.svelte";
 	import Notifs from "./components/notifs.svelte";
 	import Stats from "./components/stats.svelte";
 	import Links from "./components/links.svelte";
@@ -24,7 +23,6 @@
 	<Search {sites} />
 	<section>
 		<Functions />
-		<Days {days} />
 		<Notifs />
 	</section>
 	{#if showStats}

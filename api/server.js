@@ -1,10 +1,8 @@
 const express = require( 'express' )
 const fs = require( 'fs' )
 const app = express()
-const imageToBase64 = require( 'image-to-base64' );
 const port = process.env.PORT || 4000
 const cors = require( 'cors' );
-const { v1: uuidv1 } = require( 'uuid' );
 
 app.use( cors() );
 app.options( '*', cors() );
@@ -19,7 +17,7 @@ app.post( '/log', ( req, res ) => {
       // ADD LOG
       const file = `./api/logs/${ d.getFullYear() }${ mths[ d.getMonth() ] }.txt`;
       const log =
-            `${ uuidv1() } ::${ new Date().toString() } ::@${ q.key } ::${ q.params };;\n`
+            `${ d.getTime() } ::${ d.toString() } ::@${ q.key } ::${ q.params };;\n`
       fs.appendFile( file, log, ( e ) => { if ( e ) throw e } )
 
       // RECALCULATE STATS
@@ -49,9 +47,5 @@ app.get( '/log', ( req, res ) => {
             res.send( data )
       } )
 } )
-
-app.get( '/favicon', ( req, res ) => {
-      imageToBase64( req.query.link ).then( ( resp ) => { res.send( resp ) } )
-} );
 
 app.listen( port, console.log( 'Server listening on PORT:4000' ) )

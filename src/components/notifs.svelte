@@ -1,6 +1,8 @@
 <script>
       $: notifs = [];
 
+      import Projects from "../micro/projects.svelte";
+
       if (window.Worker) {
             let w = new Worker("./core/thread.js");
             var msg = { func: "getTest" };
@@ -15,22 +17,12 @@
             display: flex;
             list-style: none;
             overflow-x: scroll;
-            &::-webkit-scrollbar {
-                  display: none;
-            }
             .gitNotifs {
-                  min-width: 200px;
-                  width: 200px;
-                  height: 100px;
                   position: relative;
-                  background: #1118;
                   border: 1px solid transparent;
-                  border-radius: 15px;
                   display: flex;
                   flex-direction: column;
                   justify-content: space-between;
-                  padding: 1em;
-                  margin: 0 0.5em;
                   transition: all 0.3s ease;
                   &:hover {
                         background: #111;
@@ -39,7 +31,7 @@
                   .head {
                         display: flex;
                         justify-content: space-between;
-                        padding-bottom: 0.75em;
+                        padding-bottom: 1em;
                         text-transform: uppercase;
                         font-size: 0.75em;
                         color: #bbb;
@@ -54,9 +46,10 @@
 </style>
 
 <ul>
+      <Projects />
       {#each notifs as notif}
             <a href="{notif.owner}/{notif.repo}">
-                  <li class="gitNotifs">
+                  <li class="gitNotifs box">
                         <div>
                               <div class="head">
                                     <span>{notif.repo}</span>

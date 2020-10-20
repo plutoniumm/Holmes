@@ -95,15 +95,14 @@
                   font-size: 1.25rem;
                   display: flex;
                   align-items: center;
-                  border-radius: 1.5em;
+                  border-radius: 1em;
                   width: calc(80vw - 1em);
                   padding: 0.25em 0.5em;
                   img {
-                        // background: #fff8;
                         object-fit: contain;
                         width: 44px;
                         height: 44px;
-                        border-radius: 34px;
+                        border-radius: 5px;
                   }
                   #magic {
                         padding: 0.25em 0.5em;

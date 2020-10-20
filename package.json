@@ -1,9 +1,10 @@
 {
   "name": "holmes",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
+    "devSass": "rollup -c -w & node-sass -w public/global.scss public/global.css --output-style compressed",
     "start": "sirv public"
   },
   "devDependencies": {
@@ -21,8 +22,6 @@
   "dependencies": {
     "cors": "2.8.5",
     "express": "4.17.1",
-    "image-to-base64": "2.1.1",
-    "sirv-cli": "1.0.0",
-    "uuid": "8.3.1"
+    "sirv-cli": "1.0.0"
   }
 }

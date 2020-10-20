@@ -14,7 +14,10 @@
 <nav class="nav">
       <div>Holmes</div>
       <div>
-            {new Date().toLocaleString('en-GB').slice(0, -3).replace('20', '')}
+            {new Date()
+                  .toLocaleString('en-GB')
+                  .slice(0, -3)
+                  .replace('/2020', '')}
       </div>
       <div onclick="window.location.href='http://localhost:3000'">Newton</div>
 </nav>

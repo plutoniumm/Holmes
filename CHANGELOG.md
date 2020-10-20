@@ -2,6 +2,9 @@
 
 ## v2.5.0
 
+- Add vscode project links
+- Minor Restructure for efficiency and speed
+
 ### Pending
 - Pomodoro timer
 - White and Pink noise
