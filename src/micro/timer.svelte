@@ -22,7 +22,7 @@
             }
             var x = setInterval(() => {
                   d--;
-                  var h = Math.floor((d % (3600 * 24 * 365.25)) / 3600);
+                  var h = Math.floor((d % (3600 * 24 * 365)) / 3600);
                   var m = Math.floor((d % 3600) / 60);
                   var s = Math.floor(d % 60);
                   var pers = Math.round((d / str) * 100);
@@ -90,7 +90,7 @@
       .counter {
             position: relative;
             font-size: 2.5em;
-            padding: 7px 0;
+            padding: 7px 10px;
             height: 100px;
             z-index: 2;
             text-align: center;

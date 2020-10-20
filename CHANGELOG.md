@@ -4,6 +4,7 @@
 
 - Add vscode project links
 - Minor Restructure for efficiency and speed
+- (*2.5.1*) Add wallpaper
 
 ### Pending
 - Pomodoro timer

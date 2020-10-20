@@ -91,7 +91,7 @@
             justify-content: center;
             .wrapper {
                   background: #222;
-                  border: 1px solid #ddd6;
+                  border: 1px solid #ddd4;
                   font-size: 1.25rem;
                   display: flex;
                   align-items: center;

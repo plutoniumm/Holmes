@@ -1,5 +1,6 @@
 <script>
       $: notifs = [];
+      $: count = 0;
 
       import Projects from "../micro/projects.svelte";
 
@@ -7,7 +8,10 @@
             let w = new Worker("./core/thread.js");
             var msg = { func: "getTest" };
             w.postMessage(msg);
-            w.onmessage = (e) => (notifs = e.data);
+            w.onmessage = (e) => {
+                  notifs = e.data.notifs;
+                  count = e.data.count;
+            };
       }
 </script>
 
@@ -64,4 +68,9 @@
                   </li>
             </a>
       {/each}
+      <li
+            class="box"
+            style="display:flex;justify-content:center;align-items:center;font-size:5.5em;">
+            {count}
+      </li>
 </ul>

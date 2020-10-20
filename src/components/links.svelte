@@ -33,8 +33,7 @@
             {
                   name: "CodePen",
                   link: "https://codepen.io",
-                  imgLink:
-                        "static.codepen.io/assets/favicon/favicon-touch-de50acbf5d634ec6791894eba4ba9cf490f709b3d742597c6fc4b734e6492a5a.png",
+                  imgLink: "flaticon.com/svg/static/icons/svg/2111/2111501.svg",
             },
       ];
       import Quick from "../micro/quick.svelte";
@@ -50,16 +49,22 @@
             text-align: center;
       }
       .links {
-            backdrop-filter: blur(16px) grayscale(100%);
-            -moz-backdrop-filter: blur(16px) grayscale(100%);
-            -webkit-backdrop-filter: blur(16px) grayscale(100%);
             position: fixed;
             bottom: 0.5em;
+            width: 100%;
+      }
+      .quickCont {
+            width: auto;
+            border-radius: 10px;
+            background: #2224;
+            backdrop-filter: blur(32px);
+            -moz-backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
       }
 </style>
 
-<section class="links" style="width:100%">
-      <div class="quickCont" style="width:80%;">
+<section class="links">
+      <div class="quickCont">
             {#each data as link}
                   <Quick {link} />
             {/each}

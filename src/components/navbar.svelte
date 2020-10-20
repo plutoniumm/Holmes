@@ -4,7 +4,10 @@
 <style>
       .nav {
             width: calc(100% - 2em);
-            background: #222;
+            background: #2224;
+            backdrop-filter: blur(32px);
+            -moz-backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
             padding: 1em;
             display: flex;
             justify-content: space-between;
