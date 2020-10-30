@@ -26,7 +26,7 @@
 </style>
 
 <div class="quick">
-      <a href={link.link}>
+      <a href="https://{link.link}">
             <div>
                   <img
                         src="https://{link.imgLink}"

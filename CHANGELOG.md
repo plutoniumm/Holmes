@@ -1,14 +1,16 @@
 # Changelog
 
+## v2.6.0
+
+- Lava Lamp Random Backgrounds
+- Minor Restructure for efficiency and speed
+
+
 ## v2.5.0
 
 - Add vscode project links
 - Minor Restructure for efficiency and speed
 - (*2.5.1*) Add wallpaper
-
-### Pending
-- Pomodoro timer
-- White and Pink noise
 
 
 ## v2.4.0

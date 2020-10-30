@@ -16,3 +16,15 @@ export const preprocessor = ( key ) => {
       const script = sitFuncs[ key ] || "window.location.href = send;";
       return script
 }
+
+export const wpp = () => {
+      const colors = [
+            { bg: 'DarkViolet', g1: '#f00', g2: 'DeepPink' },
+            { bg: '#8086fb', g1: 'HotPink', g2: 'Pink' },
+            { bg: 'RebeccaPurple', g1: '#f00', g2: '#500' },
+            { bg: 'DarkRed', g1: 'Red', g2: 'Yellow' },
+            { bg: 'DeepPink', g1: 'LightPink', g2: '#fff' },
+      ];
+      const t = Math.floor( Math.random() * 5 );
+      return colors[ t ]
+}

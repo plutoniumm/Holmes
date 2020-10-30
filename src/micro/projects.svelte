@@ -15,10 +15,13 @@
                   font-size: 1.25em;
                   background: transparent;
                   outline: 0;
-                  border: 0;
+                  border: 1px solid #2228;
                   border-radius: 10px;
-                  background: #222222;
-                  box-shadow: 10px 10px 20px #1b1b1b, -10px -10px 20px #292929;
+                  backdrop-filter: blur(25px);
+                  -webkit-backdrop-filter: blur(25px);
+                  -moz-backdrop-filter: blur(25px);
+                  -ms-backdrop-filter: blur(25px);
+                  background: #2228;
                   color: #fff;
                   margin: 0 12px;
                   padding: 10px;
