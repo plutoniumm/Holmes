@@ -25,6 +25,11 @@
             -moz-backdrop-filter: blur(32px);
             -webkit-backdrop-filter: blur(32px);
       }
+      @media (max-width: 768px) {
+            .links {
+                  flex-wrap: wrap;
+            }
+      }
 </style>
 
 <section class="links">

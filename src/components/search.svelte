@@ -3,11 +3,10 @@
       import { startsWith, preprocessor, sug } from "../core/micro";
 
       export let sites;
-      let raw = "",
+      let raw = "g ",
             autoComplete,
             magic,
             ic,
-            dynaBox,
             staticBox;
       $: key = raw
             ? raw.split(":")[0].split(" ")[0].toLowerCase() in sites
@@ -48,20 +47,17 @@
                         break;
             }
             term = magic.value.replace(key + " ", "");
-            term ? sug(term) : null;
+            if (term) sug(term);
             send = sites[key].prelink + term + (sites[key].postlink || "");
-            if (startsWith(raw, key + ":")) {
-                  term = raw.replace(key + ":", "");
-                  send = sites[key][term];
-            }
+            if (startsWith(raw, key + ":"))
+                  send = sites[key][raw.replace(key + ":", "")];
             ic.src = `./icons/${sites[key].name}.svg`;
       };
       const metal = () => {
             if (startsWith(raw, "> ")) {
                   const exec = raw.replace("> ", "");
-                  const fn = exec.split(" ")[0];
                   const param = exec.replace(fn + " ", "");
-                  switch (fn) {
+                  switch (exec.split(" ")[0]) {
                         case "fx":
                               fx(param);
                               break;
@@ -80,9 +76,7 @@
             }
       };
 
-      onMount(() => {
-            setTimeout(magic.focus(), 500);
-      });
+      onMount(() => setTimeout(magic.focus(), 500));
 </script>
 
 <style type="text/scss">
@@ -90,14 +84,14 @@
             display: flex;
             justify-content: center;
             .wrapper {
-                  background: #222;
+                  background: #222c;
                   border: 1px solid #ddd4;
                   font-size: 1.25rem;
                   display: flex;
                   align-items: center;
-                  border-radius: 1em;
+                  border-radius: 12px;
                   width: calc(80vw - 1em);
-                  padding: 0.25em 0.5em;
+                  padding: 5px 0.5em;
                   img {
                         object-fit: contain;
                         width: 44px;
@@ -131,6 +125,28 @@
                   padding: 0.2em 0.5em;
                   &:first-child {
                         padding-top: 0.5em;
+                  }
+            }
+      }
+      @media (max-width: 768px) {
+            form {
+                  padding-top: 40%;
+                  .wrapper {
+                        border-radius: 5px;
+                        width: calc(90vw - 1em);
+                        img {
+                              width: 32px;
+                              height: 32px;
+                        }
+                        #magic {
+                              padding: 0.25em 0.5em;
+                              font-size: 1.75rem;
+                              overflow: hidden;
+                              background: transparent;
+                              color: white;
+                              outline: none;
+                              border: 0;
+                        }
                   }
             }
       }

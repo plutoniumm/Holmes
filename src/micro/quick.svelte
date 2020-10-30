@@ -23,6 +23,19 @@
                   }
             }
       }
+      @media (max-width: 600px) {
+            .quick {
+                  overflow-x: scroll;
+                  &::-webkit-scrollbar {
+                        display: none;
+                  }
+                  img {
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 5px;
+                  }
+            }
+      }
 </style>
 
 <div class="quick">

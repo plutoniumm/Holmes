@@ -49,7 +49,7 @@
 				cx={Math.floor(Math.random() * 200) + 300 + i}
 				cy={Math.floor(Math.random() * 500) + 250 + i}
 				r={Math.floor(Math.random() * 100) + 156 + i}
-				style={`animation: ${Math.round(Math.random()) ? 'bobY' : 'bobY_rev'} ${Math.random() * 7 + 7}s infinite ease-in-out alternate;`} />
+				style={`animation: ${Math.round(Math.random()) ? 'bobY' : 'bobY_rev'} ${Math.random() * 7 + 17}s infinite ease-in-out alternate;`} />
 		</g>
 	{/each}
 </svg>
@@ -57,12 +57,14 @@
 <section>
 	<Navbar />
 	<Search {sites} />
-	<div style="padding:0 10%;">
-		<Functions />
-		<Notifs />
-		{#if showStats}
-			<Stats />
-		{/if}
-	</div>
+	{#if innerWidth > 768}
+		<div style="padding:0 10%;">
+			<Functions />
+			<Notifs />
+			{#if showStats}
+				<Stats />
+			{/if}
+		</div>
+	{/if}
 	<Links />
 </section>
