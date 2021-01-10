@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.0.0
+
+- Full Merge Disphenoid into Sherlock
+
+
 ## v2.6.0
 
 - Lava Lamp Random Backgrounds

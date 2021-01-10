@@ -42,8 +42,8 @@
       <a href="https://{link.link}">
             <div>
                   <img
-                        src="https://{link.imgLink}"
-                        onerror="this.onerror=null;this.src='https://{link.imgLink}';"
+                        src="https://{link.imgLink}.png"
+                        onerror="this.onerror=null;this.src='https://{link.imgLink}.png';"
                         alt={link.name} />
             </div>
             {link.name}

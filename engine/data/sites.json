@@ -16,14 +16,14 @@
             "notifs": "https://github.com/notifications?query=is%3Aunread"
       },
       "g": {
-            "name": "Google",
+            "name": "Qwant",
             "mail": "https://mail.google.com/",
-            "prelink": "https://www.google.com/search?q="
+            "prelink": "https://www.qwant.com/?q="
       },
       "gi": {
-            "name": "GImages",
-            "prelink": "https://www.google.com/search?q=",
-            "postlink": "&tbs=imgo:1,&tbm=isch"
+            "name": "QImages",
+            "prelink": "https://www.qwant.com/?q=",
+            "postlink": "&t=images"
       },
       "ddg": {
             "name": "DuckDuckGo",
@@ -34,9 +34,8 @@
             "prelink": "https://www.reddit.com/search?q="
       },
       "y": {
-            "name": "Youtube",
-            "prelink": "https://www.youtube.com/results?search_query=",
-            "new": "https://www.youtube.com/feed/subscriptions"
+            "name": "Disphenoid",
+            "prelink": "http://localhost:4000/stream.html?q="
       },
       "ig": {
             "name": "Instagram",

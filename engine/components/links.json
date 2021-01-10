@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Numbers",
+        "link": "icloud.com/numbers",
+        "imgLink": "is1-ssl.mzstatic.com/image/thumb/Purple114/v4/2c/63/9f/2c639f45-3255-2fea-a466-e133ee052d6b/AppIcon-0-0-85-220-0-0-0-0-4-0-0-0-2x-sRGB-0-0-0-0-0.png/1200x630bb"
+    },
+    {
+        "name": "FontAwesome",
+        "link": "fontawesome.com/icons?d=gallery&m=free",
+        "imgLink": "fontawesome.com/images/favicons/apple-icon-180x180"
+    },
+    {
+        "name": "Firebase",
+        "link": "console.firebase.google.com/",
+        "imgLink": "gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_96dp"
+    },
+    {
+        "name": "GMeet",
+        "link": "meet.google.com/",
+        "imgLink": "fonts.gstatic.com/s/i/productlogos/meet_2020q4/v1/web-96dp/logo_meet_2020q4_color_1x_web_96dp"
+    },
+    {
+        "name": "Whatsapp",
+        "link": "web.whatsapp.com",
+        "imgLink": "w7.pngwing.com/pngs/672/164/png-transparent-whatsapp-icon-whatsapp-logo-computer-icons-zubees-halal-foods-whatsapp-text-circle-unified-payments-interface"
+    },
+    {
+        "name": "GoDaddy",
+        "link": "sso.godaddy.com/?realm=idp&path=%2Fproducts&app=account",
+        "imgLink": "img6.wsimg.com/ux/favicon/favicon-96x96"
+    },
+    {
+        "name": "CodePen",
+        "link": "codepen.io",
+        "imgLink": "image.flaticon.com/icons/png/512/2111/2111501"
+    }
+]

@@ -24,17 +24,35 @@ function serve () {
 	};
 }
 
-export default {
-	input: 'src/main.js',
-	output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/build/bundle.js' },
-	plugins: [
-		svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
-		resolve( { browser: true, dedupe: [ 'svelte' ] } ),
-		commonjs(),
-		!production && serve(),
-		!production && livereload( 'public' ),
-		production && terser(),
-		json()
-	],
-	watch: { clearScreen: true }
-};
+export default [
+	// MAIN ENGINE
+	{
+		input: 'engine/main.js',
+		output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/engine/bundle.js' },
+		plugins: [
+			svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
+			resolve( { browser: true, dedupe: [ 'svelte' ] } ),
+			commonjs(),
+			!production && serve(),
+			!production && livereload( 'public' ),
+			production && terser(),
+			json()
+		],
+		watch: { clearScreen: true }
+	},
+	// DISPHENOID
+	{
+		input: 'stream/main.js',
+		output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/stream/bundle.js' },
+		plugins: [
+			svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
+			resolve( { browser: true, dedupe: [ 'svelte' ] } ),
+			commonjs(),
+			!production && serve(),
+			!production && livereload( 'public' ),
+			production && terser(),
+			json()
+		],
+		watch: { clearScreen: true }
+	}
+];
