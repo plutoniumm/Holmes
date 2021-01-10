@@ -3,7 +3,7 @@
       import { startsWith, preprocessor, sug } from "../core/micro";
 
       export let sites;
-      let raw = "g ",
+      let raw = "q ",
             autoComplete,
             magic,
             ic,
@@ -31,8 +31,9 @@
       };
       const go = (e) => {
             let term;
+            autoComplete.style.opacity = 1;
             if (raw == "") {
-                  autoComplete.innerHTML = "";
+                  autoComplete.style.opacity = 0;
                   ic.src = "./icons/Basic.svg";
             }
             switch (e.keyCode) {
@@ -81,15 +82,15 @@
 
 <style type="text/scss">
       form {
+            padding-top: 22.5%;
             display: flex;
             justify-content: center;
             .wrapper {
-                  background: #222c;
-                  border: 1px solid #ddd4;
+                  background: transparent;
+                  border-bottom: 5px solid #fff;
                   font-size: 1.25rem;
                   display: flex;
                   align-items: center;
-                  border-radius: 12px;
                   width: calc(80vw - 1em);
                   padding: 5px 0.5em;
                   img {
@@ -110,43 +111,34 @@
             }
       }
       #autoComplete {
-            background: #222;
+            background: #2228;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             width: calc(75% - 1.5em);
             padding: 0.5em 0.75em;
             margin: 0 auto;
             list-style-type: none;
             border-radius: 1em;
-            transition: padding 0.3s ease;
             &:empty {
-                  padding: 0;
-            }
-            li {
-                  border-radius: 1em;
-                  padding: 0.2em 0.5em;
-                  &:first-child {
-                        padding-top: 0.5em;
-                  }
+                  opacity: 0;
             }
       }
       @media (max-width: 768px) {
-            form {
-                  padding-top: 40%;
-                  .wrapper {
-                        border-radius: 5px;
-                        width: calc(90vw - 1em);
-                        img {
-                              width: 32px;
-                              height: 32px;
-                        }
-                        #magic {
-                              padding: 0.25em 0.5em;
-                              font-size: 1.75rem;
-                              overflow: hidden;
-                              background: transparent;
-                              color: white;
-                              outline: none;
-                              border: 0;
-                        }
+            .wrapper {
+                  border-radius: 5px;
+                  width: calc(90vw - 1em);
+                  img {
+                        width: 32px;
+                        height: 32px;
+                  }
+                  #magic {
+                        padding: 0.25em 0.5em;
+                        font-size: 1.75rem;
+                        overflow: hidden;
+                        background: transparent;
+                        color: white;
+                        outline: none;
+                        border: 0;
                   }
             }
       }

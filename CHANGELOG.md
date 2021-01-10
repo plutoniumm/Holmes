@@ -2,7 +2,14 @@
 
 ## v3.0.0
 
+- Add Lazy Loaded BG Image, still with lava lamp
+- Remove a lot of useless shit
+
+
+## v3.0.0
+
 - Full Merge Disphenoid into Sherlock
+- Partially Get rid of Direct Google Usage
 
 
 ## v2.6.0

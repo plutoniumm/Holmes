@@ -1,9 +1,8 @@
 <script>
       import data from "./links.json";
-      import Quick from "../micro/quick.svelte";
 </script>
 
-<style>
+<style type="text/scss">
       .links,
       .quickCont {
             display: flex;
@@ -14,16 +13,43 @@
       }
       .links {
             position: fixed;
-            bottom: 0.5em;
+            bottom: 1em;
             width: 100%;
       }
-      .quickCont {
-            width: auto;
+      .quick {
             border-radius: 10px;
-            background: #2224;
-            backdrop-filter: blur(32px);
-            -moz-backdrop-filter: blur(32px);
-            -webkit-backdrop-filter: blur(32px);
+            background: #2226;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            margin: 0.25em 0.75em;
+            padding: 0.5em 1.25em;
+            img {
+                  width: 75px;
+                  height: 75px;
+                  object-fit: contain;
+                  border-radius: 15px;
+            }
+            a {
+                  text-decoration: none;
+                  color: #ddd;
+            }
+            transition: transform 0.3s ease;
+            &:hover {
+                  transform: scale(1.1);
+            }
+      }
+      @media (max-width: 600px) {
+            .quick {
+                  overflow-x: scroll;
+                  &::-webkit-scrollbar {
+                        display: none;
+                  }
+                  img {
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 5px;
+                  }
+            }
       }
       @media (max-width: 768px) {
             .links {
@@ -33,9 +59,17 @@
 </style>
 
 <section class="links">
-      <div class="quickCont">
-            {#each data as link}
-                  <Quick {link} />
-            {/each}
-      </div>
+      {#each data as link}
+            <div class="quick">
+                  <a href="https://{link.link}">
+                        <div>
+                              <img
+                                    src="https://{link.imgLink}.png"
+                                    onerror="this.onerror=null;this.src='https://{link.imgLink}.png';"
+                                    alt={link.name} />
+                        </div>
+                        {link.name}
+                  </a>
+            </div>
+      {/each}
 </section>

@@ -15,13 +15,13 @@
             "settings": "https://github.com/settings/profile",
             "notifs": "https://github.com/notifications?query=is%3Aunread"
       },
-      "g": {
+      "q": {
             "name": "Qwant",
             "mail": "https://mail.google.com/",
             "prelink": "https://www.qwant.com/?q="
       },
-      "gi": {
-            "name": "QImages",
+      "qi": {
+            "name": "Qwant",
             "prelink": "https://www.qwant.com/?q=",
             "postlink": "&t=images"
       },

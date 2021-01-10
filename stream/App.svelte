@@ -80,6 +80,7 @@
 		stack = stack;
 		const trk = new Date().getTime();
 		if (stack.length > 0) {
+			localStorage.removeItem(URLpars().stack);
 			localStorage.setItem(trk, JSON.stringify(stack));
 			chURL("stack", trk);
 		} else {
