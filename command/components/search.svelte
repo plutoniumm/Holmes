@@ -2,6 +2,61 @@
       import { onMount } from "svelte";
       import { startsWith, preprocessor, sug } from "../core/micro";
 
+      onMount(() => {
+            let i = 0,
+                  l = [255, 255, 0],
+                  m = [0, 255, 255],
+                  r = [255, 0, 255],
+                  state = 0;
+            let el = magic.parentElement;
+
+            console.log("mounted");
+
+            var tick = () => {
+                  if (+el.style.opacity < 1)
+                        el.style.opacity = +el.style.opacity + 0.025;
+
+                  if (state == 0) {
+                        l[0] -= 1;
+                        l[2] += 1;
+                        m[1] -= 1;
+                        m[0] += 1;
+                        r[2] -= 1;
+                        r[1] += 1;
+                        if (l[0] == 0 && m[0] == 255) state = 1;
+                  }
+
+                  if (state == 1) {
+                        l[1] -= 1;
+                        l[0] += 1;
+                        m[2] -= 1;
+                        m[1] += 1;
+                        r[0] -= 1;
+                        r[2] += 1;
+                        if (l[0] == 255 && m[0] == 255) state = 2;
+                  }
+
+                  if (state == 2) {
+                        l[2] -= 1;
+                        l[1] += 1;
+                        m[0] -= 1;
+                        m[2] += 1;
+                        r[1] -= 1;
+                        r[0] += 1;
+                        if (l[0] == 255 && m[0] == 0) state = 0;
+                  }
+
+                  (window.requestAnimationFrame &&
+                        requestAnimationFrame(tick)) ||
+                        setTimeout(tick, 1);
+
+                  el.style.borderImageSource = `linear-gradient(to right,rgb(${l.join(
+                        ","
+                  )}), rgb(${m.join(",")}), rgb(${r.join(",")}))`;
+            };
+            tick();
+      });
+
       export let sites;
       let raw = "q ",
             autoComplete,
@@ -87,7 +142,10 @@
             justify-content: center;
             .wrapper {
                   background: transparent;
-                  border-bottom: 5px solid #fff;
+                  border: 3px solid;
+                  border-image: linear-gradient(to right, #ff0, #0ff, #faa) 1 1
+                        100%;
+                  border-top: 0;
                   font-size: 1.25rem;
                   display: flex;
                   align-items: center;
@@ -120,7 +178,7 @@
             list-style-type: none;
             border-radius: 1em;
             &:empty {
-                  opacity: 0;
+                  padding: 0;
             }
       }
       @media (max-width: 768px) {
@@ -148,9 +206,7 @@
       style="display:flex;justify-content: center;align-items: center;flex-direction: column;">
       <br />
       <form on:submit|preventDefault={metal}>
-            <div
-                  class="wrapper"
-                  style="display:flex;border:3px solid;border-image:linear-gradient(to right,#ff0,#0ff,#faa)1 1 100%;border-top:0;">
+            <div class="wrapper">
                   <div class="icon">
                         <img bind:this={ic} src="./icons/Basic.svg" alt="" />
                   </div>

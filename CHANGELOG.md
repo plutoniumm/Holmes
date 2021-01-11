@@ -1,6 +1,11 @@
 # Changelog
 
-## v3.0.0
+## v3.2.0
+
+- Full Merge DashBoard, started making structure cleaner, to work more efficiently 
+
+
+## v3.1.0
 
 - Add Lazy Loaded BG Image, still with lava lamp
 - Remove a lot of useless shit

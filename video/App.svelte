@@ -6,8 +6,8 @@
 	import Stream from "./components/videostream.svelte";
 	import Plist from "./components/playlists.svelte";
 
-	import cnls from "./core/channels.json";
-	import cnls2 from "./core/channels2.json";
+	import cnls from "../config/channels.json";
+	import cnls2 from "../config/channels2.json";
 	import {
 		search,
 		plSearch,

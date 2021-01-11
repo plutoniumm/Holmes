@@ -1,7 +1,7 @@
 <script>
     $: shows = [];
     if (window.Worker) {
-        let w = new Worker("./ext.js");
+        let w = new Worker("./helpers/thread.js");
         var msg = { func: "getShows" };
         w.postMessage(msg);
         w.onmessage = (e) => {

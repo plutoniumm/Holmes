@@ -56,9 +56,9 @@
     style="z-index:9;">
     <a href="/#" style="font-size:1.5em;position:relative;top:-0.2em;">
         <img
-            src="./disphenoid.svg"
+            src="./icons/disphenoid.svg"
             alt=""
-            style="width:1.5em;position:relative;top:0.37em;left:0.2em;transform:scale(1.25) rotate(-30deg);transform-origin:center center;" />
+            style="width:1.5em;position:relative;top:0.37em;left:0.2em;transform:scale(1.2);" />
         Diasphenoid
     </a>
 

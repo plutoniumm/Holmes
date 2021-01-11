@@ -7,13 +7,11 @@
 
 	<title>Holmes</title>
 
-	<link rel='icon' type='image/png' href='./sherlock.png'>
+	<link rel='icon' type='image/svg+xml' href='./icons/sherlock.svg'>
 	<link rel='stylesheet' href='./command/global.css'>
 	<link rel='stylesheet' href='./command/bundle.css'>
 
-	<link rel="preconnect" href="https://google.com">
-	<link rel="preconnect" href="https://images.google.com">
-	<link rel="preconnect" href="https://youtube.com">
+	<link rel="preconnect" href="https://www.qwant.com/">
 	<link rel="preconnect" href="https://github.com">
 
 	<script defer src='./command/bundle.js'></script>
@@ -27,6 +25,39 @@
 
 	// ? MAIN command
 	var suggList = [], suggI = null; const returnSug = ( data ) => { const bar = document.getElementById( 'magic' ); check = ( e ) => { bar.value = e.innerText; bar.focus() }; document.getElementById( 'autoComplete' ).innerHTML = data[ 1 ].slice( 0, 2 ).map( el => `<li onclick="check(this)">${ el[ 0 ] }</li>` ).join( '<br />' ); suggList = data[ 1 ].slice( 0, 5 ).map( el => el[ 0 ] ) };
+</script>
+
+<script>
+	// const fadeIn = ( el ) => {
+	// 		el.style.opacity = 0;
+	// 		var tick = () => {
+	// 			el.style.opacity = +el.style.opacity + 0.025;
+	// 			if ( +el.style.opacity < 0.66 )
+	// 				( ( window.requestAnimationFrame && requestAnimationFrame( tick ) ) || setTimeout( tick, 1 ) );
+	// 		};
+	// 		tick();
+	// 	}
+	// 	const fadeOut = ( el ) => {
+	// 		el.style.opacity = 1;
+	// 		el.style.background = 'transparent'
+	// 		var tick = () => {
+	// 			el.style.opacity = +el.style.opacity - 0.075;
+	// 			if ( +el.style.opacity > 0 )
+	// 				( ( window.requestAnimationFrame && requestAnimationFrame( tick ) ) || setTimeout( tick, 1 ) );
+	// 			if ( +el.style.opacity < 0 )
+	// 				el.remove();
+	// 		};
+	// 		tick();
+	// 	}
+
+	// 	let bgImg = new Image( 1440, 820 );
+	// 	bgImg.src = 'https://picsum.photos/1440/820?random=1';
+	// 	bgImg.onload = () => {
+	// 		const cont = document.getElementById( 'bgContainer' );
+	// 		cont.appendChild( bgImg );
+	// 		fadeIn( bgImg );
+	// 		fadeOut( cont.childNodes[ 0 ] )
+	// 	};
 </script>
 
 </html>

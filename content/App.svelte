@@ -17,7 +17,7 @@
 	}
 
 	.box {
-		background-color: #333;
+		background-color: #222;
 		color: #fff;
 		border-radius: 5px;
 		word-wrap: break-word;
@@ -28,10 +28,14 @@
 	.a {
 		grid-column: 1;
 		grid-row: 1 / 3;
+		background: transparent;
 	}
 	.b {
 		grid-column: 2 / 4;
 		grid-row: 1;
+		color: #fff;
+		background: radial-gradient(ellipse at 20% 80%, #f88, transparent),
+			radial-gradient(ellipse at 70% 10%, #88f, transparent);
 	}
 	.c {
 		grid-column: 4;
@@ -40,6 +44,7 @@
 	.d {
 		grid-column: 2;
 		grid-row: 2;
+		background: transparent;
 	}
 	.e {
 		grid-column: 3;

@@ -2,10 +2,7 @@ const express = require( 'express' )
 const fs = require( 'fs' )
 const app = express()
 const port = process.env.PORT || 4000
-const cors = require( 'cors' );
 
-app.use( cors() );
-app.options( '*', cors() );
 app.use( '/', express.static( './public' ) );
 
 const mths = [ 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEPT', 'OCT', 'NOV', 'DEC' ]

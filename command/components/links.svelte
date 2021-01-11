@@ -1,5 +1,5 @@
 <script>
-      import data from "./links.json";
+      import data from "../../config/links.json";
 </script>
 
 <style type="text/scss">
@@ -61,11 +61,11 @@
 <section class="links">
       {#each data as link}
             <div class="quick">
-                  <a href="https://{link.link}">
+                  <a href={link.link}>
                         <div>
                               <img
                                     src="https://{link.imgLink}.png"
-                                    onerror="this.onerror=null;this.src='https://{link.imgLink}.png';"
+                                    onerror="this.onerror=null;this.src='https://{link.imgLink}';"
                                     alt={link.name} />
                         </div>
                         {link.name}

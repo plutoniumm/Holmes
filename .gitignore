@@ -7,6 +7,9 @@ logs
 .DS_Store
 thread.js
 
+**/*.css.map
+**/*.js.map
+
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 public/
 
@@ -17,6 +20,4 @@ jspm_packages/
 # Optional npm cache directory
 .npm
 
-api.js
-channels.json
-channels2.json
+config/

@@ -1,4 +1,6 @@
-export const k = "YOUR_KEY HERE";
+import { YT_KEY } from '../../config/keys'
+
+export const k = YT_KEY;
 export const YT = 'https://youtube.googleapis.com/youtube/v3/';
 
 export const search = ( q ) => {
@@ -13,9 +15,7 @@ export const playlist = ( q, num = 50 ) => {
 export const URLpars = () => {
     const entries = new URLSearchParams( window.location.search ).entries();
     const params = {};
-    for ( let entry of entries ) {
-        params[ entry[ 0 ] ] = entry[ 1 ];
-    }
+    for ( let entry of entries ) params[ entry[ 0 ] ] = entry[ 1 ];
     return params;
 }
 export const chURL = ( key, value ) => {
