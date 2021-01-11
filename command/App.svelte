@@ -4,7 +4,6 @@
 	import { wpp } from "./core/micro";
 
 	let bg = wpp();
-	$: showStats = !true;
 	import Search from "./components/search.svelte";
 	import Links from "./components/links.svelte";
 </script>

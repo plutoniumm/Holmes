@@ -11,7 +11,7 @@
       $: key = raw
             ? raw.split(":")[0].split(" ")[0].toLowerCase() in sites
                   ? raw.split(":")[0].split(" ")[0].toLowerCase()
-                  : "g"
+                  : "q"
             : null;
       $: send = "";
       const fx = (p) => {
@@ -148,7 +148,9 @@
       style="display:flex;justify-content: center;align-items: center;flex-direction: column;">
       <br />
       <form on:submit|preventDefault={metal}>
-            <div class="wrapper" style="display:flex">
+            <div
+                  class="wrapper"
+                  style="display:flex;border:3px solid;border-image:linear-gradient(to right,#ff0,#0ff,#faa)1 1 100%;border-top:0;">
                   <div class="icon">
                         <img bind:this={ic} src="./icons/Basic.svg" alt="" />
                   </div>

@@ -25,10 +25,10 @@ function serve () {
 }
 
 export default [
-	// MAIN ENGINE
+	// MAIN command
 	{
-		input: 'engine/main.js',
-		output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/engine/bundle.js' },
+		input: 'command/main.js',
+		output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/command/bundle.js' },
 		plugins: [
 			svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
 			resolve( { browser: true, dedupe: [ 'svelte' ] } ),
@@ -42,8 +42,22 @@ export default [
 	},
 	// DISPHENOID
 	{
-		input: 'stream/main.js',
-		output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/stream/bundle.js' },
+		input: 'video/main.js',
+		output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/video/bundle.js' },
+		plugins: [
+			svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
+			resolve( { browser: true, dedupe: [ 'svelte' ] } ),
+			commonjs(),
+			!production && serve(),
+			!production && livereload( 'public' ),
+			production && terser(),
+			json()
+		],
+		watch: { clearScreen: true }
+	},
+	{
+		input: 'content/main.js',
+		output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/content/bundle.js' },
 		plugins: [
 			svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
 			resolve( { browser: true, dedupe: [ 'svelte' ] } ),

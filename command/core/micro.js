@@ -6,17 +6,14 @@ export const sug = ( SIn ) => {
       sc.id = "suggestions";
       document.body.appendChild( sc );
 };
-
 export const startsWith = ( str, word ) => {
       return str.lastIndexOf( word, 0 ) === 0;
-}
-
+};
 export const preprocessor = ( key ) => {
       const sitFuncs = { "y": "window.location.href = send;" }
       const script = sitFuncs[ key ] || "window.location.href = send;";
       return script
-}
-
+};
 export const wpp = () => {
       const colors = [
             { bg: 'DarkViolet', g1: '#f00', g2: 'DeepPink' },
@@ -25,6 +22,5 @@ export const wpp = () => {
             { bg: 'DarkRed', g1: 'Red', g2: 'Yellow' },
             { bg: 'DeepPink', g1: 'LightPink', g2: '#fff' },
       ];
-      const t = Math.floor( Math.random() * 5 );
-      return colors[ t ]
-}
+      return colors[ Math.floor( Math.random() * 5 ) ]
+};
