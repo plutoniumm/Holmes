@@ -7,7 +7,7 @@
         padding: 1em;
         border-radius: 10px;
         color: #fff;
-        margin: 10px 0;
+        margin-bottom: 10px;
     }
 </style>
 

@@ -56,8 +56,8 @@ export default [
 		watch: { clearScreen: true }
 	},
 	{
-		input: 'content/main.js',
-		output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/content/bundle.js' },
+		input: 'admin/main.js',
+		output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/admin/bundle.js' },
 		plugins: [
 			svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
 			resolve( { browser: true, dedupe: [ 'svelte' ] } ),

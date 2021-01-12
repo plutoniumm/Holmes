@@ -1,5 +1,6 @@
 <script>
-    let corona = [];
+    let corona = [],
+        canvas;
 
     fetch(
         "https://cors-anywhere.herokuapp.com/" +
@@ -9,6 +10,17 @@
         .then((r) => {
             corona = Object.entries(r.All.dates).reverse();
             corona = corona.slice(45, corona.length - 1);
+
+            const ctx = canvas.getContext("2d");
+
+            let blueGrad = ctx.createLinearGradient(500, 0, 500, 300);
+            blueGrad.addColorStop(0, "#aaf8");
+            blueGrad.addColorStop(1, "#aaf0");
+
+            let redGrad = ctx.createLinearGradient(500, 0, 500, 300);
+            redGrad.addColorStop(0, "#faa0");
+            redGrad.addColorStop(1, "#faa0");
+
             for (let i = 0; i < corona.length; i++) {
                 let temp = { x: corona[i][0], y: corona[i][1] };
                 corona[i] = temp;
@@ -27,6 +39,7 @@
                                 return (i + 1) % 3 == new Date().getDate() % 3;
                             }),
                             fill: true,
+                            backgroundColor: blueGrad,
                             borderColor: "#aaf",
                         },
                         {
@@ -52,7 +65,8 @@
                                     );
                                 }),
                             fill: true,
-                            borderColor: "#faa",
+                            backgroundColor: redGrad,
+                            borderColor: "#afa",
                         },
                     ],
                 },
@@ -74,11 +88,8 @@
                     },
                 },
             };
-            window.myLine = new Chart(
-                document.getElementById("canvas").getContext("2d"),
-                config
-            );
+            window.myLine = new Chart(ctx, config);
         });
 </script>
 
-<canvas width="100%" id="canvas" />
+<canvas width="100%" bind:this={canvas} id="CJScanvas" />

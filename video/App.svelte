@@ -48,7 +48,7 @@
 											new Date(r1.snippet.publishedAt) -
 												new Date()
 										) <=
-										1.5 * 864e5
+										2 * 864e5
 								)
 							)
 							.then((r3) => {

@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "express": "4.17.1",
+    "node-osascript": "^2.1.0",
     "sirv-cli": "1.0.6"
   }
 }
