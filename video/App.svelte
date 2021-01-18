@@ -26,6 +26,7 @@
 	$: substack = [];
 
 	const channels = () => {
+		substack=[];
 		subsMon(cnls);
 		subsMon(cnls2);
 	};

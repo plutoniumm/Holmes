@@ -3,7 +3,10 @@
 
 	import { wpp } from "./core/micro";
 
-	let bg = wpp();
+	let bg = wpp(),
+		deets;
+
+	window.onload = setTimeout(() => (deets.style.top = "5px"), 1000);
 	import Search from "./components/search.svelte";
 	import Links from "./components/links.svelte";
 </script>
@@ -14,6 +17,21 @@
 		height: 100%;
 		circle {
 			stroke: #fff;
+		}
+	}
+	#deets {
+		position: fixed;
+		top: -20px;
+		padding: 0 5px;
+		display: flex;
+		justify-content: space-between;
+		width: calc(100% - 10px);
+		transition: top 0.2s ease;
+		img {
+			width: 20px;
+			height: 20px;
+			margin: 0px 2px;
+			filter: invert(100%);
 		}
 	}
 	section {
@@ -55,17 +73,23 @@
 </div>
 
 <section>
-	<div style="position:fixed;top:5px;right:10px;">
-		{new Date()
-			.toLocaleDateString('en-GB', {
-				weekday: 'short',
-				month: 'short',
-				day: 'numeric',
-				hour12: false,
-				hour: '2-digit',
-				minute: '2-digit',
-			})
-			.replace(',', '')}
+	<div bind:this={deets} id="deets">
+		<div style="display:flex;">
+			<img src="./icons/q.svg" alt="" />
+			<div>Sherlock</div>
+		</div>
+		<div>
+			{new Date()
+				.toLocaleDateString('en-GB', {
+					weekday: 'short',
+					month: 'short',
+					day: 'numeric',
+					hour12: false,
+					hour: '2-digit',
+					minute: '2-digit',
+				})
+				.replace(',', '')}
+		</div>
 	</div>
 	<Search {sites} />
 	<Links />

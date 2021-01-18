@@ -1,16 +1,11 @@
 <script>
 	import Corona from "./components/corona.svelte";
+	import Reminders from "./components/reminders.svelte";
 	import Terminal from "./components/terminal.svelte";
 	import Space from "./components/space.svelte";
 	import Reddit from "./components/reddit.svelte";
 	import Shows from "./components/shows.svelte";
 	import Gen from "./components/gen.svelte";
-
-	let states = {
-		main: 1,
-	};
-
-	const chMain = () => (states.main = !states.main);
 </script>
 
 <style type="text/scss">
@@ -19,7 +14,6 @@
 		display: grid;
 		grid-gap: 10px;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
-		height: 99vh;
 		color: #444;
 	}
 
@@ -32,6 +26,12 @@
 		padding: 5px;
 	}
 
+	.half {
+		height: 49vh;
+	}
+	.full {
+		height: 99vh;
+	}
 	.a {
 		grid-column: 1;
 		grid-row: 1 / 3;
@@ -61,59 +61,58 @@
 		grid-row: 2;
 	}
 
-	.mainController {
-		position: absolute;
-		bottom: 5px;
-		left: 42%;
-		cursor: pointer;
-		width: 150px;
-		justify-content: center;
-		padding: 5px 2px;
-		border-radius: 25px;
-		display: flex;
-		background: #222;
-		.states {
-			padding: 7px;
-		}
-		.active {
-			background: #334;
-			border-radius: 5px;
-		}
+	.a2 {
+		grid-column: 1;
+		grid-row: 4 / 6;
+		background: transparent;
+	}
+	.b2 {
+		position: relative;
+		grid-column: 2 / 4;
+		grid-row: 4;
+		color: #fff;
+		background: #223;
+	}
+	.c2 {
+		grid-column: 4;
+		grid-row: 4 / 6;
+		background: transparent;
+	}
+	.d2 {
+		grid-column: 2;
+		grid-row: 5;
+		background: transparent;
+	}
+	.e2 {
+		grid-column: 3;
+		grid-row: 5;
 	}
 </style>
 
 <div class="wrapper">
-	<div class="box a">
+	<div class="box a full">
 		<Reddit />
 	</div>
-	<div class="box b">
-		{#if !states.main}
-			<Corona />
-		{:else}
-			<Terminal />
-		{/if}
-		<div class="mainController">
-			<div
-				on:click={chMain}
-				class="states {!states.main ? 'active' : ''}">
-				STATS
-			</div>
-			<div
-				on:click={chMain}
-				class="states {!states.main ? '' : 'active'}">
-				SYSTEM
-			</div>
-		</div>
+	<div class="box b half">
+		<Terminal />
 	</div>
-	<!-- <div class="box c">
-		<Space />
-	</div> -->
-	<div class="box d">
+	<div class="box c full">
+		<Reminders />
+	</div>
+	<div class="box d half">
 		<Gen />
 	</div>
-	<!-- <div class="box e">
-		<Shows />
-	</div> -->
-</div>
+	<div class="box e half">
+		<Space />
+	</div>
 
-<!-- http://api.tvmaze.com/singlesearch/shows?q=kakegurui -->
+	<div class="box a2 full">Hia</div>
+	<div class="box b2 half">
+		<Corona />
+	</div>
+	<div class="box c2 full">Hic</div>
+	<div class="box d2 half">Hid</div>
+	<div class="box e2 half">
+		<Shows />
+	</div>
+</div>

@@ -1,3 +1,4 @@
+const { exec } = require( "child_process" );
 const express = require( 'express' );
 const fs = require( 'fs' );
 const app = express();
@@ -23,13 +24,49 @@ app.post( '/log', ( req, res ) => {
 app.post( '/sys', ( req, res ) => {
       const q = req.query;
       console.log( q );
-      // sudo osascript -e 'set volume output volume 50'
-      osascript.execute( 'set volume output volume 50', ( err, result, raw ) => {
-            if ( err ) res.send( 400 ); return;
-            console.log( result );
-            console.log( raw );
-      } );
-      res.send( 200 );
-} )
+      if ( q.app == 'system' ) {
+            if ( q.cmd == 'volume' ) {
+                  osascript.execute( `set volume output volume ${ q.params }`, ( err, result, raw ) => {
+                        if ( err ) res.sendStatus( 400 ); return;
+                        console.log( result );
+                        console.log( raw );
+                  } );
+            }
+            if ( q.cmd == 'volState' ) osascript.execute( `output volume of (get volume settings)`, ( err, result, raw ) => ( res.send( { 'cmd': 'volState', 'data': result } ) ) );
+      }
+      if ( q.app == 'music' ) {
+            if ( q.cmd == 'musicState' ) exec( 'osascript ./api/music.scpt', ( err, sto, sterr ) => ( res.send( { 'cmd': 'musicState', 'data': sto.split( ', ' ) } ) ) );
+
+            if ( q.cmd == 'playpause' ) exec( `osascript -e 'tell application "Music" to playpause'`, ( err, sto, sterr ) => null );
+      }
+
+      if ( q.app == 'reminders' ) {
+            let reminders = [];
+            exec( `osascript -e ' tell application "Reminders"
+            set mylist to id of list "${ q.params || 'Stack' }"
+            set reminderList to[]
+            set reminderList to name of reminders whose id of container is mylist
+            quit
+            return reminderList
+            end tell'`, ( err, sto, sterr ) => {
+                  if ( err ) return console.log( err );
+                  if ( sterr ) return console.log( sterr )
+                  reminders = [ ...sto.split( ', ' ).map( e => { return { "list": e.trim(), "notes": [] } } ) ];
+                  exec( `osascript -e ' tell application "Reminders"
+                  set mylist to id of list "${ q.params || 'Stack' }"
+                  set reminderList to[]
+                  set reminderList to body of reminders whose id of container is mylist
+                  quit
+                  return reminderList
+                  end tell'`, ( err, sto, sterr ) => {
+                        if ( err ) return console.log( err );
+                        if ( sterr ) return console.log( sterr );
+                        let stoes = sto.split( ', ' )
+                        reminders.forEach( ( e, i ) => ( e.notes = [ ...( stoes[ i ].split( '\n' ) ) ] ) )
+                        res.send( { 'cmd': 'reminders', 'data': reminders } );
+                  } );
+            } );
+      }
+} );
 
 app.listen( port, console.log( 'Server listening on PORT:4000' ) )

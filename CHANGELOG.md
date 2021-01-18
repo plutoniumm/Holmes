@@ -2,6 +2,11 @@
 
 ## v3.2.0
 
+- Dashboard: Add AppleScript connections to system for Music & Reminders
+
+
+## v3.2.0
+
 - Full Merge DashBoard, started making structure cleaner, to work more efficiently 
 
 

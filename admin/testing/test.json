@@ -1,0 +1,2511 @@
+{
+    "at": "https://musicbrainz.org/ws/2/release/?query=release:another%20brick%20in%20the%20wall%22%20AND%20artist:pink%20floyd&fmt=json",
+    "created": "2021-01-14T07:04:52.167Z",
+    "count": 859296,
+    "offset": 0,
+    "releases": [
+        {
+            "id": "fdb2d9a3-c6b4-457f-b600-c93b3b5c261c",
+            "score": 100,
+            "status-id": "1156806e-d06a-38bd-83f0-cf2284a808b9",
+            "count": 2,
+            "title": "Every Brick in the Wall",
+            "status": "Bootleg",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "92a95092-1c9a-3c8f-bbe2-ce3787a0afe1",
+                "type-id": "0c60f497-ff81-3818-befd-abfc84a4858b",
+                "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+                "title": "Every Brick in the Wall",
+                "primary-type": "Album",
+                "secondary-types": [
+                    "Remix"
+                ],
+                "secondary-type-ids": [
+                    "0c60f497-ff81-3818-befd-abfc84a4858b"
+                ]
+            },
+            "track-count": 28,
+            "media": [
+                {
+                    "disc-count": 0,
+                    "track-count": 15
+                },
+                {
+                    "disc-count": 0,
+                    "track-count": 13
+                }
+            ]
+        },
+        {
+            "id": "33a8637b-6b62-49e4-9c56-62d71e89f232",
+            "score": 97,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall (Part II) / Another Brick in the Wall (Part I)",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d15d737e-9b03-47a1-afa5-0eea932a28a8",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall (Part II) / Another Brick in the Wall (Part I)",
+                "primary-type": "Single"
+            },
+            "date": "1979",
+            "country": "CO",
+            "release-events": [
+                {
+                    "date": "1979",
+                    "area": {
+                        "id": "02b60d8d-7164-339d-868d-22d147d9f74a",
+                        "name": "Colombia",
+                        "sort-name": "Colombia",
+                        "iso-3166-1-codes": [
+                            "CO"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "442-1070",
+                    "label": {
+                        "id": "ad6f8706-c95e-443b-8579-8e3ecd27126c",
+                        "name": "Columbia Records"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "12\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "b1b3fd20-0604-3cb6-92d4-20ab7b2079eb",
+            "score": 97,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall, Part 2",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1979",
+            "country": "NZ",
+            "release-events": [
+                {
+                    "date": "1979",
+                    "area": {
+                        "id": "8524c7d9-f472-3890-a458-f28d5081d9c4",
+                        "name": "New Zealand",
+                        "sort-name": "New Zealand",
+                        "iso-3166-1-codes": [
+                            "NZ"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "BA 222629",
+                    "label": {
+                        "id": "b8d33bec-92cc-40d9-bd92-4eb089b401a9",
+                        "name": "CBS"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "a77481f0-d0f9-38f0-a36c-4586321ccb2f",
+            "score": 97,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "count": 1,
+            "title": "Another Brick in the Wall, Part 2",
+            "status": "Official",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1992",
+            "country": "FR",
+            "release-events": [
+                {
+                    "date": "1992",
+                    "area": {
+                        "id": "08310658-51eb-3801-80de-5a0739207115",
+                        "name": "France",
+                        "sort-name": "France",
+                        "iso-3166-1-codes": [
+                            "FR"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "724388177726",
+            "label-info": [
+                {
+                    "catalog-number": "724388177726",
+                    "label": {
+                        "id": "c029628b-6633-439e-bcee-ed02e8a338f7",
+                        "name": "EMI"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "CD",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "a6dbc6c4-e400-3317-9320-713263e83638",
+            "score": 97,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall (Part II)",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1979",
+            "country": "JP",
+            "release-events": [
+                {
+                    "date": "1979",
+                    "area": {
+                        "id": "2db42837-c832-3c27-b4a3-08198f75693c",
+                        "name": "Japan",
+                        "sort-name": "Japan",
+                        "iso-3166-1-codes": [
+                            "JP"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "06SP-453",
+                    "label": {
+                        "id": "08f37a61-1c54-4257-b31d-810fa2ac5cd5",
+                        "name": "CBS/Sony"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "b03f5f57-df1b-3e47-b109-57fa1496b849",
+            "score": 97,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "count": 1,
+            "title": "Another Brick in the Wall, Part 2",
+            "status": "Official",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1989",
+            "country": "US",
+            "release-events": [
+                {
+                    "date": "1989",
+                    "area": {
+                        "id": "489ce91b-6658-3307-9877-795b68554c98",
+                        "name": "United States",
+                        "sort-name": "United States",
+                        "iso-3166-1-codes": [
+                            "US"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "07464031180",
+            "label-info": [
+                {
+                    "catalog-number": "CSIG-000096"
+                },
+                {
+                    "catalog-number": "38K-03118",
+                    "label": {
+                        "id": "011d1192-6f65-45bd-85c4-0400dd45693e",
+                        "name": "Columbia"
+                    }
+                },
+                {
+                    "catalog-number": "CSIG 000096",
+                    "label": {
+                        "id": "011d1192-6f65-45bd-85c4-0400dd45693e",
+                        "name": "Columbia"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "8cm CD",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "1ccc1487-3d6a-450a-b662-1ff965cbc033",
+            "score": 93,
+            "count": 1,
+            "title": "Another Brick in the Wall",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Coffee",
+                    "artist": {
+                        "id": "ab6c9dae-841f-446b-9594-1581186fe08b",
+                        "name": "Pink Coffee",
+                        "sort-name": "Pink Coffee"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "2a17dfec-6451-3d9e-84c6-a0e4f5c39a04",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall",
+                "primary-type": "Single"
+            },
+            "date": "2002-04-23",
+            "country": "CA",
+            "release-events": [
+                {
+                    "date": "2002-04-23",
+                    "area": {
+                        "id": "71bbafaa-e825-3e15-8ca9-017dcad1748b",
+                        "name": "Canada",
+                        "sort-name": "Canada",
+                        "iso-3166-1-codes": [
+                            "CA"
+                        ]
+                    }
+                }
+            ],
+            "label-info": [
+                {
+                    "catalog-number": "ISBSI-7061",
+                    "label": {
+                        "id": "9f5098fe-1577-4f46-8e3f-615a8c2bc7ed",
+                        "name": "isba"
+                    }
+                }
+            ],
+            "track-count": 3,
+            "media": [
+                {
+                    "format": "CD",
+                    "disc-count": 0,
+                    "track-count": 3
+                }
+            ]
+        },
+        {
+            "id": "b11d9ac5-06d7-34b5-aecd-f63b6d9f378b",
+            "score": 84,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall (2) / One of My Turns",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1979",
+            "country": "PL",
+            "release-events": [
+                {
+                    "date": "1979",
+                    "area": {
+                        "id": "dd7f80c8-f017-3d01-8608-2a8c9c32b954",
+                        "name": "Poland",
+                        "sort-name": "Poland",
+                        "iso-3166-1-codes": [
+                            "PL"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "S-314",
+                    "label": {
+                        "id": "c9971684-b622-42f5-ace7-ef16483dc474",
+                        "name": "Tonpress"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "8fd0f59b-2994-3090-8dc5-dcb6c6c4facd",
+            "score": 83,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall, Part II / One of My Turns",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1980",
+            "country": "YU",
+            "release-events": [
+                {
+                    "date": "1980",
+                    "area": {
+                        "id": "885dce63-c211-3033-8cf7-46cb82d440c7",
+                        "name": "Yugoslavia",
+                        "sort-name": "Yugoslavia",
+                        "iso-3166-1-codes": [
+                            "YU"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "HAR 5194",
+                    "label": {
+                        "id": "993af7f6-bb99-456b-83e7-5e728ea80a0e",
+                        "name": "Harvest"
+                    }
+                },
+                {
+                    "catalog-number": "SHAR 89009",
+                    "label": {
+                        "id": "ab6093a8-ca1a-4b01-9a41-33c292a79868",
+                        "name": "Jugoton"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "f9322c5b-bef4-3659-9ac7-03c7e3f0d9d2",
+            "score": 83,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall (Part II) / One of My Turns",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1988",
+            "country": "US",
+            "release-events": [
+                {
+                    "date": "1988",
+                    "area": {
+                        "id": "489ce91b-6658-3307-9877-795b68554c98",
+                        "name": "United States",
+                        "sort-name": "United States",
+                        "iso-3166-1-codes": [
+                            "US"
+                        ]
+                    }
+                }
+            ],
+            "label-info": [
+                {
+                    "catalog-number": "13-03118",
+                    "label": {
+                        "id": "011d1192-6f65-45bd-85c4-0400dd45693e",
+                        "name": "Columbia"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "de7e846b-b76d-3982-a1f2-1441137f5ccd",
+            "score": 83,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall, Part II / One of My Turns",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1980-01-08",
+            "country": "US",
+            "release-events": [
+                {
+                    "date": "1980-01-08",
+                    "area": {
+                        "id": "489ce91b-6658-3307-9877-795b68554c98",
+                        "name": "United States",
+                        "sort-name": "United States",
+                        "iso-3166-1-codes": [
+                            "US"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "1-11187",
+                    "label": {
+                        "id": "011d1192-6f65-45bd-85c4-0400dd45693e",
+                        "name": "Columbia"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "6976a512-266c-3f89-bd3a-87024fac5f65",
+            "score": 83,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall, Part II / One of My Turns",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1979",
+            "country": "NL",
+            "release-events": [
+                {
+                    "date": "1979",
+                    "area": {
+                        "id": "ef1b7cc0-cd26-36f4-8ea0-04d9623786c7",
+                        "name": "Netherlands",
+                        "sort-name": "Netherlands",
+                        "iso-3166-1-codes": [
+                            "NL"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "1A 006-63494",
+                    "label": {
+                        "id": "993af7f6-bb99-456b-83e7-5e728ea80a0e",
+                        "name": "Harvest"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "fae0e222-8b86-324e-ab00-f79e13962cfc",
+            "score": 83,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall, Part II / One of My Turns",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1979",
+            "country": "FR",
+            "release-events": [
+                {
+                    "date": "1979",
+                    "area": {
+                        "id": "08310658-51eb-3801-80de-5a0739207115",
+                        "name": "France",
+                        "sort-name": "France",
+                        "iso-3166-1-codes": [
+                            "FR"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "2 C 008-63494",
+                    "label": {
+                        "id": "993af7f6-bb99-456b-83e7-5e728ea80a0e",
+                        "name": "Harvest"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "7b93214f-cf76-32cd-970d-bd52f7e24f7c",
+            "score": 83,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall, Part II / One of My Turns",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1979",
+            "country": "DE",
+            "release-events": [
+                {
+                    "date": "1979",
+                    "area": {
+                        "id": "85752fda-13c4-31a3-bee5-0e5cb1f51dad",
+                        "name": "Germany",
+                        "sort-name": "Germany",
+                        "iso-3166-1-codes": [
+                            "DE"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "1C 006-63494",
+                    "label": {
+                        "id": "993af7f6-bb99-456b-83e7-5e728ea80a0e",
+                        "name": "Harvest"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "ff5f6e61-34ec-3ba5-ae26-86154a11adbf",
+            "score": 83,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall, Part II / One of My Turns",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1980",
+            "country": "HU",
+            "release-events": [
+                {
+                    "date": "1980",
+                    "area": {
+                        "id": "312bc5bb-7e43-3e63-81c6-b4d712b37b2c",
+                        "name": "Hungary",
+                        "sort-name": "Hungary",
+                        "iso-3166-1-codes": [
+                            "HU"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "SPSK 70462",
+                    "label": {
+                        "id": "752052e3-b3fb-4752-863f-9003626dd9d8",
+                        "name": "Pepita"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "7e2ade39-7b6e-45cb-9986-4fe8b44ef548",
+            "score": 83,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall, Part II / One of My Turns",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1979-11-16",
+            "country": "GB",
+            "release-events": [
+                {
+                    "date": "1979-11-16",
+                    "area": {
+                        "id": "8a754a16-0027-3a29-b6d7-2b40ea0481ed",
+                        "name": "United Kingdom",
+                        "sort-name": "United Kingdom",
+                        "iso-3166-1-codes": [
+                            "GB"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "HAR 5194",
+                    "label": {
+                        "id": "993af7f6-bb99-456b-83e7-5e728ea80a0e",
+                        "name": "Harvest"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "7ccbac38-5cc5-431b-9bb6-331387fa5842",
+            "score": 82,
+            "status-id": "518ffc83-5cde-34df-8627-81bff5093d92",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall (Part II) / Run Like Hell",
+            "status": "Promotion",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "bcdf4c0c-2c63-497a-a5cb-11eb9f004b56",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall (Part II) / Run Like Hell",
+                "primary-type": "Single"
+            },
+            "date": "1979",
+            "country": "US",
+            "release-events": [
+                {
+                    "date": "1979",
+                    "area": {
+                        "id": "489ce91b-6658-3307-9877-795b68554c98",
+                        "name": "United States",
+                        "sort-name": "United States",
+                        "iso-3166-1-codes": [
+                            "US"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "AS 783",
+                    "label": {
+                        "id": "011d1192-6f65-45bd-85c4-0400dd45693e",
+                        "name": "Columbia"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "12\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "25537412-5b21-4a48-9547-e82d021540b8",
+            "score": 79,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "119eba76-b343-3e02-a292-f0f00644bb9b",
+            "count": 1,
+            "title": "Another Brick in the Wall",
+            "status": "Official",
+            "packaging": "None",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Fury Weekend",
+                    "artist": {
+                        "id": "46eb90e8-ce30-4439-8834-20d25469193b",
+                        "name": "Fury Weekend",
+                        "sort-name": "Fury Weekend"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "c5159818-2ab4-4d8e-9fa7-60975a3a3adf",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall",
+                "primary-type": "Single"
+            },
+            "date": "2018-11-13",
+            "country": "XW",
+            "release-events": [
+                {
+                    "date": "2018-11-13",
+                    "area": {
+                        "id": "525d4e18-3d00-31b9-a58b-a146a916de8f",
+                        "name": "[Worldwide]",
+                        "sort-name": "[Worldwide]",
+                        "iso-3166-1-codes": [
+                            "XW"
+                        ]
+                    }
+                }
+            ],
+            "label-info": [
+                {
+                    "label": {
+                        "id": "98648494-e369-4268-b9f0-c4f93b30f068",
+                        "name": "FiXT Music"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "Digital Media",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "00d5951a-08f4-4e5d-834d-5ecc41f82177",
+            "score": 79,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "count": 1,
+            "title": "Another Brick in the Wall",
+            "status": "Official",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Charta 77",
+                    "artist": {
+                        "id": "cd3772a8-6f4e-40c3-ba7d-019809dbd9b4",
+                        "name": "Charta 77",
+                        "sort-name": "Charta 77",
+                        "disambiguation": "Swedish punk band"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "4d92dc26-a7cf-4885-ad7c-8f51b1a7374a",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall",
+                "primary-type": "Single"
+            },
+            "date": "1990",
+            "country": "SE",
+            "release-events": [
+                {
+                    "date": "1990",
+                    "area": {
+                        "id": "23d10872-f5ae-3f0c-bf55-332788a16ecb",
+                        "name": "Sweden",
+                        "sort-name": "Sweden",
+                        "iso-3166-1-codes": [
+                            "SE"
+                        ]
+                    }
+                }
+            ],
+            "label-info": [
+                {
+                    "catalog-number": "RMAX 3015",
+                    "label": {
+                        "id": "00f74bdb-871d-4542-b703-b3c6e8ae2350",
+                        "name": "Rainbow Music"
+                    }
+                }
+            ],
+            "track-count": 4,
+            "media": [
+                {
+                    "format": "12\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 4
+                }
+            ]
+        },
+        {
+            "id": "2c87b4db-6582-4706-910c-8b39cc550a6e",
+            "score": 79,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "119eba76-b343-3e02-a292-f0f00644bb9b",
+            "count": 1,
+            "title": "Another Brick in the Wall",
+            "status": "Official",
+            "packaging": "None",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Fury Weekend",
+                    "artist": {
+                        "id": "46eb90e8-ce30-4439-8834-20d25469193b",
+                        "name": "Fury Weekend",
+                        "sort-name": "Fury Weekend"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "c5159818-2ab4-4d8e-9fa7-60975a3a3adf",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall",
+                "primary-type": "Single"
+            },
+            "date": "2017-10-08",
+            "country": "XW",
+            "release-events": [
+                {
+                    "date": "2017-10-08",
+                    "area": {
+                        "id": "525d4e18-3d00-31b9-a58b-a146a916de8f",
+                        "name": "[Worldwide]",
+                        "sort-name": "[Worldwide]",
+                        "iso-3166-1-codes": [
+                            "XW"
+                        ]
+                    }
+                }
+            ],
+            "label-info": [
+                {
+                    "label": {
+                        "id": "157afde4-4bf5-4039-8ad2-5a15acc85176",
+                        "name": "[no label]"
+                    }
+                }
+            ],
+            "track-count": 1,
+            "media": [
+                {
+                    "format": "Digital Media",
+                    "disc-count": 0,
+                    "track-count": 1
+                }
+            ]
+        },
+        {
+            "id": "503d6998-15a4-450a-909e-4fe251cac397",
+            "score": 79,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "count": 1,
+            "title": "Another Brick in the Wall",
+            "status": "Official",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Snatch",
+                    "artist": {
+                        "id": "c7f90ab2-3600-49fe-845b-fd4ca75e5682",
+                        "name": "Snatch",
+                        "sort-name": "Snatch",
+                        "disambiguation": "USA disco band"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d68e55cf-95c5-4dd5-bccf-b9373c9c5b3f",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall",
+                "primary-type": "Single"
+            },
+            "date": "1980",
+            "country": "US",
+            "release-events": [
+                {
+                    "date": "1980",
+                    "area": {
+                        "id": "489ce91b-6658-3307-9877-795b68554c98",
+                        "name": "United States",
+                        "sort-name": "United States",
+                        "iso-3166-1-codes": [
+                            "US"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "YD-11793",
+                    "label": {
+                        "id": "14976a35-e4ac-4753-a6c9-6cc408708e4d",
+                        "name": "Millennium"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "12\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "da3b2912-6539-47b7-8521-a4c5aab66033",
+            "score": 79,
+            "status-id": "1156806e-d06a-38bd-83f0-cf2284a808b9",
+            "count": 1,
+            "title": "Brick by Brick (Brick One)",
+            "status": "Bootleg",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "6e297e93-40f8-30d8-acdb-ad1d6d06ee88",
+                "type-id": "6fd474e2-6b58-3102-9d17-d6f7eb7da0a0",
+                "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+                "title": "Brick by Brick (Brick One)",
+                "primary-type": "Album",
+                "secondary-types": [
+                    "Live"
+                ],
+                "secondary-type-ids": [
+                    "6fd474e2-6b58-3102-9d17-d6f7eb7da0a0"
+                ]
+            },
+            "track-count": 14,
+            "media": [
+                {
+                    "disc-count": 0,
+                    "track-count": 14
+                }
+            ]
+        },
+        {
+            "id": "db5fd09f-57ac-3e15-bd1c-7a2659d0b95e",
+            "score": 75,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "f7101ce3-0384-39ce-9fde-fbbd0044d35f",
+            "count": 1,
+            "title": "Another Brick in the Wall, Part II: Otro Ladrillo En El Muro, Parte II / One of My Turns: Una de mis oportunidades",
+            "status": "Official",
+            "packaging": "Cardboard/Paper Sleeve",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "name": "Pink Floyd",
+                    "artist": {
+                        "id": "83d91898-7763-47d7-b03b-b92132375c47",
+                        "name": "Pink Floyd",
+                        "sort-name": "Pink Floyd"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "d39c40ba-c173-309c-a374-97c0ccdf2a19",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Another Brick in the Wall, Part 2",
+                "primary-type": "Single"
+            },
+            "date": "1979",
+            "country": "ES",
+            "release-events": [
+                {
+                    "date": "1979",
+                    "area": {
+                        "id": "471c46a7-afc5-31c4-923c-d0444f5053a4",
+                        "name": "Spain",
+                        "sort-name": "Spain",
+                        "iso-3166-1-codes": [
+                            "ES"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "",
+            "label-info": [
+                {
+                    "catalog-number": "10C 006-063494",
+                    "label": {
+                        "id": "993af7f6-bb99-456b-83e7-5e728ea80a0e",
+                        "name": "Harvest"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "7\" Vinyl",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        },
+        {
+            "id": "bc831890-e929-40ae-b948-07f5b800a935",
+            "score": 74,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "119eba76-b343-3e02-a292-f0f00644bb9b",
+            "count": 1,
+            "title": "Brick Wall",
+            "status": "Official",
+            "packaging": "None",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "joinphrase": " & ",
+                    "name": "TAI",
+                    "artist": {
+                        "id": "e41b8b61-eda8-438b-9752-1ad405c904c6",
+                        "name": "TAI",
+                        "sort-name": "TAI",
+                        "disambiguation": "German house DJ & producer"
+                    }
+                },
+                {
+                    "joinphrase": " feat. ",
+                    "name": "Scott Storch",
+                    "artist": {
+                        "id": "33a0dc46-c4e4-416f-9054-bbc278575300",
+                        "name": "Scott Storch",
+                        "sort-name": "Storch, Scott",
+                        "disambiguation": "producer"
+                    }
+                },
+                {
+                    "name": "Hell Yes",
+                    "artist": {
+                        "id": "a03afe52-4235-4774-84ce-c17826eeb76a",
+                        "name": "Hell Yes",
+                        "sort-name": "Hell Yes"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "a2cdf255-6c60-4288-aa7e-87c61f06b2bd",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Brick Wall",
+                "primary-type": "Single"
+            },
+            "date": "2015-06-29",
+            "country": "US",
+            "release-events": [
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "489ce91b-6658-3307-9877-795b68554c98",
+                        "name": "United States",
+                        "sort-name": "United States",
+                        "iso-3166-1-codes": [
+                            "US"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "8712944480948",
+            "label-info": [
+                {
+                    "label": {
+                        "id": "c5a8b61a-81d5-4c46-9bf4-0f075295c0c3",
+                        "name": "Doorn Records"
+                    }
+                },
+                {
+                    "label": {
+                        "id": "9fb16a60-7c0b-4e15-bd3a-d2a3fb851a12",
+                        "name": "Spinninâ€™ Records"
+                    }
+                }
+            ],
+            "track-count": 1,
+            "media": [
+                {
+                    "format": "Digital Media",
+                    "disc-count": 0,
+                    "track-count": 1
+                }
+            ]
+        },
+        {
+            "id": "d8c41511-7e0f-4e41-ac9a-57a4b0dab74f",
+            "score": 74,
+            "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+            "packaging-id": "119eba76-b343-3e02-a292-f0f00644bb9b",
+            "count": 1,
+            "title": "Brick Wall",
+            "status": "Official",
+            "packaging": "None",
+            "text-representation": {
+                "language": "eng",
+                "script": "Latn"
+            },
+            "artist-credit": [
+                {
+                    "joinphrase": " & ",
+                    "name": "TAI",
+                    "artist": {
+                        "id": "e41b8b61-eda8-438b-9752-1ad405c904c6",
+                        "name": "TAI",
+                        "sort-name": "TAI",
+                        "disambiguation": "German house DJ & producer"
+                    }
+                },
+                {
+                    "name": "Scott Storch",
+                    "artist": {
+                        "id": "33a0dc46-c4e4-416f-9054-bbc278575300",
+                        "name": "Scott Storch",
+                        "sort-name": "Storch, Scott",
+                        "disambiguation": "producer"
+                    }
+                }
+            ],
+            "release-group": {
+                "id": "a2cdf255-6c60-4288-aa7e-87c61f06b2bd",
+                "type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "primary-type-id": "d6038452-8ee0-3f68-affc-2de9a1ede0b9",
+                "title": "Brick Wall",
+                "primary-type": "Single"
+            },
+            "date": "2015-06-29",
+            "country": "SI",
+            "release-events": [
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "5b0b6225-584c-3942-b69d-5efceb9989af",
+                        "name": "Slovenia",
+                        "sort-name": "Slovenia",
+                        "iso-3166-1-codes": [
+                            "SI"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "6e2d562d-a754-3036-8484-7ac576606e27",
+                        "name": "Sri Lanka",
+                        "sort-name": "Sri Lanka",
+                        "iso-3166-1-codes": [
+                            "LK"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "23d10872-f5ae-3f0c-bf55-332788a16ecb",
+                        "name": "Sweden",
+                        "sort-name": "Sweden",
+                        "iso-3166-1-codes": [
+                            "SE"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "1333ff06-8e3d-3c8e-9f3a-13a2a38b41df",
+                        "name": "Switzerland",
+                        "sort-name": "Switzerland",
+                        "iso-3166-1-codes": [
+                            "CH"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "41637cec-9a4f-389c-86d2-fc6abf3357b5",
+                        "name": "Taiwan",
+                        "sort-name": "Taiwan",
+                        "iso-3166-1-codes": [
+                            "TW"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "ce209e56-cda5-358e-96db-830e3405b675",
+                        "name": "Thailand",
+                        "sort-name": "Thailand",
+                        "iso-3166-1-codes": [
+                            "TH"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "6c290168-f3b9-3adb-9889-b856feb2c26c",
+                        "name": "Trinidad and Tobago",
+                        "sort-name": "Trinidad and Tobago",
+                        "iso-3166-1-codes": [
+                            "TT"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "d3be28b4-41f7-3752-8a05-ed45e1d1e492",
+                        "name": "Turkey",
+                        "sort-name": "Turkey",
+                        "iso-3166-1-codes": [
+                            "TR"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "1ac655f1-12d1-351a-a2b2-8404167e0e0b",
+                        "name": "Uganda",
+                        "sort-name": "Uganda",
+                        "iso-3166-1-codes": [
+                            "UG"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "8a754a16-0027-3a29-b6d7-2b40ea0481ed",
+                        "name": "United Kingdom",
+                        "sort-name": "United Kingdom",
+                        "iso-3166-1-codes": [
+                            "GB"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "489ce91b-6658-3307-9877-795b68554c98",
+                        "name": "United States",
+                        "sort-name": "United States",
+                        "iso-3166-1-codes": [
+                            "US"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "2ac90d6b-04fa-3006-8a91-89da01032365",
+                        "name": "Venezuela",
+                        "sort-name": "Venezuela",
+                        "iso-3166-1-codes": [
+                            "VE"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "0158e991-c3c6-374a-9b9d-024bbaff6980",
+                        "name": "Vietnam",
+                        "sort-name": "Vietnam",
+                        "iso-3166-1-codes": [
+                            "VN"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "8562c2e5-eabb-3fad-96f2-f536a93a2957",
+                        "name": "British Virgin Islands",
+                        "sort-name": "British Virgin Islands",
+                        "iso-3166-1-codes": [
+                            "VG"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "2a8cc14f-8d47-389b-b54d-e94312b23d27",
+                        "name": "Antigua and Barbuda",
+                        "sort-name": "Antigua and Barbuda",
+                        "iso-3166-1-codes": [
+                            "AG"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "0df04709-c7d8-3b55-a6ea-f3e5069a947b",
+                        "name": "Argentina",
+                        "sort-name": "Argentina",
+                        "iso-3166-1-codes": [
+                            "AR"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "caac77d1-a5c8-3e6e-8e27-90b44dcc1446",
+                        "name": "Austria",
+                        "sort-name": "Austria",
+                        "iso-3166-1-codes": [
+                            "AT"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "f8b33963-7364-33be-8c6c-5ab2e1075ae1",
+                        "name": "Bahamas",
+                        "sort-name": "Bahamas",
+                        "iso-3166-1-codes": [
+                            "BS"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "e5d8d205-81d3-3cd3-8956-d5aaa0c0173f",
+                        "name": "Barbados",
+                        "sort-name": "Barbados",
+                        "iso-3166-1-codes": [
+                            "BB"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "5b8a5ee5-0bb3-34cf-9a75-c27c44e341fc",
+                        "name": "Belgium",
+                        "sort-name": "Belgium",
+                        "iso-3166-1-codes": [
+                            "BE"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "df3bbd94-6a4c-3fc3-bb6e-cd701623db8a",
+                        "name": "Bermuda",
+                        "sort-name": "Bermuda",
+                        "iso-3166-1-codes": [
+                            "BM"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "a5aed4a3-8ce1-3ab3-bfee-b008cff6b857",
+                        "name": "Bolivia",
+                        "sort-name": "Bolivia",
+                        "iso-3166-1-codes": [
+                            "BO"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "f45b47f8-5796-386e-b172-6c31b009a5d8",
+                        "name": "Brazil",
+                        "sort-name": "Brazil",
+                        "iso-3166-1-codes": [
+                            "BR"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "5d1fe672-9c9a-3d58-a221-4b23e9274709",
+                        "name": "Brunei",
+                        "sort-name": "Brunei",
+                        "iso-3166-1-codes": [
+                            "BN"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "114c14ad-9776-34e9-81b0-6299507f3771",
+                        "name": "Bulgaria",
+                        "sort-name": "Bulgaria",
+                        "iso-3166-1-codes": [
+                            "BG"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "5f886d01-5c12-3abb-b8be-d758b282ab05",
+                        "name": "Burkina Faso",
+                        "sort-name": "Burkina Faso",
+                        "iso-3166-1-codes": [
+                            "BF"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "ee26e886-87f5-33a2-8e8e-f9591490426d",
+                        "name": "Cambodia",
+                        "sort-name": "Cambodia",
+                        "iso-3166-1-codes": [
+                            "KH"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "71bbafaa-e825-3e15-8ca9-017dcad1748b",
+                        "name": "Canada",
+                        "sort-name": "Canada",
+                        "iso-3166-1-codes": [
+                            "CA"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "41d328a3-01da-35c2-b26e-69c56d7121d1",
+                        "name": "Cape Verde",
+                        "sort-name": "Cape Verde",
+                        "iso-3166-1-codes": [
+                            "CV"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "5dd25184-711c-3e6a-b089-572cd095f287",
+                        "name": "Cayman Islands",
+                        "sort-name": "Cayman Islands",
+                        "iso-3166-1-codes": [
+                            "KY"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "82d5f4d6-aed4-3ff5-81d1-5363ac6e97a7",
+                        "name": "Chile",
+                        "sort-name": "Chile",
+                        "iso-3166-1-codes": [
+                            "CL"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "7c81bb69-a99b-3487-b6d4-0f76d7a29ca0",
+                        "name": "China",
+                        "sort-name": "China",
+                        "iso-3166-1-codes": [
+                            "CN"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "a75b525f-8c01-31f6-975e-4a32a2b001d5",
+                        "name": "Cyprus",
+                        "sort-name": "Cyprus",
+                        "iso-3166-1-codes": [
+                            "CY"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "51d34c28-61bf-3d21-849f-7492672a9d44",
+                        "name": "Czech Republic",
+                        "sort-name": "Czech Republic",
+                        "iso-3166-1-codes": [
+                            "CZ"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "4757b525-2a60-324a-b060-578765d2c993",
+                        "name": "Denmark",
+                        "sort-name": "Denmark",
+                        "iso-3166-1-codes": [
+                            "DK"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "9898ec17-2174-3a61-9e3b-3f51b3ee4de1",
+                        "name": "Dominica",
+                        "sort-name": "Dominica",
+                        "iso-3166-1-codes": [
+                            "DM"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "696cb3e0-5084-30ab-9916-65ece70adbf6",
+                        "name": "Dominican Republic",
+                        "sort-name": "Dominican Republic",
+                        "iso-3166-1-codes": [
+                            "DO"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "967abc0e-f680-3cde-95d0-0b79b977d410",
+                        "name": "Ecuador",
+                        "sort-name": "Ecuador",
+                        "iso-3166-1-codes": [
+                            "EC"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "f2fa4bfb-97aa-3db4-8d49-cc64969ce1a7",
+                        "name": "El Salvador",
+                        "sort-name": "El Salvador",
+                        "iso-3166-1-codes": [
+                            "SV"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "e1c1215f-dcc0-35b4-b840-d2ca2151593b",
+                        "name": "Estonia",
+                        "sort-name": "Estonia",
+                        "iso-3166-1-codes": [
+                            "EE"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "031eba2b-79b5-3314-a14b-288407ad42ab",
+                        "name": "Fiji",
+                        "sort-name": "Fiji",
+                        "iso-3166-1-codes": [
+                            "FJ"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "6a264f94-6ff1-30b1-9a81-41f7bfabd616",
+                        "name": "Finland",
+                        "sort-name": "Finland",
+                        "iso-3166-1-codes": [
+                            "FI"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "08310658-51eb-3801-80de-5a0739207115",
+                        "name": "France",
+                        "sort-name": "France",
+                        "iso-3166-1-codes": [
+                            "FR"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "52641fae-20e3-3698-9fa9-1849f2c79ab8",
+                        "name": "Gambia",
+                        "sort-name": "Gambia",
+                        "iso-3166-1-codes": [
+                            "GM"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "85752fda-13c4-31a3-bee5-0e5cb1f51dad",
+                        "name": "Germany",
+                        "sort-name": "Germany",
+                        "iso-3166-1-codes": [
+                            "DE"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "cf48f4b4-28f0-39ab-9104-650324a1d1c8",
+                        "name": "Ghana",
+                        "sort-name": "Ghana",
+                        "iso-3166-1-codes": [
+                            "GH"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "803db0ca-b6ed-3bbc-aeb8-f89efd0a2168",
+                        "name": "Greece",
+                        "sort-name": "Greece",
+                        "iso-3166-1-codes": [
+                            "GR"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "217e2eb3-0a3a-3b59-9eaa-a7465c1417ff",
+                        "name": "Grenada",
+                        "sort-name": "Grenada",
+                        "iso-3166-1-codes": [
+                            "GD"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "4f01a1af-02ca-3b28-a64f-f38c36c08879",
+                        "name": "Guinea-Bissau",
+                        "sort-name": "Guinea-Bissau",
+                        "iso-3166-1-codes": [
+                            "GW"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "0373cdff-eac8-3fbc-92dc-36a607da06d1",
+                        "name": "Hong Kong",
+                        "sort-name": "Hong Kong",
+                        "iso-3166-1-codes": [
+                            "HK"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "312bc5bb-7e43-3e63-81c6-b4d712b37b2c",
+                        "name": "Hungary",
+                        "sort-name": "Hungary",
+                        "iso-3166-1-codes": [
+                            "HU"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "d31a9a15-537f-3669-ad53-25753ddd2772",
+                        "name": "India",
+                        "sort-name": "India",
+                        "iso-3166-1-codes": [
+                            "IN"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "d3a68bd0-7419-3f99-a5bd-204d6e057089",
+                        "name": "Indonesia",
+                        "sort-name": "Indonesia",
+                        "iso-3166-1-codes": [
+                            "ID"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "390b05d4-11ec-3bce-a343-703a366b34a5",
+                        "name": "Ireland",
+                        "sort-name": "Ireland",
+                        "iso-3166-1-codes": [
+                            "IE"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "c6500277-9a3d-349b-bf30-41afdbf42add",
+                        "name": "Italy",
+                        "sort-name": "Italy",
+                        "iso-3166-1-codes": [
+                            "IT"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "023da4a0-acee-3fb1-b91e-5de74ccf787b",
+                        "name": "Kenya",
+                        "sort-name": "Kenya",
+                        "iso-3166-1-codes": [
+                            "KE"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "c81cb1f4-0858-3f28-9082-c06e2ce24bea",
+                        "name": "Laos",
+                        "sort-name": "Laos",
+                        "iso-3166-1-codes": [
+                            "LA"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "66eb3e73-d69e-3581-9a23-a73b4c64c8dd",
+                        "name": "Latvia",
+                        "sort-name": "Latvia",
+                        "iso-3166-1-codes": [
+                            "LV"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "0785dc14-96af-3dc4-bde4-dcdfc2e2d0d6",
+                        "name": "Lithuania",
+                        "sort-name": "Lithuania",
+                        "iso-3166-1-codes": [
+                            "LT"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "563d21b7-4a8e-35e2-83a7-7804baefbfa7",
+                        "name": "Luxembourg",
+                        "sort-name": "Luxembourg",
+                        "iso-3166-1-codes": [
+                            "LU"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "ed4e8ad9-2b33-3133-b105-28bb719d6ce8",
+                        "name": "Macao",
+                        "sort-name": "Macao",
+                        "iso-3166-1-codes": [
+                            "MO"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "305d19c7-c040-349c-8d5f-6ac75d2d2a09",
+                        "name": "Malaysia",
+                        "sort-name": "Malaysia",
+                        "iso-3166-1-codes": [
+                            "MY"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "050c94f7-1413-3a34-bb90-4a94f3bb2084",
+                        "name": "Malta",
+                        "sort-name": "Malta",
+                        "iso-3166-1-codes": [
+                            "MT"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "bb019165-42ef-3470-bcb8-36d1b45e4bc1",
+                        "name": "Mauritius",
+                        "sort-name": "Mauritius",
+                        "iso-3166-1-codes": [
+                            "MU"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "aabae773-4997-37ba-950a-394c06847631",
+                        "name": "Federated States of Micronesia",
+                        "sort-name": "Federated States of Micronesia",
+                        "iso-3166-1-codes": [
+                            "FM"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "84360c54-1763-3146-ae38-a439c72fd4ea",
+                        "name": "Mongolia",
+                        "sort-name": "Mongolia",
+                        "iso-3166-1-codes": [
+                            "MN"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "8815c87e-cf3f-362c-a5c6-05ce853a4c79",
+                        "name": "Nepal",
+                        "sort-name": "Nepal",
+                        "iso-3166-1-codes": [
+                            "NP"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "ef1b7cc0-cd26-36f4-8ea0-04d9623786c7",
+                        "name": "Netherlands",
+                        "sort-name": "Netherlands",
+                        "iso-3166-1-codes": [
+                            "NL"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "f27e792b-ddd2-3a70-bdd4-41fb11534b57",
+                        "name": "Niger",
+                        "sort-name": "Niger",
+                        "iso-3166-1-codes": [
+                            "NE"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "1e23d84b-202e-3fc8-8c49-debc71e9eb16",
+                        "name": "Nigeria",
+                        "sort-name": "Nigeria",
+                        "iso-3166-1-codes": [
+                            "NG"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "6743d351-6f37-3049-9724-5041161fff4d",
+                        "name": "Norway",
+                        "sort-name": "Norway",
+                        "iso-3166-1-codes": [
+                            "NO"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "2366f623-b236-3073-bbfe-c26d6d6f195f",
+                        "name": "Papua New Guinea",
+                        "sort-name": "Papua New Guinea",
+                        "iso-3166-1-codes": [
+                            "PG"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "0a750c98-a7a5-3d55-bd52-f6e9011b1537",
+                        "name": "Paraguay",
+                        "sort-name": "Paraguay",
+                        "iso-3166-1-codes": [
+                            "PY"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "719f6082-95c7-3dd5-9503-e143010a6cc1",
+                        "name": "Peru",
+                        "sort-name": "Peru",
+                        "iso-3166-1-codes": [
+                            "PE"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "786532a5-2e36-315a-bdf2-221dc1b64b72",
+                        "name": "Philippines",
+                        "sort-name": "Philippines",
+                        "iso-3166-1-codes": [
+                            "PH"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "dd7f80c8-f017-3d01-8608-2a8c9c32b954",
+                        "name": "Poland",
+                        "sort-name": "Poland",
+                        "iso-3166-1-codes": [
+                            "PL"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "781b0c54-3d54-362d-a941-8a617def4992",
+                        "name": "Portugal",
+                        "sort-name": "Portugal",
+                        "iso-3166-1-codes": [
+                            "PT"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "61ed84b8-5a10-30a7-8376-ccd51801d6d1",
+                        "name": "Romania",
+                        "sort-name": "Romania",
+                        "iso-3166-1-codes": [
+                            "RO"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "b1439904-121a-38fb-8708-0573cb42e2ef",
+                        "name": "Saint Kitts and Nevis",
+                        "sort-name": "Saint Kitts and Nevis",
+                        "iso-3166-1-codes": [
+                            "KN"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "aa344640-fd57-3960-afb4-84d0d3b69d3d",
+                        "name": "Singapore",
+                        "sort-name": "Singapore",
+                        "iso-3166-1-codes": [
+                            "SG"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "eb52ca74-dd11-37a1-a3fa-154430bf2df2",
+                        "name": "Slovakia",
+                        "sort-name": "Slovakia",
+                        "iso-3166-1-codes": [
+                            "SK"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "471c46a7-afc5-31c4-923c-d0444f5053a4",
+                        "name": "Spain",
+                        "sort-name": "Spain",
+                        "iso-3166-1-codes": [
+                            "ES"
+                        ]
+                    }
+                },
+                {
+                    "date": "2015-06-29",
+                    "area": {
+                        "id": "eed9e8bb-b48f-30af-95f5-f178762ee515",
+                        "name": "Anguilla",
+                        "sort-name": "Anguilla",
+                        "iso-3166-1-codes": [
+                            "AI"
+                        ]
+                    }
+                }
+            ],
+            "barcode": "8712944477214",
+            "label-info": [
+                {
+                    "label": {
+                        "id": "c5a8b61a-81d5-4c46-9bf4-0f075295c0c3",
+                        "name": "Doorn Records"
+                    }
+                },
+                {
+                    "label": {
+                        "id": "9fb16a60-7c0b-4e15-bd3a-d2a3fb851a12",
+                        "name": "Spinninâ€™ Records"
+                    }
+                }
+            ],
+            "track-count": 2,
+            "media": [
+                {
+                    "format": "Digital Media",
+                    "disc-count": 0,
+                    "track-count": 2
+                }
+            ]
+        }
+    ]
+}
