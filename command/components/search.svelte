@@ -3,18 +3,15 @@
       import { startsWith, preprocessor, sug } from "../core/micro";
 
       onMount(() => {
-            let i = 0,
-                  l = [255, 255, 0],
+            let l = [255, 255, 0],
                   m = [0, 255, 255],
                   r = [255, 0, 255],
                   state = 0;
             let el = magic.parentElement;
 
-            console.log("mounted");
-
             var tick = () => {
                   if (+el.style.opacity < 1)
-                        el.style.opacity = +el.style.opacity + 0.025;
+                        el.style.opacity = +el.style.opacity + 0.02;
 
                   if (state == 0) {
                         l[0] -= 1;
@@ -25,7 +22,6 @@
                         r[1] += 1;
                         if (l[0] == 0 && m[0] == 255) state = 1;
                   }
-
                   if (state == 1) {
                         l[1] -= 1;
                         l[0] += 1;
@@ -35,7 +31,6 @@
                         r[2] += 1;
                         if (l[0] == 255 && m[0] == 255) state = 2;
                   }
-
                   if (state == 2) {
                         l[2] -= 1;
                         l[1] += 1;
@@ -45,10 +40,7 @@
                         r[0] += 1;
                         if (l[0] == 255 && m[0] == 0) state = 0;
                   }
-
-                  (window.requestAnimationFrame &&
-                        requestAnimationFrame(tick)) ||
-                        setTimeout(tick, 1);
+                  requestAnimationFrame(tick) || setTimeout(tick, 1);
 
                   el.style.borderImageSource = `linear-gradient(to right,rgb(${l.join(
                         ","
@@ -112,8 +104,9 @@
       const metal = () => {
             if (startsWith(raw, "> ")) {
                   const exec = raw.replace("> ", "");
+                  const fn = exec.split(" ")[0];
                   const param = exec.replace(fn + " ", "");
-                  switch (exec.split(" ")[0]) {
+                  switch (fn) {
                         case "fx":
                               fx(param);
                               break;
@@ -123,7 +116,7 @@
                   }
             } else {
                   navigator.sendBeacon(
-                        `http://localhost:4000/log?key=${key}&params=${raw
+                        `/log?key=${key}&params=${raw
                               .replace(key + " ", "")
                               .replace(key + ":", "")}`
                   );

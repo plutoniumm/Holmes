@@ -11,14 +11,14 @@ const mths = [ 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEPT', '
 
 
 app.post( '/log', ( req, res ) => {
-      const q = req.query
+      const q = req.query;
       const d = new Date();
       // ADD LOG
-      const file = `./api/logs/${ d.getFullYear() }${ mths[ d.getMonth() ] }.txt`;
+      const file = `./config/logs/${ d.getFullYear() }${ mths[ d.getMonth() ] }.txt`;
       const log =
-            `${ d.getTime() } ::${ d.toString() } ::@${ q.key } ::${ q.params };;\n`
-      fs.appendFile( file, log, ( e ) => { if ( e ) throw e } )
-      res.sendStatus( 204 )
+            `${ d.getTime() } ::${ d.toString() } ::@${ q.key } ::${ q.params };;\n`;
+      fs.appendFile( file, log, ( e ) => { if ( e ) throw e } );
+      res.sendStatus( 204 );
 } )
 
 app.post( '/sys', ( req, res ) => {

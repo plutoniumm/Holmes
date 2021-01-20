@@ -5,10 +5,9 @@
         musicState = [];
 
     const sendCMD = (appl, cmd, params = "") => {
-        fetch(
-            `http://localhost:4000/sys?app=${appl}&cmd=${cmd}&params=${params}`,
-            { method: "POST" }
-        )
+        fetch(`/sys?app=${appl}&cmd=${cmd}&params=${params}`, {
+            method: "POST",
+        })
             .then((res) => res.json())
             .then((r) => {
                 if (r.cmd == "volState") vol = r.data;

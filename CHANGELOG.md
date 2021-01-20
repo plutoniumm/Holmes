@@ -1,8 +1,10 @@
 # Changelog
 
-## v3.2.0
+## v3.2.1
 
 - Dashboard: Add AppleScript connections to system for Music & Reminders
+- Speed and other basic controls to Disphenoid
+- Bug Fixes
 
 
 ## v3.2.0

@@ -1,5 +1,5 @@
 <script>
-    export let searcher, states, channels, substack;
+    export let searcher, states, channels;
 
     import { URLpars } from "../core/api";
     let bar;
@@ -51,9 +51,9 @@
 
 <section
     bind:this={bar}
+    style="z-index:9;opacity:{URLpars().id ? 0 : 1}"
     on:mouseenter={() => (bar.style.opacity = 1)}
-    on:mouseleave={() => (bar.style.opacity = 0)}
-    style="z-index:9;">
+    on:mouseleave={() => (bar.style.opacity = 0)}>
     <a href="/#" style="font-size:1.5em;position:relative;top:-0.2em;">
         <img
             src="./icons/disphenoid.svg"
@@ -85,10 +85,6 @@
             class="plist {states.plist ? 'active' : ''}">
             PLAYLISTS
         </button>
-        <button
-            on:click={substack.length > 0 ? null : channels}
-            class="plist active">
-            SUBSCRIBED
-        </button>
+        <button on:click={channels} class="plist active"> SUBSCRIBED </button>
     </div>
 </section>

@@ -14,7 +14,11 @@
 
 <section id="search">
     {#if videos.length > 0}
-        <span style="width:100%;padding:0 5px;">Search</span>
+        <div
+            style="width:99vw;padding:0 5px;display:flex;justify-content:space-between;">
+            <div>Search</div>
+            <div on:click={() => (videos = [])}>X</div>
+        </div>
         {#each videos as vid}
             <div class="recom" style="position:relative;">
                 <div

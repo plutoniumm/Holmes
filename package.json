@@ -1,6 +1,6 @@
 {
   "name": "sherlock",
-  "version": "3.0.0",
+  "version": "3.2.1",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
