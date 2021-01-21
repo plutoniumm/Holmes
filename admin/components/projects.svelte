@@ -1,14 +1,3 @@
-<script>
-    document.documentElement.classList.toggle("dark");
-    document.addEventListener("DOMContentLoaded", function () {
-        var modeSwitch = document.querySelector(".mode-switch");
-
-        modeSwitch.addEventListener("click", function () {
-            modeSwitch.classList.toggle("active");
-        });
-    });
-</script>
-
 <style type="text/scss">
     * {
         box-sizing: border-box;
@@ -29,44 +18,6 @@
         cursor: pointer;
     }
 
-    .app {
-        &-icon {
-            width: 26px;
-            height: 2px;
-            border-radius: 4px;
-            background-color: var(--main-color);
-            position: relative;
-
-            &:before,
-            &:after {
-                content: "";
-                position: absolute;
-                width: 12px;
-                height: 2px;
-                border-radius: 4px;
-                background-color: var(--main-color);
-                left: 50%;
-                transform: translatex(-50%);
-            }
-
-            &:before {
-                top: -6px;
-            }
-            &:after {
-                bottom: -6px;
-            }
-        }
-
-        &-name {
-            color: var(--main-color);
-            margin: 0;
-            font-size: 20px;
-            line-height: 24px;
-            font-weight: 700;
-            margin: 0 32px;
-        }
-    }
-
     .add-btn {
         color: #fff;
         background-color: var(--button-bg);
@@ -80,78 +31,6 @@
         justify-content: center;
     }
 
-    .notification-btn {
-        color: var(--main-color);
-        padding: 0;
-        border: 0;
-        background-color: transparent;
-        height: 32px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .profile-btn {
-        padding: 0;
-        border: 0;
-        background-color: transparent;
-        display: flex;
-        align-items: center;
-        padding-left: 12px;
-        border-left: 2px solid #ddd;
-
-        img {
-            width: 32px;
-            height: 32px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-right: 4px;
-        }
-
-        span {
-            color: var(--main-color);
-            font-size: 16px;
-            line-height: 24px;
-            font-weight: 700;
-        }
-    }
-
-    .page-content  {
-        flex: 1;
-        width: 100%;
-    }
-
-    .app-sidebar {
-        padding: 40px 16px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        &-link {
-            color: var(--main-color);
-            color: var(--link-color);
-            margin: 16px 0;
-            transition: 0.2s;
-            border-radius: 50%;
-            flex-shrink: 0;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &:hover {
-                background-color: var(--link-color-hover);
-                color: var(--link-color-active);
-            }
-
-            &.active {
-                background-color: var(--link-color-active-bg);
-                color: var(--link-color-active);
-            }
-        }
-    }
-
     .projects-section {
         flex: 2;
         padding: 32px 32px 0 32px;
@@ -159,34 +38,6 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-
-        &-line {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 32px;
-        }
-
-        &-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-            color: var(--main-color);
-
-            p {
-                font-size: 24px;
-                line-height: 32px;
-                font-weight: 700;
-                opacity: 0.9;
-                margin: 0;
-                color: var(--main-color);
-            }
-
-            .time {
-                font-size: 20px;
-            }
-        }
     }
 
     .projects-status {
@@ -259,15 +110,6 @@
         margin: 0 -8px;
         overflow-y: auto;
 
-        &.jsGridView {
-            display: flex;
-            flex-wrap: wrap;
-
-            .project-box-wrapper {
-                width: 33.3%;
-            }
-        }
-
         &.jsListView {
             .project-box {
                 display: flex;
@@ -276,12 +118,6 @@
                 > * {
                     margin-right: 24px;
                 }
-            }
-
-            .more-wrapper {
-                position: absolute;
-                right: 16px;
-                top: 16px;
             }
 
             .project-box-content-header {
@@ -365,29 +201,16 @@
         }
     }
 
-    .project-btn-more {
-        padding: 0;
-        height: 14px;
-        width: 24px;
-        height: 24px;
-        position: relative;
-        background-color: transparent;
-        border: none;
-        flex-shrink: 0;
-    }
-
-    .more-wrapper {
-        position: relative;
-    }
-
     .box-content-header {
         font-size: 16px;
+        color: #111;
         line-height: 24px;
         font-weight: 700;
         opacity: 0.7;
     }
 
     .box-content-subheader {
+        color: #111;
         font-size: 14px;
         line-height: 24px;
         opacity: 0.7;
@@ -412,9 +235,6 @@
             font-weight: 700;
             line-height: 16px;
             margin: 0;
-        }
-
-        &-wrapper {
         }
 
         &-percentage {
@@ -483,10 +303,6 @@
     }
 
     @media screen and (max-width: 980px) {
-        .project-boxes.jsGridView .project-box-wrapper {
-            width: 50%;
-        }
-
         .status-number,
         .status-type {
             font-size: 14px;
@@ -503,11 +319,6 @@
     }
 
     @media screen and (max-width: 720px) {
-        .app-name,
-        .profile-btn span {
-            display: none;
-        }
-
         .add-btn,
         .notification-btn,
         .mode-switch {
@@ -537,22 +348,8 @@
         .status-type {
             font-size: 10px;
         }
-        .project-boxes.jsGridView .project-box-wrapper {
-            width: 100%;
-        }
-
         .projects-section {
             padding: 24px 16px 0 16px;
-        }
-
-        .profile-btn img {
-            width: 24px;
-            height: 24px;
-        }
-
-        .projects-section-header p,
-        .projects-section-header .time {
-            font-size: 18px;
         }
 
         .status-type {
@@ -594,58 +391,15 @@
         .project-boxes.jsListView .project-box > * {
             margin-right: 10px;
         }
-
-        .project-boxes.jsListView .more-wrapper {
-            right: 2px;
-            top: 10px;
-        }
     }
 </style>
 
 <div class="projects-section">
-    <div class="projects-section-header">
-        <p>Projects</p>
-        <p class="time">December, 12</p>
-    </div>
-    <div class="projects-section-line">
-        <div class="projects-status">
-            <div class="item-status">
-                <span class="status-number">45</span>
-                <span class="status-type">In Progress</span>
-            </div>
-            <div class="item-status">
-                <span class="status-number">24</span>
-                <span class="status-type">Upcoming</span>
-            </div>
-            <div class="item-status">
-                <span class="status-number">62</span>
-                <span class="status-type">Total Projects</span>
-            </div>
-        </div>
-    </div>
     <div class="project-boxes jsListView">
         <div class="project-box-wrapper">
             <div class="project-box" style="background-color: #fee4cb;">
                 <div class="project-box-header">
                     <span>December 10, 2020</span>
-                    <div class="more-wrapper">
-                        <button class="project-btn-more">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-more-vertical">
-                                <circle cx="12" cy="12" r="1" />
-                                <circle cx="12" cy="5" r="1" />
-                                <circle cx="12" cy="19" r="1" /></svg>
-                        </button>
-                    </div>
                 </div>
                 <div class="project-box-content-header">
                     <p class="box-content-header">Web Designing</p>
@@ -694,24 +448,6 @@
             <div class="project-box" style="background-color: #e9e7fd;">
                 <div class="project-box-header">
                     <span>December 10, 2020</span>
-                    <div class="more-wrapper">
-                        <button class="project-btn-more">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-more-vertical">
-                                <circle cx="12" cy="12" r="1" />
-                                <circle cx="12" cy="5" r="1" />
-                                <circle cx="12" cy="19" r="1" /></svg>
-                        </button>
-                    </div>
                 </div>
                 <div class="project-box-content-header">
                     <p class="box-content-header">Testing</p>
@@ -760,24 +496,6 @@
             <div class="project-box">
                 <div class="project-box-header">
                     <span>December 10, 2020</span>
-                    <div class="more-wrapper">
-                        <button class="project-btn-more">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-more-vertical">
-                                <circle cx="12" cy="12" r="1" />
-                                <circle cx="12" cy="5" r="1" />
-                                <circle cx="12" cy="19" r="1" /></svg>
-                        </button>
-                    </div>
                 </div>
                 <div class="project-box-content-header">
                     <p class="box-content-header">Svg Animations</p>
@@ -826,24 +544,6 @@
             <div class="project-box" style="background-color: #ffd3e2;">
                 <div class="project-box-header">
                     <span>December 10, 2020</span>
-                    <div class="more-wrapper">
-                        <button class="project-btn-more">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-more-vertical">
-                                <circle cx="12" cy="12" r="1" />
-                                <circle cx="12" cy="5" r="1" />
-                                <circle cx="12" cy="19" r="1" /></svg>
-                        </button>
-                    </div>
                 </div>
                 <div class="project-box-content-header">
                     <p class="box-content-header">UI Development</p>
@@ -892,24 +592,6 @@
             <div class="project-box" style="background-color: #c8f7dc;">
                 <div class="project-box-header">
                     <span>December 10, 2020</span>
-                    <div class="more-wrapper">
-                        <button class="project-btn-more">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-more-vertical">
-                                <circle cx="12" cy="12" r="1" />
-                                <circle cx="12" cy="5" r="1" />
-                                <circle cx="12" cy="19" r="1" /></svg>
-                        </button>
-                    </div>
                 </div>
                 <div class="project-box-content-header">
                     <p class="box-content-header">Data Analysis</p>
@@ -958,24 +640,6 @@
             <div class="project-box" style="background-color: #d5deff;">
                 <div class="project-box-header">
                     <span>December 10, 2020</span>
-                    <div class="more-wrapper">
-                        <button class="project-btn-more">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-more-vertical">
-                                <circle cx="12" cy="12" r="1" />
-                                <circle cx="12" cy="5" r="1" />
-                                <circle cx="12" cy="19" r="1" /></svg>
-                        </button>
-                    </div>
                 </div>
                 <div class="project-box-content-header">
                     <p class="box-content-header">Web Designing</p>
