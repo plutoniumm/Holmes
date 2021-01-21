@@ -1,5 +1,6 @@
 <script>
 	import Corona from "./components/corona.svelte";
+	import Projects from "./components/projects.svelte";
 	import Reminders from "./components/reminders.svelte";
 	import Terminal from "./components/terminal.svelte";
 	import Space from "./components/space.svelte";
@@ -94,7 +95,8 @@
 		<Reddit />
 	</div>
 	<div class="box b half">
-		<Terminal />
+		<Projects />
+		<!-- <Terminal /> -->
 	</div>
 	<div class="box c full">
 		<Reminders />
