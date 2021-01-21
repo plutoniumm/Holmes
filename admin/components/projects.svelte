@@ -1,6 +1,10 @@
 <script>
     import projeccs from "../../config/projects.json";
 
+    const inverter = (col) => {
+        const base = 0xfff - Number("0x" + col.split("#")[1]);
+        return base < 100 ? "0" + base : base;
+    };
     const calcfrac = (pj) =>
         ~~(
             (1 -
@@ -13,74 +17,65 @@
 </script>
 
 <style type="text/scss">
-    * {
-        box-sizing: border-box;
-    }
-
-    .projects-section {
+    .project-boxes {
+        flex-direction: column;
         flex: 2;
         overflow: hidden;
         height: 100%;
         display: flex;
-        flex-direction: column;
-    }
-
-    .project-boxes {
         margin: 0 -8px;
         overflow-y: auto;
 
-        &.jsListView {
-            .project-box {
-                display: flex;
-                border-radius: 10px;
-                position: relative;
-                > * {
-                    margin-right: 24px;
-                }
+        .project-box {
+            display: flex;
+            border-radius: 10px;
+            position: relative;
+            > * {
+                margin-right: 12px;
             }
+        }
 
-            .project-box-content-header {
-                order: 1;
-                max-width: 120px;
-            }
+        .project-box-content-header {
+            order: 1;
+            max-width: 120px;
+        }
 
-            .project-box-header {
-                order: 2;
-            }
+        .project-box-header {
+            order: 2;
+        }
 
-            .project-box-footer {
-                order: 3;
-                padding-top: 0;
-                flex-direction: column;
-                justify-content: flex-start;
-            }
+        .project-box-footer {
+            order: 3;
+            padding-top: 0;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
 
-            .project-box-footer:after {
-                display: none;
-            }
+        .project-box-footer:after {
+            display: none;
+        }
 
-            .participants {
-                margin-bottom: 8px;
-            }
+        .participants {
+            margin-bottom: 8px;
+        }
 
-            .project-box-content-header p {
-                text-align: left;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-            }
+        .project-box-content-header p {
+            text-align: left;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
 
-            .project-box-header > span {
-                position: absolute;
-                bottom: 16px;
-                left: 16px;
-                font-size: 12px;
-            }
+        .project-box-header > span {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            font-size: 12px;
+        }
 
-            .box-progress-wrapper {
-                order: 3;
-                flex: 1;
-            }
+        .box-progress-wrapper {
+            order: 3;
+            flex: 1;
         }
     }
 
@@ -102,7 +97,6 @@
         &-content-header {
             text-align: center;
             margin-bottom: 16px;
-
             p {
                 margin: 0;
             }
@@ -110,7 +104,6 @@
 
         &-wrapper {
             padding: 8px;
-            transition: 0.2s;
         }
     }
 
@@ -203,45 +196,37 @@
     }
 </style>
 
-<div class="projects-section">
-    <div class="project-boxes jsListView">
-        {#each projeccs as pj}
-            <div class="project-box-wrapper">
-                <div
-                    class="project-box"
-                    style="background: #{pj.colorl.replace('0x', '')}">
-                    <div class="project-box-header"><span>{pj.end}</span></div>
-                    <div class="project-box-content-header">
-                        <p class="box-content-header">{pj.name}</p>
-                        <p class="box-content-subheader">{pj.sub}</p>
+<div class="project-boxes">
+    {#each projeccs as pj}
+        <div class="project-box-wrapper" style="color:#{inverter(pj.colorl)}">
+            <div class="project-box" style="background: {pj.colorl}">
+                <div class="project-box-header"><span>{pj.end}</span></div>
+                <div class="project-box-content-header">
+                    <p class="box-content-header">{pj.name}</p>
+                    <p class="box-content-subheader">{pj.sub}</p>
+                </div>
+                <div class="box-progress-wrapper">
+                    <p class="box-progress-header">Progress</p>
+                    <div class="box-progress-bar">
+                        <span
+                            class="box-progress"
+                            style={`width: ${calcfrac(pj)}%; background: ${pj.colord}`} />
                     </div>
-                    <div class="box-progress-wrapper">
-                        <p class="box-progress-header">Progress</p>
-                        <div class="box-progress-bar">
-                            <span
-                                class="box-progress"
-                                style={`width: ${calcfrac(pj)}%; background: #${pj.colord.replace('0x', '')}`} />
-                        </div>
-                        <p class="box-progress-percentage">{calcfrac(pj)}%</p>
+                    <p class="box-progress-percentage">{calcfrac(pj)}%</p>
+                </div>
+                <div class="project-box-footer">
+                    <div class="participants">
+                        <span>{pj.people.join(', ')}</span>
+                        <!-- {#each pj.people as ppl}
+                            <img src="" alt="participant" />
+                        {/each} -->
                     </div>
-                    <div class="project-box-footer">
-                        <div class="participants">
-                            <img
-                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
-                                alt="participant" />
-                            <img
-                                src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-                                alt="participant" />
-                        </div>
-                        <div
-                            class="days-left"
-                            style="color: #{pj.colord.replace('0x', '')}">
-                            {~~((new Date(pj.end).getTime() - today) / 864e5)}
-                            Days Left
-                        </div>
+                    <div class="days-left" style="color: {pj.colord}">
+                        {~~((new Date(pj.end).getTime() - today) / 864e5)}
+                        Days Left
                     </div>
                 </div>
             </div>
-        {/each}
-    </div>
+        </div>
+    {/each}
 </div>
