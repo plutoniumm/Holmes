@@ -43,9 +43,7 @@
 		grid-column: 2 / 4;
 		grid-row: 1;
 		color: #fff;
-		/* background: radial-gradient(ellipse at 20% 80%, #f88, transparent),
-		radial-gradient(ellipse at 70% 10%, #88f, transparent); */
-		background: #223;
+		padding: 0;
 	}
 	.c {
 		grid-column: 4;
