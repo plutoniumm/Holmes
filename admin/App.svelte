@@ -97,7 +97,8 @@
 		<!-- <Terminal /> -->
 	</div>
 	<div class="box c full">
-		<Reminders />
+		<!-- <Reminders /> -->
+		Ok
 	</div>
 	<div class="box d half">
 		<Gen />

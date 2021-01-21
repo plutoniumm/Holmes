@@ -1,109 +1,28 @@
+<script>
+    import projeccs from "../../config/projects.json";
+
+    const calcfrac = (pj) =>
+        ~~(
+            (1 -
+                (new Date(pj.end).getTime() - today) /
+                    (new Date(pj.end) - new Date(pj.start))) *
+            1e2
+        );
+
+    const today = new Date().getTime();
+</script>
+
 <style type="text/scss">
     * {
         box-sizing: border-box;
     }
 
-    :root {
-        --main-color: #fff;
-        --secondary-color: rgba(255, 255, 255, 0.8);
-        --link-color: rgba(255, 255, 255, 0.8);
-        --link-color-hover: rgba(195, 207, 244, 0.1);
-        --link-color-active-bg: rgba(195, 207, 244, 0.2);
-        --button-bg: #2f3142;
-        --star: #ffd92c;
-    }
-
-    button,
-    a {
-        cursor: pointer;
-    }
-
-    .add-btn {
-        color: #fff;
-        background-color: var(--button-bg);
-        padding: 0;
-        border: 0;
-        border-radius: 50%;
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     .projects-section {
         flex: 2;
-        padding: 32px 32px 0 32px;
         overflow: hidden;
         height: 100%;
         display: flex;
         flex-direction: column;
-    }
-
-    .projects-status {
-        display: flex;
-    }
-
-    .item-status {
-        display: flex;
-        flex-direction: column;
-        margin-right: 16px;
-
-        &:not(:last-child) .status-type:after {
-            content: "";
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            transform: translatey(-50%);
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            border: 1px solid var(--secondary-color);
-        }
-    }
-
-    .status-number {
-        font-size: 24px;
-        line-height: 32px;
-        font-weight: 700;
-        color: var(--main-color);
-    }
-
-    .status-type {
-        position: relative;
-        padding-right: 24px;
-        color: var(--secondary-color);
-    }
-
-    .star-checkbox {
-        input {
-            opacity: 0;
-            position: absolute;
-            width: 0;
-            height: 0;
-        }
-
-        label {
-            width: 24px;
-            height: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .dark & {
-            color: var(--secondary-color);
-
-            input:checked + label {
-                color: var(--star);
-            }
-        }
-
-        input:checked + label svg {
-            fill: var(--star);
-            transition: 0.2s;
-        }
     }
 
     .project-boxes {
@@ -166,24 +85,18 @@
     }
 
     .project-box {
-        --main-color-card: #dbf6fd;
         border-radius: 30px;
         padding: 16px;
-        background-color: var(--main-color-card);
 
         &-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 16px;
-            color: var(--main-color);
-
-            span {
-                color: #4a4a4a;
-                opacity: 0.7;
-                font-size: 14px;
-                line-height: 16px;
-            }
+            color: #4a4a4a;
+            opacity: 0.7;
+            font-size: 14px;
+            line-height: 16px;
         }
 
         &-content-header {
@@ -226,7 +139,7 @@
             height: 4px;
             border-radius: 6px;
             overflow: hidden;
-            background-color: #fff;
+            background: #fff;
             margin: 8px 0;
         }
 
@@ -255,8 +168,8 @@
         &:after {
             content: "";
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.6);
-            width: calc(100% + 32px);
+            background: rgba(255, 255, 255, 0.6);
+            width: calc(100% + 64px);
             top: 0;
             left: -16px;
             height: 1px;
@@ -280,409 +193,55 @@
         }
     }
 
-    .add-participant {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: none;
-        background-color: rgba(255, 255, 255, 0.6);
-        margin-left: 6px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-    }
-
     .days-left {
-        background-color: rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.6);
         font-size: 12px;
         border-radius: 20px;
         flex-shrink: 0;
         padding: 6px 16px;
         font-weight: 700;
     }
-
-    @media screen and (max-width: 980px) {
-        .status-number,
-        .status-type {
-            font-size: 14px;
-        }
-
-        .status-type:after {
-            width: 4px;
-            height: 4px;
-        }
-
-        .item-status {
-            margin-right: 0;
-        }
-    }
-
-    @media screen and (max-width: 720px) {
-        .add-btn,
-        .notification-btn,
-        .mode-switch {
-            width: 20px;
-            height: 20px;
-
-            svg {
-                width: 16px;
-                height: 16px;
-            }
-        }
-
-        .app-header-right button {
-            margin-left: 4px;
-        }
-    }
-
-    @media screen and (max-width: 520px) {
-        .projects-section {
-            overflow: auto;
-        }
-        .project-boxes {
-            overflow-y: visible;
-        }
-
-        .status-number,
-        .status-type {
-            font-size: 10px;
-        }
-        .projects-section {
-            padding: 24px 16px 0 16px;
-        }
-
-        .status-type {
-            padding-right: 4px;
-
-            &:after {
-                display: none;
-            }
-        }
-
-        .box-content-header {
-            font-size: 12px;
-            line-height: 16px;
-        }
-
-        .box-content-subheader {
-            font-size: 10px;
-            line-height: 16px;
-        }
-
-        .project-boxes.jsListView .project-box-header > span {
-            font-size: 10px;
-        }
-
-        .box-progress-header {
-            font-size: 12px;
-        }
-
-        .box-progress-percentage {
-            font-size: 10px;
-        }
-
-        .days-left {
-            font-size: 8px;
-            padding: 6px 6px;
-            text-align: center;
-        }
-
-        .project-boxes.jsListView .project-box > * {
-            margin-right: 10px;
-        }
-    }
 </style>
 
 <div class="projects-section">
     <div class="project-boxes jsListView">
-        <div class="project-box-wrapper">
-            <div class="project-box" style="background-color: #fee4cb;">
-                <div class="project-box-header">
-                    <span>December 10, 2020</span>
-                </div>
-                <div class="project-box-content-header">
-                    <p class="box-content-header">Web Designing</p>
-                    <p class="box-content-subheader">Prototyping</p>
-                </div>
-                <div class="box-progress-wrapper">
-                    <p class="box-progress-header">Progress</p>
-                    <div class="box-progress-bar">
-                        <span
-                            class="box-progress"
-                            style="width: 60%; background-color: #ff942e" />
+        {#each projeccs as pj}
+            <div class="project-box-wrapper">
+                <div
+                    class="project-box"
+                    style="background: #{pj.colorl.replace('0x', '')}">
+                    <div class="project-box-header"><span>{pj.end}</span></div>
+                    <div class="project-box-content-header">
+                        <p class="box-content-header">{pj.name}</p>
+                        <p class="box-content-subheader">{pj.sub}</p>
                     </div>
-                    <p class="box-progress-percentage">60%</p>
-                </div>
-                <div class="project-box-footer">
-                    <div class="participants">
-                        <img
-                            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
-                            alt="participant" />
-                        <img
-                            src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-                            alt="participant" />
-                        <button class="add-participant" style="color: #ff942e;">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="12"
-                                height="12"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="3"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-plus">
-                                <path d="M12 5v14M5 12h14" />
-                            </svg>
-                        </button>
+                    <div class="box-progress-wrapper">
+                        <p class="box-progress-header">Progress</p>
+                        <div class="box-progress-bar">
+                            <span
+                                class="box-progress"
+                                style={`width: ${calcfrac(pj)}%; background: #${pj.colord.replace('0x', '')}`} />
+                        </div>
+                        <p class="box-progress-percentage">{calcfrac(pj)}%</p>
                     </div>
-                    <div class="days-left" style="color: #ff942e;">
-                        2 Days Left
+                    <div class="project-box-footer">
+                        <div class="participants">
+                            <img
+                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
+                                alt="participant" />
+                            <img
+                                src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+                                alt="participant" />
+                        </div>
+                        <div
+                            class="days-left"
+                            style="color: #{pj.colord.replace('0x', '')}">
+                            {~~((new Date(pj.end).getTime() - today) / 864e5)}
+                            Days Left
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="project-box-wrapper">
-            <div class="project-box" style="background-color: #e9e7fd;">
-                <div class="project-box-header">
-                    <span>December 10, 2020</span>
-                </div>
-                <div class="project-box-content-header">
-                    <p class="box-content-header">Testing</p>
-                    <p class="box-content-subheader">Prototyping</p>
-                </div>
-                <div class="box-progress-wrapper">
-                    <p class="box-progress-header">Progress</p>
-                    <div class="box-progress-bar">
-                        <span
-                            class="box-progress"
-                            style="width: 50%; background-color: #4f3ff0" />
-                    </div>
-                    <p class="box-progress-percentage">50%</p>
-                </div>
-                <div class="project-box-footer">
-                    <div class="participants">
-                        <img
-                            src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1215&q=80"
-                            alt="participant" />
-                        <img
-                            src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2555&q=80"
-                            alt="participant" />
-                        <button class="add-participant" style="color: #4f3ff0;">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="12"
-                                height="12"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="3"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-plus">
-                                <path d="M12 5v14M5 12h14" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="days-left" style="color: #4f3ff0;">
-                        2 Days Left
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="project-box-wrapper">
-            <div class="project-box">
-                <div class="project-box-header">
-                    <span>December 10, 2020</span>
-                </div>
-                <div class="project-box-content-header">
-                    <p class="box-content-header">Svg Animations</p>
-                    <p class="box-content-subheader">Prototyping</p>
-                </div>
-                <div class="box-progress-wrapper">
-                    <p class="box-progress-header">Progress</p>
-                    <div class="box-progress-bar">
-                        <span
-                            class="box-progress"
-                            style="width: 80%; background-color: #096c86" />
-                    </div>
-                    <p class="box-progress-percentage">80%</p>
-                </div>
-                <div class="project-box-footer">
-                    <div class="participants">
-                        <img
-                            src="https://images.unsplash.com/photo-1587628604439-3b9a0aa7a163?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-                            alt="participant" />
-                        <img
-                            src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1215&q=80"
-                            alt="participant" />
-                        <button class="add-participant" style="color: #096c86;">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="12"
-                                height="12"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="3"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-plus">
-                                <path d="M12 5v14M5 12h14" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="days-left" style="color: #096c86;">
-                        2 Days Left
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="project-box-wrapper">
-            <div class="project-box" style="background-color: #ffd3e2;">
-                <div class="project-box-header">
-                    <span>December 10, 2020</span>
-                </div>
-                <div class="project-box-content-header">
-                    <p class="box-content-header">UI Development</p>
-                    <p class="box-content-subheader">Prototyping</p>
-                </div>
-                <div class="box-progress-wrapper">
-                    <p class="box-progress-header">Progress</p>
-                    <div class="box-progress-bar">
-                        <span
-                            class="box-progress"
-                            style="width: 20%; background-color: #df3670" />
-                    </div>
-                    <p class="box-progress-percentage">20%</p>
-                </div>
-                <div class="project-box-footer">
-                    <div class="participants">
-                        <img
-                            src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
-                            alt="participant" />
-                        <img
-                            src="https://images.unsplash.com/photo-1587628604439-3b9a0aa7a163?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fHdvbWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-                            alt="participant" />
-                        <button class="add-participant" style="color: #df3670;">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="12"
-                                height="12"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="3"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-plus">
-                                <path d="M12 5v14M5 12h14" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="days-left" style="color: #df3670;">
-                        2 Days Left
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="project-box-wrapper">
-            <div class="project-box" style="background-color: #c8f7dc;">
-                <div class="project-box-header">
-                    <span>December 10, 2020</span>
-                </div>
-                <div class="project-box-content-header">
-                    <p class="box-content-header">Data Analysis</p>
-                    <p class="box-content-subheader">Prototyping</p>
-                </div>
-                <div class="box-progress-wrapper">
-                    <p class="box-progress-header">Progress</p>
-                    <div class="box-progress-bar">
-                        <span
-                            class="box-progress"
-                            style="width: 60%; background-color: #34c471" />
-                    </div>
-                    <p class="box-progress-percentage">60%</p>
-                </div>
-                <div class="project-box-footer">
-                    <div class="participants">
-                        <img
-                            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
-                            alt="participant" />
-                        <img
-                            src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
-                            alt="participant" />
-                        <button class="add-participant" style="color: #34c471;">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="12"
-                                height="12"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="3"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-plus">
-                                <path d="M12 5v14M5 12h14" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="days-left" style="color: #34c471;">
-                        2 Days Left
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="project-box-wrapper">
-            <div class="project-box" style="background-color: #d5deff;">
-                <div class="project-box-header">
-                    <span>December 10, 2020</span>
-                </div>
-                <div class="project-box-content-header">
-                    <p class="box-content-header">Web Designing</p>
-                    <p class="box-content-subheader">Prototyping</p>
-                </div>
-                <div class="box-progress-wrapper">
-                    <p class="box-progress-header">Progress</p>
-                    <div class="box-progress-bar">
-                        <span
-                            class="box-progress"
-                            style="width: 40%; background-color: #4067f9" />
-                    </div>
-                    <p class="box-progress-percentage">40%</p>
-                </div>
-                <div class="project-box-footer">
-                    <div class="participants">
-                        <img
-                            src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
-                            alt="participant" />
-                        <img
-                            src="https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2555&q=80"
-                            alt="participant" />
-                        <button class="add-participant" style="color: #4067f9;">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="12"
-                                height="12"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="3"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="feather feather-plus">
-                                <path d="M12 5v14M5 12h14" />
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="days-left" style="color: #4067f9;">
-                        2 Days Left
-                    </div>
-                </div>
-            </div>
-        </div>
+        {/each}
     </div>
 </div>
