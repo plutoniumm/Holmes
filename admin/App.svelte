@@ -13,7 +13,7 @@
 	.wrapper {
 		width: 100%;
 		display: grid;
-		grid-gap: 10px;
+		grid-gap: 5px;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		color: #444;
 	}
@@ -33,10 +33,14 @@
 	.full {
 		height: 99vh;
 	}
+
+	.plain {
+		background: transparent;
+	}
+
 	.a {
 		grid-column: 1;
 		grid-row: 1 / 3;
-		background: transparent;
 	}
 	.b {
 		position: relative;
@@ -48,12 +52,10 @@
 	.c {
 		grid-column: 4;
 		grid-row: 1 / 3;
-		background: transparent;
 	}
 	.d {
 		grid-column: 2;
 		grid-row: 2;
-		background: transparent;
 	}
 	.e {
 		grid-column: 3;
@@ -63,7 +65,6 @@
 	.a2 {
 		grid-column: 1;
 		grid-row: 4 / 6;
-		background: transparent;
 	}
 	.b2 {
 		position: relative;
@@ -75,12 +76,10 @@
 	.c2 {
 		grid-column: 4;
 		grid-row: 4 / 6;
-		background: transparent;
 	}
 	.d2 {
 		grid-column: 2;
 		grid-row: 5;
-		background: transparent;
 	}
 	.e2 {
 		grid-column: 3;
@@ -89,30 +88,30 @@
 </style>
 
 <div class="wrapper">
-	<div class="box a full">
+	<div class="box a full plain">
 		<Reddit />
 	</div>
-	<div class="box b half">
+	<div class="box b half plain">
 		<Projects />
-		<!-- <Terminal /> -->
 	</div>
-	<div class="box c full">
-		<!-- <Reminders /> -->
-		Ok
+	<div class="box c full plain">
+		<Reminders />
 	</div>
-	<div class="box d half">
+	<div class="box d half plain">
 		<Gen />
 	</div>
 	<div class="box e half">
 		<Space />
 	</div>
 
-	<div class="box a2 full">Hia</div>
+	<div class="box a2 full plain">Hia</div>
 	<div class="box b2 half">
 		<Corona />
 	</div>
-	<div class="box c2 full">Hic</div>
-	<div class="box d2 half">Hid</div>
+	<div class="box c2 full plain">Hic</div>
+	<div class="box d2 half plain">
+		<Terminal />
+	</div>
 	<div class="box e2 half">
 		<Shows />
 	</div>

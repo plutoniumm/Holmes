@@ -1,16 +1,21 @@
 <script>
-    let reminders = [];
+    $: reminders = [];
     const sendCMD = (appl, cmd, params = "") => {
         fetch(`/sys?app=${appl}&cmd=${cmd}&params=${params}`, {
             method: "POST",
         })
             .then((res) => res.json())
             .then((r) => {
-                console.log(r);
                 if (r.cmd == "reminders") {
+                    console.log(r);
                     reminders = r.data;
                 }
             });
+    };
+    const col = (i) => {
+        const set = ["#def", "#fde", "#dfe", "#fd8"];
+        console.log(i);
+        return set[i % set.length];
     };
     sendCMD("reminders", null, "Stack");
 </script>
@@ -41,13 +46,19 @@
             margin: 0;
         }
     }
+    .rmd {
+        border-radius: 10px;
+        padding: 5px 3px;
+        color: #333;
+        margin: 2px 0;
+        text-align: left;
+    }
     ul {
         list-style: none;
         padding: 2px;
         margin: 5px 0;
         border-radius: 5px;
         overflow: hidden;
-        background: #334;
         li {
             padding: 2px;
             margin: 0 3px;
@@ -66,7 +77,7 @@
     }
 </style>
 
-<article style="display:flex;flex-wrap:wrap;">
+<article style="display:flex;">
     <img
         src="https://upload.wikimedia.org/wikipedia/commons/8/82/Reminders_(macOS).png"
         alt=""
@@ -80,14 +91,16 @@
             <path stroke-width="3" d="M6 22 L16 30 26 22 M16 30 L16 2" />
         </svg>
     </div>
-    <div style="width:100%;margin:left:70px;">
-        {#each reminders as rmd}
+</article>
+<div>
+    {#each reminders as rmd, i}
+        <div class="rmd" style="background:{col(i)};">
             <div style="font-weight:600;">{rmd.list}</div>
             <ul>
                 {#each rmd.notes as nt}
                     <li>{nt}</li>
                 {/each}
             </ul>
-        {/each}
-    </div>
-</article>
+        </div>
+    {/each}
+</div>
