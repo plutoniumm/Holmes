@@ -5,10 +5,27 @@ const app = express();
 const port = process.env.PORT || 4000;
 const osascript = require( 'node-osascript' );
 
+app.use( express.json() );
 app.use( '/', express.static( './public' ) );
 
 const mths = [ 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEPT', 'OCT', 'NOV', 'DEC' ]
 
+app.post( '/json/:file', ( req, res ) => {
+      const type = req.params.file;
+      if ( type == 'multiple' ) {
+            let multi = fs.readFileSync( './public/Data/multiple.json', 'utf-8' );
+            fs.writeFileSync( './public/Data/multiple.json', JSON.stringify( [ req.body, ...( JSON.parse( multi ) ) ] ) );
+      }
+      if ( type == 'single' ) {
+            let single = fs.readFileSync( './public/Data/single.json', 'utf-8' );
+            fs.writeFileSync( './public/Data/single.json', JSON.stringify( [ req.body, ...( JSON.parse( single ) ) ] ) );
+      }
+      if ( type == 'talks' ) {
+            let talks = fs.readFileSync( './public/Data/talks.json', 'utf-8' );
+            fs.writeFileSync( './public/Data/talks.json', JSON.stringify( [ req.body, ...( JSON.parse( talks ) ) ] ) );
+      }
+      res.send( { 'status': 'Done' } );
+} );
 
 app.post( '/log', ( req, res ) => {
       const q = req.query;
