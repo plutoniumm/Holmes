@@ -18,7 +18,7 @@
       }
       .quick {
             border-radius: 10px;
-            background: #2226;
+            background: #6666;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             margin: 0.25em 0.75em;

@@ -1,0 +1,55 @@
+{
+  "manifest_version": 2,
+  "name": "Q",
+  "description": "A safari butler",
+  "default_locale": "en",
+  "author": "Plutoniumm <plutoniumm@icloud.com>",
+  "version": "2.2.0",
+  "content_scripts": [
+    {
+      "exclude_matches": [
+        "http://localhost*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "scripts/video.js",
+        "scripts/q.js"
+      ],
+      "css": [
+        "styles/q.css"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://youtube.com/*",
+        "https://*.youtube.com/*"
+      ],
+      "js": [
+        "scripts/google.js"
+      ]
+    }
+  ],
+  "icons": {
+    "64": "assets/q64.png",
+    "128": "assets/q128.png",
+    "256": "assets/q256.png",
+    "512": "assets/q512.png",
+    "1024": "assets/q1024.png"
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "pop.html",
+    "default_title": "Q"
+  }
+}

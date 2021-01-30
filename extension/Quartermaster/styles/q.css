@@ -1,0 +1,147 @@
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.QMmenu {
+    position: fixed;
+    top: 80px;
+    right: 120px;
+    z-index:99;
+    opacity: 0.9;
+    border-radius: 40px;
+}
+
+.QMmenu img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.QMmenu-toggler {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.QMmenu-toggler+label,
+.QMmenu-toggler+label:before,
+.QMmenu-toggler+label:after {
+    opacity: 0.66;
+}
+
+.QMmenu-toggler:hover+label,
+.QMmenu-toggler:hover+label:before,
+.QMmenu-toggler:hover+label:after {
+    background: #888;
+}
+
+.QMmenu-toggler:checked+label {
+    background: transparent;
+}
+
+.QMmenu-toggler:checked+label:before,
+.QMmenu-toggler:checked+label:after {
+    top: 0;
+    width: 25px;
+    transform-origin: 50% 50%;
+}
+
+.QMmenu-toggler:checked+label:before {transform: rotate(45deg)}
+.QMmenu-toggler:checked+label:after {transform: rotate(-45deg)}
+
+.QMmenu-toggler:checked~ul .QMmenu-item {opacity: 1;cursor: pointer;}
+
+.QMmenu-toggler:checked~ul .QMmenu-item:nth-child(1) {transform: rotate(0deg) translateX(-60px)}
+.QMmenu-toggler:checked~ul .QMmenu-item:nth-child(2) {transform: rotate(60deg) translateX(-60px)}
+.QMmenu-toggler:checked~ul .QMmenu-item:nth-child(3) {transform: rotate(120deg) translateX(-60px)}
+.QMmenu-toggler:checked~ul .QMmenu-item:nth-child(4) {transform: rotate(180deg) translateX(-60px)}
+.QMmenu-toggler:checked~ul .QMmenu-item:nth-child(5) {transform: rotate(240deg) translateX(-60px)}
+.QMmenu-toggler:checked~ul .QMmenu-item:nth-child(6) {transform: rotate(300deg) translateX(-60px)}
+
+.QMmenu-toggler:checked~ul .QMmenu-item .a {pointer-events: auto}
+
+.QMmenu-toggler+label {
+    width: 25px;
+    height: 5px;
+    display: block;
+    z-index: 1;
+    border-radius: 2.5px;
+    background: #333;
+    transition: transform 0.5s, top 0.5s;
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.QMmenu-toggler+label:before,
+.QMmenu-toggler+label:after {
+    width: 25px;
+    height: 5px;
+    display: block;
+    z-index: 1;
+    border-radius: 2.5px;
+    background: #000;
+    transition: transform 0.5s, top 0.5s;
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.QMmenu-toggler+label:before {top: 10px}
+.QMmenu-toggler+label:after {top: -10px}
+
+.QMmenu-item:nth-child(1) .a {transform: rotate(0deg)}
+.QMmenu-item:nth-child(2) .a {transform: rotate(-60deg)}
+.QMmenu-item:nth-child(3) .a {transform: rotate(-120deg)}
+.QMmenu-item:nth-child(4) .a {transform: rotate(-180deg)}
+.QMmenu-item:nth-child(5) .a {transform: rotate(-240deg)}
+.QMmenu-item:nth-child(6) .a {transform: rotate(-300deg)}
+
+.QMmenu-item {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    display: block;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.QMmenu-item .a {
+    display: block;
+    width: inherit;
+    height: inherit;
+    line-height: 50px;
+    color: #fffb;
+    background: #8884;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.QMmenu-item .a:hover {
+    color: white;
+    opacity: 1;
+    background: #aaa6;
+    font-size: 27.5px;
+}

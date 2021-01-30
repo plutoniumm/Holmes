@@ -3,8 +3,8 @@
   "version": "3.2.1",
   "scripts": {
     "build": "rollup -c",
-    "notes": "ijsnotebook",
-    "server": "node ./api/server.js ",
+    "notes": "cd ./config/notes && ijsnotebook",
+    "server": "node ./api/server.js",
     "dev": "rollup -c -w",
     "devSass": "rollup -c -w & node-sass -w public/global.scss public/global.css --output-style compressed",
     "start": "sirv public"
