@@ -4,13 +4,13 @@
         tlk = [],
         display = "shows";
 
-    fetch("/Data/multiple.json")
+    fetch("/data/multiple.json")
         .then((res) => res.json())
         .then((r) => (mlt = r));
-    fetch("/Data/single.json")
+    fetch("/data/single.json")
         .then((res) => res.json())
         .then((r) => (sng = r));
-    fetch("/Data/talks.json")
+    fetch("/data/talks.json")
         .then((res) => res.json())
         .then((r) => (tlk = r));
 

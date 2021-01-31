@@ -3,18 +3,19 @@
     let grade = 0;
 
     const send = () => {
-        set = [show, ...set];
+        const t = show;
+        set = [t, ...set];
         fetch("/json/multiple", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(show),
-        })
-            .then((res) => res.json())
-            .then((r) => {
-                if (r.status == "Done") window.location.reload();
-            });
+        });
+        // .then((res) => res.json())
+        // .then((r) => {
+        //     if (r.status == "Done") window.location.reload();
+        // });
     };
     let show = {
         day: new Date().toLocaleDateString("en-US"),
@@ -76,11 +77,20 @@
 <section>
     <form on:submit|preventDefault={send} class="boxes">
         <div class="main">
-            <span style="font-size:1.25em;text-format:capitalize"> Adder </span>
+            <span style="font-size:1.25em;text-format:capitalize">
+                Adder
+                <input
+                    type="submit"
+                    value="submit"
+                    style="opacity:0;width:0;" /></span>
         </div>
         <div>
             <span class="label">Name</span>
             <input type="text" class="grade" bind:value={show.record} />
+        </div>
+        <div>
+            <span class="label">Type</span>
+            <input type="text" class="grade" bind:value={show.type} />
         </div>
         <div>
             <span class="label">Released</span>
@@ -106,7 +116,6 @@
             <span class="label">Status</span>
             <input type="text" class="grade" bind:value={show.state} />
         </div>
-        <input type="submit" value="submit" style="opacity:0" />
     </form>
     <div class="boxes">
         <div class="main">

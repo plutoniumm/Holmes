@@ -1,6 +1,6 @@
 # Sherlock (MacOS)
 
-Add data and tokens in config/
+Add data and tokens in config/ (will add sample soon)
 
 ## Installation
 
@@ -35,7 +35,11 @@ Go to http://localhost:4000
 Fundamental Web Languages + AppleScript on Node & Svelte
 
 ### Structure
+Extension = Quartermaster
+API = Server
+Shared = Stuff probably to make the UI uniform
 Admin = Dashboard
+JSON = JSON editor for multiple/single
 Command = Sherlock
 Video = Disphenoid
 

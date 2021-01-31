@@ -1,5 +1,19 @@
 # Changelog
 
+## v3.3.0
+
+- Add Quartermaster Extension
+- Add json editor for multiple, single
+- Add projects tracker
+- Bug Fixes
+
+### Pending
+- Rename and Unify Theme across
+- Add json editor for talks
+- (MAYBE) add full json wsyiwyg
+- Add sample config
+
+
 ## v3.2.1
 
 - Dashboard: Add AppleScript connections to system for Music & Reminders

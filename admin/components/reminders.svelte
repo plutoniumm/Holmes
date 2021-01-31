@@ -98,7 +98,7 @@
             <div style="font-weight:600;">{rmd.list}</div>
             <ul>
                 {#each rmd.notes as nt}
-                    <li>{nt}</li>
+                    <li>- {nt}</li>
                 {/each}
             </ul>
         </div>

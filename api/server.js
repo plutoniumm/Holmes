@@ -8,24 +8,21 @@ const osascript = require( 'node-osascript' );
 app.use( express.json() );
 app.use( '/', express.static( './public' ) );
 
+const db = './config/database/';
 const mths = [ 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEPT', 'OCT', 'NOV', 'DEC' ]
 
 app.post( '/json/:file', ( req, res ) => {
       const type = req.params.file;
-      if ( type == 'multiple' ) {
-            let multi = fs.readFileSync( './public/Data/multiple.json', 'utf-8' );
-            fs.writeFileSync( './public/Data/multiple.json', JSON.stringify( [ req.body, ...( JSON.parse( multi ) ) ] ) );
-      }
-      if ( type == 'single' ) {
-            let single = fs.readFileSync( './public/Data/single.json', 'utf-8' );
-            fs.writeFileSync( './public/Data/single.json', JSON.stringify( [ req.body, ...( JSON.parse( single ) ) ] ) );
-      }
-      if ( type == 'talks' ) {
-            let talks = fs.readFileSync( './public/Data/talks.json', 'utf-8' );
-            fs.writeFileSync( './public/Data/talks.json', JSON.stringify( [ req.body, ...( JSON.parse( talks ) ) ] ) );
-      }
+      let data = fs.readFileSync( db + type + '.json', 'utf-8' );
+      fs.writeFileSync( db + type + '.json', JSON.stringify( [ req.body, ...( JSON.parse( data ) ) ] ) );
       res.send( { 'status': 'Done' } );
 } );
+
+app.get( '/data/:file', ( req, res ) => {
+      const which = req.params.file;
+      const file = fs.readFileSync( db + which, 'utf-8' );
+      res.send( file )
+} )
 
 app.post( '/log', ( req, res ) => {
       const q = req.query;

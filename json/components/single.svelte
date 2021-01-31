@@ -1,6 +1,26 @@
 <script>
     export let set;
     let grade = 0;
+
+    const send = () => {
+        set = [show, ...set];
+        fetch("/json/single", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(show),
+        });
+    };
+    let show = {
+        day: new Date().toLocaleDateString("en-US"),
+        type: "Documentary",
+        record: "Name",
+        release: "201",
+        grade: 5,
+        source: "Netflix",
+        speed: "1.8",
+    };
 </script>
 
 <style type="text/scss">
@@ -8,6 +28,17 @@
         background: #88f;
         justify-content: space-between;
         &:first-child {
+            width: 95%;
+            div,
+            input {
+                position: relative;
+                text-align: left;
+                font-size: 1em;
+                width: 100px;
+                flex: 1;
+            }
+        }
+        &:nth-child(2) {
             width: 95%;
         }
         .main {
@@ -26,10 +57,55 @@
             width: 33.33%;
             text-align: right;
         }
+        .label {
+            font-size: 0.66em;
+            position: absolute;
+            top: -9px;
+            left: 0;
+            color: #fff8;
+        }
     }
 </style>
 
 <section>
+    <form on:submit|preventDefault={send} class="boxes">
+        <div class="main">
+            <span style="font-size:1.25em;text-format:capitalize">
+                Adder
+                <input
+                    type="submit"
+                    value="submit"
+                    style="opacity:0;width:0;" /></span>
+        </div>
+        <div>
+            <span class="label">Name</span>
+            <input type="text" class="grade" bind:value={show.record} />
+        </div>
+        <div>
+            <span class="label">Type</span>
+            <input type="text" class="grade" bind:value={show.type} />
+        </div>
+        <div>
+            <span class="label">Released</span>
+            <input type="text" class="grade" bind:value={show.release} />
+        </div>
+        <div>
+            <span class="label">Grade</span>
+            <input type="text" class="grade" bind:value={show.grade} />
+        </div>
+        <div>
+            <span class="label">Speed</span>
+            <input type="text" class="grade" bind:value={show.speed} />
+        </div>
+        <div>
+            <span class="label">Source</span>
+            <input type="text" class="grade" bind:value={show.source} />
+        </div>
+        <div>
+            <span class="label">Today</span>
+            <input type="text" class="grade" bind:value={show.day} />
+        </div>
+    </form>
     <div class="boxes">
         <div class="main">
             <span style="font-size:1.25em;text-format:capitalize">
