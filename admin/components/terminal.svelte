@@ -80,16 +80,16 @@
         </svg>
     </form>
     <div style="text-align:right;">
-        {musicState[0] ? musicState[0] + ' by' : ''}
-        {musicState[1] || ''}
-        <br />
-        {musicState[2] || ''}
-        <br />
+        <div>
+            {musicState[1] ? musicState[1] + ' by ' + musicState[0] : ''}
+            <br />
+            {musicState[2] || ''}
+        </div>
         <svg
             viewBox="0 0 32 32"
             on:click={() => sendCMD('music', 'musicState')}>
             <path
-                stroke-width="2.5"
+                stroke-width="2"
                 d="M9 22 C0 23 1 12 9 13 6 2 23 2 22 10 32 7 32 23 23 22 M11 26 L16 30 21 26 M16 16 L16 30" />
         </svg>
     </div>

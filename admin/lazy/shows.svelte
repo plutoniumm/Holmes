@@ -12,6 +12,8 @@
 
 <style type="text/scss">
     .show {
+        border-radius: 10px;
+        margin: 3px 0;
         img {
             width: 100%;
             border-radius: 5px;
@@ -23,15 +25,16 @@
 
 <div>
     {#each shows as show}
-        <div class="show">
+        <div class="show blur">
             <img src={show.image} alt="" />
-            <div style="display:flex;justify-content:space-between;">
-                <div>{show.latest}</div>
-                <div>{show.name}</div>
+            <div style="padding: 2px 5px;">
+                <div style="display:flex;justify-content:space-between;">
+                    <div>{show.latest}</div>
+                    <div>{show.name}</div>
+                </div>
+                <p style="font-weight:600;">{show.ep}</p>
+                {@html show.abt}
             </div>
-            <p style="font-weight:600;">{show.ep}</p>
-            {@html show.abt}
         </div>
-        <hr />
     {/each}
 </div>

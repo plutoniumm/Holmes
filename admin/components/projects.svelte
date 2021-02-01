@@ -1,5 +1,5 @@
 <script>
-    import projeccs from "../../config/projects.json";
+    export let projeccs;
 
     const inverter = (col) => {
         const base = 0xfff - Number("0x" + col.split("#")[1]);
@@ -217,9 +217,6 @@
                 <div class="project-box-footer">
                     <div class="participants">
                         <span>{pj.people.join(', ')}</span>
-                        <!-- {#each pj.people as ppl}
-                            <img src="" alt="participant" />
-                        {/each} -->
                     </div>
                     <div class="days-left" style="color: {pj.colord}">
                         {~~((new Date(pj.end).getTime() - today) / 864e5)}

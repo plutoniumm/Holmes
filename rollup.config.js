@@ -56,24 +56,9 @@ export default [
 	// 	watch: { clearScreen: true }
 	// },
 	// // DASH
-	// {
-	// 	input: 'admin/main.js',
-	// 	output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/admin/bundle.js' },
-	// 	plugins: [
-	// 		svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
-	// 		resolve( { browser: true, dedupe: [ 'svelte' ] } ),
-	// 		commonjs(),
-	// 		!production && serve(),
-	// 		!production && livereload( 'public' ),
-	// 		production && terser(),
-	// 		json()
-	// 	],
-	// 	watch: { clearScreen: true }
-	// },
-	// JSON
 	{
-		input: 'json/main.js',
-		output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/json/bundle.js' },
+		input: 'admin/main.js',
+		output: { sourcemap: false, format: 'esm', name: 'app', dir: 'public/admin/' },
 		plugins: [
 			svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
 			resolve( { browser: true, dedupe: [ 'svelte' ] } ),
@@ -85,4 +70,19 @@ export default [
 		],
 		watch: { clearScreen: true }
 	}
+	// JSON
+	// {
+	// 	input: 'json/main.js',
+	// 	output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/json/bundle.js' },
+	// 	plugins: [
+	// 		svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
+	// 		resolve( { browser: true, dedupe: [ 'svelte' ] } ),
+	// 		commonjs(),
+	// 		!production && serve(),
+	// 		!production && livereload( 'public' ),
+	// 		production && terser(),
+	// 		json()
+	// 	],
+	// 	watch: { clearScreen: true }
+	// }
 ];

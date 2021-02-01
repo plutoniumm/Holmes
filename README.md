@@ -6,7 +6,7 @@ Add data and tokens in config/ (will add sample soon)
 
 Follow these steps to install this project directory:
 
-```
+```bash
 # clone the repo
 $ git clone https://github.com/plutoniumm/Sherlock.git
 
@@ -22,7 +22,7 @@ $ npm i
 $ node PATH/server.js
 $ npm run build
 
-Go to http://localhost:4000
+# Go to http://localhost:4000
 
 ```
 
@@ -35,11 +35,11 @@ Go to http://localhost:4000
 Fundamental Web Languages + AppleScript on Node & Svelte
 
 ### Structure
-Extension = Quartermaster
-API = Server
-Shared = Stuff probably to make the UI uniform
-Admin = Dashboard
-JSON = JSON editor for multiple/single
-Command = Sherlock
-Video = Disphenoid
+- Extension = Quartermaster
+- API = Server
+- Shared = Stuff probably to make the UI uniform
+- Admin = Dashboard
+- JSON = JSON editor for multiple/single
+- Command = Sherlock
+- Video = Disphenoid
 

@@ -1,15 +1,45 @@
 <script>
-	import Corona from "./components/corona.svelte";
+	import Nav from "./components/navigator.svelte";
 	import Projects from "./components/projects.svelte";
-	import Reminders from "./components/reminders.svelte";
 	import Terminal from "./components/terminal.svelte";
 	import Space from "./components/space.svelte";
-	import Reddit from "./components/reddit.svelte";
-	import Shows from "./components/shows.svelte";
 	import Gen from "./components/gen.svelte";
+
+	import admin from "../config/dash.json";
+
+	let state = { main: "Projects", long: "Space" },
+		Corona,
+		Reddit,
+		Shows,
+		Reminders;
+	const naver = (e) => {
+		const type = e.target.innerText;
+		const loc = e.target.parentElement.title;
+		console.log(type);
+		if (type == "Corona" && !Corona)
+			import("./lazy/corona.svelte").then((r) => (Corona = r.default));
+
+		if (type == "Reddit" && !Reddit)
+			import("./lazy/reddit.svelte").then((r) => (Reddit = r.default));
+
+		if (type == "Shows" && !Shows)
+			import("./lazy/shows.svelte").then((r) => (Shows = r.default));
+
+		if (type == "Reminders" && !Reminders)
+			import("./lazy/reminders.svelte").then(
+				(r) => (Reminders = r.default)
+			);
+
+		if (loc == "Central") state.main = type;
+		if (loc == "LongBox") state.long = type;
+	};
 </script>
 
 <style type="text/scss">
+	.bg {
+		background: url("/shared/bigSur.jpg") no-repeat center center;
+		background-size: cover;
+	}
 	.wrapper {
 		width: 100%;
 		display: grid;
@@ -18,21 +48,17 @@
 		color: #444;
 	}
 	.box {
-		background-color: #222;
 		color: #fff;
-		border-radius: 5px;
+		border-radius: 10px;
 		word-wrap: break-word;
 		overflow-y: scroll;
 		padding: 2px;
 	}
 	.half {
-		height: 49vh;
+		height: calc(49vh - 10px);
 	}
 	.full {
-		height: 99vh;
-	}
-	.plain {
-		background: transparent;
+		height: calc(99vh - 10px);
 	}
 	.a {
 		grid-column: 1;
@@ -57,56 +83,38 @@
 		grid-column: 3;
 		grid-row: 2;
 	}
-	.a2 {
-		grid-column: 1;
-		grid-row: 4 / 6;
-	}
-	.b2 {
-		position: relative;
-		grid-column: 2 / 4;
-		grid-row: 4;
-		color: #fff;
-		background: #223;
-	}
-	.c2 {
-		grid-column: 4;
-		grid-row: 4 / 6;
-	}
-	.d2 {
-		grid-column: 2;
-		grid-row: 5;
-	}
-	.e2 {
-		grid-column: 3;
-		grid-row: 5;
-	}
 </style>
 
-<div class="wrapper">
-	<div class="box a full plain">
-		<Reddit />
-	</div>
-	<div class="box b half plain">
-		<Projects />
-	</div>
-	<div class="box c full">
-		<Space />
-	</div>
-	<div class="box d half plain">
-		<Terminal />
-		<Gen />
-	</div>
-	<div class="box e half plain">
-		<Reminders />
-	</div>
-
-	<div class="box a2 full plain">Hia</div>
-	<div class="box b2 half">
-		<Corona />
-	</div>
-	<div class="box c2 full plain">Hic</div>
-	<div class="box d2 half plain">Hid</div>
-	<div class="box e2 half">
-		<Shows />
+<div class="bg">
+	<div class="wrapper blur">
+		<div
+			class="box a full blur"
+			style="margin:7px;height:calc(99vh - 15px)">
+			<Nav {naver} />
+		</div>
+		<div class="box b half">
+			{#if state.main == 'Projects'}
+				<Projects projeccs={admin.projects} />
+			{:else if state.main == 'Corona'}
+				<svelte:component this={Corona} />
+			{/if}
+		</div>
+		<div class="box c full">
+			{#if state.long == 'Space'}
+				<Space />
+			{:else if state.long == 'Shows'}
+				<svelte:component this={Shows} />
+			{:else if state.long == 'Reddit'}
+				<svelte:component this={Reddit} />
+			{:else if state.long == 'Reminders'}
+				<svelte:component this={Reminders} />
+			{/if}
+		</div>
+		<div class="box d half">
+			<Gen days={admin.days} />
+		</div>
+		<div class="box e half">
+			<Terminal />
+		</div>
 	</div>
 </div>

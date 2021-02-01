@@ -9,7 +9,6 @@
     .box {
         width: 100%;
         margin: 5px 0;
-        background: #222;
         border-radius: 10px;
         img {
             object-fit: cover;
@@ -20,11 +19,14 @@
         div {
             padding: 2px 10px;
         }
+        &:hover {
+            background: #3338;
+        }
     }
 </style>
 
 {#each space as el}
-    <div class="box">
+    <div class="box blur">
         <a href={el.url}>
             <img src={el.imageUrl} alt={el.title} />
             <div style="font-weight:400;">{el.title}</div>

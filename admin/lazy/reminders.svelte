@@ -1,5 +1,6 @@
 <script>
     $: reminders = [];
+    let which = "Keys";
     const sendCMD = (appl, cmd, params = "") => {
         fetch(`/sys?app=${appl}&cmd=${cmd}&params=${params}`, {
             method: "POST",
@@ -12,12 +13,7 @@
                 }
             });
     };
-    const col = (i) => {
-        const set = ["#def", "#fde", "#dfe", "#fd8"];
-        console.log(i);
-        return set[i % set.length];
-    };
-    sendCMD("reminders", null, "Stack");
+    sendCMD("reminders", null, which);
 </script>
 
 <style type="text/scss">
@@ -49,7 +45,7 @@
     .rmd {
         border-radius: 10px;
         padding: 5px 3px;
-        color: #333;
+        color: #fff;
         margin: 2px 0;
         text-align: left;
     }
@@ -84,17 +80,17 @@
         style="width:67px;margin:5px;height:67px" />
     <div style="display:flex;flex-wrap:wrap;">
         <div style="padding:2px 7px;width:100%;">REMINDERS</div>
-        <input type="text" value="Stack" style="width:60px;" />
+        <input type="text" bind:value={which} style="width:60px;" />
         <svg
             viewBox="0 0 32 34"
-            on:click={(e) => sendCMD('reminders', null, e.target.parentElement.childNodes[0].value)}>
+            on:click={() => sendCMD('reminders', null, which)}>
             <path stroke-width="3" d="M6 22 L16 30 26 22 M16 30 L16 2" />
         </svg>
     </div>
 </article>
 <div>
     {#each reminders as rmd, i}
-        <div class="rmd" style="background:{col(i)};">
+        <div class="rmd blurW">
             <div style="font-weight:600;">{rmd.list}</div>
             <ul>
                 {#each rmd.notes as nt}

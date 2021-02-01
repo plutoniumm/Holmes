@@ -1,7 +1,5 @@
 <script>
-    import days from "../../config/days";
-
-    const cols = ["#46f", "#3c7", "#e37"];
+    export let days;
 </script>
 
 <style>
@@ -14,9 +12,7 @@
 </style>
 
 {#each days as day}
-    <div
-        class="days"
-        style="background:{cols[~~(Math.random() * cols.length)]}">
+    <div class="days blur">
         <div style="font-size:3em;">
             {Math.abs(~~((new Date(day.date) - new Date()) / 864e5))}
         </div>
