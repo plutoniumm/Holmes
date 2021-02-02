@@ -15,19 +15,14 @@
             "settings": "https://github.com/settings/profile",
             "notifs": "https://github.com/notifications?query=is%3Aunread"
       },
-      "q": {
-            "name": "Qwant",
-            "mail": "https://mail.google.com/",
-            "prelink": "https://www.qwant.com/?q="
-      },
-      "qi": {
-            "name": "Qwant",
-            "prelink": "https://www.qwant.com/?q=",
-            "postlink": "&t=images"
-      },
-      "ddg": {
+      "d": {
             "name": "DuckDuckGo",
             "prelink": "https://duckduckgo.com/?q="
+      },
+      "di": {
+            "name": "DuckDuckGo",
+            "prelink": "https://duckduckgo.com/?q=",
+            "postlink": " &iax=images&ia=images"
       },
       "r": {
             "name": "Reddit",

@@ -50,7 +50,7 @@
       });
 
       export let sites;
-      let raw = "q ",
+      let raw = "d ",
             autoComplete,
             magic,
             ic,
@@ -58,7 +58,7 @@
       $: key = raw
             ? raw.split(":")[0].split(" ")[0].toLowerCase() in sites
                   ? raw.split(":")[0].split(" ")[0].toLowerCase()
-                  : "q"
+                  : "d"
             : null;
       $: send = "";
       const fx = (p) => {

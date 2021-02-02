@@ -37,13 +37,11 @@ app.post( '/log', ( req, res ) => {
 
 app.post( '/sys', ( req, res ) => {
       const q = req.query;
-      console.log( q );
       if ( q.app == 'system' ) {
+            console.log( q );
             if ( q.cmd == 'volume' ) {
                   osascript.execute( `set volume output volume ${ q.params }`, ( err, result, raw ) => {
                         if ( err ) res.sendStatus( 400 ); return;
-                        console.log( result );
-                        console.log( raw );
                   } );
             }
             if ( q.cmd == 'volState' ) osascript.execute( `output volume of (get volume settings)`, ( err, result, raw ) => ( res.send( { 'cmd': 'volState', 'data': result } ) ) );
@@ -55,6 +53,7 @@ app.post( '/sys', ( req, res ) => {
       }
 
       if ( q.app == 'reminders' ) {
+            console.log( q );
             let reminders = [];
             exec( `osascript -e ' tell application "Reminders"
             set mylist to id of list "${ q.params || 'Stack' }"

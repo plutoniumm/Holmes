@@ -1,17 +1,29 @@
 # Changelog
 
+## Pending
+- Rename and Unify Theme across
+- Add json editor for talks
+- (MAYBE) add full json wsyiwyg
+- Add sample config
+
+
+## v3.3.2
+
+- Ditch Qwant
+- Disphenoid Bug Fixes
+
+
+## v3.3.1
+
+- Glass Dashboard with Lazy Loading
+
+
 ## v3.3.0
 
 - Add Quartermaster Extension
 - Add json editor for multiple, single
 - Add projects tracker
 - Bug Fixes
-
-### Pending
-- Rename and Unify Theme across
-- Add json editor for talks
-- (MAYBE) add full json wsyiwyg
-- Add sample config
 
 
 ## v3.2.1
@@ -58,29 +70,17 @@
 - Adding timer
 - Add logo (Not very useful but sure)
 
-### Pending
-- Pomodoro timer
-
 
 ## v2.3.0
 
 - Added history logging
 - Added beacon to send stat and added background stats calculations
 
-### Pending
-- Creating a minimal holmes logo?
-- Adding timer, pomodoro timer
-- Adding test scripts
-
 
 ## v2.2.0
 
 - Adding github integration
 - Add hyperlink to newton
-
-### Pending
-- Adding timer, pomodoro timer and forex check check
-- Adding test scripts
 
 
 ## v2.1.0

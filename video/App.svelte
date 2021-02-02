@@ -7,7 +7,12 @@
 	import Plist from "./components/playlists.svelte";
 
 	import cnls from "../config/channels.json";
-	import cnls2 from "../config/channels2.json";
+
+	const size = 49;
+	const chanList = new Array(Math.ceil(cnls.length / size));
+	for (let i = 0; i < chanList.length; i++)
+		chanList[i] = cnls.splice(0, size);
+
 	import {
 		search,
 		plSearch,
@@ -27,8 +32,8 @@
 
 	const channels = () => {
 		substack = [];
-		subsMon(cnls);
-		subsMon(cnls2);
+		console.log(chanList);
+		chanList.forEach((e) => subsMon(e));
 	};
 	const subsMon = (cList) => {
 		fetch(
@@ -80,26 +85,29 @@
 		stack.splice(i, 1);
 		stack = stack;
 		const trk = new Date().getTime();
+		localStorage.removeItem(URLpars().stack);
 		if (stack.length > 0) {
-			localStorage.removeItem(URLpars().stack);
 			localStorage.setItem(trk, JSON.stringify(stack));
 			chURL("stack", trk);
-		} else {
-			localStorage.removeItem(URLpars().stack);
-			chURL("stack", "");
-		}
+		} else chURL("stack", "");
 	};
 	window.onload = URLpars().q ? searcher(URLpars().q) : null;
 </script>
 
 <style>
+	main,
+	main * {
+		overflow-x: hidden;
+	}
 </style>
 
-<Bar {searcher} {states} {channels} {substack} />
-{#if id}
-	<Player {id} />
-{:else}<br /> <br /> <br />{/if}
-<Stack videos={stack} {vidoer} {destacker} />
-<Stream videos={base} {vidoer} {stacker} />
-<Subsc videos={substack} {vidoer} {stacker} />
-<Plist videos={plStack} {fullStacker} />
+<main>
+	<Bar {searcher} {states} {channels} {substack} />
+	{#if id}
+		<Player {id} />
+	{:else}<br /> <br /> <br />{/if}
+	<Stack videos={stack} {vidoer} {destacker} />
+	<Stream videos={base} {vidoer} {stacker} />
+	<Subsc videos={substack} {vidoer} {stacker} />
+	<Plist videos={plStack} {fullStacker} />
+</main>

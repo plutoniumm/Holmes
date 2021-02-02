@@ -1,6 +1,6 @@
 {
   "name": "sherlock",
-  "version": "3.3.0",
+  "version": "3.3.2",
   "license": "MIT",
   "private": true,
   "author": {
@@ -8,13 +8,7 @@
     "email": "plutniumm@icloud.com",
     "url": "https://me.nukes.in"
   },
-  "contributors": [
-    {
-      "name": "Plutoniumm",
-      "email": "plutniumm@icloud.com",
-      "url": "https://me.nukes.in"
-    }
-  ],
+  "contributors": [],
   "scripts": {
     "build": "rollup -c",
     "notes": "cd ./config/notes && ijsnotebook",
