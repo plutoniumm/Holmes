@@ -14,6 +14,8 @@ $ git clone https://github.com/plutoniumm/Sherlock.git
 $ cd myproject
 
 # install dependencies
+$ brew install smckit
+
 $ pnpm i
 # OR
 $ npm i

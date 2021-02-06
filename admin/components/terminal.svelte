@@ -1,8 +1,9 @@
 <script>
     import { onMount } from "svelte";
+    import data from "./data.json";
 
-    let vol = "75",
-        musicState = [];
+    let musicState = [],
+        MBstats = [];
 
     const sendCMD = (appl, cmd, params = "") => {
         fetch(`/sys?app=${appl}&cmd=${cmd}&params=${params}`, {
@@ -10,87 +11,95 @@
         })
             .then((res) => res.json())
             .then((r) => {
-                if (r.cmd == "volState") vol = r.data;
                 if (r.cmd == "musicState") musicState = [...r.data];
+                if (r.cmd == "MBstats") MBstats = r.data;
             });
     };
 
     onMount(() => {
-        setInterval(() => sendCMD("system", "volState"), 1e5);
-        setInterval(() => sendCMD("music", "musicState"), 1e4);
+        setInterval(() => {
+            sendCMD("music", "musicState");
+            sendCMD("system", "smc");
+        }, 1e5);
     });
 
+    sendCMD("system", "smc");
     sendCMD("music", "musicState");
-    sendCMD("system", "volState");
 </script>
 
 <style type="text/scss">
     article {
         padding: 5px;
         border-radius: 10px;
-        background: #112;
-        margin: 5px 0;
-    }
-    input,
-    svg {
-        border: 0;
-        outline: none;
-        padding: 5px;
-        color: #fff;
-        fill: transparent;
-        border-radius: 5px;
-        margin: 5px;
-        background: #334;
-        height: 32px;
-    }
-    input {
-        font-size: 1.2em;
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+        margin-bottom: 5px;
+        img {
+            width: 36px;
+            object-fit: cover;
+            margin-right: 5px;
+            height: 36px;
         }
     }
-    svg {
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 2;
+    button {
+        border: 0;
+        outline: 0;
         cursor: pointer;
-        stroke: #fff;
-        transition: background 0.2s ease;
-        &:hover {
-            background: #445;
+        border-radius: 1.5em;
+        padding: 0.33em 1em;
+        color: #fff;
+        &.prim {
+            border: 1px solid #18f;
+            background: #18f;
+        }
+        &.sec {
+            border: 1px solid #fff;
+            background: transparent;
         }
     }
 </style>
 
-<article style="display:flex;">
-    <img
-        src="https://static.wikia.nocookie.net/logopedia/images/c/cb/Apple_Music_Icon_RGB_lg_073120.svg"
-        alt=""
-        style="width:67px;margin:5px;height:67px" />
-    <form
-        on:submit|preventDefault={() => sendCMD('system', 'volume', vol || 75)}
-        style="display:flex;flex-wrap:wrap;">
-        <div style="padding:2px 7px;width:100%;">MUSIC</div>
-        <input type="number" max="100" bind:value={vol} style="width: 32px;" />
-        <svg viewBox="0 0 24 30" on:click={() => sendCMD('music', 'playpause')}>
-            <path stroke-width="4" d="M3 3 L3 29" />
-            <path fill="#fff" d="M10 2 L10 30 24 16 Z" />
-        </svg>
-    </form>
-    <div style="text-align:right;">
-        <div>
-            {musicState[1] ? musicState[1] + ' by ' + musicState[0] : ''}
-            <br />
-            {musicState[2] || ''}
-        </div>
-        <svg
-            viewBox="0 0 32 32"
-            on:click={() => sendCMD('music', 'musicState')}>
-            <path
-                stroke-width="2"
-                d="M9 22 C0 23 1 12 9 13 6 2 23 2 22 10 32 7 32 23 23 22 M11 26 L16 30 21 26 M16 16 L16 30" />
-        </svg>
+<article class="blur">
+    <div style="display:flex;">
+        <img src={data.terminal.music.img} alt="" />
+        <div style="font-weight:400;font-size:28px;">Music</div>
     </div>
+    {@html musicState[1] ? `<p><b>${musicState[1]}</b> by ${musicState[0]} - <i>${musicState[2]}</i></p>` : ''}
+    <div style="text-align:right;">
+        <button
+            class="prim"
+            on:click={() => sendCMD('music', 'playpause')}>Play/Pause</button>
+        <button class="sec" on:click={() => sendCMD('music', 'musicState')}>Get
+            Music</button>
+    </div>
+</article>
+<article class="blur">
+    <div style="display:flex;">
+        <img src={data.terminal.jupyter.img} alt="" />
+        <div style="font-weight:400;font-size:28px;">Jupyter</div>
+    </div>
+    <div style="text-align:right;">
+        <button class="prim" on:click={() => sendCMD('jupyter', 'start')}>
+            Start</button>
+        <button class="sec" on:click={() => sendCMD('jupyter', 'stop')}>
+            Stop</button>
+    </div>
+</article>
+<article class="blur">
+    <div style="display:flex;">
+        <img src={data.terminal.sysprefs.img} alt="" />
+        <div style="font-weight:400;font-size:28px;">System</div>
+    </div>
+    <table>
+        <tr>
+            <td>CPU Temp:</td>
+            <td>{MBstats.cpu}</td>
+        </tr>
+        <tr>
+            <td>MBo Temp:</td>
+            <td>{MBstats.board}</td>
+        </tr>
+        <tr>
+            <td>Fan Speed:</td>
+            <td>{MBstats.fan}</td>
+        </tr>
+    </table>
 </article>

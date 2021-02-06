@@ -1,0 +1,21 @@
+{
+    "projects": [
+        {
+            "name": "Topology",
+            "sub": "Online",
+            "start": "5 December 2020",
+            "end": "31 January 2021",
+            "colord": "#46f",
+            "colorl": "#def",
+            "people": [
+                "Tokeida"
+            ]
+        }
+    ],
+    "days": [
+        {
+            "event": "Lockdown",
+            "date": "17 March 2020"
+        }
+    ]
+}

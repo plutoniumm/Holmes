@@ -1,0 +1,13 @@
+{
+    "terminal": {
+        "music": {
+            "img": "https://static.wikia.nocookie.net/logopedia/images/c/cb/Apple_Music_Icon_RGB_lg_073120.svg"
+        },
+        "jupyter": {
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/207px-Jupyter_logo.svg.png"
+        },
+        "sysprefs": {
+            "img": "https://static.wikia.nocookie.net/logopedia/images/5/5a/Icon_512x512_Normalspreferences.png"
+        }
+    }
+}

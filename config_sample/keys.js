@@ -1,0 +1,1 @@
+export const YT_KEY = 'YOUR_YT_KEY';

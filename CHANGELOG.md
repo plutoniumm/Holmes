@@ -3,8 +3,15 @@
 ## Pending
 - Rename and Unify Theme across
 - Add json editor for talks
-- (MAYBE) add full json wsyiwyg
-- Add sample config
+- Add sample config (Partial)
+- Add system fules launching for Sherly
+- Fix GMeet bar remover
+
+
+## v3.3.3
+
+- Add Jupyter Controls
+- Add CPU temp + fan speed Stats
 
 
 ## v3.3.2

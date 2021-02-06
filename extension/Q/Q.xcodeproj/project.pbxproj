@@ -7,39 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F4D9F73725C56E7E00666E92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F73625C56E7E00666E92 /* AppDelegate.swift */; };
-		F4D9F73A25C56E7E00666E92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F73825C56E7E00666E92 /* Main.storyboard */; };
-		F4D9F73C25C56E7E00666E92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F73B25C56E7E00666E92 /* ViewController.swift */; };
-		F4D9F73E25C56E8200666E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F73D25C56E8200666E92 /* Assets.xcassets */; };
-		F4D9F74525C56E8200666E92 /* Q Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F4D9F74425C56E8200666E92 /* Q Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F4D9F74A25C56E8200666E92 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D9F74925C56E8200666E92 /* Cocoa.framework */; };
-		F4D9F74D25C56E8200666E92 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D9F74C25C56E8200666E92 /* SafariWebExtensionHandler.swift */; };
-		F4D9F76025C56E8300666E92 /* pop.html in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F75A25C56E8300666E92 /* pop.html */; };
-		F4D9F76125C56E8300666E92 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F75B25C56E8300666E92 /* background.js */; };
-		F4D9F76225C56E8300666E92 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F75C25C56E8300666E92 /* styles */; };
-		F4D9F76325C56E8300666E92 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F75D25C56E8300666E92 /* scripts */; };
-		F4D9F76425C56E8300666E92 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F75E25C56E8300666E92 /* manifest.json */; };
-		F4D9F76525C56E8300666E92 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = F4D9F75F25C56E8300666E92 /* assets */; };
+		F4E41AAB25CF49400011F245 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E41AAA25CF49400011F245 /* AppDelegate.swift */; };
+		F4E41AAE25CF49400011F245 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4E41AAC25CF49400011F245 /* Main.storyboard */; };
+		F4E41AB025CF49400011F245 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E41AAF25CF49400011F245 /* ViewController.swift */; };
+		F4E41AB225CF49450011F245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E41AB125CF49450011F245 /* Assets.xcassets */; };
+		F4E41AB925CF49460011F245 /* Q Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F4E41AB825CF49460011F245 /* Q Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F4E41ABE25CF49460011F245 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E41ABD25CF49460011F245 /* Cocoa.framework */; };
+		F4E41AC125CF49460011F245 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E41AC025CF49460011F245 /* SafariWebExtensionHandler.swift */; };
+		F4E41AD425CF49480011F245 /* pop.html in Resources */ = {isa = PBXBuildFile; fileRef = F4E41ACE25CF49480011F245 /* pop.html */; };
+		F4E41AD525CF49480011F245 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = F4E41ACF25CF49480011F245 /* background.js */; };
+		F4E41AD625CF49480011F245 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = F4E41AD025CF49480011F245 /* styles */; };
+		F4E41AD725CF49480011F245 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = F4E41AD125CF49480011F245 /* scripts */; };
+		F4E41AD825CF49480011F245 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E41AD225CF49480011F245 /* manifest.json */; };
+		F4E41AD925CF49480011F245 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = F4E41AD325CF49480011F245 /* assets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F4D9F74625C56E8200666E92 /* PBXContainerItemProxy */ = {
+		F4E41ABA25CF49460011F245 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F4D9F72A25C56E7D00666E92 /* Project object */;
+			containerPortal = F4E41A9E25CF49400011F245 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F4D9F74325C56E8200666E92;
+			remoteGlobalIDString = F4E41AB725CF49460011F245;
 			remoteInfo = "Q Extension";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F4D9F75525C56E8200666E92 /* Embed App Extensions */ = {
+		F4E41AC925CF49460011F245 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F4D9F74525C56E8200666E92 /* Q Extension.appex in Embed App Extensions */,
+				F4E41AB925CF49460011F245 /* Q Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,105 +47,105 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F4D9F73225C56E7E00666E92 /* Q.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Q.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4D9F73525C56E7E00666E92 /* Q.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Q.entitlements; sourceTree = "<group>"; };
-		F4D9F73625C56E7E00666E92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4D9F73925C56E7E00666E92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F4D9F73B25C56E7E00666E92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F4D9F73D25C56E8200666E92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F4D9F73F25C56E8200666E92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4D9F74425C56E8200666E92 /* Q Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Q Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4D9F74925C56E8200666E92 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		F4D9F74C25C56E8200666E92 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		F4D9F74E25C56E8200666E92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4D9F74F25C56E8200666E92 /* Q_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Q_Extension.entitlements; sourceTree = "<group>"; };
-		F4D9F75A25C56E8300666E92 /* pop.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pop.html; path = ../../Quartermaster/pop.html; sourceTree = "<group>"; };
-		F4D9F75B25C56E8300666E92 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../Quartermaster/background.js; sourceTree = "<group>"; };
-		F4D9F75C25C56E8300666E92 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = styles; path = ../../Quartermaster/styles; sourceTree = "<group>"; };
-		F4D9F75D25C56E8300666E92 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = ../../Quartermaster/scripts; sourceTree = "<group>"; };
-		F4D9F75E25C56E8300666E92 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../Quartermaster/manifest.json; sourceTree = "<group>"; };
-		F4D9F75F25C56E8300666E92 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../Quartermaster/assets; sourceTree = "<group>"; };
+		F4E41AA625CF49400011F245 /* Q.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Q.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E41AA925CF49400011F245 /* Q.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Q.entitlements; sourceTree = "<group>"; };
+		F4E41AAA25CF49400011F245 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4E41AAD25CF49400011F245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4E41AAF25CF49400011F245 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4E41AB125CF49450011F245 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4E41AB325CF49450011F245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4E41AB825CF49460011F245 /* Q Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Q Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E41ABD25CF49460011F245 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F4E41AC025CF49460011F245 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		F4E41AC225CF49460011F245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4E41AC325CF49460011F245 /* Q_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Q_Extension.entitlements; sourceTree = "<group>"; };
+		F4E41ACE25CF49480011F245 /* pop.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pop.html; path = ../../Quartermaster/pop.html; sourceTree = "<group>"; };
+		F4E41ACF25CF49480011F245 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../Quartermaster/background.js; sourceTree = "<group>"; };
+		F4E41AD025CF49480011F245 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = styles; path = ../../Quartermaster/styles; sourceTree = "<group>"; };
+		F4E41AD125CF49480011F245 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = ../../Quartermaster/scripts; sourceTree = "<group>"; };
+		F4E41AD225CF49480011F245 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../Quartermaster/manifest.json; sourceTree = "<group>"; };
+		F4E41AD325CF49480011F245 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../Quartermaster/assets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F4D9F72F25C56E7E00666E92 /* Frameworks */ = {
+		F4E41AA325CF49400011F245 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4D9F74125C56E8200666E92 /* Frameworks */ = {
+		F4E41AB525CF49460011F245 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D9F74A25C56E8200666E92 /* Cocoa.framework in Frameworks */,
+				F4E41ABE25CF49460011F245 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F4D9F72925C56E7D00666E92 = {
+		F4E41A9D25CF49400011F245 = {
 			isa = PBXGroup;
 			children = (
-				F4D9F73425C56E7E00666E92 /* Q */,
-				F4D9F74B25C56E8200666E92 /* Q Extension */,
-				F4D9F74825C56E8200666E92 /* Frameworks */,
-				F4D9F73325C56E7E00666E92 /* Products */,
+				F4E41AA825CF49400011F245 /* Q */,
+				F4E41ABF25CF49460011F245 /* Q Extension */,
+				F4E41ABC25CF49460011F245 /* Frameworks */,
+				F4E41AA725CF49400011F245 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F4D9F73325C56E7E00666E92 /* Products */ = {
+		F4E41AA725CF49400011F245 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4D9F73225C56E7E00666E92 /* Q.app */,
-				F4D9F74425C56E8200666E92 /* Q Extension.appex */,
+				F4E41AA625CF49400011F245 /* Q.app */,
+				F4E41AB825CF49460011F245 /* Q Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F4D9F73425C56E7E00666E92 /* Q */ = {
+		F4E41AA825CF49400011F245 /* Q */ = {
 			isa = PBXGroup;
 			children = (
-				F4D9F73525C56E7E00666E92 /* Q.entitlements */,
-				F4D9F73625C56E7E00666E92 /* AppDelegate.swift */,
-				F4D9F73825C56E7E00666E92 /* Main.storyboard */,
-				F4D9F73B25C56E7E00666E92 /* ViewController.swift */,
-				F4D9F73D25C56E8200666E92 /* Assets.xcassets */,
-				F4D9F73F25C56E8200666E92 /* Info.plist */,
+				F4E41AA925CF49400011F245 /* Q.entitlements */,
+				F4E41AAA25CF49400011F245 /* AppDelegate.swift */,
+				F4E41AAC25CF49400011F245 /* Main.storyboard */,
+				F4E41AAF25CF49400011F245 /* ViewController.swift */,
+				F4E41AB125CF49450011F245 /* Assets.xcassets */,
+				F4E41AB325CF49450011F245 /* Info.plist */,
 			);
 			path = Q;
 			sourceTree = "<group>";
 		};
-		F4D9F74825C56E8200666E92 /* Frameworks */ = {
+		F4E41ABC25CF49460011F245 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4D9F74925C56E8200666E92 /* Cocoa.framework */,
+				F4E41ABD25CF49460011F245 /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F4D9F74B25C56E8200666E92 /* Q Extension */ = {
+		F4E41ABF25CF49460011F245 /* Q Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F4D9F75925C56E8300666E92 /* Resources */,
-				F4D9F74C25C56E8200666E92 /* SafariWebExtensionHandler.swift */,
-				F4D9F74E25C56E8200666E92 /* Info.plist */,
-				F4D9F74F25C56E8200666E92 /* Q_Extension.entitlements */,
+				F4E41ACD25CF49480011F245 /* Resources */,
+				F4E41AC025CF49460011F245 /* SafariWebExtensionHandler.swift */,
+				F4E41AC225CF49460011F245 /* Info.plist */,
+				F4E41AC325CF49460011F245 /* Q_Extension.entitlements */,
 			);
 			path = "Q Extension";
 			sourceTree = "<group>";
 		};
-		F4D9F75925C56E8300666E92 /* Resources */ = {
+		F4E41ACD25CF49480011F245 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F4D9F75A25C56E8300666E92 /* pop.html */,
-				F4D9F75B25C56E8300666E92 /* background.js */,
-				F4D9F75C25C56E8300666E92 /* styles */,
-				F4D9F75D25C56E8300666E92 /* scripts */,
-				F4D9F75E25C56E8300666E92 /* manifest.json */,
-				F4D9F75F25C56E8300666E92 /* assets */,
+				F4E41ACE25CF49480011F245 /* pop.html */,
+				F4E41ACF25CF49480011F245 /* background.js */,
+				F4E41AD025CF49480011F245 /* styles */,
+				F4E41AD125CF49480011F245 /* scripts */,
+				F4E41AD225CF49480011F245 /* manifest.json */,
+				F4E41AD325CF49480011F245 /* assets */,
 			);
 			name = Resources;
 			path = "Q Extension";
@@ -154,32 +154,32 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4D9F73125C56E7E00666E92 /* Q */ = {
+		F4E41AA525CF49400011F245 /* Q */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4D9F75625C56E8200666E92 /* Build configuration list for PBXNativeTarget "Q" */;
+			buildConfigurationList = F4E41ACA25CF49460011F245 /* Build configuration list for PBXNativeTarget "Q" */;
 			buildPhases = (
-				F4D9F72E25C56E7E00666E92 /* Sources */,
-				F4D9F72F25C56E7E00666E92 /* Frameworks */,
-				F4D9F73025C56E7E00666E92 /* Resources */,
-				F4D9F75525C56E8200666E92 /* Embed App Extensions */,
+				F4E41AA225CF49400011F245 /* Sources */,
+				F4E41AA325CF49400011F245 /* Frameworks */,
+				F4E41AA425CF49400011F245 /* Resources */,
+				F4E41AC925CF49460011F245 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F4D9F74725C56E8200666E92 /* PBXTargetDependency */,
+				F4E41ABB25CF49460011F245 /* PBXTargetDependency */,
 			);
 			name = Q;
 			productName = Q;
-			productReference = F4D9F73225C56E7E00666E92 /* Q.app */;
+			productReference = F4E41AA625CF49400011F245 /* Q.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F4D9F74325C56E8200666E92 /* Q Extension */ = {
+		F4E41AB725CF49460011F245 /* Q Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4D9F75225C56E8200666E92 /* Build configuration list for PBXNativeTarget "Q Extension" */;
+			buildConfigurationList = F4E41AC625CF49460011F245 /* Build configuration list for PBXNativeTarget "Q Extension" */;
 			buildPhases = (
-				F4D9F74025C56E8200666E92 /* Sources */,
-				F4D9F74125C56E8200666E92 /* Frameworks */,
-				F4D9F74225C56E8200666E92 /* Resources */,
+				F4E41AB425CF49460011F245 /* Sources */,
+				F4E41AB525CF49460011F245 /* Frameworks */,
+				F4E41AB625CF49460011F245 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -187,27 +187,27 @@
 			);
 			name = "Q Extension";
 			productName = "Q Extension";
-			productReference = F4D9F74425C56E8200666E92 /* Q Extension.appex */;
+			productReference = F4E41AB825CF49460011F245 /* Q Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F4D9F72A25C56E7D00666E92 /* Project object */ = {
+		F4E41A9E25CF49400011F245 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					F4D9F73125C56E7E00666E92 = {
+					F4E41AA525CF49400011F245 = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					F4D9F74325C56E8200666E92 = {
+					F4E41AB725CF49460011F245 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = F4D9F72D25C56E7D00666E92 /* Build configuration list for PBXProject "Q" */;
+			buildConfigurationList = F4E41AA125CF49400011F245 /* Build configuration list for PBXProject "Q" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -215,75 +215,75 @@
 				en,
 				Base,
 			);
-			mainGroup = F4D9F72925C56E7D00666E92;
-			productRefGroup = F4D9F73325C56E7E00666E92 /* Products */;
+			mainGroup = F4E41A9D25CF49400011F245;
+			productRefGroup = F4E41AA725CF49400011F245 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4D9F73125C56E7E00666E92 /* Q */,
-				F4D9F74325C56E8200666E92 /* Q Extension */,
+				F4E41AA525CF49400011F245 /* Q */,
+				F4E41AB725CF49460011F245 /* Q Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F4D9F73025C56E7E00666E92 /* Resources */ = {
+		F4E41AA425CF49400011F245 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D9F73E25C56E8200666E92 /* Assets.xcassets in Resources */,
-				F4D9F73A25C56E7E00666E92 /* Main.storyboard in Resources */,
+				F4E41AB225CF49450011F245 /* Assets.xcassets in Resources */,
+				F4E41AAE25CF49400011F245 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4D9F74225C56E8200666E92 /* Resources */ = {
+		F4E41AB625CF49460011F245 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D9F76125C56E8300666E92 /* background.js in Resources */,
-				F4D9F76225C56E8300666E92 /* styles in Resources */,
-				F4D9F76425C56E8300666E92 /* manifest.json in Resources */,
-				F4D9F76525C56E8300666E92 /* assets in Resources */,
-				F4D9F76025C56E8300666E92 /* pop.html in Resources */,
-				F4D9F76325C56E8300666E92 /* scripts in Resources */,
+				F4E41AD525CF49480011F245 /* background.js in Resources */,
+				F4E41AD625CF49480011F245 /* styles in Resources */,
+				F4E41AD825CF49480011F245 /* manifest.json in Resources */,
+				F4E41AD925CF49480011F245 /* assets in Resources */,
+				F4E41AD425CF49480011F245 /* pop.html in Resources */,
+				F4E41AD725CF49480011F245 /* scripts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F4D9F72E25C56E7E00666E92 /* Sources */ = {
+		F4E41AA225CF49400011F245 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D9F73C25C56E7E00666E92 /* ViewController.swift in Sources */,
-				F4D9F73725C56E7E00666E92 /* AppDelegate.swift in Sources */,
+				F4E41AB025CF49400011F245 /* ViewController.swift in Sources */,
+				F4E41AAB25CF49400011F245 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4D9F74025C56E8200666E92 /* Sources */ = {
+		F4E41AB425CF49460011F245 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D9F74D25C56E8200666E92 /* SafariWebExtensionHandler.swift in Sources */,
+				F4E41AC125CF49460011F245 /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F4D9F74725C56E8200666E92 /* PBXTargetDependency */ = {
+		F4E41ABB25CF49460011F245 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F4D9F74325C56E8200666E92 /* Q Extension */;
-			targetProxy = F4D9F74625C56E8200666E92 /* PBXContainerItemProxy */;
+			target = F4E41AB725CF49460011F245 /* Q Extension */;
+			targetProxy = F4E41ABA25CF49460011F245 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F4D9F73825C56E7E00666E92 /* Main.storyboard */ = {
+		F4E41AAC25CF49400011F245 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F4D9F73925C56E7E00666E92 /* Base */,
+				F4E41AAD25CF49400011F245 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F4D9F75025C56E8200666E92 /* Debug */ = {
+		F4E41AC425CF49460011F245 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -352,7 +352,7 @@
 			};
 			name = Debug;
 		};
-		F4D9F75125C56E8200666E92 /* Release */ = {
+		F4E41AC525CF49460011F245 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -406,7 +406,7 @@
 			};
 			name = Release;
 		};
-		F4D9F75325C56E8200666E92 /* Debug */ = {
+		F4E41AC725CF49460011F245 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Q Extension/Q_Extension.entitlements";
@@ -425,7 +425,7 @@
 			};
 			name = Debug;
 		};
-		F4D9F75425C56E8200666E92 /* Release */ = {
+		F4E41AC825CF49460011F245 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Q Extension/Q_Extension.entitlements";
@@ -444,7 +444,7 @@
 			};
 			name = Release;
 		};
-		F4D9F75725C56E8200666E92 /* Debug */ = {
+		F4E41ACB25CF49460011F245 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -465,7 +465,7 @@
 			};
 			name = Debug;
 		};
-		F4D9F75825C56E8200666E92 /* Release */ = {
+		F4E41ACC25CF49460011F245 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -489,34 +489,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F4D9F72D25C56E7D00666E92 /* Build configuration list for PBXProject "Q" */ = {
+		F4E41AA125CF49400011F245 /* Build configuration list for PBXProject "Q" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4D9F75025C56E8200666E92 /* Debug */,
-				F4D9F75125C56E8200666E92 /* Release */,
+				F4E41AC425CF49460011F245 /* Debug */,
+				F4E41AC525CF49460011F245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4D9F75225C56E8200666E92 /* Build configuration list for PBXNativeTarget "Q Extension" */ = {
+		F4E41AC625CF49460011F245 /* Build configuration list for PBXNativeTarget "Q Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4D9F75325C56E8200666E92 /* Debug */,
-				F4D9F75425C56E8200666E92 /* Release */,
+				F4E41AC725CF49460011F245 /* Debug */,
+				F4E41AC825CF49460011F245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4D9F75625C56E8200666E92 /* Build configuration list for PBXNativeTarget "Q" */ = {
+		F4E41ACA25CF49460011F245 /* Build configuration list for PBXNativeTarget "Q" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4D9F75725C56E8200666E92 /* Debug */,
-				F4D9F75825C56E8200666E92 /* Release */,
+				F4E41ACB25CF49460011F245 /* Debug */,
+				F4E41ACC25CF49460011F245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F4D9F72A25C56E7D00666E92 /* Project object */;
+	rootObject = F4E41A9E25CF49400011F245 /* Project object */;
 }

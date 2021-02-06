@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Dashboard",
+        "link": "/dash.html",
+        "imgLink": "img.pngio.com/nempos-dashboard-dashboard-png-500_500.png"
+    },
+    {
+        "name": "JSON",
+        "link": "/json.html",
+        "imgLink": "upload.wikimedia.org/wikipedia/commons/thumb/c/c9/JSON_vector_logo.svg/240px-JSON_vector_logo.svg.png"
+    }
+]
