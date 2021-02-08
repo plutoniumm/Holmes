@@ -16,6 +16,36 @@
     sendCMD("reminders", null, which);
 </script>
 
+<article style="display:flex;">
+    <img
+        src="https://upload.wikimedia.org/wikipedia/commons/8/82/Reminders_(macOS).png"
+        alt=""
+        style="width:67px;margin:5px;height:67px"
+    />
+    <div style="display:flex;flex-wrap:wrap;">
+        <div class="w-100" style="padding:2px 7px;">REMINDERS</div>
+        <input type="text" bind:value={which} style="width:60px;" />
+        <svg
+            viewBox="0 0 32 34"
+            on:click={() => sendCMD("reminders", null, which)}
+        >
+            <path stroke-width="3" d="M6 22 L16 30 26 22 M16 30 L16 2" />
+        </svg>
+    </div>
+</article>
+<div>
+    {#each reminders as rmd, i}
+        <div class="rmd blurW">
+            <div style="font-weight:600;">{rmd.list}</div>
+            <ul>
+                {#each rmd.notes as nt}
+                    <li>- {nt}</li>
+                {/each}
+            </ul>
+        </div>
+    {/each}
+</div>
+
 <style type="text/scss">
     article {
         padding: 5px;
@@ -72,31 +102,3 @@
         }
     }
 </style>
-
-<article style="display:flex;">
-    <img
-        src="https://upload.wikimedia.org/wikipedia/commons/8/82/Reminders_(macOS).png"
-        alt=""
-        style="width:67px;margin:5px;height:67px" />
-    <div style="display:flex;flex-wrap:wrap;">
-        <div style="padding:2px 7px;width:100%;">REMINDERS</div>
-        <input type="text" bind:value={which} style="width:60px;" />
-        <svg
-            viewBox="0 0 32 34"
-            on:click={() => sendCMD('reminders', null, which)}>
-            <path stroke-width="3" d="M6 22 L16 30 26 22 M16 30 L16 2" />
-        </svg>
-    </div>
-</article>
-<div>
-    {#each reminders as rmd, i}
-        <div class="rmd blurW">
-            <div style="font-weight:600;">{rmd.list}</div>
-            <ul>
-                {#each rmd.notes as nt}
-                    <li>- {nt}</li>
-                {/each}
-            </ul>
-        </div>
-    {/each}
-</div>

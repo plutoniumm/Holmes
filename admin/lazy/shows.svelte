@@ -10,6 +10,22 @@
     }
 </script>
 
+<div>
+    {#each shows as show}
+        <div class="show blur">
+            <img class="w-100" src={show.image} alt="" />
+            <div style="padding: 2px 5px;">
+                <div style="display:flex;justify-content:space-between;">
+                    <div>{show.latest}</div>
+                    <div>{show.name}</div>
+                </div>
+                <p style="font-weight:600;">{show.ep}</p>
+                {@html show.abt}
+            </div>
+        </div>
+    {/each}
+</div>
+
 <style type="text/scss">
     .show {
         border-radius: 10px;
@@ -22,19 +38,3 @@
         }
     }
 </style>
-
-<div>
-    {#each shows as show}
-        <div class="show blur">
-            <img src={show.image} alt="" />
-            <div style="padding: 2px 5px;">
-                <div style="display:flex;justify-content:space-between;">
-                    <div>{show.latest}</div>
-                    <div>{show.name}</div>
-                </div>
-                <p style="font-weight:600;">{show.ep}</p>
-                {@html show.abt}
-            </div>
-        </div>
-    {/each}
-</div>

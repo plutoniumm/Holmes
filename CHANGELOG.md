@@ -1,10 +1,7 @@
 # Changelog
 
 ## Pending
-- Rename and Unify Theme across
 - Add json editor for talks
-- Add sample config (Partial)
-- Add system fules launching for Sherly
 - Fix GMeet bar remover
 - System hourly stats logger - Fan Speed, CPU+MB Temp, Battery level
 - Uptime session logger/shutdown script
@@ -16,6 +13,7 @@
 
 - Add Jupyter Controls
 - Add CPU temp + fan speed Stats
+- Glass JSON, remove talks
 
 
 ## v3.3.2

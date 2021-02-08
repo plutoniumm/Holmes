@@ -35,6 +35,41 @@
 	};
 </script>
 
+<div class="bg">
+	<div class="wrapper blur w-100">
+		<div
+			class="box a full blur"
+			style="margin:7px;height:calc(99vh - 15px)"
+		>
+			<Nav {naver} />
+		</div>
+		<div class="box b half">
+			{#if state.main == "Projects"}
+				<Projects projeccs={admin.projects} />
+			{:else if state.main == "Corona"}
+				<svelte:component this={Corona} />
+			{/if}
+		</div>
+		<div class="box c full">
+			{#if state.long == "Space"}
+				<Space />
+			{:else if state.long == "Shows"}
+				<svelte:component this={Shows} />
+			{:else if state.long == "Reddit"}
+				<svelte:component this={Reddit} />
+			{:else if state.long == "Reminders"}
+				<svelte:component this={Reminders} />
+			{/if}
+		</div>
+		<div class="box d half">
+			<Gen days={admin.days} />
+		</div>
+		<div class="box e half">
+			<Terminal />
+		</div>
+	</div>
+</div>
+
 <style type="text/scss">
 	.bg {
 		background: url("/shared/bigSur.jpg") no-repeat center center;
@@ -84,37 +119,3 @@
 		grid-row: 2;
 	}
 </style>
-
-<div class="bg">
-	<div class="wrapper blur">
-		<div
-			class="box a full blur"
-			style="margin:7px;height:calc(99vh - 15px)">
-			<Nav {naver} />
-		</div>
-		<div class="box b half">
-			{#if state.main == 'Projects'}
-				<Projects projeccs={admin.projects} />
-			{:else if state.main == 'Corona'}
-				<svelte:component this={Corona} />
-			{/if}
-		</div>
-		<div class="box c full">
-			{#if state.long == 'Space'}
-				<Space />
-			{:else if state.long == 'Shows'}
-				<svelte:component this={Shows} />
-			{:else if state.long == 'Reddit'}
-				<svelte:component this={Reddit} />
-			{:else if state.long == 'Reminders'}
-				<svelte:component this={Reminders} />
-			{/if}
-		</div>
-		<div class="box d half">
-			<Gen days={admin.days} />
-		</div>
-		<div class="box e half">
-			<Terminal />
-		</div>
-	</div>
-</div>

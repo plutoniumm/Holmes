@@ -16,6 +16,41 @@
     const today = new Date().getTime();
 </script>
 
+<div class="project-boxes">
+    {#each projeccs as pj}
+        <div class="project-box-wrapper" style="color:#{inverter(pj.colorl)}">
+            <div class="project-box" style="background: {pj.colorl}">
+                <div class="project-box-header"><span>{pj.end}</span></div>
+                <div class="project-box-content-header">
+                    <p class="box-content-header">{pj.name}</p>
+                    <p class="box-content-subheader">{pj.sub}</p>
+                </div>
+                <div class="box-progress-wrapper">
+                    <p class="box-progress-header">Progress</p>
+                    <div class="box-progress-bar w-100">
+                        <span
+                            class="box-progress"
+                            style={`width: ${calcfrac(pj)}%; background: ${
+                                pj.colord
+                            }`}
+                        />
+                    </div>
+                    <p class="box-progress-percentage">{calcfrac(pj)}%</p>
+                </div>
+                <div class="project-box-footer">
+                    <div class="participants">
+                        <span>{pj.people.join(", ")}</span>
+                    </div>
+                    <div class="days-left" style="color: {pj.colord}">
+                        {~~((new Date(pj.end).getTime() - today) / 864e5)}
+                        Days Left
+                    </div>
+                </div>
+            </div>
+        </div>
+    {/each}
+</div>
+
 <style type="text/scss">
     .project-boxes {
         flex-direction: column;
@@ -128,7 +163,6 @@
         border-radius: 6px;
 
         &-bar {
-            width: 100%;
             height: 4px;
             border-radius: 6px;
             overflow: hidden;
@@ -195,35 +229,3 @@
         font-weight: 700;
     }
 </style>
-
-<div class="project-boxes">
-    {#each projeccs as pj}
-        <div class="project-box-wrapper" style="color:#{inverter(pj.colorl)}">
-            <div class="project-box" style="background: {pj.colorl}">
-                <div class="project-box-header"><span>{pj.end}</span></div>
-                <div class="project-box-content-header">
-                    <p class="box-content-header">{pj.name}</p>
-                    <p class="box-content-subheader">{pj.sub}</p>
-                </div>
-                <div class="box-progress-wrapper">
-                    <p class="box-progress-header">Progress</p>
-                    <div class="box-progress-bar">
-                        <span
-                            class="box-progress"
-                            style={`width: ${calcfrac(pj)}%; background: ${pj.colord}`} />
-                    </div>
-                    <p class="box-progress-percentage">{calcfrac(pj)}%</p>
-                </div>
-                <div class="project-box-footer">
-                    <div class="participants">
-                        <span>{pj.people.join(', ')}</span>
-                    </div>
-                    <div class="days-left" style="color: {pj.colord}">
-                        {~~((new Date(pj.end).getTime() - today) / 864e5)}
-                        Days Left
-                    </div>
-                </div>
-            </div>
-        </div>
-    {/each}
-</div>
