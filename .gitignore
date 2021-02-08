@@ -10,8 +10,11 @@ thread.js
 **/*.css.map
 **/*.js.map
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-public/
+public/admin
+public/command
+public/helpers
+public/json
+public/video
 
 # Dependency directories
 node_modules/

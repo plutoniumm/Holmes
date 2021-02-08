@@ -1,6 +1,5 @@
 <script>
     export let set;
-    let grade = 0;
 
     const send = () => {
         const t = show;
@@ -12,10 +11,6 @@
             },
             body: JSON.stringify(show),
         });
-        // .then((res) => res.json())
-        // .then((r) => {
-        //     if (r.status == "Done") window.location.reload();
-        // });
     };
     let show = {
         day: new Date().toLocaleDateString("en-US"),
@@ -30,127 +25,82 @@
     };
 </script>
 
-<style type="text/scss">
-    .boxes {
-        background: #88f;
-        justify-content: space-between;
-        &:first-child {
-            width: 95%;
-            div,
-            input {
-                position: relative;
-                text-align: left;
-                font-size: 1em;
-                width: 100px;
-                flex: 1;
-            }
-        }
-        &:nth-child(2) {
-            width: 95%;
-        }
-        .main {
-            width: 33.33%;
-            display: flex;
-        }
-        .grade {
-            background: transparent;
-            outline: none;
-            border: 0;
-            color: #fff;
-            text-align: right;
-            width: 33.33%;
-        }
-        .date {
-            width: 33.33%;
-            text-align: right;
-        }
-        .label {
-            font-size: 0.66em;
-            position: absolute;
-            top: -9px;
-            left: 0;
-            color: #fff8;
-        }
-    }
-</style>
-
 <section>
-    <form on:submit|preventDefault={send} class="boxes">
-        <div class="main">
-            <span style="font-size:1.25em;text-format:capitalize">
-                Adder
-                <input
-                    type="submit"
-                    value="submit"
-                    style="opacity:0;width:0;" /></span>
-        </div>
-        <div>
+    <form on:submit|preventDefault={send} class="boxes blurW">
+        <div class="inp-cont">
             <span class="label">Name</span>
             <input type="text" class="grade" bind:value={show.record} />
         </div>
-        <div>
+        <div class="inp-cont">
             <span class="label">Type</span>
             <input type="text" class="grade" bind:value={show.type} />
         </div>
-        <div>
+        <div class="inp-cont">
             <span class="label">Released</span>
             <input type="text" class="grade" bind:value={show.release} />
         </div>
-        <div>
+        <div class="inp-cont">
             <span class="label">Grade</span>
             <input type="text" class="grade" bind:value={show.grade} />
         </div>
-        <div>
+        <div class="inp-cont">
             <span class="label">Speed</span>
             <input type="text" class="grade" bind:value={show.speed} />
         </div>
-        <div>
+        <div class="inp-cont">
             <span class="label">Source</span>
             <input type="text" class="grade" bind:value={show.source} />
         </div>
-        <div>
+        <div class="inp-cont">
             <span class="label">Today</span>
             <input type="text" class="grade" bind:value={show.day} />
+            <input type="submit" value="submit" style="opacity:0;width:0;" />
         </div>
-        <div>
+        <div class="inp-cont">
             <span class="label">Status</span>
             <input type="text" class="grade" bind:value={show.state} />
         </div>
     </form>
-    <div class="boxes">
-        <div class="main">
-            <span style="font-size:1.25em;text-format:capitalize">
-                Filterer
-            </span>
-        </div>
-        <input type="text" class="grade" bind:value={grade} />
-        <div class="date">&nbsp;</div>
-    </div>
+    <br />
     {#each set as show}
-        {#if show.grade >= (grade || 0)}
-            <div class="boxes">
-                <div class="main">
-                    <span style="font-size:1.25em;text-format:capitalize">
-                        {show.record.length > 20 ? show.record.slice(0, 20) + '...' : show.record}
-                    </span>
-                    <svg
-                        height="20"
-                        width="32"
-                        viewBox="0 0 40 25"
-                        style="background:#888;border-radius:8px;margin:3px 5px;">
-                        <text x="8" y="18" fill="#fff">{show.speed}</text>
-                    </svg>
-                </div>
-                <div class="grade">{show.grade}</div>
-                <div class="date">
-                    {new Date(show.day).toLocaleString('en-GB', {
-                        weekday: 'short',
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                    })}
-                </div>
+        <div class="boxes blurW">
+            <div class="main w-33">
+                <span style="font-size:1.25em;text-format:capitalize">
+                    {show.record.length > 20
+                        ? show.record.slice(0, 20) + "..."
+                        : show.record}
+                </span>
+                <svg height="20" width="32" viewBox="0 0 40 25">
+                    <text x="8" y="18" fill="#fff">{show.speed}</text>
+                </svg>
             </div>
-        {/if}
+            <div class="w-33 t-rhs">{show.grade}</div>
+            <div class="w-33 t-rhs">
+                {new Date(show.day).toLocaleString("en-GB", {
+                    weekday: "short",
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                })}
+            </div>
+        </div>
     {/each}
 </section>
+
+<style type="text/scss">
+    input {
+        color: #fff;
+        width: 100px;
+    }
+    .inp-cont {
+        flex: 1;
+    }
+    .main {
+        display: flex;
+        svg {
+            background: #888;
+            border-radius: 8px;
+            margin: 3px 5px;
+        }
+    }
+</style>

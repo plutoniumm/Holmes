@@ -14,7 +14,7 @@
     "notes": "cd ./config/notes && ijsnotebook",
     "server": "clear && node ./api/server.js",
     "dev": "rollup -c -w",
-    "devSass": "rollup -c -w & node-sass -w public/global.scss public/global.css --output-style compressed",
+    "devSass": "rollup -c -w & node-sass -w public/shared/global.scss public/shared/global.css --output-style compressed",
     "start": "sirv public"
   },
   "devDependencies": {

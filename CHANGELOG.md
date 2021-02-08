@@ -6,6 +6,10 @@
 - Add sample config (Partial)
 - Add system fules launching for Sherly
 - Fix GMeet bar remover
+- System hourly stats logger - Fan Speed, CPU+MB Temp, Battery level
+- Uptime session logger/shutdown script
+- Add instant formatting textbox which runs scripts on it (dash).
+- Add insta viewer
 
 
 ## v3.3.3
