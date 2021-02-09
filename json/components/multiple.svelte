@@ -1,5 +1,5 @@
 <script>
-    export let set;
+    export let set, sourcer;
 
     const send = () => {
         const t = show;
@@ -65,6 +65,7 @@
     {#each set as show}
         <div class="boxes blurW">
             <div class="main w-33">
+                <img src="./icons/{sourcer(show.source)}.svg" alt="" />
                 <span style="font-size:1.25em;text-format:capitalize">
                     {show.record.length > 20
                         ? show.record.slice(0, 20) + "..."
@@ -101,6 +102,13 @@
             background: #888;
             border-radius: 8px;
             margin: 3px 5px;
+        }
+        img {
+            width: 24px;
+            height: 24px;
+            border-radius: 5px;
+            object-fit: contain;
+            margin: 0 5px;
         }
     }
 </style>

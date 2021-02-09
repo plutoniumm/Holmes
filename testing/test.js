@@ -1,27 +1,22 @@
-const { exec } = require( "child_process" );
+const pr = require( 'playwright' );
 
-let reminders = [];
-exec( `osascript -e ' tell application "Reminders"
-            set mylist to id of list "Stack"
-            set reminderList to[]
-            set reminderList to name of reminders whose id of container is mylist
-            quit
-            return reminderList
-            end tell'`, ( err, sto, sterr ) => {
-    if ( err ) return console.log( err );
-    if ( sterr ) return console.log( sterr )
-    reminders = [ ...sto.split( ', ' ).map( e => { return { "list": e.trim(), "notes": [] } } ) ];
-} );
 
-exec( `osascript -e ' tell application "Reminders"
-            set mylist to id of list "Stack"
-            set reminderList to[]
-            set reminderList to body of reminders whose id of container is mylist
-            quit
-            return reminderList
-            end tell'`, ( err, sto, sterr ) => {
-    if ( err ) return console.log( err );
-    if ( sterr ) return console.log( sterr );
-    let stoes = sto.split( ', ' )
-    reminders.forEach( ( e, i ) => ( e.notes = [ ...( stoes[ i ].split( '\n' ) ) ] ) )
-} );
+( async () => {
+    const browser = pr[ 'webkit' ].launch( { headless: false } );
+    const ctx = ( await browser ).newContext();
+    const pg = ( await ctx ).newPage();
+
+    const groups = [ "SEDS Celestia 2021", "Chemical Engineering '23", "CTE: Instructors 2021sem2", "Chemical dualites", "Cosmology", "Mathletes" ];
+
+    ( await pg ).goto( "https://web.whatsapp.com" );
+    ( await pg ).waitForSelector( "span[title='MX']" );
+
+
+    ( await pg ).click( `span[title="${ groups[ 0 ] }"]` );
+    ( await pg ).click( "#main span[data-icon='menu']" );
+    ( await pg ).waitForTimeout( 1 * 1e3 );
+    ( await pg ).click( "div[title='Clear messages']" );
+    ( await pg ).waitForTimeout( 1 * 1e3 );
+    ( await pg ).click( "div[data-animate-modal-popup] div[role='button']:last-child" );
+    ( await pg ).waitForTimeout( 3 * 1e3 );
+} )()

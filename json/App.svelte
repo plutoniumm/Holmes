@@ -1,7 +1,8 @@
 <script>
     let mlt = [],
         sng = [],
-        display = 1;
+        trk = [],
+        display = 2;
 
     fetch("/data/multiple.json")
         .then((res) => res.json())
@@ -9,24 +10,42 @@
     fetch("/data/single.json")
         .then((res) => res.json())
         .then((r) => (sng = r));
+    fetch("/data/track.json")
+        .then((res) => res.json())
+        .then((r) => (trk = r));
+
+    const sourcer = (src) => {
+        if (src == "DC++") return "DCpp";
+        if (src == "AppleTV+") return "Apple";
+        if (src == "PrimeVideo") return "Amazon";
+        if (src == "Hotstar") return "Disney";
+        if (src == "KissMovies" || src == "KissAnime") return "Web";
+        else return src;
+    };
 
     import Multi from "./components/multiple.svelte";
     import Single from "./components/single.svelte";
+    import Tracker from "./components/track.svelte";
 </script>
 
 <section>
     <nav class="blurW">
-        <div class={display ? "blurW" : ""} on:click={() => (display = 1)}>
+        <div class={display == 0 ? "blurW" : ""} on:click={() => (display = 0)}>
             Movies
         </div>
-        <div class={!display ? "blurW" : ""} on:click={() => (display = 0)}>
+        <div class={display == 1 ? "blurW" : ""} on:click={() => (display = 1)}>
             Shows
         </div>
+        <div class={display == 2 ? "blurW" : ""} on:click={() => (display = 2)}>
+            Tracker
+        </div>
     </nav>
-    {#if display}
-        <Single set={sng} />
+    {#if display == 0}
+        <Single set={sng} {sourcer} />
+    {:else if display == 1}
+        <Multi set={mlt} {sourcer} />
     {:else}
-        <Multi set={mlt} />
+        <Tracker set={trk} {sourcer} />
     {/if}
 </section>
 

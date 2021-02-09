@@ -13,8 +13,8 @@
 
 - Add Jupyter Controls
 - Add CPU temp + fan speed Stats
+- Watch tracker + src icons
 - Glass JSON, remove talks
-
 
 ## v3.3.2
 

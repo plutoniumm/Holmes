@@ -3,7 +3,7 @@
 
     const send = () => {
         set = [show, ...set];
-        fetch("/json/single", {
+        fetch("/json/track", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -12,45 +12,45 @@
         });
     };
     let show = {
-        day: new Date().toLocaleDateString("en-US"),
-        type: "Documentary",
-        record: "Name",
-        release: "201",
-        grade: 5,
+        type: "Movie",
+        record: "Don't Fuck with Cats",
+        release: "2019",
         source: "Netflix",
-        speed: "1.8",
+        stars: "",
+        size: "",
+        why: "8",
     };
 </script>
 
 <section>
     <form on:submit|preventDefault={send} class="boxes blurW">
         <div class="inp-cont">
-            <span class="label">Name</span>
-            <input type="text" class="grade" bind:value={show.record} />
-        </div>
-        <div class="inp-cont">
             <span class="label">Type</span>
             <input type="text" class="grade" bind:value={show.type} />
+        </div>
+        <div class="inp-cont">
+            <span class="label">Name</span>
+            <input type="text" class="grade" bind:value={show.record} />
         </div>
         <div class="inp-cont">
             <span class="label">Released</span>
             <input type="text" class="grade" bind:value={show.release} />
         </div>
         <div class="inp-cont">
-            <span class="label">Grade</span>
-            <input type="text" class="grade" bind:value={show.grade} />
-        </div>
-        <div class="inp-cont">
-            <span class="label">Speed</span>
-            <input type="text" class="grade" bind:value={show.speed} />
-        </div>
-        <div class="inp-cont">
             <span class="label">Source</span>
             <input type="text" class="grade" bind:value={show.source} />
         </div>
         <div class="inp-cont">
-            <span class="label">Today</span>
-            <input type="text" class="grade" bind:value={show.day} />
+            <span class="label">Size</span>
+            <input type="text" class="grade" bind:value={show.size} />
+        </div>
+        <div class="inp-cont">
+            <span class="label">Stars</span>
+            <input type="text" class="grade" bind:value={show.stars} />
+        </div>
+        <div class="inp-cont">
+            <span class="label">Why</span>
+            <input type="text" class="grade" bind:value={show.why} />
             <input type="submit" value="submit" style="opacity:0;width:0;" />
         </div>
     </form>
@@ -62,26 +62,12 @@
                 <span style="font-size:1.25em;text-format:capitalize">
                     {show.record.length > 20
                         ? show.record.slice(0, 20) + "..."
-                        : show.record}
+                        : show.record} ({show.release})
                 </span>
-                <svg
-                    height="20"
-                    width="32"
-                    viewBox="0 0 40 25"
-                    style="background:#888;border-radius:8px;margin:3px 5px;"
-                >
-                    <text x="8" y="18" fill="#fff">{show.speed}</text>
-                </svg>
             </div>
-            <div class="w-33 t-rhs">{show.grade}</div>
-            <div class="w-33 t-rhs">
-                {new Date(show.day).toLocaleString("en-GB", {
-                    weekday: "short",
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                })}
-            </div>
+            <div class="w-33 t-rhs">{show.stars}</div>
+            <div class="w-33 t-rhs">{show.size}</div>
+            <div class="w-33 t-rhs">({show.type}) {show.why}</div>
         </div>
     {/each}
 </section>
