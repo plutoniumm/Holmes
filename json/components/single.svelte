@@ -1,8 +1,11 @@
 <script>
-    export let set, sourcer;
+    export let set, state;
+
+    import { sourcer, histSearch } from "../functions.js";
 
     const send = () => {
-        set = [show, ...set];
+        const t = show;
+        set = [t, ...set];
         fetch("/json/single", {
             method: "POST",
             headers: {
@@ -54,8 +57,10 @@
             <input type="submit" value="submit" style="opacity:0;width:0;" />
         </div>
     </form>
-    <br />
-    {#each set as show}
+    {#each set.filter((e) => {
+        if (state != "") return histSearch(e, state);
+        else return 1;
+    }) as show}
         <div class="boxes blurW">
             <div class="main w-33">
                 <img src="./icons/{sourcer(show.source)}.svg" alt="" />

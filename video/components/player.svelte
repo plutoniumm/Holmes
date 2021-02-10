@@ -5,6 +5,7 @@
     let config = "?autoplay=1&enablejsapi=1";
 
     const clear = (() => {
+        console.log("cleared");
         const defined = (v) => v !== null && v !== undefined;
         const timeout = setInterval(() => {
             if (defined([...document.querySelectorAll(".ad-showing")][0])) {
@@ -42,10 +43,26 @@
     };
 </script>
 
+<div id="wrapper">
+    <iframe
+        bind:this={maxwell}
+        id="main"
+        class="main"
+        title="video"
+        src="https://www.youtube-nocookie.com/embed/{id + config}"
+        allow="accelerometer;autoplay;clipboard-write;encrypted-media;picture-in-picture"
+        sandbox="allow-scripts allow-same-origin"
+        allowfullscreen
+    />
+    <div class="controls">
+        <input type="text" on:change={speedCh} bind:value={speed} />
+    </div>
+</div>
+
 <style type="text/scss">
     #wrapper {
         width: 100%;
-        height: 99.9vh;
+        height: 100vh;
         .main {
             width: 100%;
             height: 100%;
@@ -70,18 +87,3 @@
         }
     }
 </style>
-
-<div id="wrapper">
-    <iframe
-        bind:this={maxwell}
-        id="main"
-        class="main"
-        title="video"
-        src="https://www.youtube-nocookie.com/embed/{id + config}"
-        allow="accelerometer;autoplay;clipboard-write;encrypted-media;picture-in-picture"
-        sandbox="allow-scripts allow-same-origin"
-        allowfullscreen />
-    <div class="controls">
-        <input type="text" on:change={speedCh} bind:value={speed} />
-    </div>
-</div>

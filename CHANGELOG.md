@@ -1,12 +1,16 @@
 # Changelog
 
 ## Pending
-- Add json editor for talks
-- Fix GMeet bar remover
 - System hourly stats logger - Fan Speed, CPU+MB Temp, Battery level
 - Uptime session logger/shutdown script
 - Add instant formatting textbox which runs scripts on it (dash).
 - Add insta viewer
+
+
+## v3.4.0
+
+- Add search to JSON Multiple & Single
+- Fix GMeet Bar remover and add ?bar=1 reader
 
 
 ## v3.3.3
@@ -15,6 +19,7 @@
 - Add CPU temp + fan speed Stats
 - Watch tracker + src icons
 - Glass JSON, remove talks
+
 
 ## v3.3.2
 
@@ -106,6 +111,7 @@ Full Convert to Svelte
 ## v1.0.0
 
 Processing Engine for multiple sites with functions
+
 
 ## v0.0.0
 

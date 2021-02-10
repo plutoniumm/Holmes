@@ -2,7 +2,9 @@
     let mlt = [],
         sng = [],
         trk = [],
-        display = 2;
+        display = 0;
+
+    $: search = "";
 
     fetch("/data/multiple.json")
         .then((res) => res.json())
@@ -13,15 +15,6 @@
     fetch("/data/track.json")
         .then((res) => res.json())
         .then((r) => (trk = r));
-
-    const sourcer = (src) => {
-        if (src == "DC++") return "DCpp";
-        if (src == "AppleTV+") return "Apple";
-        if (src == "PrimeVideo") return "Amazon";
-        if (src == "Hotstar") return "Disney";
-        if (src == "KissMovies" || src == "KissAnime") return "Web";
-        else return src;
-    };
 
     import Multi from "./components/multiple.svelte";
     import Single from "./components/single.svelte";
@@ -41,12 +34,20 @@
         </div>
     </nav>
     {#if display == 0}
-        <Single set={sng} {sourcer} />
+        <Single set={sng} state={search.toLowerCase()} />
     {:else if display == 1}
-        <Multi set={mlt} {sourcer} />
+        <Multi set={mlt} state={search.toLowerCase()} />
     {:else}
-        <Tracker set={trk} {sourcer} />
+        <Tracker set={trk} state={search.toLowerCase()} />
     {/if}
+</section>
+<section class="filter">
+    <input
+        type="text"
+        class="engine blurW"
+        placeholder="Search"
+        bind:value={search}
+    />
 </section>
 
 <style type="text/scss">
@@ -56,7 +57,7 @@
     nav {
         display: flex;
         justify-content: space-around;
-        position: fixed;
+        position: absolute;
         top: 0;
         z-index: 999;
         border-radius: 10px;
@@ -72,6 +73,29 @@
             transition: transform 0.2s ease;
             &:hover {
                 transform: scale(1.05);
+            }
+        }
+    }
+    .filter {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        .engine {
+            width: 80%;
+            font-size: 1.5em;
+            margin: 0 5%;
+            padding: 10px 5%;
+            color: #fff;
+            border-radius: 25px;
+            transition: transform 0.2s ease;
+            transform: translateY(50vh);
+            &:focus {
+                transform: translateY(0);
+            }
+        }
+        &:hover {
+            .engine {
+                transform: translateY(0);
             }
         }
     }

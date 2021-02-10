@@ -94,13 +94,6 @@
 	window.onload = URLpars().q ? searcher(URLpars().q) : null;
 </script>
 
-<style>
-	main,
-	main * {
-		overflow-x: hidden;
-	}
-</style>
-
 <main>
 	<Bar {searcher} {states} {channels} {substack} />
 	{#if id}
@@ -111,3 +104,10 @@
 	<Subsc videos={substack} {vidoer} {stacker} />
 	<Plist videos={plStack} {fullStacker} />
 </main>
+
+<style>
+	main,
+	main * {
+		overflow-x: hidden;
+	}
+</style>

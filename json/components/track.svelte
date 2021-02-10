@@ -1,8 +1,11 @@
 <script>
-    export let set, sourcer;
+    export let set;
+
+    import { sourcer } from "../functions.js";
 
     const send = () => {
-        set = [show, ...set];
+        const t = show;
+        set = [t, ...set];
         fetch("/json/track", {
             method: "POST",
             headers: {

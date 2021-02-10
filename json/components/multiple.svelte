@@ -1,5 +1,7 @@
 <script>
-    export let set, sourcer;
+    export let set, state;
+
+    import { sourcer, histSearch } from "../functions.js";
 
     const send = () => {
         const t = show;
@@ -62,7 +64,10 @@
         </div>
     </form>
     <br />
-    {#each set as show}
+    {#each set.filter((e) => {
+        if (state != "") return histSearch(e, state);
+        else return 1;
+    }) as show}
         <div class="boxes blurW">
             <div class="main w-33">
                 <img src="./icons/{sourcer(show.source)}.svg" alt="" />
