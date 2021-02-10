@@ -7,39 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F4A963CC25D3ACC1002A2E86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A963CB25D3ACC1002A2E86 /* AppDelegate.swift */; };
-		F4A963CF25D3ACC1002A2E86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A963CD25D3ACC1002A2E86 /* Main.storyboard */; };
-		F4A963D125D3ACC1002A2E86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A963D025D3ACC1002A2E86 /* ViewController.swift */; };
-		F4A963D325D3ACC5002A2E86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A963D225D3ACC5002A2E86 /* Assets.xcassets */; };
-		F4A963DA25D3ACC5002A2E86 /* Q Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F4A963D925D3ACC5002A2E86 /* Q Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F4A963DF25D3ACC5002A2E86 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A963DE25D3ACC5002A2E86 /* Cocoa.framework */; };
-		F4A963E225D3ACC5002A2E86 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A963E125D3ACC5002A2E86 /* SafariWebExtensionHandler.swift */; };
-		F4A963F525D3ACC6002A2E86 /* pop.html in Resources */ = {isa = PBXBuildFile; fileRef = F4A963EF25D3ACC6002A2E86 /* pop.html */; };
-		F4A963F625D3ACC6002A2E86 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = F4A963F025D3ACC6002A2E86 /* background.js */; };
-		F4A963F725D3ACC6002A2E86 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = F4A963F125D3ACC6002A2E86 /* styles */; };
-		F4A963F825D3ACC6002A2E86 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = F4A963F225D3ACC6002A2E86 /* scripts */; };
-		F4A963F925D3ACC6002A2E86 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = F4A963F325D3ACC6002A2E86 /* manifest.json */; };
-		F4A963FA25D3ACC6002A2E86 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = F4A963F425D3ACC6002A2E86 /* assets */; };
+		F4F881A325D3B16900D10A81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F881A225D3B16900D10A81 /* AppDelegate.swift */; };
+		F4F881A625D3B16900D10A81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F881A425D3B16900D10A81 /* Main.storyboard */; };
+		F4F881A825D3B16900D10A81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F881A725D3B16900D10A81 /* ViewController.swift */; };
+		F4F881AA25D3B16B00D10A81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F881A925D3B16B00D10A81 /* Assets.xcassets */; };
+		F4F881B125D3B16B00D10A81 /* Q Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F4F881B025D3B16B00D10A81 /* Q Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F4F881B625D3B16B00D10A81 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4F881B525D3B16B00D10A81 /* Cocoa.framework */; };
+		F4F881B925D3B16B00D10A81 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F881B825D3B16B00D10A81 /* SafariWebExtensionHandler.swift */; };
+		F4F881CC25D3B16C00D10A81 /* pop.html in Resources */ = {isa = PBXBuildFile; fileRef = F4F881C625D3B16C00D10A81 /* pop.html */; };
+		F4F881CD25D3B16C00D10A81 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = F4F881C725D3B16C00D10A81 /* background.js */; };
+		F4F881CE25D3B16C00D10A81 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = F4F881C825D3B16C00D10A81 /* styles */; };
+		F4F881CF25D3B16C00D10A81 /* scripts in Resources */ = {isa = PBXBuildFile; fileRef = F4F881C925D3B16C00D10A81 /* scripts */; };
+		F4F881D025D3B16C00D10A81 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = F4F881CA25D3B16C00D10A81 /* manifest.json */; };
+		F4F881D125D3B16C00D10A81 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = F4F881CB25D3B16C00D10A81 /* assets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F4A963DB25D3ACC5002A2E86 /* PBXContainerItemProxy */ = {
+		F4F881B225D3B16B00D10A81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F4A963BF25D3ACC1002A2E86 /* Project object */;
+			containerPortal = F4F8819625D3B16900D10A81 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F4A963D825D3ACC5002A2E86;
+			remoteGlobalIDString = F4F881AF25D3B16B00D10A81;
 			remoteInfo = "Q Extension";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F4A963EA25D3ACC5002A2E86 /* Embed App Extensions */ = {
+		F4F881C125D3B16B00D10A81 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F4A963DA25D3ACC5002A2E86 /* Q Extension.appex in Embed App Extensions */,
+				F4F881B125D3B16B00D10A81 /* Q Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,105 +47,105 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F4A963C725D3ACC1002A2E86 /* Q.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Q.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4A963CA25D3ACC1002A2E86 /* Q.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Q.entitlements; sourceTree = "<group>"; };
-		F4A963CB25D3ACC1002A2E86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4A963CE25D3ACC1002A2E86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F4A963D025D3ACC1002A2E86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F4A963D225D3ACC5002A2E86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F4A963D425D3ACC5002A2E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4A963D925D3ACC5002A2E86 /* Q Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Q Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4A963DE25D3ACC5002A2E86 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		F4A963E125D3ACC5002A2E86 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		F4A963E325D3ACC5002A2E86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4A963E425D3ACC5002A2E86 /* Q_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Q_Extension.entitlements; sourceTree = "<group>"; };
-		F4A963EF25D3ACC6002A2E86 /* pop.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pop.html; path = ../../Quartermaster/pop.html; sourceTree = "<group>"; };
-		F4A963F025D3ACC6002A2E86 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../Quartermaster/background.js; sourceTree = "<group>"; };
-		F4A963F125D3ACC6002A2E86 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = styles; path = ../../Quartermaster/styles; sourceTree = "<group>"; };
-		F4A963F225D3ACC6002A2E86 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = ../../Quartermaster/scripts; sourceTree = "<group>"; };
-		F4A963F325D3ACC6002A2E86 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../Quartermaster/manifest.json; sourceTree = "<group>"; };
-		F4A963F425D3ACC6002A2E86 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../Quartermaster/assets; sourceTree = "<group>"; };
+		F4F8819E25D3B16900D10A81 /* Q.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Q.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4F881A125D3B16900D10A81 /* Q.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Q.entitlements; sourceTree = "<group>"; };
+		F4F881A225D3B16900D10A81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4F881A525D3B16900D10A81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4F881A725D3B16900D10A81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4F881A925D3B16B00D10A81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4F881AB25D3B16B00D10A81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4F881B025D3B16B00D10A81 /* Q Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Q Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4F881B525D3B16B00D10A81 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F4F881B825D3B16B00D10A81 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		F4F881BA25D3B16B00D10A81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4F881BB25D3B16B00D10A81 /* Q_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Q_Extension.entitlements; sourceTree = "<group>"; };
+		F4F881C625D3B16C00D10A81 /* pop.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pop.html; path = ../../Quartermaster/pop.html; sourceTree = "<group>"; };
+		F4F881C725D3B16C00D10A81 /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../Quartermaster/background.js; sourceTree = "<group>"; };
+		F4F881C825D3B16C00D10A81 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = styles; path = ../../Quartermaster/styles; sourceTree = "<group>"; };
+		F4F881C925D3B16C00D10A81 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = ../../Quartermaster/scripts; sourceTree = "<group>"; };
+		F4F881CA25D3B16C00D10A81 /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../Quartermaster/manifest.json; sourceTree = "<group>"; };
+		F4F881CB25D3B16C00D10A81 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../Quartermaster/assets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F4A963C425D3ACC1002A2E86 /* Frameworks */ = {
+		F4F8819B25D3B16900D10A81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4A963D625D3ACC5002A2E86 /* Frameworks */ = {
+		F4F881AD25D3B16B00D10A81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A963DF25D3ACC5002A2E86 /* Cocoa.framework in Frameworks */,
+				F4F881B625D3B16B00D10A81 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F4A963BE25D3ACC1002A2E86 = {
+		F4F8819525D3B16900D10A81 = {
 			isa = PBXGroup;
 			children = (
-				F4A963C925D3ACC1002A2E86 /* Q */,
-				F4A963E025D3ACC5002A2E86 /* Q Extension */,
-				F4A963DD25D3ACC5002A2E86 /* Frameworks */,
-				F4A963C825D3ACC1002A2E86 /* Products */,
+				F4F881A025D3B16900D10A81 /* Q */,
+				F4F881B725D3B16B00D10A81 /* Q Extension */,
+				F4F881B425D3B16B00D10A81 /* Frameworks */,
+				F4F8819F25D3B16900D10A81 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F4A963C825D3ACC1002A2E86 /* Products */ = {
+		F4F8819F25D3B16900D10A81 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4A963C725D3ACC1002A2E86 /* Q.app */,
-				F4A963D925D3ACC5002A2E86 /* Q Extension.appex */,
+				F4F8819E25D3B16900D10A81 /* Q.app */,
+				F4F881B025D3B16B00D10A81 /* Q Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F4A963C925D3ACC1002A2E86 /* Q */ = {
+		F4F881A025D3B16900D10A81 /* Q */ = {
 			isa = PBXGroup;
 			children = (
-				F4A963CA25D3ACC1002A2E86 /* Q.entitlements */,
-				F4A963CB25D3ACC1002A2E86 /* AppDelegate.swift */,
-				F4A963CD25D3ACC1002A2E86 /* Main.storyboard */,
-				F4A963D025D3ACC1002A2E86 /* ViewController.swift */,
-				F4A963D225D3ACC5002A2E86 /* Assets.xcassets */,
-				F4A963D425D3ACC5002A2E86 /* Info.plist */,
+				F4F881A125D3B16900D10A81 /* Q.entitlements */,
+				F4F881A225D3B16900D10A81 /* AppDelegate.swift */,
+				F4F881A425D3B16900D10A81 /* Main.storyboard */,
+				F4F881A725D3B16900D10A81 /* ViewController.swift */,
+				F4F881A925D3B16B00D10A81 /* Assets.xcassets */,
+				F4F881AB25D3B16B00D10A81 /* Info.plist */,
 			);
 			path = Q;
 			sourceTree = "<group>";
 		};
-		F4A963DD25D3ACC5002A2E86 /* Frameworks */ = {
+		F4F881B425D3B16B00D10A81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4A963DE25D3ACC5002A2E86 /* Cocoa.framework */,
+				F4F881B525D3B16B00D10A81 /* Cocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F4A963E025D3ACC5002A2E86 /* Q Extension */ = {
+		F4F881B725D3B16B00D10A81 /* Q Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F4A963EE25D3ACC6002A2E86 /* Resources */,
-				F4A963E125D3ACC5002A2E86 /* SafariWebExtensionHandler.swift */,
-				F4A963E325D3ACC5002A2E86 /* Info.plist */,
-				F4A963E425D3ACC5002A2E86 /* Q_Extension.entitlements */,
+				F4F881C525D3B16C00D10A81 /* Resources */,
+				F4F881B825D3B16B00D10A81 /* SafariWebExtensionHandler.swift */,
+				F4F881BA25D3B16B00D10A81 /* Info.plist */,
+				F4F881BB25D3B16B00D10A81 /* Q_Extension.entitlements */,
 			);
 			path = "Q Extension";
 			sourceTree = "<group>";
 		};
-		F4A963EE25D3ACC6002A2E86 /* Resources */ = {
+		F4F881C525D3B16C00D10A81 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F4A963EF25D3ACC6002A2E86 /* pop.html */,
-				F4A963F025D3ACC6002A2E86 /* background.js */,
-				F4A963F125D3ACC6002A2E86 /* styles */,
-				F4A963F225D3ACC6002A2E86 /* scripts */,
-				F4A963F325D3ACC6002A2E86 /* manifest.json */,
-				F4A963F425D3ACC6002A2E86 /* assets */,
+				F4F881C625D3B16C00D10A81 /* pop.html */,
+				F4F881C725D3B16C00D10A81 /* background.js */,
+				F4F881C825D3B16C00D10A81 /* styles */,
+				F4F881C925D3B16C00D10A81 /* scripts */,
+				F4F881CA25D3B16C00D10A81 /* manifest.json */,
+				F4F881CB25D3B16C00D10A81 /* assets */,
 			);
 			name = Resources;
 			path = "Q Extension";
@@ -154,32 +154,32 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4A963C625D3ACC1002A2E86 /* Q */ = {
+		F4F8819D25D3B16900D10A81 /* Q */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4A963EB25D3ACC5002A2E86 /* Build configuration list for PBXNativeTarget "Q" */;
+			buildConfigurationList = F4F881C225D3B16B00D10A81 /* Build configuration list for PBXNativeTarget "Q" */;
 			buildPhases = (
-				F4A963C325D3ACC1002A2E86 /* Sources */,
-				F4A963C425D3ACC1002A2E86 /* Frameworks */,
-				F4A963C525D3ACC1002A2E86 /* Resources */,
-				F4A963EA25D3ACC5002A2E86 /* Embed App Extensions */,
+				F4F8819A25D3B16900D10A81 /* Sources */,
+				F4F8819B25D3B16900D10A81 /* Frameworks */,
+				F4F8819C25D3B16900D10A81 /* Resources */,
+				F4F881C125D3B16B00D10A81 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F4A963DC25D3ACC5002A2E86 /* PBXTargetDependency */,
+				F4F881B325D3B16B00D10A81 /* PBXTargetDependency */,
 			);
 			name = Q;
 			productName = Q;
-			productReference = F4A963C725D3ACC1002A2E86 /* Q.app */;
+			productReference = F4F8819E25D3B16900D10A81 /* Q.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F4A963D825D3ACC5002A2E86 /* Q Extension */ = {
+		F4F881AF25D3B16B00D10A81 /* Q Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4A963E725D3ACC5002A2E86 /* Build configuration list for PBXNativeTarget "Q Extension" */;
+			buildConfigurationList = F4F881BE25D3B16B00D10A81 /* Build configuration list for PBXNativeTarget "Q Extension" */;
 			buildPhases = (
-				F4A963D525D3ACC5002A2E86 /* Sources */,
-				F4A963D625D3ACC5002A2E86 /* Frameworks */,
-				F4A963D725D3ACC5002A2E86 /* Resources */,
+				F4F881AC25D3B16B00D10A81 /* Sources */,
+				F4F881AD25D3B16B00D10A81 /* Frameworks */,
+				F4F881AE25D3B16B00D10A81 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -187,27 +187,27 @@
 			);
 			name = "Q Extension";
 			productName = "Q Extension";
-			productReference = F4A963D925D3ACC5002A2E86 /* Q Extension.appex */;
+			productReference = F4F881B025D3B16B00D10A81 /* Q Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F4A963BF25D3ACC1002A2E86 /* Project object */ = {
+		F4F8819625D3B16900D10A81 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					F4A963C625D3ACC1002A2E86 = {
+					F4F8819D25D3B16900D10A81 = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					F4A963D825D3ACC5002A2E86 = {
+					F4F881AF25D3B16B00D10A81 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = F4A963C225D3ACC1002A2E86 /* Build configuration list for PBXProject "Q" */;
+			buildConfigurationList = F4F8819925D3B16900D10A81 /* Build configuration list for PBXProject "Q" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -215,75 +215,75 @@
 				en,
 				Base,
 			);
-			mainGroup = F4A963BE25D3ACC1002A2E86;
-			productRefGroup = F4A963C825D3ACC1002A2E86 /* Products */;
+			mainGroup = F4F8819525D3B16900D10A81;
+			productRefGroup = F4F8819F25D3B16900D10A81 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4A963C625D3ACC1002A2E86 /* Q */,
-				F4A963D825D3ACC5002A2E86 /* Q Extension */,
+				F4F8819D25D3B16900D10A81 /* Q */,
+				F4F881AF25D3B16B00D10A81 /* Q Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F4A963C525D3ACC1002A2E86 /* Resources */ = {
+		F4F8819C25D3B16900D10A81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A963D325D3ACC5002A2E86 /* Assets.xcassets in Resources */,
-				F4A963CF25D3ACC1002A2E86 /* Main.storyboard in Resources */,
+				F4F881AA25D3B16B00D10A81 /* Assets.xcassets in Resources */,
+				F4F881A625D3B16900D10A81 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4A963D725D3ACC5002A2E86 /* Resources */ = {
+		F4F881AE25D3B16B00D10A81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A963F625D3ACC6002A2E86 /* background.js in Resources */,
-				F4A963F725D3ACC6002A2E86 /* styles in Resources */,
-				F4A963F925D3ACC6002A2E86 /* manifest.json in Resources */,
-				F4A963FA25D3ACC6002A2E86 /* assets in Resources */,
-				F4A963F525D3ACC6002A2E86 /* pop.html in Resources */,
-				F4A963F825D3ACC6002A2E86 /* scripts in Resources */,
+				F4F881CD25D3B16C00D10A81 /* background.js in Resources */,
+				F4F881CE25D3B16C00D10A81 /* styles in Resources */,
+				F4F881D025D3B16C00D10A81 /* manifest.json in Resources */,
+				F4F881D125D3B16C00D10A81 /* assets in Resources */,
+				F4F881CC25D3B16C00D10A81 /* pop.html in Resources */,
+				F4F881CF25D3B16C00D10A81 /* scripts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F4A963C325D3ACC1002A2E86 /* Sources */ = {
+		F4F8819A25D3B16900D10A81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A963D125D3ACC1002A2E86 /* ViewController.swift in Sources */,
-				F4A963CC25D3ACC1002A2E86 /* AppDelegate.swift in Sources */,
+				F4F881A825D3B16900D10A81 /* ViewController.swift in Sources */,
+				F4F881A325D3B16900D10A81 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4A963D525D3ACC5002A2E86 /* Sources */ = {
+		F4F881AC25D3B16B00D10A81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A963E225D3ACC5002A2E86 /* SafariWebExtensionHandler.swift in Sources */,
+				F4F881B925D3B16B00D10A81 /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F4A963DC25D3ACC5002A2E86 /* PBXTargetDependency */ = {
+		F4F881B325D3B16B00D10A81 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F4A963D825D3ACC5002A2E86 /* Q Extension */;
-			targetProxy = F4A963DB25D3ACC5002A2E86 /* PBXContainerItemProxy */;
+			target = F4F881AF25D3B16B00D10A81 /* Q Extension */;
+			targetProxy = F4F881B225D3B16B00D10A81 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F4A963CD25D3ACC1002A2E86 /* Main.storyboard */ = {
+		F4F881A425D3B16900D10A81 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F4A963CE25D3ACC1002A2E86 /* Base */,
+				F4F881A525D3B16900D10A81 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F4A963E525D3ACC5002A2E86 /* Debug */ = {
+		F4F881BC25D3B16B00D10A81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -352,7 +352,7 @@
 			};
 			name = Debug;
 		};
-		F4A963E625D3ACC5002A2E86 /* Release */ = {
+		F4F881BD25D3B16B00D10A81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -406,7 +406,7 @@
 			};
 			name = Release;
 		};
-		F4A963E825D3ACC5002A2E86 /* Debug */ = {
+		F4F881BF25D3B16B00D10A81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Q Extension/Q_Extension.entitlements";
@@ -425,7 +425,7 @@
 			};
 			name = Debug;
 		};
-		F4A963E925D3ACC5002A2E86 /* Release */ = {
+		F4F881C025D3B16B00D10A81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Q Extension/Q_Extension.entitlements";
@@ -444,7 +444,7 @@
 			};
 			name = Release;
 		};
-		F4A963EC25D3ACC5002A2E86 /* Debug */ = {
+		F4F881C325D3B16B00D10A81 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -465,7 +465,7 @@
 			};
 			name = Debug;
 		};
-		F4A963ED25D3ACC5002A2E86 /* Release */ = {
+		F4F881C425D3B16B00D10A81 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -489,34 +489,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F4A963C225D3ACC1002A2E86 /* Build configuration list for PBXProject "Q" */ = {
+		F4F8819925D3B16900D10A81 /* Build configuration list for PBXProject "Q" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4A963E525D3ACC5002A2E86 /* Debug */,
-				F4A963E625D3ACC5002A2E86 /* Release */,
+				F4F881BC25D3B16B00D10A81 /* Debug */,
+				F4F881BD25D3B16B00D10A81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4A963E725D3ACC5002A2E86 /* Build configuration list for PBXNativeTarget "Q Extension" */ = {
+		F4F881BE25D3B16B00D10A81 /* Build configuration list for PBXNativeTarget "Q Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4A963E825D3ACC5002A2E86 /* Debug */,
-				F4A963E925D3ACC5002A2E86 /* Release */,
+				F4F881BF25D3B16B00D10A81 /* Debug */,
+				F4F881C025D3B16B00D10A81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4A963EB25D3ACC5002A2E86 /* Build configuration list for PBXNativeTarget "Q" */ = {
+		F4F881C225D3B16B00D10A81 /* Build configuration list for PBXNativeTarget "Q" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4A963EC25D3ACC5002A2E86 /* Debug */,
-				F4A963ED25D3ACC5002A2E86 /* Release */,
+				F4F881C325D3B16B00D10A81 /* Debug */,
+				F4F881C425D3B16B00D10A81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F4A963BF25D3ACC1002A2E86 /* Project object */;
+	rootObject = F4F8819625D3B16900D10A81 /* Project object */;
 }
