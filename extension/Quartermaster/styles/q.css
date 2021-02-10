@@ -2,12 +2,18 @@ body::-webkit-scrollbar{
     display: none;
 }
 
-.QMmenu {
+canvas{
+    opacity: 0.5;
+    max-width: 100px;
+    max-height: 10vw;
+}
+
+#QMmenu {
     position: fixed;
-    top: 80px;
+    top: 100px;
     right: 120px;
-    z-index:99;
-    opacity: 0.9;
+    z-index:9999;
+    opacity: 0.8;
     border-radius: 40px;
 }
 
@@ -21,10 +27,9 @@ body::-webkit-scrollbar{
     display: block;
     top: 0;
     bottom: 0;
-    right: 0;
     left: 0;
     margin: auto;
-    width: 25px;
+    width: 50px;
     height: 25px;
     z-index: 2;
     opacity: 0;
@@ -80,8 +85,7 @@ body::-webkit-scrollbar{
     display: block;
     top: 0;
     bottom: 0;
-    right: 0;
-    left: 0;
+    left: 12px;
     margin: auto;
 }
 
@@ -127,6 +131,7 @@ body::-webkit-scrollbar{
 .QMmenu-item .a {
     display: block;
     width: inherit;
+    overflow:hidden;
     height: inherit;
     line-height: 50px;
     color: #fffb;
@@ -140,8 +145,8 @@ body::-webkit-scrollbar{
 }
 
 .QMmenu-item .a:hover {
-    color: white;
+    color: #fff;
     opacity: 1;
-    background: #aaa6;
-    font-size: 27.5px;
+    background: #9996;
+    font-size: 27px;
 }
