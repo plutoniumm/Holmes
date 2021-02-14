@@ -76,7 +76,7 @@
 	const vidoer = (e) => {
 		id = e.target.parentElement.id;
 		chURL("id", id);
-		window.location.href = "#main";
+		window.scrollTo(0, 0);
 		document.title = e.target.parentElement.getAttribute("data-title");
 	};
 	const fullStacker = (vids) => (stack = [...stack, ...vids]);

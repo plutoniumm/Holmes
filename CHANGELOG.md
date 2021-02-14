@@ -5,6 +5,8 @@
 - Uptime session logger/shutdown script
 - Add instant formatting textbox which runs scripts on it (dash).
 - Add insta viewer
+- Create a development system with API testing in browser, test scripts editing etc...
+- Startup Script - node server && psql_start. Stop script stop server && psql_stop
 
 
 ## v3.4.0

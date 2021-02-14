@@ -2,7 +2,12 @@
     export let id;
     let maxwell,
         speed = 1.0;
-    let config = "?autoplay=1&enablejsapi=1";
+
+    const [ext, yt, ald] = [
+        "?autoplay=1&enablejsapi=1",
+        "https://www.youtube-nocookie.com/embed/",
+        "accelerometer;autoplay;clipboard-write;encrypted-media;picture-in-picture",
+    ];
 
     const clear = (() => {
         console.log("cleared");
@@ -46,11 +51,9 @@
 <div id="wrapper">
     <iframe
         bind:this={maxwell}
-        id="main"
-        class="main"
         title="video"
-        src="https://www.youtube-nocookie.com/embed/{id + config}"
-        allow="accelerometer;autoplay;clipboard-write;encrypted-media;picture-in-picture"
+        src={yt + id + ext}
+        allow={ald}
         sandbox="allow-scripts allow-same-origin"
         allowfullscreen
     />
@@ -63,7 +66,7 @@
     #wrapper {
         width: 100%;
         height: 100vh;
-        .main {
+        iframe {
             width: 100%;
             height: 100%;
             border: 0;
