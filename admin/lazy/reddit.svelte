@@ -6,7 +6,7 @@
 </script>
 
 {#each tn as el}
-    <div class="box w-100 blurW">
+    <div class="boxy w-100 blurW">
         <a href={el.data.url_overridden_by_dest}>
             <img
                 class="w-100"
@@ -20,7 +20,7 @@
 {/each}
 
 <style type="text/scss">
-    .box {
+    .boxy {
         margin: 5px 0;
         border-radius: 10px;
         transition: all 0.2s ease;

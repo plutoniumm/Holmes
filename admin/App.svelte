@@ -38,19 +38,19 @@
 <div class="bg">
 	<div class="wrapper blur w-100">
 		<div
-			class="box a full blur"
+			class="boxy a full blur"
 			style="margin:7px;height:calc(99vh - 15px)"
 		>
 			<Nav {naver} />
 		</div>
-		<div class="box b half">
+		<div class="boxy b half">
 			{#if state.main == "Projects"}
 				<Projects projeccs={admin.projects} />
 			{:else if state.main == "Corona"}
 				<svelte:component this={Corona} />
 			{/if}
 		</div>
-		<div class="box c full">
+		<div class="boxy c full">
 			{#if state.long == "Space"}
 				<Space />
 			{:else if state.long == "Shows"}
@@ -61,10 +61,10 @@
 				<svelte:component this={Reminders} />
 			{/if}
 		</div>
-		<div class="box d half">
+		<div class="boxy d half">
 			<Gen days={admin.days} />
 		</div>
-		<div class="box e half">
+		<div class="boxy e half">
 			<Terminal />
 		</div>
 	</div>
@@ -82,7 +82,7 @@
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		color: #444;
 	}
-	.box {
+	.boxy {
 		color: #fff;
 		border-radius: 10px;
 		word-wrap: break-word;

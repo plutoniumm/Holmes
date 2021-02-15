@@ -7,11 +7,28 @@ import json from "@rollup/plugin-json";
 import preprocess from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
+const settings = [
+	resolve( { browser: true, dedupe: [ 'svelte' ] } ),
+	commonjs(),
+	!production && serve(),
+	!production && livereload( 'public' ),
+	production && terser(),
+	json()
+]
+const statics = [
+	// 'environment',
+	// 'command',
+	'debug',
+	// 'video',
+	// 'json'
+];
+const dynamics = [
+	// 'admin'
+]
 
 function serve () {
 	let server;
 	function toExit () { if ( server ) server.kill( 0 ); }
-
 	return {
 		writeBundle () {
 			if ( server ) return;
@@ -25,64 +42,24 @@ function serve () {
 }
 
 export default [
-	// MAIN command
-	// {
-	// 	input: 'command/main.js',
-	// 	output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/bundles/command.js' },
-	// 	plugins: [
-	// 		svelte( { dev: !production, css: css => { css.write( 'command.css' ); }, preprocess: preprocess() } ),
-	// 		resolve( { browser: true, dedupe: [ 'svelte' ] } ),
-	// 		commonjs(),
-	// 		!production && serve(),
-	// 		!production && livereload( 'public' ),
-	// 		production && terser(),
-	// 		json()
-	// 	],
-	// 	watch: { clearScreen: true }
-	// },
-	// DISPHENOID
-	// {
-	// 	input: 'video/main.js',
-	// 	output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/bundles/video.js' },
-	// 	plugins: [
-	// 		svelte( { dev: !production, css: css => { css.write( 'video.css' ); }, preprocess: preprocess() } ),
-	// 		resolve( { browser: true, dedupe: [ 'svelte' ] } ),
-	// 		commonjs(),
-	// 		!production && serve(),
-	// 		!production && livereload( 'public' ),
-	// 		production && terser(),
-	// 		json()
-	// 	],
-	// 	watch: { clearScreen: true }
-	// },
-	// DASH
-	// {
-	// 	input: 'admin/main.js',
-	// 	output: { sourcemap: false, format: 'esm', name: 'app', dir: 'public/admin/' },
-	// 	plugins: [
-	// 		svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
-	// 		resolve( { browser: true, dedupe: [ 'svelte' ] } ),
-	// 		commonjs(),
-	// 		!production && serve(),
-	// 		!production && livereload( 'public' ),
-	// 		production && terser(),
-	// 		json()
-	// 	],
-	// 	watch: { clearScreen: true }
-	// },
-	// JSON
-	{
-		input: 'json/main.js',
-		output: { sourcemap: false, format: 'iife', name: 'app', file: 'public/bundles/json.js' },
+	...( statics.map( e => ( {
+		input: e + '/main.js',
+		output: { sourcemap: false, format: 'iife', name: 'app', file: `public/bundles/${ e }.js` },
 		plugins: [
-			svelte( { dev: !production, css: css => { css.write( 'json.css' ); }, preprocess: preprocess() } ),
-			resolve( { browser: true, dedupe: [ 'svelte' ] } ),
-			commonjs(),
-			!production && serve(),
-			!production && livereload( 'public' ),
-			production && terser(),
-			json()
+			svelte( { dev: !production, css: css => { css.write( e + '.css' ); }, preprocess: preprocess() } ),
+			...settings
 		],
 		watch: { clearScreen: true }
-	}
+	} )
+	) ),
+	...( dynamics.map( e => ( {
+		input: e + '/main.js',
+		output: { sourcemap: false, format: 'esm', name: 'app', dir: `public/${ e }/` },
+		plugins: [
+			svelte( { dev: !production, css: css => { css.write( 'bundle.css' ); }, preprocess: preprocess() } ),
+			...settings
+		],
+		watch: { clearScreen: true }
+	} )
+	) )
 ];

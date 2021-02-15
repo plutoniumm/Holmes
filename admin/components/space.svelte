@@ -6,7 +6,7 @@
 </script>
 
 {#each space as el}
-    <div class="box w-100 blur">
+    <div class="boxy w-100 blur">
         <a href={el.url}>
             <img class="w-100" src={el.imageUrl} alt={el.title} />
             <div style="font-weight:400;">{el.title}</div>
@@ -27,7 +27,7 @@
 {/each}
 
 <style type="text/scss">
-    .box {
+    .boxy {
         margin: 5px 0;
         border-radius: 10px;
         img {
