@@ -40,6 +40,22 @@ input, button{
 	opacity: 0.1;
 }
 
+.box{
+	height: calc(100px - 5px);
+	border-radius: 10px;
+	min-width: calc(250px - 20px);
+	max-width: calc(250px - 20px);
+	width: calc(250px - 20px) !important;
+	padding: 10px;
+	margin: 0 7px;
+	overflow: hidden;
+	backdrop-filter: blur(25px);
+	-webkit-backdrop-filter: blur(25px);
+	-moz-backdrop-filter: blur(25px);
+	-ms-backdrop-filter: blur(25px);
+	background: #222a;
+}
+
 .boxes{
 	justify-content: space-between;
 	width: 90%;
@@ -87,3 +103,26 @@ input, button{
 		text-align: left;
 	}
 }
+
+@keyframes bobX {
+	0% {transform: translateX(50vw);}
+	50% {transform: translateX(-50vw);}
+	100% {transform: translateX(50vw);}
+}
+@keyframes bobX_rev {
+	0% {transform: translateX(-50vw);}
+	50% {transform: translateX(50vw);}
+	100% {transform: translateX(-50vw);}
+}
+@keyframes bobY {
+	0% {transform: translateY(50vh);}
+	50% {transform: translateY(-50vh);}
+	100% {transform: translateY(50vh);}
+}
+@keyframes bobY_rev {
+	0% {transform: translateY(-50vh);}
+	50% {transform: translateY(50vh);}
+	100% {transform: translateY(-50vh);}
+}
+.x {animation: bobX 23s infinite ease-in-out alternate;}
+.x-rev {animation: bobX_rev 21s infinite ease-in-out alternate;}

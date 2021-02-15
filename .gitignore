@@ -10,10 +10,9 @@ thread.js
 **/*.css.map
 **/*.js.map
 
+public/bundles
 public/admin
-public/command
 public/helpers
-public/json
 public/video
 
 # Dependency directories

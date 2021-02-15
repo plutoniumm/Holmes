@@ -1,9 +1,9 @@
 <script>
 	import Bar from "./components/bar.svelte";
 	import Player from "./components/player.svelte";
-	import Stack from "./components/stackstream.svelte";
-	import Subsc from "./components/substream.svelte";
-	import Stream from "./components/videostream.svelte";
+	import Stack from "./components/queue.svelte";
+	import Subsc from "./components/subscriptions.svelte";
+	import Stream from "./components/search.svelte";
 	import Plist from "./components/playlists.svelte";
 
 	import cnls from "../config/channels.json";

@@ -28,6 +28,16 @@ $ npm run build
 
 ```
 
+Safari butler
+
+- Remove recommened & comments from youtube
+- Add speed options to all HTML5 video
+- Space news
+
+```
+xcrun safari-web-extension-converter ./Quartermaster/
+```
+
 ## Contribution Guidelines
 1. **Fork** the repo on GitHub.
 4. **Push** your work back up to your fork.
