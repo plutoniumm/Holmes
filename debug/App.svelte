@@ -1,21 +1,19 @@
 <script>
     import APIs from "./components/apis.svelte";
+    import ScriptEd from "./components/script.svelte";
 </script>
 
 <section>
-    <div class="splitter">
+    <div class="w-50">
         <APIs />
     </div>
-    <div class="splitter">
-        <APIs />
+    <div class="w-50">
+        <ScriptEd />
     </div>
 </section>
 
 <style type="text/scss">
     section {
         display: flex;
-        .splitter {
-            width: 100%;
-        }
     }
 </style>

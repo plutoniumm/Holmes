@@ -18,7 +18,8 @@ const settings = [
 const statics = [
 	// 'environment',
 	// 'command',
-	'debug',
+	// 'debug',
+	'tasks',
 	// 'video',
 	// 'json'
 ];
