@@ -2,7 +2,7 @@
     import { timeCal, strCal } from "./functions.js";
     let [clock, time] = [null, "00:00:00"];
     let indic,
-        state = { run: 1 };
+        state = { run: 0 };
 
     const later = (delay) => {
         let [timer, reject] = [0, null],
@@ -33,7 +33,9 @@
             },
             cancel() {
                 if (timer) {
+                    clearInterval(interval);
                     clearTimeout(timer);
+                    time = "00:00:00";
                     timer = 0;
                     state.run = 0;
                     reject();
@@ -43,50 +45,24 @@
         };
     };
 
-    clock = later(10);
-    clock.promise
-        .then(() => {
-            console.log("done");
-        })
-        .catch(() => {
-            time = "00:00:00";
-            console.log("l2 cancelled");
-        });
-    // setTimeout(() => {
-    //     clock.cancel();
-    // }, 15);
-
     const detector = (e) => {
-        if (+e.keyCode - 48 > -1 && +e.keyCode - 48 < 10 && !state.run) {
-            let vars = time.split("");
-            time = [
-                vars[1],
-                vars[3],
-                ":",
-                vars[4],
-                vars[6],
-                ":",
-                vars[7],
-                e.keyCode - 48,
-            ].join("");
-        }
-        if (+e.keyCode == 8) {
-            let vars = time.split("");
-            time = [
-                0,
-                vars[0],
-                ":",
-                vars[1],
-                vars[3],
-                ":",
-                vars[4],
-                vars[6],
-            ].join("");
+        if (!state.run) {
+            const norm = +e.keyCode - 48;
+            let ta = time.split("");
+            if (norm > -1 && norm < 10)
+                time = [ta[1], ta[3], ":", ta[4], ta[6], ":", ta[7], norm].join(
+                    ""
+                );
+
+            if (+e.keyCode == 8)
+                time = [0, ta[0], ":", ta[1], ta[3], ":", ta[4], ta[6]].join(
+                    ""
+                );
         }
 
-        if (e.keyCode === 13 || e.type == "click") {
+        if ((e.keyCode === 13 || e.type == "click") && !state.run) {
             const till = timeCal(time);
-            clock = later(time);
+            clock = later(till);
         }
     };
 
@@ -130,7 +106,7 @@
         justify-content: center;
     }
     article {
-        background: #d88;
+        background: #88d;
         border-radius: 10em;
         width: 10em;
         height: 10em;
@@ -146,7 +122,7 @@
             text-align: center;
         }
         .indic {
-            background: #e66a;
+            background: #66ea;
             z-index: 0;
             transition: height 1s linear;
             position: absolute;

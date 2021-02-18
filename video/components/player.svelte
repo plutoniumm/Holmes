@@ -3,10 +3,13 @@
     let maxwell,
         speed = 1.0;
 
-    const [ext, yt, ald] = [
+    import { URLpars } from "../core/api";
+
+    const [ext, yt, ald, sbx] = [
         "?autoplay=1&enablejsapi=1",
         "https://www.youtube-nocookie.com/embed/",
         "accelerometer;autoplay;clipboard-write;encrypted-media;picture-in-picture",
+        "allow-scripts allow-same-origin",
     ];
 
     const clear = (() => {
@@ -49,17 +52,12 @@
 </script>
 
 <div id="wrapper">
-    <iframe
-        bind:this={maxwell}
-        title="video"
-        src={yt + id + ext}
-        allow={ald}
-        sandbox="allow-scripts allow-same-origin"
-        allowfullscreen
-    />
-    <div class="controls">
-        <input type="text" on:change={speedCh} bind:value={speed} />
-    </div>
+    <iframe bind:this={maxwell} src={yt + id + ext} allow={ald} sandbox={sbx} />
+    {#if !URLpars().zen}
+        <div class="controls">
+            <input type="text" on:change={speedCh} bind:value={speed} />
+        </div>
+    {/if}
 </div>
 
 <style type="text/scss">
@@ -73,20 +71,18 @@
             background: #111;
         }
         .controls {
-            width: 100%;
+            width: 20px;
             opacity: 0.6;
             position: absolute;
             bottom: 2.5em;
             display: flex;
             left: 95vw;
-            font-size: 20px;
         }
         input {
             color: #fff;
             border: 0;
             background: transparent;
             outline: 0;
-            font-size: 1.2em;
         }
     }
 </style>

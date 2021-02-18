@@ -15,6 +15,16 @@
             "settings": "https://github.com/settings/profile",
             "notifs": "https://github.com/notifications?query=is%3Aunread"
       },
+      "s": {
+            "name": "q",
+            "prelink": "https://eu.startpage.com/sp/search?query=",
+            "postlink": "&abp=-1&t=blak&cat=web&sc=HYapiSX53sGA20&abp=-1"
+      },
+      "si": {
+            "name": "q",
+            "prelink": "https://eu.startpage.com/sp/search?query=%40haste",
+            "postlink": "&t=blak&abp=-1&cat=pics&sc=Du1CQoBZh80g20"
+      },
       "d": {
             "name": "DuckDuckGo",
             "prelink": "https://duckduckgo.com/?q="

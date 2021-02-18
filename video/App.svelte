@@ -95,14 +95,18 @@
 </script>
 
 <main>
-	<Bar {searcher} {states} {channels} {substack} />
+	{#if !URLpars().zen}
+		<Bar {searcher} {states} {channels} {substack} />
+	{/if}
 	{#if id}
 		<Player {id} />
 	{:else}<br /> <br /> <br />{/if}
-	<Stack videos={stack} {vidoer} {destacker} />
-	<Stream videos={base} {vidoer} {stacker} />
-	<Subsc videos={substack} {vidoer} {stacker} />
-	<Plist videos={plStack} {fullStacker} />
+	{#if !URLpars().zen}
+		<Stack videos={stack} {vidoer} {destacker} />
+		<Stream videos={base} {vidoer} {stacker} />
+		<Subsc videos={substack} {vidoer} {stacker} />
+		<Plist videos={plStack} {fullStacker} />
+	{/if}
 </main>
 
 <style>

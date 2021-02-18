@@ -2,16 +2,15 @@
   "manifest_version": 2,
   "name": "Q",
   "description": "A safari butler",
-  "default_locale": "en",
   "author": "Plutoniumm <plutoniumm@icloud.com>",
   "version": "2.2.0",
   "content_scripts": [
     {
       "exclude_matches": [
-        "http://localhost*"
+        "http://localhost:*/*"
       ],
       "matches": [
-        "<all_urls>"
+        "https://*/*"
       ],
       "js": [
         "scripts/qm.js",

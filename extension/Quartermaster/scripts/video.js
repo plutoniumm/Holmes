@@ -6,7 +6,7 @@ app.findVideos = ( doc, videos ) => {
 }
 app.maintain_speed = () => {
     if ( app.AllVids ) for ( const vd of app.AllVids ) vd.playbackRate = +app.speed.toFixed( 1 );
-    document.getElementById( 'QM-speed' ).childNodes[ 0 ].innerText = app.speed.toFixed( 1 );
+    if ( document.getElementById( 'QM-speed' ) ) document.getElementById( 'QM-speed' ).childNodes[ 0 ].innerText = app.speed.toFixed( 1 );
 }
 app.setup = () => {
     app.AllVids = []; app.findVideos( document, app.AllVids );

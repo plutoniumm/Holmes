@@ -50,7 +50,7 @@
       });
 
       export let sites;
-      let raw = "d ",
+      let raw = "s ",
             autoComplete,
             magic,
             ic,
@@ -58,7 +58,7 @@
       $: key = raw
             ? raw.split(":")[0].split(" ")[0].toLowerCase() in sites
                   ? raw.split(":")[0].split(" ")[0].toLowerCase()
-                  : "d"
+                  : "s"
             : null;
       $: send = "";
       const fx = (p) => {
@@ -128,6 +128,32 @@
       onMount(() => setTimeout(magic.focus(), 500));
 </script>
 
+<section
+      style="display:flex;justify-content: center;align-items: center;flex-direction: column;"
+>
+      <br />
+      <form on:submit|preventDefault={metal}>
+            <div class="wrapper">
+                  <div class="icon">
+                        <img bind:this={ic} src="./icons/Basic.svg" alt="" />
+                  </div>
+                  <input
+                        on:keyup={go}
+                        bind:this={magic}
+                        id="magic"
+                        required
+                        bind:value={raw}
+                        size="100"
+                  />
+            </div>
+            <input type="submit" style="display:none" />
+      </form>
+      <div style="width:calc(100% - 1em);padding:0.5em;margin-top:0.5em;">
+            <ul bind:this={autoComplete} id="autoComplete" />
+      </div>
+      <div bind:this={staticBox} id="staticBox" />
+</section>
+
 <style type="text/scss">
       form {
             padding-top: 22.5%;
@@ -194,27 +220,3 @@
             }
       }
 </style>
-
-<section
-      style="display:flex;justify-content: center;align-items: center;flex-direction: column;">
-      <br />
-      <form on:submit|preventDefault={metal}>
-            <div class="wrapper">
-                  <div class="icon">
-                        <img bind:this={ic} src="./icons/Basic.svg" alt="" />
-                  </div>
-                  <input
-                        on:keyup={go}
-                        bind:this={magic}
-                        id="magic"
-                        required
-                        bind:value={raw}
-                        size="100" />
-            </div>
-            <input type="submit" style="display:none" />
-      </form>
-      <div style="width:calc(100% - 1em);padding:0.5em;margin-top:0.5em;">
-            <ul bind:this={autoComplete} id="autoComplete" />
-      </div>
-      <div bind:this={staticBox} id="staticBox" />
-</section>
