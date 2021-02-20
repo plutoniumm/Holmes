@@ -1,5 +1,5 @@
 <script>
-    import { timeCal, strCal, beepURI } from "./functions.js";
+    import { timeCal, strCal, play } from "./functions.js";
     const [pom, brk] = ["00:25:00", "00:05:00"];
     let [clock, time] = [null, pom];
     let indic,
@@ -30,6 +30,7 @@
                 document.title = time;
                 if (temp < 1) {
                     resolve();
+                    play();
                     reset();
                 }
             }, 1e3);
@@ -62,6 +63,7 @@
     };
 
     const detector = (e) => {
+        play();
         if ((e.keyCode === 13 || e.type == "click") && !state.run) pomorun();
     };
 

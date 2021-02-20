@@ -1,22 +1,22 @@
 <script>
-    let [link, method, data] = [
-        "https://jsonplaceholder.typicode.com/posts",
-        "GET",
-        "",
-    ];
+    let form,
+        resp = "";
 
-    let resp = "";
     const makeCall = () => requester().then((r) => (resp = r));
+
     const requester = async () => {
-        const response = await fetch(link, {
-            method: method,
+        let formDat = new FormData(form);
+        const response = await fetch(formDat.get("link"), {
+            method: formDat.method,
             mode: "cors",
             cache: "no-cache",
             headers: {
                 "Content-Type": "application/json",
             },
             referrerPolicy: "no-referrer",
-            ...(method == "POST" && { body: JSON.stringify(data) }),
+            ...(formDat.method == "POST" && {
+                body: JSON.stringify(formDat.data),
+            }),
         });
         return response.json();
     };
@@ -24,15 +24,16 @@
 
 <section class="blur boxes">
     <h3 class="w-100">APIs</h3>
-    <form on:submit|preventDefault={makeCall}>
+    <form on:submit|preventDefault={makeCall} bind:this={form}>
         <input
+            name="link"
             class="w-100"
             placeholder="Enter Link..."
             type="text"
-            bind:value={link}
+            value="https://jsonplaceholder.typicode.com/posts"
         />
         Method:
-        <select bind:value={method}>
+        <select>
             {#each ["GET", "POST", "PUT", "DELETE"] as mt}
                 <option value={mt}>
                     {mt}
@@ -43,9 +44,8 @@
             name="data"
             class="w-100"
             placeholder="Enter Data..."
-            rows="10"
-            style="height:{method == 'POST' ? '100px' : '0'}"
-            bind:value={data}
+            rows="3"
+            value="&lcub;&#13; &#9; &#13;&rcub;"
         />
     </form>
     <pre

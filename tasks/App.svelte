@@ -3,15 +3,8 @@
     import Pomodoro from "./components/pomodoro.svelte";
     import Timer from "./components/timer.svelte";
     import Days from "./components/day.svelte";
-    import { onMount } from "svelte";
     import { slide } from "svelte/transition";
     let chx = 1;
-
-    onMount(() =>
-        document
-            .getElementById("timeBox")
-            .addEventListener("keydown", (e) => e.preventDefault())
-    );
 </script>
 
 <section style="grid-template-rows: {chx ? '1fr' : '5fr 1fr'};">

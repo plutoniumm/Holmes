@@ -11,9 +11,17 @@
 	<link rel='stylesheet' href='./bundles/tasks.css'>
 
 	<script defer type="module" src="./bundles/tasks.js"></script>
+
 </head>
 
 <body xmlns:svg="http://www.w3.org/2000/svg" style="background: url(./shared/xdr.jpg) no-repeat fixed;">
 </body>
+
+<script>
+	window.onload = () => (
+		document
+			.getElementById( "timeBox" )
+			.addEventListener( "keydown", ( e ) => e.preventDefault() ) )
+</script>
 
 </html>

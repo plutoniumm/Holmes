@@ -15,6 +15,7 @@
             placeholder="Enter Data..."
             bind:value={data}
         />
+        <input type="submit" value="Go" />
     </form>
     <p class="w-100">{"ok"}</p>
 </section>
