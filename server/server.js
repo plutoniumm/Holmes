@@ -4,13 +4,14 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 app.use( express.json() );
+require( './social.js' )( app );
 require( './macos.js' )( app );
 app.use( '/', express.static( './public' ) );
 
 const db = './config/database/';
 const mths = [ 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEPT', 'OCT', 'NOV', 'DEC' ]
 
-app.post( '/json/:file', ( req, res ) => {
+app.post( '/data/:file', ( req, res ) => {
       const type = req.params.file;
       let data = fs.readFileSync( db + type + '.json', 'utf-8' );
       fs.writeFileSync( db + type + '.json', JSON.stringify( [ req.body, ...( JSON.parse( data ) ) ] ) );

@@ -1,0 +1,185 @@
+*::-webkit-scrollbar {
+    display: none;
+}
+canvas {
+	opacity: 0.5;
+	max-width: 100px;
+	max-height: 10vw;
+}
+#QMmenu {
+	font: 25px helvetica;
+	font-weight: 300;
+	position: fixed;
+	top: 100px;
+	right: 120px;
+	z-index: 9999;
+	opacity: 0.8;
+	border-radius: 40px;
+}
+.QMmenu img {
+    width: 100%;
+    object-fit: cover;
+}
+.QMmenu-toggler {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 50px;
+	height: 25px;
+	z-index: 2;
+	opacity: 0;
+	cursor: pointer;
+	&:checked+label {
+		background: transparent;
+		&:before ,&:after {
+            top: 0;
+            width: 25px;
+            transform-origin: 50% 50%;
+        }
+		&:before {
+			transform: rotate(45deg);
+		}
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+	&:checked~ul {
+		.QMmenu-item {
+			opacity: 1;
+			cursor: pointer;
+			&:nth-child(1) {
+				transform: rotate(0deg) translateX(-60px);
+			}
+			&:nth-child(2) {
+				transform: rotate(60deg) translateX(-60px);
+			}
+			&:nth-child(3) {
+				transform: rotate(120deg) translateX(-60px);
+			}
+			&:nth-child(4) {
+				transform: rotate(180deg) translateX(-60px);
+			}
+			&:nth-child(5) {
+				transform: rotate(240deg) translateX(-60px);
+			}
+			&:nth-child(6) {
+				transform: rotate(300deg) translateX(-60px);
+			}
+			.a {
+				pointer-events: auto;
+			}
+		}
+	}
+	&:hover+label {
+		transform: translateX(6px);
+		width: 15px;
+		&:before {
+			transform: translateX(-6px);
+		}
+		&:after {
+			transform: translateX(-6px);
+		}
+	}
+}
+.QMmenu-toggler+label {
+	opacity: 0.66;
+	transition: all 0.2s ease;
+	width: 30px;
+	height: 3px;
+	display: block;
+	z-index: 1;
+	transition: all 0.2s, top 0.2s;
+	position: absolute;
+	background: #000;
+	left: 0;
+	content: "";
+	top: 0;
+	left: 12px;
+	bottom: 0;
+	margin: auto;
+    &:before,&:after{
+        opacity: 0.66;
+        transition: all 0.2s ease;
+        width: 30px;
+        height: 3px;
+        display: block;
+        z-index: 1;
+        transition: all 0.2s, top 0.2s;
+        position: absolute;
+        background: #000;
+        left: 0;
+        content: "";
+    }
+	&:before {
+		top: 10px;
+	}
+	&:after {
+		top: -10px;
+	}
+}
+.QMmenu-item {
+	&:nth-child(1) {
+		.a {
+			transform: rotate(0deg);
+		}
+	}
+	&:nth-child(2) {
+		.a {
+			transform: rotate(-60deg);
+		}
+	}
+	&:nth-child(3) {
+		.a {
+			transform: rotate(-120deg);
+		}
+	}
+	&:nth-child(4) {
+		.a {
+			transform: rotate(-180deg);
+		}
+	}
+	&:nth-child(5) {
+		.a {
+			transform: rotate(-240deg);
+		}
+	}
+	&:nth-child(6) {
+		.a {
+			transform: rotate(-300deg);
+		}
+	}
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	width: 50px;
+	height: 50px;
+	display: block;
+	opacity: 0;
+	transition: 0.5s;
+	.a {
+		display: block;
+		width: inherit;
+		overflow: hidden;
+		height: inherit;
+		line-height: 50px;
+		color: #fffb;
+		background: #8888;
+		border-radius: 50%;
+		text-align: center;
+		text-decoration: none;
+		pointer-events: none;
+		transition: all 0.2s;
+		&:hover {
+			cursor: pointer;
+			color: #fff;
+			background: #666;
+		}
+	}
+}

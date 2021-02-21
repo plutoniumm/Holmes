@@ -17,14 +17,6 @@
                   </a>
             </div>
       {/each}
-      <div class="quick flex-col" style="justify-content:space-between;">
-            {#each ["DEBUG", "SOCIAL", "TASKS"] as loc}
-                  <a href="/{loc}.html">
-                        {loc}
-                        <hr />
-                  </a>
-            {/each}
-      </div>
 </section>
 
 <style type="text/scss">

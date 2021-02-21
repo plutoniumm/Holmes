@@ -6,7 +6,7 @@
     const send = () => {
         const t = show;
         set = [t, ...set];
-        fetch("/json/track", {
+        fetch("/data/track", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -52,7 +52,7 @@
 - Remove a lot of useless shit
 
 
-## v3.0.0
+## v3.0.0 (Quartermaster)
 
 - Full Merge Disphenoid into Sherlock
 - Partially Get rid of Direct Google Usage
@@ -94,7 +94,7 @@
 - Engine now has search suggestions (From Google Search API)
 
 
-## v2.0.0
+## v2.0.0 (Sherlock)
 
 Full Convert to Svelte
 
@@ -104,6 +104,6 @@ Full Convert to Svelte
 Processing Engine for multiple sites with functions
 
 
-## v0.0.0
+## v0.0.0 (Chernobyl)
 
 Simple new tab page written in vanillaJS

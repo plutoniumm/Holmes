@@ -16,8 +16,8 @@ const settings = [
 	json()
 ]
 const statics = [
-	// 'social',
-	'command',
+	'social',
+	// 'command',
 	// 'debug',
 	// 'tasks',
 	// 'video',

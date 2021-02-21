@@ -1,4 +1,4 @@
-body::-webkit-scrollbar{
+*::-webkit-scrollbar{
     display: none;
 }
 
@@ -9,6 +9,8 @@ canvas{
 }
 
 #QMmenu {
+    font:25px helvetica;
+    font-weight: 300;
     position: fixed;
     top: 100px;
     right: 120px;
@@ -40,12 +42,7 @@ canvas{
 .QMmenu-toggler+label:before,
 .QMmenu-toggler+label:after {
     opacity: 0.66;
-}
-
-.QMmenu-toggler:hover+label,
-.QMmenu-toggler:hover+label:before,
-.QMmenu-toggler:hover+label:after {
-    background: #888;
+    transition: all 0.2s ease;
 }
 
 .QMmenu-toggler:checked+label {
@@ -73,34 +70,35 @@ canvas{
 
 .QMmenu-toggler:checked~ul .QMmenu-item .a {pointer-events: auto}
 
-.QMmenu-toggler+label {
-    width: 25px;
-    height: 5px;
+.QMmenu-toggler+label, 
+.QMmenu-toggler+label:before,
+.QMmenu-toggler+label:after{
+    width: 30px;
+    height: 3px;
     display: block;
     z-index: 1;
-    border-radius: 2.5px;
-    background: #333;
-    transition: transform 0.5s, top 0.5s;
+    transition: all 0.2s, top 0.2s;
     position: absolute;
-    display: block;
+    background: #000;
+    left: 0;
+    content: "";
+}
+
+.QMmenu-toggler+label {
     top: 0;
-    bottom: 0;
     left: 12px;
+    bottom: 0;
     margin: auto;
 }
 
-.QMmenu-toggler+label:before,
-.QMmenu-toggler+label:after {
-    width: 25px;
-    height: 5px;
-    display: block;
-    z-index: 1;
-    border-radius: 2.5px;
-    background: #000;
-    transition: transform 0.5s, top 0.5s;
-    content: "";
-    position: absolute;
-    left: 0;
+.QMmenu-toggler:hover+label{
+    transform: translateX(6px);
+    width: 15px;
+}
+
+.QMmenu-toggler:hover+label:before,
+.QMmenu-toggler:hover+label:after{
+    transform: translateX(-6px);
 }
 
 .QMmenu-toggler+label:before {top: 10px}
@@ -135,18 +133,16 @@ canvas{
     height: inherit;
     line-height: 50px;
     color: #fffb;
-    background: #8884;
+    background: #8888;
     border-radius: 50%;
     text-align: center;
     text-decoration: none;
-    font-size: 25px;
     pointer-events: none;
-    transition: 0.2s;
+    transition: all 0.2s;
 }
 
 .QMmenu-item .a:hover {
+    cursor: pointer;
     color: #fff;
-    opacity: 1;
-    background: #9996;
-    font-size: 27px;
+    background: #666;
 }

@@ -44,3 +44,33 @@ onMount( () => {
     };
     tick();
 } );
+
+fetch( 'https://api.github.com/graphql', {
+    method: 'POST',
+    headers: {
+        Authorization: "token TOKEN",
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify( {
+        query: `
+        query {
+            user( login: "plutoniumm") {
+                repositories( first: 30) {
+                    nodes{
+                        name
+                            pullRequests (last: 20) {
+                            edges {
+                                node {
+                                    title
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        `
+    } ),
+} )
+    .then( res => res.json() )
+    .then( res => document.body.innerText = JSON.stringify( res ) );

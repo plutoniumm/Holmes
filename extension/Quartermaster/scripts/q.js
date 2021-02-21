@@ -2,7 +2,7 @@ const lier = ( idd = '', cls = '', onclk = '' ) => `<li class="QMmenu-item ${ cl
 q.setAttribute( 'id', 'QMmenu' );
 q.setAttribute( 'class', 'QMmenu' );
 q.innerHTML = `<canvas id="downcanvas" width="1px" height="1px" style="opacity:0;pointer-events:none;position:fixed;" class="playable-canvas"></canvas><input class="QMmenu-toggler" id="QMmenu-toggler" type="checkbox"></input><label for="QMmenu-toggler"></label><ul>
-                ${ lier() }<img id="Q-img" src="http://localhost:4000/icons/q.svg" alt="QTemp">${ lic }
+                ${ lier() }浪人${ lic }
                 ${ lier( '', '', "window.location.href += '?bar=1'" ) }Ꞡ${ lic }
                 ${ lier( 'QM-speed' ) }${ lic }
                 ${ lier( '', '', "window.location.href = document.querySelector('iframe').src" ) }IF${ lic }
@@ -11,7 +11,7 @@ q.innerHTML = `<canvas id="downcanvas" width="1px" height="1px" style="opacity:0
             </ul>`;
 
 setInterval
-    ( () => { if ( !document.querySelector( '.QMmenu' ) ) document.body.appendChild( q ); }, 2e3 );
+    ( () => !document.querySelector( '.QMmenu' ) ? document.body.appendChild( q ) : null, 2e3 );
 
 
 function prepPics () {
@@ -44,4 +44,4 @@ function prepPics () {
         }
     } );
 }
-window.onload = setInterval( prepPics, 1.5e3 );
+window.onload = setInterval( prepPics, 3e3 );

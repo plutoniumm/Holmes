@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q</title>
+    <link rel="stylesheet" href="./styles/q.css">
+</head>
+
+<body>
+
+    <script>
+        const lier = ( idd = '', cls = '', onclk = '' ) => `<li class="QMmenu-item ${ cls }" id="${ idd }" onclick="${ onclk }"><div class="a">`, lic = `</div></li>`; let q = document.createElement( "qnav" );
+        q.setAttribute( 'id', 'QMmenu' );
+        q.setAttribute( 'class', 'QMmenu' );
+        q.innerHTML = `<canvas id="downcanvas" width="1px" height="1px" style="opacity:0;pointer-events:none;position:fixed;" class="playable-canvas"></canvas><input class="QMmenu-toggler" id="QMmenu-toggler" type="checkbox"></input><label for="QMmenu-toggler"></label><ul>
+                ${ lier() }浪人${ lic }
+                ${ lier( '', '', "window.location.href += '?bar=1'" ) }Ꞡ${ lic }
+                ${ lier( 'QM-speed' ) }${ lic }
+                ${ lier( '', '', "window.location.href = document.querySelector('iframe').src" ) }IF${ lic }
+                ${ lier() }5${ lic }
+                ${ lier() }6${ lic }
+            </ul>`;
+        setInterval
+            ( () => { if ( !document.querySelector( '.QMmenu' ) ) document.body.appendChild( q ); }, 2e2 );
+    </script>
+</body>
+
+</html>

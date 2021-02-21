@@ -1,7 +1,10 @@
 <script>
+    import Google from "./components/gtrends.svelte";
 </script>
 
-<section>Ok</section>
+<section>
+    <Google />
+</section>
 
 <style type="text/scss">
 </style>

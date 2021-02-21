@@ -15,6 +15,14 @@
             "settings": "https://github.com/settings/profile",
             "notifs": "https://github.com/notifications?query=is%3Aunread"
       },
+      "qm": {
+            "name": "q",
+            "json": "/json.html",
+            "debug": "/debug.html",
+            "social": "/social.html",
+            "secure": "/secure.html",
+            "tasks": "/tasks.html"
+      },
       "s": {
             "name": "q",
             "prelink": "https://eu.startpage.com/sp/search?query=",

@@ -1,10 +1,6 @@
-# Sherlock (MacOS)
-
-Add data and tokens in config/ (will add sample soon)
+# Ronin v4 (MacOS)
 
 ## Installation
-
-Follow these steps to install this project directory:
 
 ```bash
 # clone the repo
@@ -25,14 +21,9 @@ $ node PATH/server.js
 $ npm run build
 
 # Go to http://localhost:4000
-
 ```
 
 Safari butler
-
-- Remove recommened & comments from youtube
-- Add speed options to all HTML5 video
-- Space news
 
 ```
 xcrun safari-web-extension-converter ./Quartermaster/
@@ -47,11 +38,14 @@ xcrun safari-web-extension-converter ./Quartermaster/
 Fundamental Web Languages + AppleScript on Node & Svelte
 
 ### Structure
-- Extension = Quartermaster
-- API = Server
-- Shared = Stuff probably to make the UI uniform
-- Admin = Dashboard
-- JSON = JSON editor for multiple/single
-- Command = Sherlock
-- Video = Disphenoid
+- Admin (Dashboard)
+- Command (Search)
+- Debug (Dev)
+- Extension (Ext)
+- JSON (Tracker)
+- Secure (Security)
+- Server (Server)
+- Social (Social)
+- Tasks (Timer)
+- Video (Youtube)
 

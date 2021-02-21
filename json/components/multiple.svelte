@@ -32,7 +32,7 @@
             fr("status")
         );
         set = [show, ...set];
-        fetch("/json/multiple", {
+        fetch("/data/multiple", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

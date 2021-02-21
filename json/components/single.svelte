@@ -29,7 +29,7 @@
         );
         const t = show;
         set = [t, ...set];
-        fetch("/json/single", {
+        fetch("/data/single", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
