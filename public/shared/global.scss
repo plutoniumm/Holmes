@@ -116,6 +116,14 @@ input{
 	}
 }
 
+.flex{
+	display: flex;
+	&-col{
+		display: flex;
+		flex-direction: column;
+	}
+}
+
 // SEARCH
 .box{
 	height: calc(100px - 5px);

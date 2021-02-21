@@ -3,7 +3,7 @@
 
 <a
     href="https://github.com/plutoniumm/csatimes/security/dependabot/package.json/axios/open"
-    class="blur"
+    class="blur flex"
 >
     <svg
         viewBox="0 0 32 32"
@@ -21,7 +21,6 @@
 
 <style type="text/scss">
     a {
-        display: flex;
         align-items: center;
         justify-content: center;
         width: 400px;

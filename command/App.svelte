@@ -46,8 +46,8 @@
 </div>
 
 <section>
-	<div bind:this={deets} id="deets">
-		<div style="display:flex;">
+	<div bind:this={deets} class="flex" id="deets">
+		<div class="flex">
 			<img src="./icons/q.svg" alt="" />
 			<div>Quartermaster</div>
 		</div>
@@ -81,7 +81,6 @@
 		position: fixed;
 		top: -20px;
 		padding: 0 5px;
-		display: flex;
 		justify-content: space-between;
 		width: calc(100% - 10px);
 		transition: top 0.2s ease;

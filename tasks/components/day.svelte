@@ -17,7 +17,10 @@
 
 <section>
     {#each Array(11) as day, i}
-        <div class="day rpm-5" style="opacity:{(5 - Math.abs(i - 5)) / 5}">
+        <div
+            class="day rpm-5 flex-col"
+            style="opacity:{(5 - Math.abs(i - 5)) / 5}"
+        >
             <div class="month">
                 {months[
                     +new Date(
@@ -36,8 +39,6 @@
     section {
         display: flex;
         .day {
-            display: flex;
-            flex-direction: column;
             font-weight: 600;
             padding: 0;
             background: #fff;

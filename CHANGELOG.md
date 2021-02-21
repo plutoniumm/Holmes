@@ -7,12 +7,19 @@
 - Add insta viewer
 - Create a development system with API testing in browser, test scripts editing etc...
 - Startup Script - node server && psql_start. Stop script stop server && psql_stop
+- Create social systems with reddit, twitter and RSS readers, hackernews api
+- Create Security system to generate totp, github security alerts
+
+
+## v3.5.0
+
 
 
 ## v3.4.0
 
 - Add search to JSON Multiple & Single
 - Fix GMeet Bar remover and add ?bar=1 reader
+- Add classes & formdata for simplicity
 
 
 ## v3.3.3
@@ -21,16 +28,8 @@
 - Add CPU temp + fan speed Stats
 - Watch tracker + src icons
 - Glass JSON, remove talks
-
-
-## v3.3.2
-
 - Ditch Qwant
 - Disphenoid Bug Fixes
-
-
-## v3.3.1
-
 - Glass Dashboard with Lazy Loading
 
 
@@ -40,21 +39,14 @@
 - Add json editor for multiple, single
 - Add projects tracker
 - Bug Fixes
-
-
-## v3.2.1
-
 - Dashboard: Add AppleScript connections to system for Music & Reminders
 - Speed and other basic controls to Disphenoid
 - Bug Fixes
 
 
-## v3.2.0
+## v3.1.0 & v3.2.0
 
 - Full Merge DashBoard, started making structure cleaner, to work more efficiently 
-
-
-## v3.1.0
 
 - Add Lazy Loaded BG Image, still with lava lamp
 - Remove a lot of useless shit
@@ -87,13 +79,10 @@
 - Add logo (Not very useful but sure)
 
 
-## v2.3.0
+## v2.2.0 & v2.3.0
 
 - Added history logging
 - Added beacon to send stat and added background stats calculations
-
-
-## v2.2.0
 
 - Adding github integration
 - Add hyperlink to newton

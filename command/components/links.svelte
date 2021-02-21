@@ -2,7 +2,7 @@
       import data from "../../config/links.json";
 </script>
 
-<section class="links">
+<section class="links flex">
       {#each data as link}
             <div class="quick">
                   <a href={link.link}>
@@ -17,12 +17,18 @@
                   </a>
             </div>
       {/each}
+      <div class="quick flex-col" style="justify-content:space-between;">
+            {#each ["DEBUG", "SOCIAL", "TASKS"] as loc}
+                  <a href="/{loc}.html">
+                        {loc}
+                        <hr />
+                  </a>
+            {/each}
+      </div>
 </section>
 
 <style type="text/scss">
-      .links,
-      .quickCont {
-            display: flex;
+      .links {
             justify-content: center;
             align-items: center;
             word-wrap: break-word;
@@ -34,6 +40,8 @@
             width: 100%;
       }
       .quick {
+            width: 90px;
+            height: 100px;
             border-radius: 10px;
             background: #6666;
             backdrop-filter: blur(8px);
@@ -49,9 +57,12 @@
             a {
                   text-decoration: none;
                   color: #ddd;
+                  &:hover {
+                        transform: scale(1.1);
+                  }
             }
             transition: transform 0.3s ease;
-            &:hover {
+            &:not(:last-child):hover {
                   transform: scale(1.1);
             }
       }

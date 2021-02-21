@@ -6,6 +6,7 @@
         w.postMessage(msg);
         w.onmessage = (e) => {
             shows = [...shows, e.data.show];
+            close();
         };
     }
 </script>

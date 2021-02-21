@@ -2,53 +2,6 @@
       import { onMount } from "svelte";
       import { startsWith, preprocessor, sug } from "../core/micro";
 
-      onMount(() => {
-            let l = [255, 255, 0],
-                  m = [0, 255, 255],
-                  r = [255, 0, 255],
-                  state = 0;
-            let el = magic.parentElement;
-
-            var tick = () => {
-                  if (+el.style.opacity < 1)
-                        el.style.opacity = +el.style.opacity + 0.02;
-
-                  if (state == 0) {
-                        l[0] -= 1;
-                        l[2] += 1;
-                        m[1] -= 1;
-                        m[0] += 1;
-                        r[2] -= 1;
-                        r[1] += 1;
-                        if (l[0] == 0 && m[0] == 255) state = 1;
-                  }
-                  if (state == 1) {
-                        l[1] -= 1;
-                        l[0] += 1;
-                        m[2] -= 1;
-                        m[1] += 1;
-                        r[0] -= 1;
-                        r[2] += 1;
-                        if (l[0] == 255 && m[0] == 255) state = 2;
-                  }
-                  if (state == 2) {
-                        l[2] -= 1;
-                        l[1] += 1;
-                        m[0] -= 1;
-                        m[2] += 1;
-                        r[1] -= 1;
-                        r[0] += 1;
-                        if (l[0] == 255 && m[0] == 0) state = 0;
-                  }
-                  requestAnimationFrame(tick) || setTimeout(tick, 1);
-
-                  el.style.borderImageSource = `linear-gradient(to right,rgb(${l.join(
-                        ","
-                  )}), rgb(${m.join(",")}), rgb(${r.join(",")}))`;
-            };
-            tick();
-      });
-
       export let sites;
       let raw = "s ",
             autoComplete,
@@ -76,6 +29,7 @@
                         staticBox.innerHTML += "<br>" + ans;
                   });
       };
+
       const go = (e) => {
             let term;
             autoComplete.style.opacity = 1;
@@ -125,15 +79,13 @@
             }
       };
 
-      onMount(() => setTimeout(magic.focus(), 500));
+      onMount(() => setTimeout(magic.focus(), 1e3));
 </script>
 
-<section
-      style="display:flex;justify-content: center;align-items: center;flex-direction: column;"
->
+<section class="flex-col" style="justify-content: center;align-items: center;">
       <br />
-      <form on:submit|preventDefault={metal}>
-            <div class="wrapper">
+      <form class="flex" on:submit|preventDefault={metal}>
+            <div class="wrapper flex">
                   <div class="icon">
                         <img bind:this={ic} src="./icons/Basic.svg" alt="" />
                   </div>
@@ -143,10 +95,14 @@
                         id="magic"
                         required
                         bind:value={raw}
-                        size="100"
+                        size="150"
                   />
             </div>
-            <input type="submit" style="display:none" />
+            <input
+                  type="submit"
+                  value="SEARCH"
+                  style="position:relative;right:6%;top:8px;font-size:12px;color:#a00;cursor:pointer;"
+            />
       </form>
       <div style="width:calc(100% - 1em);padding:0.5em;margin-top:0.5em;">
             <ul bind:this={autoComplete} id="autoComplete" />
@@ -157,16 +113,15 @@
 <style type="text/scss">
       form {
             padding-top: 22.5%;
-            display: flex;
             justify-content: center;
             .wrapper {
                   background: transparent;
-                  border: 3px solid;
-                  border-image: linear-gradient(to right, #ff0, #0ff, #faa) 1 1
-                        100%;
-                  border-top: 0;
+                  // border: 3px solid;
+                  // border-image: linear-gradient(to right, #ff0, #0ff, #faa) 1 1
+                  //       100%;
+                  // border-top: 0;
+                  border-bottom: 3px solid #a00;
                   font-size: 1.25rem;
-                  display: flex;
                   align-items: center;
                   width: calc(80vw - 1em);
                   padding: 5px 0.5em;

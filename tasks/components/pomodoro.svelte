@@ -72,7 +72,7 @@
     };
 </script>
 
-<section>
+<section class="flex-col">
     <article>
         <div class="times w-100">
             <span id="timeBox" on:keyup|preventDefault={detector}>{time}s</span>
@@ -96,8 +96,6 @@
 
 <style type="text/scss">
     section {
-        display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
     }

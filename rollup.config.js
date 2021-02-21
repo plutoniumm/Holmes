@@ -16,10 +16,10 @@ const settings = [
 	json()
 ]
 const statics = [
-	// 'environment',
-	// 'command',
+	// 'social',
+	'command',
 	// 'debug',
-	'tasks',
+	// 'tasks',
 	// 'video',
 	// 'json'
 ];
