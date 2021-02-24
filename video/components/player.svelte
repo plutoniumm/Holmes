@@ -1,9 +1,9 @@
 <script>
-    export let id;
     let maxwell,
         speed = 1.0;
 
     import { URLpars } from "../core/api";
+    import { vId } from "../core/store";
 
     const [ext, yt, ald, sbx] = [
         "?autoplay=1&enablejsapi=1",
@@ -52,7 +52,12 @@
 </script>
 
 <div id="wrapper">
-    <iframe bind:this={maxwell} src={yt + id + ext} allow={ald} sandbox={sbx} />
+    <iframe
+        bind:this={maxwell}
+        src={yt + $vId + ext}
+        allow={ald}
+        sandbox={sbx}
+    />
     {#if !URLpars().zen}
         <div class="controls">
             <input type="text" on:change={speedCh} bind:value={speed} />

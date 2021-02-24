@@ -1,10 +1,11 @@
 <script>
+    import Tzs from "./components/timezones.svelte";
     import Tasks from "./components/tasks.svelte";
     import Pomodoro from "./components/pomodoro.svelte";
     import Timer from "./components/timer.svelte";
     import Days from "./components/day.svelte";
     import { slide } from "svelte/transition";
-    let chx = 1;
+    let chx = 0;
 </script>
 
 <section style="grid-template-rows: {chx ? '1fr' : '5fr 1fr'};">
@@ -13,19 +14,25 @@
         <label id="control" for="toggle" />
         <div id="container" />
     </div>
-    <div class="top blurW" style="top:{chx ? '12px' : 'unset'}">
+    <div class="super blurW {chx ? 'zen' : ''}">
+        &nbsp;
+        {#if !chx}
+            <div transition:slide>
+                <Tzs />
+            </div>
+        {/if}
+    </div>
+    <div class="top blurW">
         {#if chx}
             <div in:slide>
                 <Pomodoro />
             </div>
+            <div in:slide>
+                <Tasks />
+            </div>
         {:else}
             <div in:slide>
                 <Timer />
-            </div>
-        {/if}
-        {#if chx}
-            <div transition:slide>
-                <Tasks />
             </div>
         {/if}
     </div>
@@ -41,18 +48,18 @@
 
 <style type="text/scss">
     section {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         height: 100vh;
         overflow-y: hidden;
     }
     .top,
-    .low {
+    .low,
+    .super {
         position: relative;
         width: calc(100% - 20px);
         margin: 10px;
         opacity: 1;
-        text-align: center;
-        transform: translateY(0);
         height: auto;
         display: flex;
         align-items: center;
@@ -61,17 +68,14 @@
     .top {
         width: calc(100% - 40px);
         padding: 10px;
-        grid-row: 1;
+        flex: 5;
         div {
             width: 50%;
         }
-        .zen {
-            padding-bottom: 20px;
-        }
     }
     .bottom {
-        margin: 10px;
-        grid-row: 2;
+        margin: 10px 20%;
+        flex: 1;
         mask-image: linear-gradient(to right, #0000, #000, #0000);
         -webkit-mask-image: linear-gradient(to right, #0000, #000, #0000);
     }

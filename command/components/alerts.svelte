@@ -1,23 +1,65 @@
 <script>
+    import { fade } from "svelte/transition";
+
+    async function getVulns() {
+        const req = await fetch("/security/git");
+        const json = await req.json();
+        return json;
+    }
+    let promise = getVulns();
 </script>
 
-<a
-    href="https://github.com/plutoniumm/csatimes/security/dependabot/package.json/axios/open"
-    class="blur flex"
->
-    <svg
-        viewBox="0 0 32 32"
-        width="20"
-        height="20"
-        fill="none"
-        stroke="currentcolor"
-        stroke-width="2"
+{#await promise}
+    <a class="blur flex safe">
+        <svg
+            viewBox="0 0 32 32"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentcolor"
+            stroke-width="2"
+        >
+            <path d="M16 14 L16 23 M16 8 L16 10" />
+            <circle cx="16" cy="16" r="14" />
+        </svg>
+        Checking...
+    </a>
+{:then arr}
+    <a
+        in:fade
+        href="https://github.com/plutoniumm/csatimes/security/dependabot/package.json/axios/open"
+        class="blur flex alert"
     >
-        <path d="M16 14 L16 23 M16 8 L16 10" />
-        <circle cx="16" cy="16" r="14" />
-    </svg>
-    Security Vulnerability Found in&nbsp;<strong>CSATimes</strong>&nbsp;(Code 0)
-</a>
+        <svg
+            viewBox="0 0 32 32"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentcolor"
+            stroke-width="2"
+        >
+            <path d="M16 14 L16 23 M16 8 L16 10" />
+            <circle cx="16" cy="16" r="14" />
+        </svg>
+        Security Vulnerability Found in&nbsp;<strong>{arr[0].name}</strong
+        >&nbsp;(Code 0)
+    </a>
+{:catch err}
+    <a in:fade href="https://github.com/" class="blur flex warn">
+        <svg
+            viewBox="0 0 32 32"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentcolor"
+            stroke-width="2"
+        >
+            <path d="M16 14 L16 23 M16 8 L16 10" />
+            <circle cx="16" cy="16" r="14" />
+        </svg>
+        Unknown error, try again!
+    </a>
+{/await}
 
 <style type="text/scss">
     a {
@@ -25,9 +67,6 @@
         justify-content: center;
         width: 400px;
         margin: 0 auto;
-        opacity: 0;
-        background: #a448;
-        color: #f88;
         padding: 10px 5px;
         border-radius: 20px;
         transform: scale(1);
@@ -44,12 +83,16 @@
             stroke-linejoin: round;
         }
     }
-    @keyframes aja {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
+    .alert {
+        background: #a448;
+        color: #f88;
+    }
+    .safe {
+        background: #4a48;
+        color: #8f8;
+    }
+    .warn {
+        background: #aa48;
+        color: #ff8;
     }
 </style>

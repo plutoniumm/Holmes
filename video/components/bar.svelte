@@ -5,17 +5,50 @@
     let bar;
 </script>
 
+<section bind:this={bar} style="z-index:9;">
+    <button
+        on:click={() => (states.loc ^= 1)}
+        class="plist {states.loc && 'active'}"
+    >
+        Mode
+    </button>
+
+    <form on:submit|preventDefault={searcher}>
+        <input
+            id="srcBox"
+            size="40"
+            placeholder="Search"
+            value={URLpars().q || ""}
+        />
+        <input type="submit" value="Go" style="background:#fff0" />
+    </form>
+
+    <div style="width:11.5em;display:flex;">
+        <button
+            on:click={() => (states.plist ^= 1)}
+            class="plist {states.plist && 'active'}"
+        >
+            PLAYLISTS
+        </button>
+        <button on:click={channels} class="plist active"> SUBSCRIBED </button>
+    </div>
+</section>
+
 <style type="text/scss">
     section {
         width: calc(100% - 10px);
         display: flex;
         position: fixed;
+        opacity: 0;
         top: 0;
         justify-content: space-between;
         background: #222;
         transition: all 0.3s ease;
         align-items: center;
         padding: 10px 5px;
+        &:hover {
+            opacity: 1;
+        }
         input {
             padding: 5px 10px;
             background: #444;
@@ -32,8 +65,8 @@
     }
     .plist {
         border: 1px solid transparent;
-        background: #fff;
-        color: #000;
+        background: transparent;
+        color: #fff;
         border-radius: 5px;
         margin: 0 2px;
         padding: 10px;
@@ -44,47 +77,7 @@
         }
     }
     .active {
-        background: #f00;
+        background: #c22;
         color: #fff;
     }
 </style>
-
-<section
-    bind:this={bar}
-    style="z-index:9;opacity:{URLpars().id ? 0 : 1}"
-    on:mouseenter={() => (bar.style.opacity = 1)}
-    on:mouseleave={() => (bar.style.opacity = 0)}>
-    <a href="/#" style="font-size:1.5em;position:relative;top:-0.2em;">
-        <img
-            src="./icons/disphenoid.svg"
-            alt=""
-            style="width:1.5em;position:relative;top:0.37em;left:0.2em;transform:scale(1.2);" />
-        Diasphenoid
-    </a>
-
-    <form on:submit|preventDefault={searcher()}>
-        <input
-            id="srcBox"
-            size="40"
-            placeholder="Search"
-            value={URLpars().q || ''} />
-        <svg
-            viewBox="0 0 32 32"
-            width="20"
-            height="20"
-            style="position:relative;left:-32px;top:4px;">
-            <circle cx="14" cy="14" r="12" />
-            <path d="M23 23 L30 30" />
-        </svg>
-        <input type="submit" style="opacity:0" value="go" />
-    </form>
-
-    <div style="width:11.5em;display:flex;">
-        <button
-            on:click={() => (states.plist = !states.plist)}
-            class="plist {states.plist ? 'active' : ''}">
-            PLAYLISTS
-        </button>
-        <button on:click={channels} class="plist active"> SUBSCRIBED </button>
-    </div>
-</section>

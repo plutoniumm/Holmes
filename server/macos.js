@@ -1,4 +1,8 @@
 const { exec } = require( "child_process" );
+const fs = require( 'fs' );
+
+
+const dcpp = '../../../Downloads/DC++/';
 
 const fns = {
     "playpause": `osascript -e 'tell application "Music" to playpause'`,
@@ -11,6 +15,12 @@ const fns = {
 }
 
 module.exports = function ( app ) {
+    app.get( '/sys/fs', ( req, res ) => {
+        const ur = decodeURIComponent( req.query.ur );
+        const dir = fs.readdirSync( dcpp + ur ).filter( e => e.charAt( 0 ) !== '.' );
+        res.send( dir )
+    } );
+
     app.post( '/sys', ( req, res ) => {
         const q = req.query;
 

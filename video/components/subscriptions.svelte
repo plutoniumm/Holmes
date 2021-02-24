@@ -1,5 +1,7 @@
 <script>
-    export let vidoer, stacker, videos;
+    export let videos;
+
+    import { vidoer, stacker } from "../core/store";
 </script>
 
 <section id="search">
@@ -22,7 +24,8 @@
                         <path d="M16 2 L16 30 M2 16 L30 16" />
                     </svg>
                 </div>
-                <div
+                <a
+                    href="#wrapper"
                     on:click={vidoer}
                     data-title={vid.snippet.title}
                     id={vid.snippet.resourceId.videoId}
@@ -48,7 +51,7 @@
                             hours ago
                         </span>
                     </div>
-                </div>
+                </a>
             </div>
         {/each}
     {/if}

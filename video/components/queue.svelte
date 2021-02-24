@@ -1,11 +1,11 @@
 <script>
-    export let videos, vidoer, destacker;
+    import { vidoer, destacker, stack } from "../core/store";
 </script>
 
 <section id="search">
-    {#if videos.length > 0}
-        <span style="width:100%;padding:0 5px;">Queue ({videos.length})</span>
-        {#each videos as vid, i}
+    {#if $stack.length > 0}
+        <span style="width:100%;padding:0 5px;">Queue ({$stack.length})</span>
+        {#each $stack as vid, i}
             <div class="recom" style="position:relative;">
                 <div
                     on:click={destacker(i)}
@@ -20,7 +20,8 @@
                         <path d="M2 30 L30 2 M30 30 L2 2" />
                     </svg>
                 </div>
-                <div
+                <a
+                    href="#wrapper"
                     on:click={vidoer}
                     data-title={vid.snippet.title}
                     id={vid.id.videoId || vid.snippet.resourceId.videoId}
@@ -43,7 +44,7 @@
                             )}
                         </span>
                     </div>
-                </div>
+                </a>
             </div>
         {/each}
     {/if}
