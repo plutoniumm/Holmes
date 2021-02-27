@@ -1,18 +1,34 @@
 <script>
+    import TechNews from "./components/technews.svelte";
     import Google from "./components/gtrends.svelte";
+    import HNews from "./components/hackernews.svelte";
 
-    let src = "Political";
+    let state = { src: "TechNews" };
+
+    const pages = [
+        { name: "TechNews", component: TechNews },
+        { name: "Google", component: Google },
+        { name: "HackerNews", component: HNews },
+    ];
+
     const chNews = (e) => {
-        src = e.target.innerText;
+        state.src = e.target.title;
+        console.log(pages[pages.findIndex((x) => x.name === state.src)]);
     };
 </script>
 
 <section>
     <nav class="rpm-10 flex blur" on:click={chNews}>
-        <div class="ln {src === 'Political' ? 'blurW' : 'blur'}">Political</div>
-        <div class="ln {src === 'Software' ? 'blurW' : 'blur'}">Software</div>
+        {#each pages as pg}
+            <div title={pg.name} class="ln {state.src === pg.name && 'blurW'}">
+                {pg.name}
+            </div>
+        {/each}
     </nav>
-    <Google />
+
+    <svelte:component
+        this={pages[pages.findIndex((x) => x.name === state.src)].component}
+    />
 </section>
 
 <style type="text/scss">

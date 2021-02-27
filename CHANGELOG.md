@@ -7,12 +7,14 @@
 - Add insta viewer
 - Create a development system with API testing in browser, test scripts editing etc...
 - Startup Script - node server && psql_start. Stop script stop server && psql_stop
-- Create social systems with reddit, twitter and RSS readers, hackernews api
+- Create social systems with reddit, twitter
 - Create Security system to generate totp, github security alerts
 
 
-## v3.5.0
-
+## v4.0.0 (In Progress)
+- News System
+- Youtube Stores
+- Bug Fixes
 
 
 ## v3.4.0

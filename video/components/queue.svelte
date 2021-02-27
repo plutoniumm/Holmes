@@ -8,7 +8,7 @@
         {#each $stack as vid, i}
             <div class="recom" style="position:relative;">
                 <div
-                    on:click={destacker(i)}
+                    on:click={() => destacker(i)}
                     style="position:absolute;right:5px;top:5px;border-radius:7px;"
                 >
                     <svg
@@ -55,5 +55,8 @@
         padding: 20px 10px;
         display: flex;
         flex-wrap: wrap;
+        svg {
+            stroke: #fff;
+        }
     }
 </style>

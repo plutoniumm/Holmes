@@ -62,5 +62,8 @@
         padding: 20px 10px;
         display: flex;
         flex-wrap: wrap;
+        svg {
+            stroke: #fff;
+        }
     }
 </style>

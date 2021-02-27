@@ -9,7 +9,6 @@
 
 	let state = { main: "Projects", long: "Space" },
 		Corona,
-		Reddit,
 		Shows,
 		Reminders;
 	const naver = (e) => {
@@ -18,9 +17,6 @@
 		console.log(type);
 		if (type == "Corona" && !Corona)
 			import("./lazy/corona.svelte").then((r) => (Corona = r.default));
-
-		if (type == "Reddit" && !Reddit)
-			import("./lazy/reddit.svelte").then((r) => (Reddit = r.default));
 
 		if (type == "Shows" && !Shows)
 			import("./lazy/shows.svelte").then((r) => (Shows = r.default));
@@ -55,8 +51,6 @@
 				<Space />
 			{:else if state.long == "Shows"}
 				<svelte:component this={Shows} />
-			{:else if state.long == "Reddit"}
-				<svelte:component this={Reddit} />
 			{:else if state.long == "Reminders"}
 				<svelte:component this={Reminders} />
 			{/if}

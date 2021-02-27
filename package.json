@@ -1,6 +1,6 @@
 {
   "name": "sherlock",
-  "version": "3.4.0",
+  "version": "4.0.0",
   "license": "MIT",
   "private": true,
   "author": {
@@ -34,6 +34,7 @@
     "cors": "^2.8.5",
     "express": "4.17.1",
     "node-fetch": "^2.6.1",
+    "prerender-node": "^3.2.5",
     "sirv-cli": "1.0.11"
   },
   "optionalDependencies": {

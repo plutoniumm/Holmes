@@ -13,7 +13,7 @@
 	for (let i = 0; i < chanList.length; i++)
 		chanList[i] = cnls.splice(0, size);
 
-	import { stacker, vId, stack, fullStacker } from "../core/store";
+	import { vId } from "../core/store";
 
 	import {
 		search,
@@ -27,38 +27,35 @@
 	import { onMount } from "svelte";
 
 	let [base, plStack] = [[], []];
-	$: states = { plist: 1, loc: 0 };
+	$: states = { plist: 0, loc: 0 };
 	$: substack = [];
 
-	const channels = () => {
-		substack = [];
-		chanList.forEach((e) => subsMon(e));
-	};
-
 	const subsMon = (cList) => {
-		fetch(
-			`${YT}channels?part=snippet%2CcontentDetails&id=${cList
-				.map((el) => el.id)
-				.join("%2C")}&key=${k}`
-		)
+		const link = `${YT}channels?part=snippet%2CcontentDetails&id=${cList
+			.map((el) => el.id)
+			.join("%2C")}&key=${k}`;
+		fetch(link)
 			.then((res) => res.json())
 			.then((r) => {
 				r.items
 					.map((el) => el.contentDetails.relatedPlaylists.uploads)
 					.forEach((el) => {
-						playlist(el + "&order=date", 4)
-							.then((r2) =>
-								r2.items.filter(
-									(r1) =>
-										Date() - Date(r1.snippet.publishedAt) <=
-										2 * 864e5
-								)
-							)
-							.then((r3) => {
-								r3 && (substack = [...substack, ...r3]);
-							});
+						playlist(el + "&order=date", 4).then((r2) => {
+							const arr = r2.items.filter(
+								(r1) =>
+									new Date() -
+										new Date(r1.snippet.publishedAt) <=
+									2 * 864e5
+							);
+							if (arr) substack = [...substack, ...arr];
+						});
 					});
 			});
+	};
+
+	const channels = () => {
+		substack = [];
+		chanList.forEach(subsMon);
 	};
 
 	const searcher = (sc) => {
@@ -82,7 +79,7 @@
 		<Player />
 	{:else}<br /> <br /> <br />{/if}
 	{#if !URLpars().zen && !states.loc}
-		<Queue videos={stack} />
+		<Queue />
 		<Search videos={base} />
 		<Subsc videos={substack} />
 		<Plist videos={plStack} />

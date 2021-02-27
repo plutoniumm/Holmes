@@ -5,14 +5,12 @@ logs
 *lock*.yml
 
 .DS_Store
-thread.js
 
 **/*.css.map
 **/*.js.map
 
 public/bundles
 public/admin
-public/helpers
 public/video
 
 # Dependency directories
