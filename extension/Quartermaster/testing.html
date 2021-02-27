@@ -10,19 +10,20 @@
 </head>
 
 <body>
-
     <script>
         const lier = ( idd = '', cls = '', onclk = '' ) => `<li class="QMmenu-item ${ cls }" id="${ idd }" onclick="${ onclk }"><div class="a">`, lic = `</div></li>`; let q = document.createElement( "qnav" );
         q.setAttribute( 'id', 'QMmenu' );
         q.setAttribute( 'class', 'QMmenu' );
-        q.innerHTML = `<canvas id="downcanvas" width="1px" height="1px" style="opacity:0;pointer-events:none;position:fixed;" class="playable-canvas"></canvas><input class="QMmenu-toggler" id="QMmenu-toggler" type="checkbox"></input><label for="QMmenu-toggler"></label><ul>
+        q.innerHTML = `<canvas id="downcanvas" width="1px" height="1px" style="opacity:0;pointer-events:none;position:fixed;" class="playable-canvas"></canvas><input class="QMmenu-toggler" id="QMmenu-toggler" type="checkbox"></input><label for="QMmenu-toggler" id="QMLabel"></label><ul id="QMul">
                 ${ lier() }浪人${ lic }
-                ${ lier( '', '', "window.location.href += '?bar=1'" ) }Ꞡ${ lic }
+                ${ lier( '', '', "history.pushState({path:location.href+='?bar=1'},'',location.href+='?bar=1');" ) }Ꞡ${ lic }
                 ${ lier( 'QM-speed' ) }${ lic }
                 ${ lier( '', '', "window.location.href = document.querySelector('iframe').src" ) }IF${ lic }
                 ${ lier() }5${ lic }
                 ${ lier() }6${ lic }
-            </ul>`;
+            </ul>
+            <div id="QMDetection">&nbsp;</div>
+            `;
         setInterval
             ( () => { if ( !document.querySelector( '.QMmenu' ) ) document.body.appendChild( q ); }, 2e2 );
     </script>

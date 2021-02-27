@@ -39,6 +39,10 @@
         "prerender-node": "^3.2.5",
         "ijavascript": "5.2.0"
     },
+    "optionalDependencies": {
+        "ijavascript": "5.2.0",
+        "pg": "^8.5.1"
+    },
     "engines": {
         "node": ">= 15.0.0",
         "npm": ">= 7.0.0"

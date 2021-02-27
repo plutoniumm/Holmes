@@ -5,6 +5,10 @@ logs
 *lock*.yml
 
 .DS_Store
+**/.DS_Store
+**/*.DS_Store
+
+.ipynb*/
 
 **/*.css.map
 **/*.js.map
@@ -12,12 +16,7 @@ logs
 public/bundles
 public/admin
 public/video
+config/
 
 # Dependency directories
 node_modules/
-jspm_packages/
-
-# Optional npm cache directory
-.npm
-
-config/
