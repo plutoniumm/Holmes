@@ -7,13 +7,10 @@ if ( argv.meta == 'pkg' ) {
 
     let deps = {}, dDeps = {};
     for ( const [ key, val ] of Object.entries( prepkg.packages ) ) {
-        if ( key !== 'ronin/global' )
-            Object.entries( val ).map( e => deps[ e[ 0 ] ] = e[ 1 ] );
-        else
-            Object.entries( val ).map( e => dDeps[ e[ 0 ] ] = e[ 1 ] );
-
-        // console.log( val.replace( '{', '' ).replace( '}', ',' ) );
+        if ( key !== 'ronin/global' ) Object.entries( val ).map( e => deps[ e[ 0 ] ] = e[ 1 ] );
+        else Object.entries( val ).map( e => dDeps[ e[ 0 ] ] = e[ 1 ] );
     }
+
     let pkgnew = pkmain;
     pkgnew.dependencies = deps;
     pkgnew.devDependencies = dDeps;
