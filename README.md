@@ -38,7 +38,6 @@ xcrun safari-web-extension-converter ./Quartermaster/
 Fundamental Web Languages + AppleScript on Node & Svelte
 
 ### Structure
-- Admin (Dashboard)
 - Command (Search)
 - Debug (Dev)
 - Extension (Ext)

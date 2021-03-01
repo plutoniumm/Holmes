@@ -1,7 +1,6 @@
 <script>
     let offset = 0;
-    let d = new Date(),
-        ctz = "PST";
+    let [d, ctz] = [new Date(), "PST"];
 
     const tz = {
         PST: "America/Los_Angeles",
@@ -34,26 +33,16 @@
                 />
             </td>
         </tr>
-        <tr>
-            <td>
-                {ctz}
-            </td>
-            <td>
-                {d.toLocaleString("en-GB", { timeZone: tz[ctz] })}
-            </td>
-        </tr>
-        <tr>
-            <td> GMT </td>
-            <td>
-                {d.toLocaleString("en-GB", { timeZone: tz.GMT })}
-            </td>
-        </tr>
-        <tr>
-            <td> IST </td>
-            <td>
-                {d.toLocaleString("en-GB", { timeZone: tz.IST })}
-            </td>
-        </tr>
+        {#each [ctz, "GMT", "IST"] as t}
+            <tr>
+                <td>
+                    {t}
+                </td>
+                <td>
+                    {d.toLocaleString("en-GB", { timeZone: tz[t] })}
+                </td>
+            </tr>
+        {/each}
     </table>
 </article>
 
