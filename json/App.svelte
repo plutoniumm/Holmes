@@ -2,7 +2,7 @@
     let mlt = [],
         sng = [],
         trk = [],
-        display = 1;
+        display = 3;
 
     $: search = "";
 
@@ -19,26 +19,28 @@
     import Multi from "./components/multiple.svelte";
     import Single from "./components/single.svelte";
     import Tracker from "./components/track.svelte";
+    import Pending from "./components/pending.svelte";
 </script>
 
 <section>
     <nav class="blurW">
-        <div class={display == 0 ? "blurW" : ""} on:click={() => (display = 0)}>
-            Movies
-        </div>
-        <div class={display == 1 ? "blurW" : ""} on:click={() => (display = 1)}>
-            Shows
-        </div>
-        <div class={display == 2 ? "blurW" : ""} on:click={() => (display = 2)}>
-            Tracker
-        </div>
+        {#each ["Movies", "Shows", "Tracker", "Pending"] as sh, i}
+            <div
+                class={display == i ? "blurW" : ""}
+                on:click={() => (display = i)}
+            >
+                {sh}
+            </div>
+        {/each}
     </nav>
     {#if display == 0}
         <Single set={sng} state={search.toLowerCase()} />
     {:else if display == 1}
         <Multi set={mlt} state={search.toLowerCase()} />
-    {:else}
+    {:else if display == 2}
         <Tracker set={trk} state={search.toLowerCase()} />
+    {:else}
+        <Pending />
     {/if}
 </section>
 <section class="filter">

@@ -2,19 +2,18 @@
     import TechNews from "./components/technews.svelte";
     import Google from "./components/gtrends.svelte";
     import HNews from "./components/hackernews.svelte";
+    import Specifics from "./components/specifix.svelte";
 
-    let state = { src: "TechNews" };
+    let state = { src: "Specifics" };
 
     const pages = [
         { name: "TechNews", component: TechNews },
         { name: "Google", component: Google },
         { name: "HackerNews", component: HNews },
+        { name: "Specifics", component: Specifics },
     ];
 
-    const chNews = (e) => {
-        state.src = e.target.title;
-        console.log(pages[pages.findIndex((x) => x.name === state.src)]);
-    };
+    const chNews = (e) => (state.src = e.target.title);
 </script>
 
 <section>

@@ -13,9 +13,6 @@ logs
 **/*.css.map
 **/*.js.map
 
-/router
-/proxy
-
 public/bundles
 public/admin
 public/video

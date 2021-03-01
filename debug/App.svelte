@@ -1,11 +1,15 @@
 <script>
+    import System from "./components/system.svelte";
     import APIs from "./components/apis.svelte";
     import ScriptEd from "./components/script.svelte";
 </script>
 
-<section>
+<section class="flex">
     <div class="w-50">
         <APIs />
+    </div>
+    <div class="w-50">
+        <System />
     </div>
     <div class="w-50">
         <ScriptEd />
@@ -14,6 +18,6 @@
 
 <style type="text/scss">
     section {
-        display: flex;
+        flex-wrap: wrap;
     }
 </style>

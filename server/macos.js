@@ -5,7 +5,6 @@ const fs = require( 'fs' );
 const dcpp = '../../../Downloads/DC++/';
 
 const fns = {
-    "playpause": `osascript -e 'tell application "Music" to playpause'`,
     "smc": 'smckit',
     "jupyStart": 'npm run notes',
     "jupyStop": 'jupyter notebook stop',
@@ -40,12 +39,6 @@ module.exports = function ( app ) {
             if ( q.cmd == 'start' ) exec( fns.jupyStart, ( err, sto, sterr ) => null );
 
             if ( q.cmd == 'stop' ) exec( fns.jupyStop, ( err, sto, sterr ) => null );
-        }
-
-        if ( q.app == 'music' ) {
-            if ( q.cmd == 'musicState' ) exec( 'osascript ./api/music.scpt', ( err, sto, sterr ) => ( res.send( { 'cmd': 'musicState', 'data': sto.split( ', ' ) } ) ) );
-
-            if ( q.cmd == 'playpause' ) exec( fns.playpause, ( err, sto, sterr ) => null );
         }
 
         if ( q.app == 'reminders' ) {

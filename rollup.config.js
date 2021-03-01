@@ -33,7 +33,7 @@ function serve () {
 }
 
 export default [
-	...( run.rollup.iife.map( e => ( {
+	...( run.iife.map( e => ( {
 		input: e + '/main.js',
 		output: { sourcemap: false, format: 'iife', name: 'app', file: `public/bundles/${ e }.js` },
 		plugins: [
@@ -42,7 +42,7 @@ export default [
 		]
 	} )
 	) ),
-	...( run.rollup.esm.map( e => ( {
+	...( run.esm.map( e => ( {
 		input: e + '/main.js',
 		output: { sourcemap: false, format: 'esm', name: 'app', dir: `public/${ e }/` },
 		plugins: [

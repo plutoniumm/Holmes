@@ -1,32 +1,71 @@
 <script>
     let rss = [];
+
+    const smartFilter = (item) => {
+        const filertlist = [
+            "nba",
+            "baseball",
+            "football",
+            "basketball",
+            "league",
+        ];
+        const heads = ["title", "src", "desc", "url"];
+        for (const hd of heads)
+            if (
+                item[hd] &&
+                filertlist.some((v) => item[hd].toLowerCase().indexOf(v) >= 0)
+            )
+                return 0;
+        for (const it of item.items)
+            for (const hd of heads)
+                if (
+                    filertlist.some((v) => it[hd].toLowerCase().indexOf(v) >= 0)
+                )
+                    return 0;
+        return 1;
+    };
+
     fetch("/social/google/trends")
-        .then((response) => response.text())
-        .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
+        .then((response) => response.json())
+        .then((str) =>
+            str.map((e) =>
+                new window.DOMParser().parseFromString(e, "text/xml")
+            )
+        )
         .then((data) => {
-            rss = [...data.querySelectorAll("item")].map((e) => {
-                const newsItems = [...e.getElementsByTagName("ht:news_item")];
-                return {
-                    title: e.querySelector("title").textContent,
-                    desc: e.querySelector("description").textContent,
-                    img: e.getElementsByTagName("ht:picture")[0].textContent,
-                    items: newsItems.map((e2) => {
-                        return {
-                            title: e2.getElementsByTagName(
-                                "ht:news_item_title"
-                            )[0].textContent,
-                            desc: e2.getElementsByTagName(
-                                "ht:news_item_snippet"
-                            )[0].textContent,
-                            url: e2.getElementsByTagName("ht:news_item_url")[0]
-                                .textContent,
-                            src: e2.getElementsByTagName(
-                                "ht:news_item_source"
-                            )[0].textContent,
-                        };
-                    }),
-                };
-            });
+            rss = [];
+            data.forEach((e) => rss.push(...e.querySelectorAll("item")));
+            rss = rss
+                .map((e) => {
+                    const newsItems = [
+                        ...e.getElementsByTagName("ht:news_item"),
+                    ];
+                    return {
+                        title: e.querySelector("title").textContent,
+                        desc: e
+                            .querySelector("description")
+                            .textContent.slice(0, 40),
+                        img: e.getElementsByTagName("ht:picture")[0]
+                            .textContent,
+                        items: newsItems.map((e2) => {
+                            return {
+                                title: e2.getElementsByTagName(
+                                    "ht:news_item_title"
+                                )[0].textContent,
+                                desc: e2.getElementsByTagName(
+                                    "ht:news_item_snippet"
+                                )[0].textContent,
+                                url: e2.getElementsByTagName(
+                                    "ht:news_item_url"
+                                )[0].textContent,
+                                src: e2.getElementsByTagName(
+                                    "ht:news_item_source"
+                                )[0].textContent,
+                            };
+                        }),
+                    };
+                })
+                .filter(smartFilter);
         });
 </script>
 
