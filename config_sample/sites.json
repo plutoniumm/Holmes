@@ -1,4 +1,7 @@
 {
+      "root": {
+            "name": "Basic"
+      },
       "nf": {
             "name": "Netflix",
             "prelink": "https://www.netflix.com/search?q="
@@ -74,11 +77,6 @@
       "wiki": {
             "name": "Wikipedia",
             "prelink": "https://en.wikipedia.org/wiki/Special:Search?search="
-      },
-      ">": {
-            "name": "Functions",
-            "now": "time.is",
-            "mail": "https://www.icloud.com/mail/"
       },
       "ht": {
             "name": "Web",

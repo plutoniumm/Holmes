@@ -34,9 +34,6 @@ input{
 	background: #2228;
 	backdrop-filter: blur(16px);
 	-webkit-backdrop-filter: blur(16px);
-	&W{
-		background: #4446;
-	}
 }
 .blurW{
 	backdrop-filter: blur(16px);
@@ -53,16 +50,6 @@ input{
 	margin: 10px;
 	padding: 10px;
 	border-radius: 10px;
-}
-
-.pm-5{
-	margin: 5px;
-	padding: 5px;
-}
-
-.pm-10{
-	margin: 10px;
-	padding: 10px;
 }
 
 .QMmenu{
@@ -197,3 +184,7 @@ input{
 		transform: scale(1.05);
 	}
 }
+
+#QMmenu {
+		display: none;
+	}

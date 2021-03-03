@@ -3,15 +3,35 @@
 ## Pending
 - System hourly stats logger - Fan Speed, CPU+MB Temp, Battery level
 - Uptime session logger/shutdown script
-- Add instant formatting textbox which runs scripts on it (dash).
 - Add insta viewer
 - Create a development system with API testing in browser, test scripts editing etc...
-- Startup Script - node server && psql_start. Stop script stop server && psql_stop
-- Create social systems with reddit, twitter
+- Create social systems with twitter
 - Create Security system to generate totp, github security alerts
+- Add goto top button in Quartermaster
+
+## Code Quality (Search Done)
+- Convert all == to ===
+- Add a testing system
+- Add defualt value to EVERY variable
+- Find eval alternative
+- Remove all 'Var's indluding functions. They need to be scoped as objects/constructors
+- Switch if arr.length>0 to if arr.length
+- Convert all short names to proper names variables and functions
+- Remove all comments as // tick and convert to /* tock */
+- Remove all multiple e.style.property1, 2, 3..n and change combine them to one e.toggleclass
+- Remove all trailing commas
+- DOn't do i=0;i<a.length. It reads length repeatedly and is shit. Do. i=0,j=a.length;i<j; or predeclare
+- Keep dom access to a minimum. Its really slow.
+- Typecheck all data and add ranges and regexes where needed (input fields)
+
+## Adding Tests
+- Test for all functions return value. Made as many funcs return as possible
+- Test for existance of == anywhere in code. All need to be ===
+- Test for evals
+- Test for vars. All need to be let and const
 
 
-## v4.0.0 (In Progress)
+## v4.0.0 (In Progress | Ronin)
 - News System
 - Youtube Stores
 - Bug Fixes

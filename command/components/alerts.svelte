@@ -1,16 +1,12 @@
 <script>
     import { fade } from "svelte/transition";
+    import { repoSecurity } from "../../public/shared/js/yoroi";
 
-    async function getVulns() {
-        const req = await fetch("/security/git");
-        const json = await req.json();
-        return json;
-    }
-    let promise = getVulns();
+    let promise = repoSecurity();
 </script>
 
 {#await promise}
-    <a class="blur flex safe">
+    <a class="blur flex safe" href="/">
         <svg
             viewBox="0 0 32 32"
             width="20"
@@ -24,10 +20,10 @@
         </svg>
         Checking...
     </a>
-{:then arr}
+{:then response}
     <a
         in:fade
-        href="https://github.com/plutoniumm/csatimes/security/dependabot/package.json/axios/open"
+        href="https://github.com/notifications?query=reason%3Asecurity-alert"
         class="blur flex alert"
     >
         <svg
@@ -41,7 +37,7 @@
             <path d="M16 14 L16 23 M16 8 L16 10" />
             <circle cx="16" cy="16" r="14" />
         </svg>
-        Security Vulnerability Found in&nbsp;<strong>{arr[0].name}</strong
+        Security Vulnerability Found in&nbsp;<strong>{response[0].name}</strong
         >&nbsp;(Code 0)
     </a>
 {:catch err}

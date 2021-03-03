@@ -385,12 +385,6 @@
                             {
                                 "node": {
                                     "__typename": "GraphVideo",
-                                    "id": "2508993520715714335",
-                                    "shortcode": "CLRvFBaBE8f",
-                                    "dimensions": {
-                                        "height": 750,
-                                        "width": 750
-                                    },
                                     "display_url": "https://instagram.fbom36-1.fna.fbcdn.net/v/t51.2885-15/e35/149370648_128168202515267_2846866506232286780_n.jpg?tp=1&_nc_ht=instagram.fbom36-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=XfrJfNKcMcMAX_yAY_6&oh=81150a529f480fe0008351f8ec223b65&oe=603F0061",
                                     "edge_media_to_tagged_user": {
                                         "edges": []
@@ -404,10 +398,6 @@
                                     },
                                     "media_overlay_info": null,
                                     "media_preview": "ACoqfbW24CtVLZRSW20KPpVgyj3piIZFjjG5iFHvUHlxzjchDD2rP1aVi6qBnCk4z/P39utR6dL5cuG48xfu+hFJMbQ26s8dKyDCc1108iMtYDFcn61RJvwHKj6UpkTncw9OvrWFb3Mm3YDndzirxUyR7mBDqcDj7w65x7Z7cVDl0RSXczpzhgiZLE4Gec/44FRmNgwkc8dOKksSGugT1G7HthTUlw4WPHBJxgfjU+RfQiSZ48/xDH+f51Wac5PAqWJlzhstx26D/P8AOqTOMnFNNkW6ixS4PTOPTj/636VuST4QOj4BA3DPIPuPQ/5Fc2Kfnmm0NaG5bRRoTOH3MQwC49Rjrk1UuPmcnOAigevJ5rOckNxxUkbHB5PJGeevWlYe6sIzMvt71DT5OtR1Qj//2Q==",
-                                    "owner": {
-                                        "id": "1115478881",
-                                        "username": "jessicachastain"
-                                    },
                                     "is_video": true,
                                     "accessibility_caption": null,
                                     "dash_info": {
