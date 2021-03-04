@@ -14,9 +14,9 @@
                 "Content-Type": "application/json",
             },
             referrerPolicy: "no-referrer",
-            ...(formDat.method == "POST" && {
-                body: JSON.stringify(formDat.data),
-            }),
+            ...(formDat.method === "POST" && {
+                body: JSON.stringify(formDat.data)
+            })
         });
         return response.json();
     };

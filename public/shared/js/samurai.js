@@ -11,7 +11,7 @@ const suggestions = ( SIn ) => {
 
 const setEngineImage = ( key ) => {
     const engineImage = find( '#engineImage' );
-    engineImage.src = `./icons/${ sites[ key ].name }.svg`
+    if ( engineImage ) engineImage.src = `./icons/${ sites[ key ].name }.svg`
 }
 
 export const engine = ( input ) => {
@@ -43,4 +43,15 @@ export const engine = ( input ) => {
         else suggestions( input );
         return { key: 's', query: input, url: ( sites[ 's' ].prelink + encodeURIComponent( input ) + ( sites[ 's' ].postlink || '' ) ) };;
     }
+}
+
+export const preprocessor = ( { key, query, url } ) => {
+    const siteFunctions = {
+        r: ( q ) => {
+            if ( q.charAt( 0 ) === '/' ) return sites.r.base + 'r' + q;
+            else return url;
+        }
+    }
+    if ( siteFunctions.hasOwnProperty( key ) ) return siteFunctions[ key ]( query );
+    else return url;
 }

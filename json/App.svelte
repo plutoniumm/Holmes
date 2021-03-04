@@ -2,7 +2,7 @@
     let mlt = [],
         sng = [],
         trk = [],
-        display = 3;
+        display = 2;
 
     $: search = "";
 

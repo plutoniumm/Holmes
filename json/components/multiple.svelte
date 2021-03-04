@@ -5,16 +5,16 @@
     import { sourcer, histSearch } from "../functions.js";
 
     class Show {
-        constructor(day, typ, rec, yr, grd, src, tags, x, stt) {
+        constructor(day, type, record, year, grade, source, tags, x, state) {
             this.day = new Date(day).toLocaleDateString("en-US");
-            this.type = typ;
-            this.record = rec;
-            this.release = yr;
-            this.grade = grd;
-            this.source = src;
+            this.type = type;
+            this.record = record;
+            this.release = year;
+            this.grade = grade;
+            this.source = source;
             this.tags = tags;
             this.speed = x;
-            this.state = stt;
+            this.state = state;
         }
     }
 

@@ -1,6 +1,6 @@
 <script>
       import { onMount } from "svelte";
-      import { engine } from "../../public/shared/js/samurai";
+      import { engine, preprocessor } from "../../public/shared/js/samurai";
 
       let magic;
 
@@ -20,7 +20,7 @@
                                     .replace(send.key + " ", "")
                                     .replace(send.key + ":", "")}`
                         );
-                        window.location.href = send.url;
+                        window.location.href = preprocessor(send);
                         break;
                   default:
                         suggI = null;
