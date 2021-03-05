@@ -1,5 +1,6 @@
 <script>
-    let mlt = [],
+    let // new line
+        mlt = [],
         sng = [],
         trk = [],
         display = 2;
@@ -51,6 +52,30 @@
         bind:value={search}
     />
 </section>
+
+<svelte:head>
+    <style>
+        input {
+            color: #fff;
+            width: 100px;
+        }
+        .inp-cont {
+            flex: 1;
+        }
+        .main img {
+            width: 24px;
+            height: 24px;
+            border-radius: 5px;
+            object-fit: contain;
+            margin: 0 5px;
+        }
+        svg {
+            background: #888;
+            border-radius: 8px;
+            margin: 3px 5px;
+        }
+    </style>
+</svelte:head>
 
 <style type="text/scss">
     section {

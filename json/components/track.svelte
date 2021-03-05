@@ -81,7 +81,7 @@
     else return 1;
 }) as show}
     <div class="boxes blurW">
-        <div class="main w-33">
+        <div class="main flex w-33">
             <img src="./icons/{sourcer(show.source)}.svg" alt="" />
             <span style="font-size:1.25em;text-format:capitalize">
                 {show.record.length > 20
@@ -93,28 +93,3 @@
         <div class="w-33 t-rhs">({show.type}) {show.why}</div>
     </div>
 {/each}
-
-<style type="text/scss">
-    input {
-        color: #fff;
-        width: 100px;
-    }
-    .inp-cont {
-        flex: 1;
-    }
-    .main {
-        display: flex;
-        svg {
-            background: #888;
-            border-radius: 8px;
-            margin: 3px 5px;
-        }
-        img {
-            width: 24px;
-            height: 24px;
-            border-radius: 5px;
-            object-fit: contain;
-            margin: 0 5px;
-        }
-    }
-</style>
