@@ -7,49 +7,34 @@
 
 {#await promise}
     <a class="blur flex safe" href="/">
-        <svg
-            viewBox="0 0 32 32"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentcolor"
-            stroke-width="2"
-        >
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentcolor">
             <path d="M16 14 L16 23 M16 8 L16 10" />
             <circle cx="16" cy="16" r="14" />
         </svg>
         Checking...
     </a>
 {:then response}
+    <div style="display:none;">{JSON.stringify(response)}</div>
     <a
         in:fade
         href="https://github.com/notifications?query=reason%3Asecurity-alert"
-        class="blur flex alert"
+        class="blur flex {response ? 'alert' : 'safe'}"
     >
-        <svg
-            viewBox="0 0 32 32"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentcolor"
-            stroke-width="2"
-        >
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentcolor">
             <path d="M16 14 L16 23 M16 8 L16 10" />
             <circle cx="16" cy="16" r="14" />
         </svg>
-        Security Vulnerability Found in&nbsp;<strong>{response[0].name}</strong
-        >&nbsp;(Code 0)
+        {#if response}
+            Security Vulnerability Found in&nbsp;<strong
+                >{response[0].name}</strong
+            >&nbsp;(Code 0)
+        {:else}
+            All Good Secuirty check passed!
+        {/if}
     </a>
 {:catch err}
     <a in:fade href="https://github.com/" class="blur flex warn">
-        <svg
-            viewBox="0 0 32 32"
-            width="20"
-            height="20"
-            fill="none"
-            stroke="currentcolor"
-            stroke-width="2"
-        >
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentcolor">
             <path d="M16 14 L16 23 M16 8 L16 10" />
             <circle cx="16" cy="16" r="14" />
         </svg>
@@ -75,6 +60,8 @@
         svg {
             padding: 0 5px 0 0;
             stroke-width: 2;
+            height: 20px;
+            width: 20px;
             stroke-linecap: round;
             stroke-linejoin: round;
         }

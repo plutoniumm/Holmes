@@ -2,6 +2,20 @@
 	import Search from "./components/search.svelte";
 	import Alerts from "./components/alerts.svelte";
 	import Links from "./components/links.svelte";
+
+	let date = "";
+	setInterval(
+		() =>
+			(date = new Date().toLocaleDateString("en-GB", {
+				weekday: "short",
+				month: "short",
+				day: "numeric",
+				hour12: false,
+				hour: "2-digit",
+				minute: "2-digit",
+			})),
+		1e3
+	);
 </script>
 
 <div
@@ -13,26 +27,29 @@
 
 <section class="w-100">
 	<div class="flex" id="deets">
-		<div class="flex">
-			<img src="./icons/q.svg" alt="" />
-			<div>Ronin</div>
-		</div>
-		<div>
-			{new Date()
-				.toLocaleDateString("en-GB", {
-					weekday: "short",
-					month: "short",
-					day: "numeric",
-					hour12: false,
-					hour: "2-digit",
-					minute: "2-digit",
-				})
-				.replace(",", "")}
-		</div>
+		<svg viewbox="0 0 256 128" height="22px">
+			<defs>
+				<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+					<stop offset="0%" style="stop-color:#000;" />
+					<stop offset="100%" style="stop-color:#900;" />
+				</linearGradient>
+			</defs>
+			<text
+				fill="url(#grad1)"
+				font-weight="700"
+				font-family="Times"
+				font-size="128"
+				x="0"
+				y="110">浪人</text
+			>
+		</svg>
+		<div>{date}</div>
 	</div>
 	<Search />
 	<Alerts />
-	<Links />
+	<div id="Qlinks">
+		<Links />
+	</div>
 </section>
 
 <style type="text/scss">
@@ -44,19 +61,22 @@
 		width: calc(100% - 10px);
 		animation: topBar 0.2s ease forwards;
 		animation-delay: 1s;
-		img {
-			width: 20px;
-			height: 20px;
-			margin: 0px 2px;
-			filter: invert(100%);
-		}
+	}
+	#Qlinks {
+		position: fixed;
+		bottom: -10em;
+		width: calc(100% - 10px);
+		animation: linksBar 0.2s ease forwards;
+		animation-delay: 1s;
 	}
 	@keyframes topBar {
-		from {
-			top: -20px;
-		}
 		to {
 			top: 5px;
+		}
+	}
+	@keyframes linksBar {
+		to {
+			bottom: 0.25em;
 		}
 	}
 	section {

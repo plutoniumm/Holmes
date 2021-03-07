@@ -24,9 +24,6 @@
             align-items: center;
             word-wrap: break-word;
             text-align: center;
-
-            position: fixed;
-            bottom: 1em;
       }
       .quick {
             width: 90px;

@@ -5,18 +5,14 @@
       <stop offset="100%" style="stop-color:#900;" />
     </linearGradient>
     <style>
-      @font-face {
-        font-family: Hans;
-        src: url('https://github.com/adobe-fonts/source-han-serif/raw/release/OTF/Japanese/SourceHanSerif-Heavy.otf');
-      }
       .bg{
-	    height:256;
+	      height:356px;
         opacity:0.6;
-        mix-blend-mode: lighten;
+        mix-blend-mode: overlay;
       }
     </style>
   </defs>
-  <rect  width="256" height="256" rx="10" fill="url(#grad1)" />
-    <image preserveAspectRatio="xMinYMin slice" class="bg" href="https://ak.picdn.net/shutterstock/videos/23848024/thumb/11.jpg" />
-  <text fill="#fff" font-family="Hans" font-size="128" x="0" y="175">浪人</text>
+  <rect width="256" height="256" rx="10" fill="url(#grad1)" />
+    <image preserveAspectRatio="xMinYMin slice" class="bg" href="./circuit.gif" />
+  <text fill="#fff" font-weight="700" font-family="Times" font-size="128" x="0" y="175">浪人</text>
 </svg>

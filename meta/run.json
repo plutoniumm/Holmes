@@ -1,1 +1,6 @@
-{"iife":["json"],"esm":[]}
+{
+    "iife": [
+        "command"
+    ],
+    "esm": []
+}

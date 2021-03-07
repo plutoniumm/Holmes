@@ -15,34 +15,31 @@ const setEngineImage = ( key ) => {
 }
 
 export const engine = ( input ) => {
+    setEngineImage( 'root' );
+    if ( input.charAt( 0 ) === '!' ) {
+        const withBang = input.replace( '!', '' );
+        let // blanks
+            query,
+            key;
 
-    if ( input ) {
-        setEngineImage( 'root' );
-        if ( input.charAt( 0 ) === '!' ) {
-            const withBang = input.replace( '!', '' );
-            let // blanks
-                query,
-                key;
-
-            if ( sites.hasOwnProperty( withBang.split( ':' )[ 0 ] ) ) {
-                key = withBang.split( ':' )[ 0 ];
-                query = withBang.replace( key + ':', '' );
-                setEngineImage( key );
-                if ( query ) suggestions( query );
-                return { key: key, query: query, url: sites[ key ][ query ] };
-            }
-
-            if ( sites.hasOwnProperty( withBang.split( ' ' )[ 0 ] ) ) {
-                key = withBang.split( ' ' )[ 0 ];
-                query = withBang.replace( key + ' ', '' );
-                if ( query ) suggestions( query );
-                setEngineImage( key );
-                return { key: key, query: query, url: ( sites[ key ].prelink + encodeURIComponent( query ) + ( sites[ key ].postlink || '' ) ) };
-            }
+        if ( sites.hasOwnProperty( withBang.split( ':' )[ 0 ] ) ) {
+            key = withBang.split( ':' )[ 0 ];
+            query = withBang.replace( key + ':', '' );
+            setEngineImage( key );
+            if ( query ) suggestions( query );
+            return { key: key, query: query, url: sites[ key ][ query ] };
         }
-        else suggestions( input );
-        return { key: 's', query: input, url: ( sites[ 's' ].prelink + encodeURIComponent( input ) + ( sites[ 's' ].postlink || '' ) ) };;
+
+        if ( sites.hasOwnProperty( withBang.split( ' ' )[ 0 ] ) ) {
+            key = withBang.split( ' ' )[ 0 ];
+            query = withBang.replace( key + ' ', '' );
+            if ( query ) suggestions( query );
+            setEngineImage( key );
+            return { key: key, query: query, url: ( sites[ key ].prelink + encodeURIComponent( query ) + ( sites[ key ].postlink || '' ) ) };
+        }
     }
+    else suggestions( input );
+    return { key: 's', query: input, url: ( sites[ 's' ].prelink + encodeURIComponent( input ) + ( sites[ 's' ].postlink || '' ) ) };
 }
 
 export const preprocessor = ( { key, query, url } ) => {

@@ -90,8 +90,12 @@
       #autoComplete {
             width: calc(75% - 1.5em);
             padding: 0.5em 0.75em;
+            opacity: 1;
             margin: 0 auto;
             list-style-type: none;
             border-radius: 1em;
+            &:empty {
+                  opacity: 0;
+            }
       }
 </style>
