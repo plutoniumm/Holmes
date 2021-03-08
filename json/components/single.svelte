@@ -18,7 +18,7 @@
 
     const send = () => {
         const fr = (t) => new FormData(form).get(t);
-        const show2 = new Movie(
+        const t = new Movie(
             fr("date"),
             fr("type"),
             fr("record"),
@@ -27,14 +27,13 @@
             fr("source"),
             fr("speed")
         );
-        const t = show;
         set = [t, ...set];
         fetch("/data/single", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(show),
+            body: JSON.stringify(t),
         });
     };
     let show = {
@@ -49,35 +48,58 @@
 </script>
 
 <form on:submit|preventDefault={send} class="boxes blurW" bind:this={form}>
-    <div class="inp-cont">
-        <span class="label">Name</span>
-        <input type="text" class="grade" bind:value={show.record} />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Type</span>
-        <input type="text" class="grade" bind:value={show.type} />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Released</span>
-        <input type="text" class="grade" bind:value={show.release} />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Grade</span>
-        <input type="text" class="grade" bind:value={show.grade} />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Speed</span>
-        <input type="text" class="grade" bind:value={show.speed} />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Source</span>
-        <input type="text" class="grade" bind:value={show.source} />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Today</span>
+    <fieldset class="w-20">
+        <legend class="label">Name</legend>
+        <input name="record" type="text" placeholder="Name" />
+    </fieldset>
+    <fieldset>
+        <legend class="label">Type</legend>
+        <input name="type" list="types" type="text" value="Movie" />
+        <datalist id="types">
+            {#each ["Movie", "Documentary", "Anime"] as type}
+                <option value={type} />{/each}
+        </datalist>
+    </fieldset>
+    <fieldset>
+        <legend class="label">Released</legend>
+        <input
+            name="release"
+            type="number"
+            min="1930"
+            value="2019"
+            max={new Date().getFullYear()}
+        />
+    </fieldset>
+    <fieldset>
+        <legend class="label">Grade</legend>
+        <input
+            name="grade"
+            type="text"
+            value={set
+                .reduce(
+                    (avg, value, _, { length }) => avg + +value.grade / length,
+                    0
+                )
+                .toFixed(2)}
+        />
+    </fieldset>
+    <fieldset>
+        <legend class="label">Speed</legend>
+        <input name="speed" type="text" value="1.6" />
+    </fieldset>
+    <fieldset>
+        <legend class="label">Source</legend>
+        <input type="text" list="sources" name="source" value="Netflix" />
+        <datalist id="sources">
+            {#each ["Netflix", "PrimeVideo", "Torrent", "KissMovies", "Web", "DC++", "AppleTV+", "Theatre"] as type}
+                <option value={type} />{/each}
+        </datalist>
+    </fieldset>
+    <fieldset>
+        <legend class="label">Today</legend>
         <input type="text" class="grade" bind:value={show.day} />
         <input type="submit" value="submit" style="opacity:0;width:0;" />
-    </div>
+    </fieldset>
 </form>
 {#each set.filter((e) => {
     if (state != "") return histSearch(e, state);

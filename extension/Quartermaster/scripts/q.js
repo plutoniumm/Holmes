@@ -6,8 +6,8 @@ q.innerHTML = `<canvas id="downcanvas" width="1px" height="1px" style="opacity:0
                 ${ lier( '', '', "window.location.href += '?bar=1'" ) }Ꞡ${ lic }
                 ${ lier( 'QM-speed' ) }${ lic }
                 ${ lier( '', '', "window.location.href = document.querySelector('iframe').src" ) }IF${ lic }
-                ${ lier() }5${ lic }
-                ${ lier() }6${ lic }
+                ${ lier( '', '', "window.scrollTo(0,0)" ) }↑${ lic }
+                ${ lier() }-${ lic }
             </ul>`;
 
 setInterval

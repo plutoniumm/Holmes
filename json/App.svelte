@@ -3,7 +3,7 @@
         mlt = [],
         sng = [],
         trk = [],
-        display = 2;
+        display = 1;
 
     $: search = "";
 
@@ -55,12 +55,18 @@
 
 <svelte:head>
     <style>
+        fieldset {
+            border: 0;
+            height: 2em;
+            padding: 0;
+        }
+        .label {
+            color: #888;
+            font-size: 0.75em;
+        }
         input {
             color: #fff;
             width: 100px;
-        }
-        .inp-cont {
-            flex: 1;
         }
         .main img {
             width: 24px;
@@ -107,6 +113,7 @@
         position: fixed;
         bottom: 0;
         width: 100%;
+        transition: background 0.2s ease;
         .engine {
             width: 80%;
             font-size: 1.5em;
@@ -121,6 +128,7 @@
             }
         }
         &:hover {
+            background: linear-gradient(to bottom, transparent, #3338);
             .engine {
                 transform: translateY(0);
             }

@@ -21,7 +21,7 @@
     const send = () => {
         const fr = (t) => new FormData(form).get(t);
         const show = new Show(
-            fr("date"),
+            new Date().toLocaleDateString("en-US"),
             fr("type"),
             fr("record"),
             fr("release"),
@@ -43,56 +43,61 @@
 </script>
 
 <form on:submit|preventDefault={send} class="boxes blurW" bind:this={form}>
-    <div class="inp-cont">
-        <span class="label">Name</span>
-        <input name="record" type="text" class="grade" placeholder="Name" />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Type</span>
-        <input name="type" type="text" class="grade" value="Web Series" />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Released</span>
+    <fieldset class="w-20">
+        <legend class="label">Name</legend>
+        <input name="record" type="text" placeholder="Name" />
+    </fieldset>
+    <fieldset>
+        <legend class="label">Type</legend>
+        <input name="type" list="types" type="text" value="Web Series" />
+        <datalist id="types">
+            {#each ["Web Series", "TV Show", "Anime"] as type}
+                <option value={type} />{/each}
+        </datalist>
+    </fieldset>
+    <fieldset>
+        <legend class="label">Released</legend>
         <input
             name="release"
             type="number"
-            class="grade"
             min="1930"
-            value="2017"
+            value="2019"
             max={new Date().getFullYear()}
         />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Grade</span>
-        <input name="grade" type="text" class="grade" value="5" />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Speed</span>
-        <input name="speed" type="text" class="grade" value="1.6" />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Source</span>
-        <input type="text" name="source" class="grade" value="Netflix" />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Today</span>
+    </fieldset>
+    <fieldset>
+        <legend class="label">Grade</legend>
         <input
+            name="grade"
             type="text"
-            name="date"
-            value={new Date().toLocaleDateString("en-US")}
-            class="grade"
+            value={set
+                .reduce(
+                    (avg, value, _, { length }) => avg + +value.grade / length,
+                    0
+                )
+                .toFixed(2)}
         />
-        <input type="submit" value="submit" style="opacity:0;width:0;" />
-    </div>
-    <div class="inp-cont">
-        <span class="label">Status</span>
-        <input type="text" name="status" value="Completed" class="grade" />
-    </div>
+    </fieldset>
+    <fieldset>
+        <legend class="label">Speed</legend>
+        <input name="speed" type="text" value="1.6" />
+    </fieldset>
+    <fieldset>
+        <legend class="label">Source</legend>
+        <input type="text" list="sources" name="source" value="Netflix" />
+        <datalist id="sources">
+            {#each ["Netflix", "PrimeVideo", "Torrent", "KissAnime", "Web", "DC++", "AppleTV+"] as type}
+                <option value={type} />{/each}
+        </datalist>
+    </fieldset>
+    <fieldset>
+        <legend class="label">Status</legend>
+        <input type="text" name="status" value="Completed" />
+    </fieldset>
 </form>
 <br />
 {#each set.filter((e) => {
-    if (state != "") return histSearch(e, state);
-    else return 1;
+    return state ? histSearch(e, state) : 1;
 }) as show}
     <div class="boxes blurW">
         <div class="main flex w-33">

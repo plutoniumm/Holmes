@@ -10,7 +10,7 @@ app.maintain_speed = () => {
 }
 app.setup = () => {
     app.AllVids = []; app.findVideos( document, app.AllVids );
-    if ( !document.body.getAttribute( 'data-qm' ) ) {
+    if ( !document.body.dataset.qm ) {
         document.body.setAttribute( 'data-qm', 1 )
         if ( app.AllVids !== undefined ) {
             document.addEventListener( "keydown", ( e ) => {
@@ -29,7 +29,13 @@ app.setup = () => {
                             app.maintain_speed();
                             break;
                         case 101: // e
-                            for ( const vd of app.AllVids ) vd.currentTime = vd.duration;
+                            for ( const vd of app.AllVids ) vd.currentTime = vd.duration - 1;
+                            break;
+                        case 37:
+                            for ( const vd of app.AllVids ) vd.currentTime -= 5;
+                            break;
+                        case 39:
+                            for ( const vd of app.AllVids ) vd.currentTime += 5;
                             break;
                         case 48:
                         case 49:

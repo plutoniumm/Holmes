@@ -9,11 +9,10 @@ const db = './config/database/';
 app.register( require( './js/security' ) );
 app.register( require( './js/socials' ) );
 app.register( require( './js/macos' ) );
+app.register( require( 'fastify-cors' ), {} )
+app.register( require( 'fastify-static' ), { root: path.join( __dirname, '../public' ) } );
 
-app.register( require( 'fastify-static' ), {
-      root: path.join( __dirname, '../public' )
-} );
-
+// ROUTES
 app.get( '/', function ( req, res ) {
       return res.sendFile( 'index.html' );
 } );
@@ -25,6 +24,7 @@ app.get( '/:file', function ( req, res ) {
       else return res.sendFile( 'index.html' );
 } );
 
+// APIs
 app.post( '/data/:file', ( req, res ) => {
       const type = req.params.file;
       let data = fs.readFileSync( db + type + '.json', 'utf-8' );
