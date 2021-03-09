@@ -7,6 +7,7 @@ const db = './config/database/';
 
 // app.use( express.json() );
 app.register( require( './js/security' ) );
+app.register( require( './js/google' ) );
 app.register( require( './js/socials' ) );
 app.register( require( './js/macos' ) );
 app.register( require( 'fastify-cors' ), {} )

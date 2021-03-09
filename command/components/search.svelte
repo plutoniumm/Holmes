@@ -5,7 +5,7 @@
       let magic;
 
       const go = (e) => {
-            const send = engine(magic.value.toLowerCase());
+            const send = engine(magic.value);
             switch (e.keyCode) {
                   case 40:
                         magic.value = "!" + send.key + " " + suggList[0];

@@ -22,16 +22,16 @@ export const engine = ( input ) => {
             query,
             key;
 
-        if ( sites.hasOwnProperty( withBang.split( ':' )[ 0 ] ) ) {
-            key = withBang.split( ':' )[ 0 ];
+        if ( sites.hasOwnProperty( withBang.split( ':' )[ 0 ]?.toLowerCase() ) ) {
+            key = withBang.split( ':' )[ 0 ]?.toLowerCase();
             query = withBang.replace( key + ':', '' );
             setEngineImage( key );
             if ( query ) suggestions( query );
             return { key: key, query: query, url: sites[ key ][ query ] };
         }
 
-        if ( sites.hasOwnProperty( withBang.split( ' ' )[ 0 ] ) ) {
-            key = withBang.split( ' ' )[ 0 ];
+        if ( sites.hasOwnProperty( withBang.split( ' ' )[ 0 ]?.toLowerCase() ) ) {
+            key = withBang.split( ' ' )[ 0 ]?.toLowerCase();
             query = withBang.replace( key + ' ', '' );
             if ( query ) suggestions( query );
             setEngineImage( key );
@@ -47,10 +47,10 @@ export const preprocessor = ( { key, query, url } ) => {
         r: ( q ) => {
             if ( q.charAt( 0 ) === '/' ) return sites.r.base + 'r' + q;
             else return url;
-            // },
-            // y: ( q ) => {
-            //     if ( q.charAt( 0 ) === '/' ) return sites.r.base + 'r' + q;
-            //     else return url;
+        },
+        y: ( q ) => {
+            if ( q.charAt( 0 ) === '@' ) return sites.y.prelink + '&id=' + q.replace( '@', '' );
+            else return url;
         }
     }
     if ( siteFunctions.hasOwnProperty( key ) ) return siteFunctions[ key ]( query );

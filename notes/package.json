@@ -1,0 +1,30 @@
+{
+    "name": "ronin",
+    "version": "4.0.0",
+    "license": "MIT",
+    "private": true,
+    "author": {
+        "name": "Plutoniumm",
+        "email": "plutniumm@icloud.com",
+        "url": "https://me.nukes.in"
+    },
+    "contributors": [],
+    "scripts": {
+        "server": "clear && node ./server"
+    },
+    "dependencies": {
+        "ejs": "^3.1.6",
+        "fastify": "3.13.0",
+        "fastify-cors": "5.2.0",
+        "fastify-static": "4.0.1",
+        "minimist": "1.2.5",
+        "point-of-view": "4.14.0"
+    },
+    "engines": {
+        "node": ">= 15.0.0",
+        "npm": ">= 7.0.0"
+    },
+    "repository": {
+        "type": "git"
+    }
+}
