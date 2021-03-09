@@ -1,5 +1,8 @@
 <script>
     let news = [];
+
+    import { date } from "../../public/shared/js/yoroi";
+
     if (window.Worker) {
         let w = new Worker("./helpers/thread.js");
         var msg = { func: "getHNTop" };
@@ -28,9 +31,9 @@
                     <span class="desc">{urlP(n.url)}</span>
                 </div>
                 <div class="desc" style="font-size: 0.8em;">
-                    {n.score} points| {n.descendants} comments | {new Date(
-                        n.time
-                    ).toLocaleString("en-GB")}
+                    {n.score} points | {n.descendants} comments | {date(
+                        n.time * 1e3
+                    )}
                 </div>
             </a>
         </div>

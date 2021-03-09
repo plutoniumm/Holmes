@@ -1,90 +1,85 @@
 <script>
+	import TopBar from "./micro/topbar.svelte";
+
 	import Search from "./components/search.svelte";
 	import Alerts from "./components/alerts.svelte";
-	import Links from "./components/links.svelte";
 
-	let date = "";
-	setInterval(
-		() =>
-			(date = new Date().toLocaleDateString("en-GB", {
-				weekday: "short",
-				month: "short",
-				day: "numeric",
-				hour12: false,
-				hour: "2-digit",
-				minute: "2-digit",
-			})),
-		1e3
-	);
+	import News from "./lazy/news.svelte";
+
+	const state = { news: 0 };
+
+	window.onscroll = () => {
+		if (window.scrollY > 10) state.news = 1;
+	};
 </script>
 
-<div
-	id="bgContainer"
-	style="position: absolute;z-index: 0;width: 100vw;height: 100vh;background:#000;"
->
-	<img src="./shared/bigSur.jpg" class="w-100" height="100%" alt="" />
+<div id="bgContainer">
+	<img src="./shared/bigSur.jpg" class="w-100" alt="" />
 </div>
 
 <section class="w-100">
-	<div class="flex" id="deets">
-		<svg viewbox="0 0 256 128" height="22px">
-			<defs>
-				<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-					<stop offset="0%" style="stop-color:#000;" />
-					<stop offset="100%" style="stop-color:#900;" />
-				</linearGradient>
-			</defs>
-			<text
-				fill="url(#grad1)"
-				font-weight="700"
-				font-family="Times"
-				font-size="128"
-				x="0"
-				y="110">浪人</text
-			>
-		</svg>
-		<div>{date}</div>
-	</div>
+	<TopBar />
 	<Search />
 	<Alerts />
 	<div id="Qlinks">
-		<Links />
+		Scroll for Today <br />
+		<svg
+			viewBox="0 0 32 32"
+			width="25"
+			height="25"
+			fill="none"
+			stroke="currentcolor"
+			stroke-width="1"
+		>
+			<path d="M30 12 L16 24 2 12" />
+		</svg>
 	</div>
 </section>
 
+<section style="padding:0 25%;height:auto;">
+	<div id="newsBox" class="w-100" style="margin:0 auto;margin-top:20%;">
+		{#if state.news}
+			<News />
+		{/if}
+	</div>
+</section>
+
+<svelte:head>
+	<style>
+		*::-webkit-scrollbar {
+			display: none;
+		}
+	</style>
+</svelte:head>
+
 <style type="text/scss">
-	#deets {
+	#bgContainer {
 		position: fixed;
-		top: -20px;
-		padding: 0 5px;
-		justify-content: space-between;
-		width: calc(100% - 10px);
-		animation: topBar 0.2s ease forwards;
-		animation-delay: 1s;
-	}
-	#Qlinks {
-		position: fixed;
-		bottom: -10em;
-		width: calc(100% - 10px);
-		animation: linksBar 0.2s ease forwards;
-		animation-delay: 1s;
-	}
-	@keyframes topBar {
-		to {
-			top: 5px;
+		z-index: 0;
+		width: 100vw;
+		height: 100vh;
+		background: #000;
+		img {
+			height: 100%;
+			object-fit: cover;
 		}
 	}
-	@keyframes linksBar {
+	#Qlinks {
+		width: calc(100% - 10px);
+		text-align: center;
+		animation: downBar 0.2s ease forwards;
+		animation-delay: 1s;
+		position: absolute;
+		bottom: -5em;
+	}
+	@keyframes downBar {
 		to {
-			bottom: 0.25em;
+			bottom: 0.5em;
 		}
 	}
 	section {
-		position: absolute;
-		height: 100%;
+		position: relative;
+		height: 100vh;
 		z-index: 1;
-	}
-	* {
-		overflow-y: hidden;
 	}
 </style>

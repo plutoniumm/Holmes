@@ -4,7 +4,7 @@
     import HNews from "./components/hackernews.svelte";
     import Specifics from "./components/specifix.svelte";
 
-    let state = { src: "Specifics" };
+    let state = { src: "Google" };
 
     const pages = [
         { name: "TechNews", component: TechNews },

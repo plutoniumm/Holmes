@@ -47,6 +47,10 @@ export const preprocessor = ( { key, query, url } ) => {
         r: ( q ) => {
             if ( q.charAt( 0 ) === '/' ) return sites.r.base + 'r' + q;
             else return url;
+            // },
+            // y: ( q ) => {
+            //     if ( q.charAt( 0 ) === '/' ) return sites.r.base + 'r' + q;
+            //     else return url;
         }
     }
     if ( siteFunctions.hasOwnProperty( key ) ) return siteFunctions[ key ]( query );

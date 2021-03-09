@@ -30,7 +30,7 @@
                             style="object-fit: cover;border-radius:5px;"
                         />
                         <div style="font-weight:400;padding:5px;">
-                            {el.data.title}
+                            {el.data.title.replace(/TIL/g, "")}
                         </div>
                     </a>
                 </div>

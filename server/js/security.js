@@ -29,7 +29,8 @@ async function routes ( fastify, options ) {
                     } )
                 } )
                 res.send( prs );
-            } );
+            } )
+            .catch( err => res.send( 404 ) );
     } );
 };
 
