@@ -7,13 +7,12 @@
   "content_scripts": [
     {
       "exclude_matches": [
-        "http://localhost:*/*"
+        "localhost:*/*"
       ],
       "matches": [
         "https://*/*"
       ],
       "js": [
-        "scripts/qm.js",
         "scripts/video.js",
         "scripts/q.js"
       ],
@@ -37,8 +36,7 @@
     "64": "assets/q64.png",
     "128": "assets/q128.png",
     "256": "assets/q256.png",
-    "512": "assets/q512.png",
-    "1024": "assets/q1024.png"
+    "512": "assets/q512.png"
   },
   "permissions": [
     "activeTab"

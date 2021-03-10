@@ -25,8 +25,12 @@ $ npm run build
 
 Safari butler
 
-```
+``` 
 xcrun safari-web-extension-converter ./Quartermaster/
+```
+
+```
+pg_ctl -D /usr/local/var/postgres start
 ```
 
 ## Contribution Guidelines

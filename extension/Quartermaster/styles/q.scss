@@ -2,26 +2,12 @@
     display: none;
 }
 #downcanvas {
-	opacity: 0.5;
+	opacity: 0;
 	max-width: 100px;
 	max-height: 10vw;
 }
-#QMDetection{
-	position: fixed;
-	z-index: -1;
-	pointer-events: none;
-	width: 20vw;
-	height: 99vw;
-	right: 0;
-	top: 0;
-}
-#QMmenu-toggler,#QMmenu-toggler+label,#QMmenu-toggler+label::before, #QMmenu-toggler+label::after{
-	z-index:9999;
-}
-#QMmenu-toggler~ul .QMmenu-item .a{
-	z-index:9998;
-}
 #QMmenu {
+	z-index: 999999;
 	font: 25px helvetica;
 	font-weight: 300;
 	position: fixed;
@@ -59,9 +45,13 @@
 			transform: rotate(-45deg);
 		}
 	}
+	~ul{
+		pointer-events: none;
+	}
 	&:checked~ul {
 		.QMmenu-item {
 			opacity: 1;
+			pointer-events: all;
 			cursor: pointer;
 			&:nth-child(1) {
 				transform: rotate(0deg) translateX(-60px);
@@ -112,7 +102,6 @@
 	bottom: 0;
 	margin: auto;
     &:before,&:after{
-        opacity: 0.66;
         transition: all 0.2s ease;
         width: 30px;
         height: 3px;

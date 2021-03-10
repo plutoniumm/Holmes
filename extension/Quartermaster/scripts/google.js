@@ -1,3 +1,12 @@
+const qm = {};
+
+qm.URLpars = () => {
+    const entries = new URLSearchParams( window.location.search ).entries();
+    const params = {};
+    for ( let entry of entries ) params[ entry[ 0 ] ] = entry[ 1 ];
+    return params;
+}
+
 if ( window.location.host.includes( 'youtube' ) ) {
     setInterval( () => {
         if ( document.getElementById( 'related' ) ) document.getElementById( 'related' ).remove();

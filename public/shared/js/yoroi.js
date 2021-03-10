@@ -5,7 +5,7 @@ export const repoSecurity = async () => {
 };
 
 export const getReddit = async ( sub ) => {
-    const raw = await fetch( "https://www.reddit.com/r/" + sub + "/top/.json?limit=5" );
+    const raw = await fetch( "https://www.reddit.com/r/" + sub + "/top/.json?limit=3" );
     const json = await raw.json();
     return json.data.children;
 };

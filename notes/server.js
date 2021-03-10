@@ -13,13 +13,28 @@ const port = process.env.PORT || 4001;
 
 // ( Math.random() * 1e18 ).toString( 32 )
 
-app.get( '/:id', ( req, reply ) => {
-      reply.view( './note.html', { text: fs.readFileSync( './files/' + id, 'utf-8' ) } )
+app.get( '/', ( req, res ) => {
+      const id = req.params.id;
+      res.view( './note.html' );
+} )
+
+app.get( '/:id', ( req, res ) => {
+      const id = req.params.id;
+      res.view( './note.html' );
+} )
+
+app.get( '/file/:id', ( req, res ) => {
+      const id = req.params.id;
+      res.send( fs.readFileSync( `./files/${ id }.txt`, 'utf-8' ) )
+} )
+
+app.post( '/:id', ( req, res ) => {
+      const id = req.params.id;
+      fs.writeFileSync( `./files/${ id }.txt`, req.body );
+      res.send( 200 );
 } )
 
 const files = fs.readdirSync( './files/' );
 console.log( files );
-// app.get( '/',  ( req, res )=> {
-// } );
 
 app.listen( port, console.log( 'Server listening on PORT:' + port ) );

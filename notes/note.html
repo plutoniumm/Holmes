@@ -8,25 +8,53 @@
     <title>Notes</title>
 </head>
 
-<body contenteditable>
-    <%= text %>
+<body>
+    <div contenteditable id="container">
+
+    </div>
 </body>
 
 <style>
+    body,
+    #container {
+        width: 99.9vw;
+        height: 100%;
+        outline: none;
+        margin: 0;
+        padding: 0;
+    }
+
     body {
         background: #333;
         color: #fff;
     }
+
+    #container {
+        min-height: 100vh;
+        margin: 20px;
+        font: lighter 16px Helvetica;
+    }
 </style>
 
 <script>
+    const container = document.querySelector( '#container' );
+
+    fetch( '/file' + window.location.pathname )
+        .then( res => res.text() )
+        .then( r => container.innerHTML = r );
+
+    const save = () => {
+        fetch( window.location.pathname, { method: 'POST', body: container.innerHTML } )
+            .then( res => res.text() )
+            .then( r => console.log( r ) );
+    }
     window.addEventListener( 'keyup', ( e ) => {
-        if ( e.keyCode === 83 && e.metaKey ) {
+        if ( e.altKey && e.keyCode === 83 ) {
             e.preventDefault();
-            console.log( "SAVE" );
-        }
-        console.log( e.keyCode );
+            save();
+        };
     } )
+    setInterval( save, 5e3 );
 </script>
 
 </html>
